@@ -314,6 +314,34 @@
 
   document.getElementById('btn-tr').onclick = ()=>applyLang('tr');
   document.getElementById('btn-en').onclick = ()=>applyLang('en');
-  </script>
+  </script><script>
+const tr = {
+  nav_about:"Hakkımda", nav_books:"Kitaplar", nav_projects:"Projeler", nav_contact:"İletişim",
+  hero_kicker:"Klinik Psikolog • Din Felsefesi • Siyaset Bilimi",
+  hero_title:"Merhaba, ben Melike Balkın Karakaya",
+  hero_lead:"Psikoloji, felsefe ve tasavvuf ekseninde yazıyor; bilinç, algı ve travma dönüşümü üzerine çalışıyorum.",
+  btn_books:"Kitaplarımı Gör", btn_projects:"Projeler & Makaleler"
+};
+const en = {
+  nav_about:"About", nav_books:"Books", nav_projects:"Projects", nav_contact:"Contact",
+  hero_kicker:"Clinical Psychologist • Philosophy of Religion • Political Science",
+  hero_title:"Hi, I'm Melike Balkın Karakaya",
+  hero_lead:"I write at the intersection of psychology, philosophy and Sufism; I work on consciousness, perception and trauma transformation.",
+  btn_books:"See My Books", btn_projects:"Projects & Articles"
+};
+const dict = {tr,en};
+
+function applyLang(lang){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key=el.getAttribute('data-i18n');
+    if(dict[lang][key]) el.textContent=dict[lang][key];
+  });
+  document.getElementById('btn-tr').classList.toggle('active',lang==='tr');
+  document.getElementById('btn-en').classList.toggle('active',lang==='en');
+}
+document.getElementById('btn-tr').onclick=()=>applyLang('tr');
+document.getElementById('btn-en').onclick=()=>applyLang('en');
+</script>
 </body>
 </html>
+
