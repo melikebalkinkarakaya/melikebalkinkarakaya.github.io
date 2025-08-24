@@ -62,33 +62,27 @@
 
   @media (max-width:980px){h1{font-size:36px}.hero-grid{flex-direction:column;align-items:flex-start}.hero-image img{max-width:220px}}
   @media (max-width:640px){h1{font-size:30px}.about{grid-template-columns:1fr}}
-/* HAKKIMDA: bölümü ve kartı ortala, genişliği yönet */
+/* HAKKIMDA: bölümü ve kartı ortala, içeriği hizala */
 #hakkimda{
   display:flex;
-  justify-content:center;   /* bölümü yatayda ortaya getirir */
+  justify-content:center;     /* bölümü ortalar */
 }
 
 #hakkimda .card{
-  width:min(900px, 95vw);   /* 900px’e kadar büyüsün, küçük ekranda %95 kaplasın */
-  margin:0 auto;            /* kartı ortalar */
+  width:100%;                 /* container kadar genişlik */
+  max-width:1100px;           /* sitenin genel genişliğiyle uyumlu */
+  margin:0 auto;              /* kartı ortalar */
+  text-align:center;          /* kart içindeki başlık/parağrafları ortalar */
 }
 
-/* Başlık ve paragrafları ortala */
-#hakkimda .card h2,
-#hakkimda .card h3,
-#hakkimda .card p{
-  text-align:center;
-}
-
-/* Liste satırları sola yaslı kalsın ama liste bloğu ortalansın */
+/* Liste: blok ortada kalsın, maddeler solda kalsın (istersen aşağıdaki
+   text-align'i center yaparak maddeleri de ortalayabilirsin) */
 #hakkimda .card ul{
   padding-left:0;
-  margin:0 auto;            /* liste bloğunu ortaya alır */
-  width:max-content;        /* içeriği kadar genişlik */
-}
-#hakkimda .card li{
+  margin:12px auto 0;
+  display:inline-block;       /* liste bloğunu ortalar */
+  text-align:left;            /* madde metni sola hizalı kalsın */
   list-style-position:inside;
-  text-align:left;          /* madde satırı sola */
 }
 </style>
 </head>
@@ -218,6 +212,7 @@
 
 </body>
 </html>
+
 
 
 
