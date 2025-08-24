@@ -84,6 +84,37 @@
   text-align:left;            /* madde metni sola hizalı kalsın */
   list-style-position:inside;
 }
+<style>
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.info-grid h3 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 4px;
+}
+
+.info-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-grid li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
 <body>
@@ -133,6 +164,8 @@
       inanç dinamikleri ve algı yönetimi üzerine çalışmalar yapmaktadır.
     </p>
 
+    <div class="info-grid">
+  <div>
     <h3>Diller</h3>
     <ul>
       <li>İngilizce (Orta–İleri, B1–B2)</li>
@@ -140,6 +173,40 @@
       <li>Farsça (temel)</li>
       <li>Almanca (temel)</li>
     </ul>
+  </div>
+
+  <div>
+    <h3>Uzmanlık Alanları</h3>
+    <ul>
+      <li>Aile ve Çift Danışmanlığı</li>
+      <li>Bağımlılık ve Madde Kullanımı</li>
+      <li>Ayrılık Kaygısı</li>
+      <li>Bilişsel Davranışçı Terapi (BDT)</li>
+      <li>Bütüncül Psikoterapi</li>
+      <li>Mindfulness</li>
+      <li>Duygu Düzenleme</li>
+      <li>Hipnoterapi</li>
+      <li>Regresyon Terapisi</li>
+      <li>Kabul ve Kararlılık Terapisi (ACT)</li>
+      <li>Manevi Danışmanlık</li>
+      <li>Algı Yönetimi</li>
+      <li>Stratejik Manipülasyon ve Psikolojik Harp</li>
+      <li>Sosyal Psikoloji</li>
+      <li>Liderlik</li>
+      <li>Online Terapi</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Akademik İlgi Alanları</h3>
+    <ul>
+      <li>Din felsefesi ve tasavvuf düşüncesi</li>
+      <li>İnanç psikolojisi ve metafizik sorgulamalar</li>
+      <li>Sosyal algı yönetimi ve politik iletişim</li>
+      <li>Bilinç ile toplumsal dönüşüm arasındaki ilişki</li>
+    </ul>
+  </div>
+</div>
 
     <h3>Uzmanlık Alanları</h3>
     <ul>
@@ -240,6 +307,7 @@
 
 </body>
 </html>
+
 
 
 
