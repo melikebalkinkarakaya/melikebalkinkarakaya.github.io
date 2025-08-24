@@ -62,37 +62,33 @@
 
   @media (max-width:980px){h1{font-size:36px}.hero-grid{flex-direction:column;align-items:flex-start}.hero-image img{max-width:220px}}
   @media (max-width:640px){h1{font-size:30px}.about{grid-template-columns:1fr}}
-/* Hakkımda bölümünü ortalamak ve içerik hizalamaları */
-#hakkimda, #hakkimda {
-    display: flex;
-    justify-content: center;   /* bölümü yatayda ortaya getirir */
+/* HAKKIMDA: bölümü ve kartı ortala, genişliği yönet */
+#hakkimda{
+  display:flex;
+  justify-content:center;   /* bölümü yatayda ortaya getirir */
 }
 
-/* Kart boyutu */
-#hakkimda .card, #hakkimda .card {
-    max-width: 700px;
-    margin: 0 auto;
+#hakkimda .card{
+  width:min(900px, 95vw);   /* 900px’e kadar büyüsün, küçük ekranda %95 kaplasın */
+  margin:0 auto;            /* kartı ortalar */
 }
 
 /* Başlık ve paragrafları ortala */
 #hakkimda .card h2,
 #hakkimda .card h3,
-#hakkimda .card p {
-    text-align: center;
+#hakkimda .card p{
+  text-align:center;
 }
 
-/* Listeleri ortala */
-#hakkimda .card ul {
-    padding-left: 0;
-    list-style-position: inside;  /* noktaları yazıyla hizalar */
-    text-align: center;           /* listedeki tüm metni ortalar */
+/* Liste satırları sola yaslı kalsın ama liste bloğu ortalansın */
+#hakkimda .card ul{
+  padding-left:0;
+  margin:0 auto;            /* liste bloğunu ortaya alır */
+  width:max-content;        /* içeriği kadar genişlik */
 }
-
-/* Liste maddeleri */
-#hakkimda .card li {
-    text-align: center;           /* maddeler de ortalı */
-}
-  text-align: left;
+#hakkimda .card li{
+  list-style-position:inside;
+  text-align:left;          /* madde satırı sola */
 }
 </style>
 </head>
@@ -222,6 +218,7 @@
 
 </body>
 </html>
+
 
 
 
