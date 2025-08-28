@@ -46,6 +46,7 @@
   .project-card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.5);text-align:center}
   .project-card h3{margin:0 0 10px;color:#fff}
   .project-card p{font-size:14px;color:var(--muted);margin:0 0 15px}
+  .project-logo{width:80px;height:auto;margin:0 auto 10px auto;border-radius:12px;border:1px solid #30363d}
 
   .socials{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
   .chip{background:#21262d;border-radius:999px;padding:8px 12px;font-size:14px;color:#c9d1d9;border:1px solid #30363d}
@@ -189,18 +190,25 @@
     <div class="container">
       <h2 class="section-title" data-i18n="projects_title">Projeler &amp; Makaleler</h2>
       <div class="projects-grid">
+
         <div class="project-card">
-          <h3 data-i18n="p1_t">Near-False Deletion Protocol</h3>
+          <img class="project-logo" src="yakınyanlış.jpeg" alt="Yakın Yanlış Protokolü Logo">
+          <h3 data-i18n="p1_t">Near-False Erasure Protocol</h3>
           <p data-i18n="p1_d">Bilinçaltı travmatik izlerin yeniden kodlanmasına yönelik deneysel protokol.</p>
         </div>
+
         <div class="project-card">
+          <img class="project-logo" src="MelikeBalkınKarakaya.jpeg" alt="DIM–IMEC Logo">
           <h3 data-i18n="p2_t">DIM–IMEC Project</h3>
           <p data-i18n="p2_d">Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli.</p>
         </div>
+
         <div class="project-card">
+          <img class="project-logo" src="lucit.jpeg" alt="Lucid Dream Transformation Logo">
           <h3 data-i18n="p3_t">Lucid Dream-Based Trauma Transformation</h3>
           <p data-i18n="p3_d">Lucid rüya ile travma dönüşümü ve psikolojik şifa yaklaşımı.</p>
         </div>
+
       </div>
     </div>
   </section>
@@ -235,7 +243,7 @@
     <div class="container">© 2025 Melike Balkın Karakaya</div>
   </footer>
 
-  <!-- Basit i18n betiği -->
+  <!-- i18n (tek betik) -->
   <script>
   const tr = {
     site_title:"Melike Balkın Karakaya",
@@ -260,7 +268,7 @@
     books_title:"Kitaplarım",
     books_p:"Kitap ve yayınlarım için Amazon Author Page ve Goodreads profillerimi ziyaret edebilirsiniz.",
     projects_title:"Projeler & Makaleler",
-    p1_t:"Near-Miss Erasure Protocol", p1_d:"Bilinçaltı travmatik izlerin yeniden kodlanmasına yönelik deneysel protokol.",
+    p1_t:"Near-False Erasure Protocol", p1_d:"Bilinçaltı travmatik izlerin yeniden kodlanmasına yönelik deneysel protokol.",
     p2_t:"DIM–IMEC Project", p2_d:"Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli.",
     p3_t:"Lucid Dream-Based Trauma Transformation", p3_d:"Lucid rüya ile travma dönüşümü ve psikolojik şifa yaklaşımı.",
     contact_title:"İletişim", contact_mail_label:"E-posta:", contact_site_label:"Resmî alan adı:"
@@ -289,7 +297,7 @@
     books_title:"Books",
     books_p:"For my publications, please visit my Amazon Author Page and Goodreads profile.",
     projects_title:"Projects & Articles",
-    p1_t:"Near-Miss Erasure Protocol", p1_d:"An experimental protocol for recoding traumatic imprints.",
+    p1_t:"Near-False Erasure Protocol", p1_d:"An experimental protocol for recoding traumatic imprints.",
     p2_t:"DIM–IMEC Project", p2_d:"A multilayered consciousness model bridging science, philosophy and faith.",
     p3_t:"Lucid Dream-Based Trauma Transformation", p3_d:"A healing approach to trauma using lucid dreaming.",
     contact_title:"Contact", contact_mail_label:"Email:", contact_site_label:"Official domain:"
@@ -314,35 +322,6 @@
 
   document.getElementById('btn-tr').onclick = ()=>applyLang('tr');
   document.getElementById('btn-en').onclick = ()=>applyLang('en');
-  </script><script>
-const tr = {
-  nav_about:"Hakkımda", nav_books:"Kitaplar", nav_projects:"Projeler", nav_contact:"İletişim",
-  hero_kicker:"Klinik Psikolog • Din Felsefesi • Siyaset Bilimi",
-  hero_title:"Merhaba, ben Melike Balkın Karakaya",
-  hero_lead:"Psikoloji, felsefe ve tasavvuf ekseninde yazıyor; bilinç, algı ve travma dönüşümü üzerine çalışıyorum.",
-  btn_books:"Kitaplarımı Gör", btn_projects:"Projeler & Makaleler"
-};
-const en = {
-  nav_about:"About", nav_books:"Books", nav_projects:"Projects", nav_contact:"Contact",
-  hero_kicker:"Clinical Psychologist • Philosophy of Religion • Political Science",
-  hero_title:"Hi, I'm Melike Balkın Karakaya",
-  hero_lead:"I write at the intersection of psychology, philosophy and Sufism; I work on consciousness, perception and trauma transformation.",
-  btn_books:"See My Books", btn_projects:"Projects & Articles"
-};
-const dict = {tr,en};
-
-function applyLang(lang){
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const key=el.getAttribute('data-i18n');
-    if(dict[lang][key]) el.textContent=dict[lang][key];
-  });
-  document.getElementById('btn-tr').classList.toggle('active',lang==='tr');
-  document.getElementById('btn-en').classList.toggle('active',lang==='en');
-}
-document.getElementById('btn-tr').onclick=()=>applyLang('tr');
-document.getElementById('btn-en').onclick=()=>applyLang('en');
-</script>
+  </script>
 </body>
 </html>
-
-
