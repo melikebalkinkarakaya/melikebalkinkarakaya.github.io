@@ -21,7 +21,6 @@
   .menu{display:flex;gap:16px;flex-wrap:wrap}
   .menu a{padding:8px 12px;border-radius:10px;color:#c9d1d9}
   .menu a:hover{background:#21262d}
-  /* dil anahtarı */
   .lang{display:flex;gap:8px;align-items:center}
   .lang button{background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:999px;padding:6px 10px;font-weight:600;cursor:pointer}
   .lang button.active{background:var(--brand);color:#0b1020;border-color:transparent}
@@ -45,8 +44,17 @@
   .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:20px}
   .project-card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.5);text-align:center}
   .project-card h3{margin:0 0 10px;color:#fff}
-  .project-card p{font-size:14px;color:var(--muted);margin:0 0 15px}
+  .project-card p{font-size:14px;color:#a8b3bf;margin:0 0 15px}
   .project-logo{width:80px;height:auto;margin:0 auto 10px auto;border-radius:12px;border:1px solid #30363d}
+
+  /* Kitaplar */
+  #kitaplar .books{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-top:16px}
+  .book-card{background:var(--card);border:1px solid #30363d;border-radius:14px;padding:14px;box-shadow:0 2px 10px rgba(0,0,0,.35);text-align:center}
+  .book-card img{width:100%;height:auto;border-radius:10px}
+  .book-card h3{margin:12px 0 10px;font-size:18px;color:#fff}
+  .book-card .btn{display:inline-block;padding:9px 12px;border-radius:10px;background:var(--brand);color:#0b1020;font-weight:700}
+  .book-card .btn:hover{filter:brightness(.95)}
+  .book-card small{display:block;color:var(--muted);margin-top:4px}
 
   .socials{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
   .chip{background:#21262d;border-radius:999px;padding:8px 12px;font-size:14px;color:#c9d1d9;border:1px solid #30363d}
@@ -56,7 +64,6 @@
 
   #hakkimda{display:flex;justify-content:center}
   #hakkimda .card{width:100%;max-width:1100px;margin:0 auto}
-
   #hakkimda .info-grid{display:grid;gap:30px;margin:20px 0;grid-template-columns:repeat(3,minmax(0,1fr));justify-items:center;text-align:center}
   #hakkimda .info-grid h3{margin:0 0 10px;font-weight:600;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:6px}
   #hakkimda .info-grid ul{list-style:none;padding:0;margin:0}
@@ -99,7 +106,7 @@
           </div>
         </div>
         <div class="hero-image">
-          <img src="melike.jpeg?v=1" alt="Melike Balkın Karakaya">
+          <img src="melike.jpeg?v=1" alt="Melike Balkın Karakaya" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -173,45 +180,72 @@
   <section id="kitaplar" class="section">
     <div class="container">
       <h2 class="section-title" data-i18n="books_title">Kitaplarım</h2>
-      <div class="card">
-        <p data-i18n="books_p">
-          Kitap ve yayınlarım için
-          <a href="https://https://author.amazon.com/home?locale=tr_TR" target="_blank" rel="noopener">Amazon Author Page</a>
-          ve
-          <a href="https://https://www.goodreads.com/author/show/58025231.Melike_Balk_n_Karakaya"_blank" rel="noopener">Goodreads</a>
-          profillerimi ziyaret edebilirsiniz.
-        </p>
+      <div class="books">
+
+        <!-- Zehir Değil Çığlık -->
+        <article class="book-card">
+          <img src="zehir-degil-ciglik.png" alt="Zehir Değil Çığlık" loading="lazy" decoding="async">
+          <h3>Zehir Değil Çığlık</h3>
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://www.amazon.com/gp/product/B0FK6KLYJ6/ref=x_gr_bb_amazon?ie=UTF8&tag=x_gr_bb_amazon-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=B0FK6KLYJ6&SubscriptionId=1MGPYB6YW3HWK55XCGG2">
+            Amazon’da Satın Al
+          </a>
+          <small>e-Kitap</small>
+        </article>
+
+        <!-- Kalbin Bütçesi -->
+        <article class="book-card">
+          <img src="kalbin_butcesi.jpg" alt="Kalbin Bütçesi" loading="lazy" decoding="async">
+          <h3>Kalbin Bütçesi</h3>
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://www.amazon.com/gp/product/B0FKTCQSBS/ref=x_gr_bb_amazon?ie=UTF8&tag=x_gr_bb_amazon-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=B0FKTCQSBS&SubscriptionId=1MGPYB6YW3HWK55XCGG2">
+            Amazon’da Satın Al
+          </a>
+          <small>e-Kitap</small>
+        </article>
+
+        <!-- Aşkın Haritası -->
+        <article class="book-card">
+          <img src="askin_haritasi.jpeg" alt="Aşkın Haritası" loading="lazy" decoding="async">
+          <h3>Aşkın Haritası</h3>
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://www.amazon.com/gp/product/B0FMYXK27M/ref=x_gr_bb_amazon?ie=UTF8&tag=x_gr_bb_amazon-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=B0FMYXK27M&SubscriptionId=1MGPYB6YW3HWK55XCGG2">
+            Amazon’da Satın Al
+          </a>
+          <small>e-Kitap</small>
+        </article>
+
       </div>
     </div>
   </section>
 
   <!-- PROJELER -->
-<section id="projeler" class="section">
-  <div class="container">
-    <h2 class="section-title" data-i18n="projects_title">Projeler &amp; Makaleler</h2>
-    <div class="projects-grid">
+  <section id="projeler" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="projects_title">Projeler &amp; Makaleler</h2>
+      <div class="projects-grid">
 
-      <div class="project-card">
-        <img class="project-logo" src="yakin_yanlis.jpeg" alt="Yakın Yanlış Protokolü Logo">
-        <h3 data-i18n="p1_t">Near-False Deletion Protocol</h3>
-        <p data-i18n="p1_d">Bilinçaltı travmatik izlerin yeniden kodlanmasına yönelik deneysel protokol.</p>
+        <div class="project-card">
+          <img class="project-logo" src="yakin_yanlis.jpeg" alt="Yakın Yanlış Protokolü Logo" loading="lazy" decoding="async">
+          <h3 data-i18n="p1_t">Near-False Deletion Protocol</h3>
+          <p data-i18n="p1_d">Bilinçaltı travmatik izlerin yeniden kodlanmasına yönelik deneysel protokol.</p>
+        </div>
+
+        <div class="project-card">
+          <img class="project-logo" src="dim-imec.jpeg" alt="DIM–IMEC Logo" loading="lazy" decoding="async">
+          <h3 data-i18n="p2_t">DIM–IMEC Project</h3>
+          <p data-i18n="p2_d">Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli.</p>
+        </div>
+
+        <div class="project-card">
+          <img class="project-logo" src="lucid.jpeg" alt="Lucid Dream Transformation Logo" loading="lazy" decoding="async">
+          <h3 data-i18n="p3_t">Lucid Dream-Based Trauma Transformation</h3>
+          <p data-i18n="p3_d">Lucid rüya ile travma dönüşümü ve psikolojik şifa yaklaşımı.</p>
+        </div>
+
       </div>
-
-      <div class="project-card">
-        <img class="project-logo" src="dim-imec.jpeg" alt="DIM–IMEC Logo">
-        <h3 data-i18n="p2_t">DIM–IMEC Project</h3>
-        <p data-i18n="p2_d">Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli.</p>
-      </div>
-
-      <div class="project-card">
-        <img class="project-logo" src="lucid.jpeg" alt="Lucid Dream Transformation Logo">
-        <h3 data-i18n="p3_t">Lucid Dream-Based Trauma Transformation</h3>
-        <p data-i18n="p3_d">Lucid rüya ile travma dönüşümü ve psikolojik şifa yaklaşımı.</p>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- İLETİŞİM -->
   <section id="iletisim" class="section">
@@ -243,7 +277,7 @@
     <div class="container">© 2025 Melike Balkın Karakaya</div>
   </footer>
 
-  <!-- i18n (tek betik) -->
+  <!-- i18n -->
   <script>
   const tr = {
     site_title:"Melike Balkın Karakaya",
@@ -325,8 +359,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
