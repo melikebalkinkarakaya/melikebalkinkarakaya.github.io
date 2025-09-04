@@ -11,7 +11,7 @@
   <style>
     :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--ring:rgba(88,166,255,.25);--container:1100px;--radius:18px}
     *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg)}
+    body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial;color:var(--text);background:var(--bg)}
     a{color:var(--brand);text-decoration:none} img{max-width:100%;display:block}
     .container{max-width:var(--container);margin:auto;padding:0 20px}
 
@@ -54,10 +54,16 @@
     .book-card .btn:hover{filter:brightness(.95)}
     .book-card small{display:block;color:var(--muted);margin-top:4px}
 
-    /* Bayraklar (CDN) */
+    /* Bayraklar — emoji ile, boyutu küçük ve hizalı */
     .langs{margin-top:8px;display:flex;justify-content:center}
-    .badge{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:999px;background:#21262d;border:1px solid #30363d}
-    .langs img{width:18px;height:auto;display:inline-block;vertical-align:middle}
+    .badge{
+      display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:999px;
+      background:#21262d;border:1px solid #30363d;
+      font-family:"Segoe UI Emoji","Noto Color Emoji","Apple Color Emoji","Twemoji Mozilla",
+                   system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      font-size:16px;line-height:1;
+      -webkit-text-size-adjust:100%;
+    }
   </style>
 </head>
 <body>
@@ -108,19 +114,17 @@
           <h3>Zehir Değil Çığlık</h3>
           <a class="btn" target="_blank" rel="noopener" href="https://www.amazon.com/gp/product/B0FK6KLYJ6">Amazon’da Satın Al</a>
           <small>e-Kitap</small>
-          <div class="langs">
-            <span class="badge">
-              <img src="https://flagcdn.com/tr.svg" alt="TR">
-              <img src="https://flagcdn.com/gb.svg" alt="GB">
-              <img src="https://flagcdn.com/de.svg" alt="DE">
-              <img src="https://flagcdn.com/es.svg" alt="ES">
-              <img src="https://flagcdn.com/fr.svg" alt="FR">
-              <img src="https://flagcdn.com/sa.svg" alt="SA">
-              <img src="https://flagcdn.com/it.svg" alt="IT">
-              <img src="https://flagcdn.com/ru.svg" alt="RU">
-              <img src="https://flagcdn.com/jp.svg" alt="JP">
-            </span>
-          </div>
+          <div class="langs"><span class="badge">
+            &#x1F1F9;&#x1F1F7; <!-- TR -->
+            &#x1F1EC;&#x1F1E7; <!-- GB -->
+            &#x1F1E9;&#x1F1EA; <!-- DE -->
+            &#x1F1EA;&#x1F1F8; <!-- ES -->
+            &#x1F1EB;&#x1F1F7; <!-- FR -->
+            &#x1F1F8;&#x1F1E6; <!-- SA -->
+            &#x1F1EE;&#x1F1F9; <!-- IT -->
+            &#x1F1F7;&#x1F1FA; <!-- RU -->
+            &#x1F1EF;&#x1F1F5; <!-- JP -->
+          </span></div>
         </article>
 
         <article class="book-card">
@@ -128,20 +132,18 @@
           <h3>Kalbin Bütçesi</h3>
           <a class="btn" target="_blank" rel="noopener" href="https://www.amazon.com/gp/product/B0FKTCQSBS">Amazon’da Satın Al</a>
           <small>e-Kitap</small>
-          <div class="langs">
-            <span class="badge">
-              <img src="https://flagcdn.com/tr.svg" alt="TR">
-              <img src="https://flagcdn.com/gb.svg" alt="GB">
-              <img src="https://flagcdn.com/de.svg" alt="DE">
-              <img src="https://flagcdn.com/es.svg" alt="ES">
-              <img src="https://flagcdn.com/fr.svg" alt="FR">
-              <img src="https://flagcdn.com/sa.svg" alt="SA">
-              <img src="https://flagcdn.com/it.svg" alt="IT">
-              <img src="https://flagcdn.com/id.svg" alt="ID">
-              <img src="https://flagcdn.com/br.svg" alt="BR">
-              <img src="https://flagcdn.com/jp.svg" alt="JP">
-            </span>
-          </div>
+          <div class="langs"><span class="badge">
+            &#x1F1F9;&#x1F1F7; <!-- TR -->
+            &#x1F1EC;&#x1F1E7; <!-- GB -->
+            &#x1F1E9;&#x1F1EA; <!-- DE -->
+            &#x1F1EA;&#x1F1F8; <!-- ES -->
+            &#x1F1EB;&#x1F1F7; <!-- FR -->
+            &#x1F1F8;&#x1F1E6; <!-- SA -->
+            &#x1F1EE;&#x1F1F9; <!-- IT -->
+            &#x1F1EE;&#x1F1E9; <!-- ID -->
+            &#x1F1E7;&#x1F1F7; <!-- BR -->
+            &#x1F1EF;&#x1F1F5; <!-- JP -->
+          </span></div>
         </article>
 
         <article class="book-card">
@@ -149,15 +151,13 @@
           <h3>Aşkın Haritası</h3>
           <a class="btn" target="_blank" rel="noopener" href="https://www.amazon.com/gp/product/B0FMYXK27M">Amazon’da Satın Al</a>
           <small>e-Kitap</small>
-          <div class="langs">
-            <span class="badge">
-              <img src="https://flagcdn.com/tr.svg" alt="TR">
-              <img src="https://flagcdn.com/de.svg" alt="DE">
-              <img src="https://flagcdn.com/fr.svg" alt="FR">
-              <img src="https://flagcdn.com/jp.svg" alt="JP">
-              <img src="https://flagcdn.com/gb.svg" alt="GB">
-            </span>
-          </div>
+          <div class="langs"><span class="badge">
+            &#x1F1F9;&#x1F1F7; <!-- TR -->
+            &#x1F1E9;&#x1F1EA; <!-- DE -->
+            &#x1F1EB;&#x1F1F7; <!-- FR -->
+            &#x1F1EF;&#x1F1F5; <!-- JP -->
+            &#x1F1EC;&#x1F1E7; <!-- GB -->
+          </span></div>
         </article>
 
       </div>
