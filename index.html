@@ -1,10 +1,23 @@
 <!doctype html>
 <html lang="tr" data-lang="tr">
 <head>
+<head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
   <title data-i18n="site_title">Melike Balkın Karakaya</title>
+  <meta name="description" content="Klinik Psikolog; din felsefesi ve siyaset bilimi araştırmacısı. Psikoloji, felsefe ve tasavvuf ekseninde yazılar; bilinç, algı ve travma dönüşümü.">
+  <link rel="canonical" href="https://melikebalkinkarakaya.org/" />
+
+  <!-- Twemoji: Emoji'leri tüm cihazlarda resim olarak göster -->
+  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Sayfadaki tüm emojileri SVG bayrak ikonlarına dönüştür
+      twemoji.parse(document.body, { folder: 'svg', ext: '.svg' });
+    });
+  </script>
+</head>
   <meta name="description" content="Klinik Psikolog; din felsefesi ve siyaset bilimi araştırmacısı. Psikoloji, felsefe ve tasavvuf ekseninde yazılar; bilinç, algı ve travma dönüşümü.">
   <link rel="canonical" href="https://melikebalkinkarakaya.org/" />
 
@@ -25,7 +38,13 @@
   </script>
 
   <style>
-  :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--ring:rgba(88,166,255,.25);--container:1100px;--radius:18px}
+/* Bayrak emojileri Twemoji'ye dönünce <img> olur; biraz küçültelim */
+.badge img { 
+  height: 16px; 
+  width: 16px; 
+  margin: 0 2px; 
+  vertical-align: -3px; 
+}  :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--ring:rgba(88,166,255,.25);--container:1100px;--radius:18px}
   *{box-sizing:border-box} html{scroll-behavior:smooth}
   body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg)}
   a{color:var(--brand);text-decoration:none} img{max-width:100%;display:block}
@@ -374,5 +393,6 @@
   </script>
 </body>
 </html>
+
 
 
