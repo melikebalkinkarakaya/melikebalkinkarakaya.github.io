@@ -4,11 +4,39 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
-  <title>Melike Balkın Karakaya</title>
-  <meta name="description" content="Klinik Psikolog; din felsefesi ve siyaset bilimi araştırmacısı.">
+  <title data-i18n="site_title">Melike Balkın Karakaya</title>
+  <meta name="description" content="Klinik Psikolog; din felsefesi ve siyaset bilimi araştırmacısı. Psikoloji, felsefe ve tasavvuf ekseninde yazılar; bilinç, algı ve travma dönüşümü.">
+  <link rel="canonical" href="https://melikebalkinkarakaya.org/" />
+
   <link rel="icon" href="/favicon.ico?v=1">
-  <meta name="theme-color" content="#0d1117" />
+  <meta name="theme-color" content="#0d1117">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Melike Balkın Karakaya">
+  <meta property="og:description" content="Klinik Psikolog; din felsefesi ve siyaset bilimi araştırmacısı.">
+  <meta property="og:url" content="https://melikebalkinkarakaya.org/">
+
+  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      twemoji.parse(document.body, { folder: 'svg', ext: '.svg' });
+    });
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BKY0021LPP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BKY0021LPP');
+  </script>
+
   <style>
+    .badge img {
+      height: 10px;
+      width: 10px;
+      margin: 0 1px;
+      vertical-align: -1px;
+    }
     :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--ring:rgba(88,166,255,.25);--container:1100px;--radius:18px}
     *{box-sizing:border-box} html{scroll-behavior:smooth}
     body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial;color:var(--text);background:var(--bg)}
@@ -54,51 +82,17 @@
     .book-card .btn:hover{filter:brightness(.95)}
     .book-card small{display:block;color:var(--muted);margin-top:4px}
 
-    /* Bayraklar — SVG (resim) */
+    /* Bayraklar — emoji ile, boyutu küçük ve hizalı */
     .langs{margin-top:8px;display:flex;justify-content:center}
     .badge{
       display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:999px;
       background:#21262d;border:1px solid #30363d;
+      font-family:"Segoe UI Emoji","Noto Color Emoji","Apple Color Emoji","Twemoji Mozilla",
+                   system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      font-size:16px;line-height:1;
+      -webkit-text-size-adjust:100%;
     }
-    .flag{width:18px;height:12px;border-radius:2px;display:inline-block;box-shadow:0 0 0 1px rgba(0,0,0,.25)}
-    .flag svg{width:18px;height:12px;display:block}
   </style>
-
-  <!-- Inline SVG sprite: TR, GB, DE, FR, ES -->
-  <svg aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;left:-9999px;top:-9999px">
-    <!-- Türkiye -->
-    <symbol id="flag-tr" viewBox="0 0 18 12">
-      <rect width="18" height="12" fill="#E30A17"/>
-      <circle cx="7" cy="6" r="3" fill="#fff"/>
-      <circle cx="8" cy="6" r="2.4" fill="#E30A17"/>
-      <polygon points="10.6,6 9.5,6.35 10.1,5.4 9.5,4.45 10.6,4.8 11.5,4 11.4,5.15 12.5,5.6 11.35,5.9 11.3,7" fill="#fff"/>
-    </symbol>
-    <!-- Birleşik Krallık (basitleştirilmiş) -->
-    <symbol id="flag-gb" viewBox="0 0 18 12">
-      <rect width="18" height="12" fill="#012169"/>
-      <rect x="7" width="4" height="12" fill="#fff"/>
-      <rect y="4" width="18" height="4" fill="#fff"/>
-      <rect x="7.5" width="3" height="12" fill="#C8102E"/>
-      <rect y="4.5" width="18" height="3" fill="#C8102E"/>
-    </symbol>
-    <!-- Almanya -->
-    <symbol id="flag-de" viewBox="0 0 18 12">
-      <rect width="18" height="4" y="0" fill="#000"/>
-      <rect width="18" height="4" y="4" fill="#DD0000"/>
-      <rect width="18" height="4" y="8" fill="#FFCE00"/>
-    </symbol>
-    <!-- Fransa -->
-    <symbol id="flag-fr" viewBox="0 0 18 12">
-      <rect width="6" height="12" x="0" fill="#0055A4"/>
-      <rect width="6" height="12" x="6" fill="#FFFFFF"/>
-      <rect width="6" height="12" x="12" fill="#EF4135"/>
-    </symbol>
-    <!-- İspanya -->
-    <symbol id="flag-es" viewBox="0 0 18 12">
-      <rect width="18" height="12" fill="#AA151B"/>
-      <rect y="3" width="18" height="6" fill="#F1BF00"/>
-    </symbol>
-  </svg>
 </head>
 <body>
 
@@ -106,11 +100,11 @@
     <div class="container nav-row">
       <a class="brand" href="#hero">Melike Balkın Karakaya</a>
       <div class="menu">
-        <a href="#hakkimda">Hakkımda</a>
-        <a href="#kitaplar">Kitaplar</a>
-        <a href="blog.html">Blog</a>
-        <a href="#projeler">Projeler</a>
-        <a href="#iletisim">İletişim</a>
+        <a href="#hakkimda" data-i18n="nav_about">Hakkımda</a>
+        <a href="#kitaplar" data-i18n="nav_books">Kitaplar</a>
+        <a href="blog.html" data-i18n="nav_blog">Blog</a>
+        <a href="#projeler" data-i18n="nav_projects">Projeler</a>
+        <a href="#iletisim" data-i18n="nav_contact">İletişim</a>
       </div>
       <div class="lang">
         <button id="btn-tr" class="active">TR</button>
@@ -123,16 +117,16 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-text">
-          <p class="kicker">Klinik Psikolog • Din Felsefesi • Siyaset Bilimi</p>
-          <h1>Merhaba, ben Melike Balkın Karakaya</h1>
-          <p class="lead">Psikoloji, felsefe ve tasavvuf ekseninde yazıyor; bilinç, algı ve travma dönüşümü üzerine çalışıyorum.</p>
+          <p class="kicker" data-i18n="hero_kicker">Klinik Psikolog • Din Felsefesi • Siyaset Bilimi</p>
+          <h1 data-i18n="hero_title">Merhaba, ben Melike Balkın Karakaya</h1>
+          <p class="lead" data-i18n="hero_lead">Psikoloji, felsefe ve tasavvuf ekseninde yazıyor; bilinç, algı ve travma dönüşümü üzerine çalışıyorum.</p>
           <div class="cta">
-            <a class="btn" href="#kitaplar">Kitaplarımı Gör</a>
-            <a class="btn alt" href="#projeler">Projeler &amp; Makaleler</a>
+            <a class="btn" href="#kitaplar" data-i18n="btn_books">Kitaplarımı Gör</a>
+            <a class="btn alt" href="#projeler" data-i18n="btn_projects">Projeler &amp; Makaleler</a>
           </div>
         </div>
         <div class="hero-image">
-          <img src="melike.jpeg?v=2" alt="Melike Balkın Karakaya" loading="lazy">
+          <img src="melikebalkinkarakaya.jpeg?v=2" alt="Melike Balkın Karakaya" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -140,83 +134,99 @@
 
   <section id="kitaplar" class="section">
     <div class="container">
-      <h2 class="section-title">Kitaplarım</h2>
+      <h2 class="section-title" data-i18n="books_title">Kitaplarım</h2>
       <div class="books">
 
-        <!-- 1) Zehir Değil Çığlık -->
         <article class="book-card">
           <img src="zehir-degil-ciglik.png?v=2" alt="Zehir Değil Çığlık" loading="lazy">
           <h3>Zehir Değil Çığlık</h3>
           <a class="btn" target="_blank" rel="noopener" href="https://www.amazon.com/gp/product/B0FK6KLYJ6">Amazon’da Satın Al</a>
           <small>e-Kitap</small>
-          <div class="langs">
-            <span class="badge">
-              <span class="flag" title="Türkçe" aria-label="Türkçe"><svg><use href="#flag-tr"/></svg></span>
-              <span class="flag" title="İngilizce" aria-label="İngilizce"><svg><use href="#flag-gb"/></svg></span>
-              <span class="flag" title="Almanca" aria-label="Almanca"><svg><use href="#flag-de"/></svg></span>
-              <span class="flag" title="Fransızca" aria-label="Fransızca"><svg><use href="#flag-fr"/></svg></span>
-              <span class="flag" title="İspanyolca" aria-label="İspanyolca"><svg><use href="#flag-es"/></svg></span>
-            </span>
-          </div>
+          <div class="langs"><span class="badge">
+            🇹🇷 🇬🇧 🇩🇪 🇪🇸 🇸🇦 🇮🇹 🇫🇷 🇷🇺 🇯🇵
+          </span></div>
         </article>
 
-        <!-- 2) Kalbin Bütçesi -->
         <article class="book-card">
           <img src="kalbin_butcesi.jpg?v=2" alt="Kalbin Bütçesi" loading="lazy">
           <h3>Kalbin Bütçesi</h3>
           <a class="btn" target="_blank" rel="noopener" href="https://www.amazon.com/gp/product/B0FKTCQSBS">Amazon’da Satın Al</a>
           <small>e-Kitap</small>
-          <div class="langs">
-            <span class="badge">
-              <span class="flag" title="Türkçe" aria-label="Türkçe"><svg><use href="#flag-tr"/></svg></span>
-              <span class="flag" title="İngilizce" aria-label="İngilizce"><svg><use href="#flag-gb"/></svg></span>
-              <span class="flag" title="Almanca" aria-label="Almanca"><svg><use href="#flag-de"/></svg></span>
-              <span class="flag" title="Fransızca" aria-label="Fransızca"><svg><use href="#flag-fr"/></svg></span>
-              <span class="flag" title="İspanyolca" aria-label="İspanyolca"><svg><use href="#flag-es"/></svg></span>
-            </span>
-          </div>
+          <div class="langs"><span class="badge">
+            🇹🇷 🇬🇧 🇩🇪 🇪🇸 🇫🇷 🇸🇦 🇮🇹 🇮🇩 🇧🇷 🇯🇵
+          </span></div>
         </article>
 
-        <!-- 3) Aşkın Haritası -->
         <article class="book-card">
           <img src="askin_haritasi.jpeg?v=2" alt="Aşkın Haritası" loading="lazy">
           <h3>Aşkın Haritası</h3>
           <a class="btn" target="_blank" rel="noopener" href="https://www.amazon.com/gp/product/B0FMYXK27M">Amazon’da Satın Al</a>
           <small>e-Kitap</small>
-          <div class="langs">
-            <span class="badge">
-              <span class="flag" title="Türkçe" aria-label="Türkçe"><svg><use href="#flag-tr"/></svg></span>
-              <span class="flag" title="İngilizce" aria-label="İngilizce"><svg><use href="#flag-gb"/></svg></span>
-              <span class="flag" title="Almanca" aria-label="Almanca"><svg><use href="#flag-de"/></svg></span>
-              <span class="flag" title="Fransızca" aria-label="Fransızca"><svg><use href="#flag-fr"/></svg></span>
-              <span class="flag" title="İspanyolca" aria-label="İspanyolca"><svg><use href="#flag-es"/></svg></span>
-            </span>
-          </div>
+          <div class="langs"><span class="badge">
+            🇹🇷 🇩🇪 🇫🇷 🇯🇵 🇬🇧
+          </span></div>
         </article>
 
-        <!-- 4) İnancın Anatomisi — YENİ -->
         <article class="book-card">
           <img src="inancin_anatomisi.png?v=2" alt="İnancın Anatomisi" loading="lazy">
           <h3>İnancın Anatomisi</h3>
           <a class="btn" target="_blank" rel="noopener" href="https://amzn.asia/d/0eTh6Uk">Amazon’da Satın Al</a>
           <small>e-Kitap</small>
-          <div class="langs">
-            <span class="badge">
-              <span class="flag" title="Türkçe" aria-label="Türkçe"><svg><use href="#flag-tr"/></svg></span>
-              <span class="flag" title="İngilizce" aria-label="İngilizce"><svg><use href="#flag-gb"/></svg></span>
-              <span class="flag" title="Almanca" aria-label="Almanca"><svg><use href="#flag-de"/></svg></span>
-              <span class="flag" title="Fransızca" aria-label="Fransızca"><svg><use href="#flag-fr"/></svg></span>
-              <span class="flag" title="İspanyolca" aria-label="İspanyolca"><svg><use href="#flag-es"/></svg></span>
-            </span>
-          </div>
+          <div class="langs"><span class="badge">
+            🇹🇷 🇬🇧 🇩🇪 🇪🇸 🇫🇷
+          </span></div>
         </article>
 
+      </div>
+      <div class="card" style="margin-top:18px">
+        <p data-i18n="books_p">Daha fazlası için
+          <a href="https://www.amazon.com/stores/Melike-Balk%C4%B1n-Karakaya/author/B0FKH5PW2P" target="_blank" rel="noopener">Amazon Author Page</a> ve
+          <a href="https://www.goodreads.com/author/show/58025231.Melike_Balk_n_Karakaya" target="_blank" rel="noopener">Goodreads</a> profillerimi ziyaret edebilirsiniz.
+        </p>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">© 2025 Melike Balkın Karakaya</div>
-  </footer>
-</body>
-</html>
+  <section id="projeler" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="projects_title">Projeler &amp; Makaleler</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img class="project-logo" src="imtp.jpeg?v=2" alt="IMTP Logo" loading="lazy" decoding="async" width="80" height="80">
+          <h3>IMTP — Imagery–Memory Transformation Protocol</h3>
+          <p>Travmatik anıların duygusal yükünü dönüştürmeye yönelik protokol.</p>
+        </div>
+        <div class="project-card">
+          <img class="project-logo" src="yakin_yanlis.jpeg?v=2" alt="Yakın Yanlış Protokolü Logo" loading="lazy" decoding="async" width="80" height="80">
+          <h3 data-i18n="p1_t">Near-False Deletion Protocol</h3>
+          <p data-i18n="p1_d">Bilinçaltı travmatik izlerin yeniden kodlanmasına yönelik deneysel protokol.</p>
+        </div>
+        <div class="project-card">
+          <img class="project-logo" src="dim-imec.jpeg?v=2" alt="DIM–IMEC Logo" loading="lazy" decoding="async" width="80" height="80">
+          <h3 data-i18n="p2_t">DIM–IMEC Project</h3>
+          <p data-i18n="p2_d">Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli.</p>
+        </div>
+        <div class="project-card">
+          <img class="project-logo" src="lucid.jpeg?v=2" alt="Lucid Dream Transformation Logo" loading="lazy" decoding="async" width="80" height="80">
+          <h3 data-i18n="p3_t">Lucid Dream-Based Trauma Transformation</h3>
+          <p data-i18n="p3_d">Lucid rüya ile travma dönüşümü ve psikolojik şifa yaklaşımı.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="iletisim" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="contact_title">İletişim</h2>
+    </div>
+    <div class="container card">
+      <p><span data-i18n="contact_mail_label">E-posta:</span> <a href="mailto:research@melikebalkinkarakaya.org">research@melikebalkinkarakaya.org</a></p>
+      <p><span data-i18n="contact_site_label">Resmî alan adı:</span> <a href="http://melikebalkinkarakaya.org" target="_blank" rel="noopener">melikebalkinkarakaya.org</a></p>
+      <div class="socials">
+        <a class="chip" href="https://www.amazon.com/stores/Melike-Balk%C4%B1n-Karakaya/author/B0FKH5PW2P" target="_blank" rel="noopener">Amazon Author</a>
+        <a class="chip" href="https://zenodo.org/users/melikebalkinkarakaya" target="_blank" rel="noopener">Zenodo</a>
+        <a class="chip" href="https://scholar.google.com/citations?user=F-E6qlYAAAAJ&hl=tr" target="_blank" rel="noopener">Google Scholar</a>
+        <a class="chip" href="https://medium.com/@melikebalkinkarakaya" target="_blank" rel="noopener">Medium</a>
+        <a class="chip" href="https://www.linkedin.com/in/melike-balk%C4%B1n-karakaya-36a684167/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="chip" href="https://www.reddit.com/user/Grand_World3731/" target="_blank" rel="noopener">Reddit</a>
+        <a class="chip" href="https://www.goodreads.com/user/show/193141932-
