@@ -31,12 +31,15 @@
   </script>
 
   <style>
-  /* Bayrak emojileri Twemoji'ye dönünce <img> olur; biraz küçültelim */
+  /* Bayrak emojileri Twemoji'ye dönünce <img> olur; ufak ve hizalı gösterelim */
   .badge img { 
-    height: 16px; 
-    width: 16px; 
-    margin: 0 2px; 
-    vertical-align: -3px; 
+    display: inline-block;
+    height: 16px !important;
+    width: auto !important;
+    max-height: 16px !important;
+    max-width: 24px !important;
+    margin: 0 2px;
+    vertical-align: middle;
   }
 
   :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--ring:rgba(88,166,255,.25);--container:1100px;--radius:18px}
