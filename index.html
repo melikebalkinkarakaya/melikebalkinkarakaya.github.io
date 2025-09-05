@@ -24,8 +24,8 @@
     gtag('config', 'G-BKY0021LPP');
   </script>
 
-  <!-- Flag Icons (küçük bayrak simgeleri için) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css">
+  <!-- Flag Icons (versiyonlu CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
 
   <style>
   :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--ring:rgba(88,166,255,.25);--container:1100px;--radius:18px}
@@ -41,10 +41,16 @@
   .menu a{padding:8px 12px;border-radius:10px;color:#c9d1d9}
   .menu a:hover{background:#21262d}
 
+  /* Dil butonları: sadece bayrak ikonları */
   .lang{display:flex;gap:8px;align-items:center}
-  .lang button{display:flex;align-items:center;gap:8px;background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:999px;padding:6px 10px;font-weight:600;cursor:pointer}
+  .lang button{
+    display:flex;align-items:center;justify-content:center;
+    width:36px;height:28px;padding:0;
+    background:#21262d;color:#c9d1d9;border:1px solid #30363d;
+    border-radius:999px;font-weight:600;cursor:pointer
+  }
   .lang button.active{background:var(--brand);color:#0b1020;border-color:transparent}
-  .lang .flag{width:18px;height:13.5px;border-radius:2px;box-shadow:none}
+  .lang .flag{width:20px;height:15px;border-radius:2px;box-shadow:none}
 
   .hero{padding:84px 0 48px;background:
     radial-gradient(1200px 600px at 80% -10%, rgba(88,166,255,.18), transparent),
@@ -99,7 +105,6 @@
 
   @media (max-width:980px){h1{font-size:36px}.hero-grid{flex-direction:column;align-items:flex-start}.hero-image img{max-width:220px}#hakkimda .info-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
   @media (max-width:768px){#hakkimda .info-grid{grid-template-columns:1fr}}
-  /* erişilebilirlik yardımcı sınıfı */
   .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
 </head>
@@ -116,11 +121,12 @@
         <a href="#iletisim" data-i18n="nav_contact">İletişim</a>
       </div>
       <div class="lang">
-        <button id="btn-tr" class="active" aria-pressed="true">
-          <span class="fi fi-tr flag" aria-hidden="true"></span><span class="sr-only">Türkçe</span>TR
+        <!-- Sadece ikonlar -->
+        <button id="btn-tr" class="active" aria-pressed="true" aria-label="Türkçe">
+          <span class="fi fi-tr flag" aria-hidden="true"></span>
         </button>
-        <button id="btn-en" aria-pressed="false">
-          <span class="fi fi-gb flag" aria-hidden="true"></span><span class="sr-only">English</span>EN
+        <button id="btn-en" aria-pressed="false" aria-label="English">
+          <span class="fi fi-gb flag" aria-hidden="true"></span>
         </button>
       </div>
     </div>
