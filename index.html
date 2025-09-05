@@ -15,19 +15,22 @@
   <meta property="og:description" content="Klinik Psikolog; din felsefesi ve siyaset bilimi araştırmacısı.">
   <meta property="og:url" content="https://melikebalkinkarakaya.org/">
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BKY0021LPP"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-BKY0021LPP');
   </script>
+
+  <!-- Flag Icons (küçük bayrak simgeleri için) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css">
 
   <style>
   :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--ring:rgba(88,166,255,.25);--container:1100px;--radius:18px}
   *{box-sizing:border-box} html{scroll-behavior:smooth}
-  body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg)}
+  body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial;color:var(--text);background:var(--bg)}
   a{color:var(--brand);text-decoration:none} img{max-width:100%;display:block}
   .container{max-width:var(--container);margin:auto;padding:0 20px}
 
@@ -37,9 +40,11 @@
   .menu{display:flex;gap:16px;flex-wrap:wrap}
   .menu a{padding:8px 12px;border-radius:10px;color:#c9d1d9}
   .menu a:hover{background:#21262d}
+
   .lang{display:flex;gap:8px;align-items:center}
-  .lang button{background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:999px;padding:6px 10px;font-weight:600;cursor:pointer}
+  .lang button{display:flex;align-items:center;gap:8px;background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:999px;padding:6px 10px;font-weight:600;cursor:pointer}
   .lang button.active{background:var(--brand);color:#0b1020;border-color:transparent}
+  .lang .flag{width:18px;height:13.5px;border-radius:2px;box-shadow:none}
 
   .hero{padding:84px 0 48px;background:
     radial-gradient(1200px 600px at 80% -10%, rgba(88,166,255,.18), transparent),
@@ -74,6 +79,9 @@
 
   /* Diller / Bayraklar */
   .langs{margin-top:8px;display:flex;justify-content:center}
+  .flag-list{display:flex;gap:6px;justify-content:center;align-items:center;flex-wrap:wrap}
+  .flag{display:inline-block;width:20px;height:15px;border-radius:2px;box-shadow:0 0 0 1px #30363d inset}
+  .flag.sm{width:18px;height:13.5px}
   .badge{display:inline-block;padding:6px 12px;border-radius:999px;background:#21262d;border:1px solid #30363d;font-size:16px}
 
   .socials{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
@@ -91,6 +99,8 @@
 
   @media (max-width:980px){h1{font-size:36px}.hero-grid{flex-direction:column;align-items:flex-start}.hero-image img{max-width:220px}#hakkimda .info-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
   @media (max-width:768px){#hakkimda .info-grid{grid-template-columns:1fr}}
+  /* erişilebilirlik yardımcı sınıfı */
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
 </head>
 <body>
@@ -106,8 +116,12 @@
         <a href="#iletisim" data-i18n="nav_contact">İletişim</a>
       </div>
       <div class="lang">
-        <button id="btn-tr" class="active">TR</button>
-        <button id="btn-en">EN</button>
+        <button id="btn-tr" class="active" aria-pressed="true">
+          <span class="fi fi-tr flag" aria-hidden="true"></span><span class="sr-only">Türkçe</span>TR
+        </button>
+        <button id="btn-en" aria-pressed="false">
+          <span class="fi fi-gb flag" aria-hidden="true"></span><span class="sr-only">English</span>EN
+        </button>
       </div>
     </div>
   </nav>
@@ -193,7 +207,17 @@
           <h3>Zehir Değil Çığlık</h3>
           <a class="btn" target="_blank" rel="noopener" href="https://www.amazon.com/gp/product/B0FK6KLYJ6">Amazon’da Satın Al</a>
           <small>e-Kitap</small>
-          <div class="langs"><span class="badge">🇹🇷 🇬🇧 🇩🇪 🇪🇸 🇸🇦 🇮🇹 🇫🇷 🇷🇺 🇯🇵</span></div>
+          <div class="flag-list" aria-label="Mevcut diller">
+            <span class="fi fi-tr flag sm" title="Türkçe"></span>
+            <span class="fi fi-gb flag sm" title="İngilizce"></span>
+            <span class="fi fi-de flag sm" title="Almanca"></span>
+            <span class="fi fi-es flag sm" title="İspanyolca"></span>
+            <span class="fi fi-sa flag sm" title="Arapça"></span>
+            <span class="fi fi-it flag sm" title="İtalyanca"></span>
+            <span class="fi fi-fr flag sm" title="Fransızca"></span>
+            <span class="fi fi-ru flag sm" title="Rusça"></span>
+            <span class="fi fi-jp flag sm" title="Japonca"></span>
+          </div>
         </article>
 
         <article class="book-card">
@@ -201,7 +225,18 @@
           <h3>Kalbin Bütçesi</h3>
           <a class="btn" target="_blank" rel="noopener" href="https://www.amazon.com/gp/product/B0FKTCQSBS">Amazon’da Satın Al</a>
           <small>e-Kitap</small>
-          <div class="langs"><span class="badge">🇹🇷 🇬🇧 🇩🇪 🇪🇸 🇫🇷 🇸🇦 🇮🇹 🇮🇩 🇧🇷 🇯🇵</span></div>
+          <div class="flag-list" aria-label="Mevcut diller">
+            <span class="fi fi-tr flag sm" title="Türkçe"></span>
+            <span class="fi fi-gb flag sm" title="İngilizce"></span>
+            <span class="fi fi-de flag sm" title="Almanca"></span>
+            <span class="fi fi-es flag sm" title="İspanyolca"></span>
+            <span class="fi fi-fr flag sm" title="Fransızca"></span>
+            <span class="fi fi-sa flag sm" title="Arapça"></span>
+            <span class="fi fi-it flag sm" title="İtalyanca"></span>
+            <span class="fi fi-id flag sm" title="Endonezce"></span>
+            <span class="fi fi-br flag sm" title="Portekizce (BR)"></span>
+            <span class="fi fi-jp flag sm" title="Japonca"></span>
+          </div>
         </article>
 
         <article class="book-card">
@@ -209,19 +244,19 @@
           <h3>Aşkın Haritası</h3>
           <a class="btn" target="_blank" rel="noopener" href="https://www.amazon.com/gp/product/B0FMYXK27M">Amazon’da Satın Al</a>
           <small>e-Kitap</small>
-          <div class="langs"><span class="badge">🇹🇷 🇩🇪 🇫🇷 🇯🇵 🇬🇧</span></div>
+          <div class="flag-list" aria-label="Mevcut diller">
+            <span class="fi fi-tr flag sm" title="Türkçe"></span>
+            <span class="fi fi-de flag sm" title="Almanca"></span>
+            <span class="fi fi-fr flag sm" title="Fransızca"></span>
+            <span class="fi fi-jp flag sm" title="Japonca"></span>
+            <span class="fi fi-gb flag sm" title="İngilizce"></span>
+          </div>
         </article>
 
       </div>
 
       <div class="card" style="margin-top:18px">
-        <p data-i18n="books_p">
-          Daha fazlası için
-          <a href="https://www.amazon.com/stores/Melike-Balk%C4%B1n-Karakaya/author/B0FKH5PW2P" target="_blank" rel="noopener">Amazon Author Page</a>
-          ve
-          <a href="https://www.goodreads.com/author/show/58025231.Melike_Balk_n_Karakaya" target="_blank" rel="noopener">Goodreads</a>
-          profillerimi ziyaret edebilirsiniz.
-        </p>
+        <p data-i18n="books_p"></p>
       </div>
     </div>
   </section>
@@ -311,7 +346,7 @@
     ai5:"DIM–IMEC: Bilim, felsefe ve inancın ortak dili",
     about_p2:"Çalışmalarım; bilinç, maneviyat, felsefe ve siyaset biliminin kesişiminde konumlanır. Yayınladığım kitaplar ve geliştirdiğim protokollerle travma, rüya ve inanç psikolojisi alanlarına katkı sunarken; stratejik çözümlemelerim modern dünyaya yeni bakış açıları kazandırmayı amaçlar.",
     books_title:"Kitaplarım",
-    books_p:"Kitap ve yayınlarım için Amazon Author Page ve Goodreads profillerimi ziyaret edebilirsiniz.",
+    books_p:'Daha fazlası için <a href="https://www.amazon.com/stores/Melike-Balk%C4%B1n-Karakaya/author/B0FKH5PW2P" target="_blank" rel="noopener">Amazon Author Page</a> ve <a href="https://www.goodreads.com/author/show/58025231.Melike_Balk_n_Karakaya" target="_blank" rel="noopener">Goodreads</a> profillerimi ziyaret edebilirsiniz.',
     projects_title:"Projeler & Makaleler",
     p1_t:"Near-False Deletion Protocol", p1_d:"Bilinçaltı travmatik izlerin yeniden kodlanmasına yönelik deneysel protokol.",
     p2_t:"DIM–IMEC Project", p2_d:"Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli.",
@@ -333,7 +368,7 @@
     lang_tr:"Turkish (native)", lang_en:"English (B1–B2)", lang_ar:"Arabic (basic)", lang_fa:"Persian (basic)", lang_de:"German (basic)",
     ex1:"Couple & Family Counseling", ex2:"Addiction & Substance Use", ex3:"Separation Anxiety",
     ex4:"Cognitive Behavioral Therapy (CBT)", ex5:"Integrative Psychotherapy", ex6:"Mindfulness",
-    ex7:"Emotion Regulation", ex8:"Hypnoterapi", ex9:"Regression Therapy", ex10:"Acceptance & Commitment Therapy (ACT)",
+    ex7:"Emotion Regulation", ex8:"Hypnotherapy", ex9:"Regression Therapy", ex10:"Acceptance & Commitment Therapy (ACT)",
     ex11:"Spiritual Counseling", ex12:"Perception Management", ex13:"Strategic Manipulation & Psychological Warfare",
     ex14:"Social Psychology • Leadership", ex15:"Online Therapy",
     ai1:"Philosophy of religion & Sufi thought", ai2:"Psychology of belief & metaphysics",
@@ -341,7 +376,7 @@
     ai5:"DIM–IMEC: A common language of science, philosophy and faith",
     about_p2:"My work sits at the intersection of consciousness, spirituality, philosophy and political science. Through my books and protocols, I contribute to trauma, dreaming and psychology of belief, aiming to offer fresh perspectives to the modern world.",
     books_title:"Books",
-    books_p:"For my publications, please visit my Amazon Author Page and Goodreads profile.",
+    books_p:'For more, visit my <a href="https://www.amazon.com/stores/Melike-Balk%C4%B1n-Karakaya/author/B0FKH5PW2P" target="_blank" rel="noopener">Amazon Author Page</a> and <a href="https://www.goodreads.com/author/show/58025231.Melike_Balk_n_Karakaya" target="_blank" rel="noopener">Goodreads</a> profiles.',
     projects_title:"Projects & Articles",
     p1_t:"Near-False Deletion Protocol", p1_d:"An experimental protocol for recoding traumatic imprints.",
     p2_t:"DIM–IMEC Project", p2_d:"A multilayered consciousness model bridging science, philosophy and faith.",
@@ -352,19 +387,33 @@
   const dict = { tr, en };
 
   function applyLang(lang){
-    document.documentElement.setAttribute('lang', lang === 'tr' ? 'tr' : 'en');
-    document.documentElement.setAttribute('data-lang', lang);
+    const safe = (lang === 'en') ? 'en' : 'tr';
+    document.documentElement.setAttribute('lang', safe === 'tr' ? 'tr' : 'en');
+    document.documentElement.setAttribute('data-lang', safe);
     document.querySelectorAll('[data-i18n]').forEach(el=>{
       const key = el.getAttribute('data-i18n');
-      if(dict[lang][key]) el.textContent = dict[lang][key];
+      const val = dict[safe] && dict[safe][key];
+      if(!val) return;
+      // HTML içerik barındırıyorsa innerHTML, aksi halde textContent
+      if (typeof val === 'string' && val.indexOf('<') !== -1) {
+        el.innerHTML = val;
+      } else {
+        el.textContent = val;
+      }
     });
-    document.getElementById('btn-tr').classList.toggle('active', lang==='tr');
-    document.getElementById('btn-en').classList.toggle('active', lang==='en');
-    localStorage.setItem('lang', lang);
+    const btnTR = document.getElementById('btn-tr');
+    const btnEN = document.getElementById('btn-en');
+    if (btnTR && btnEN) {
+      btnTR.classList.toggle('active', safe==='tr');
+      btnEN.classList.toggle('active', safe==='en');
+      btnTR.setAttribute('aria-pressed', String(safe==='tr'));
+      btnEN.setAttribute('aria-pressed', String(safe==='en'));
+    }
+    localStorage.setItem('lang', safe);
   }
 
-  const saved = localStorage.getItem('lang') || 'tr';
-  applyLang(saved);
+  const savedRaw = localStorage.getItem('lang') || 'tr';
+  applyLang((savedRaw === 'en') ? 'en' : 'tr');
 
   document.getElementById('btn-tr').onclick = ()=>applyLang('tr');
   document.getElementById('btn-en').onclick = ()=>applyLang('en');
