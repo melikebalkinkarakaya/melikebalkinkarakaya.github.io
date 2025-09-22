@@ -12,115 +12,40 @@
 
   <style>
     :root{
-      --bg-color:#0d1117;
-      --card-color:#161b22;
-      --text-color:#e6edf3;
-      --muted:#9aa4af;
-      --accent-color:#58a6ff;
-      --border:#30363d;
+      --bg-color:#0d1117; --card-color:#161b22; --text-color:#e6edf3;
+      --muted:#9aa4af; --accent-color:#58a6ff; --border:#30363d;
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height:1.6;
-    }
+    body{margin:0;font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--bg-color);color:var(--text-color);line-height:1.6}
 
-    /* Header / Nav */
-    header{
-      position: sticky;
-      top: 0;
-      background-color: rgba(13,17,23,0.8);
-      backdrop-filter: blur(10px);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--border);
-      z-index: 10;
-    }
-    header h1{
-      margin:0;
-      font-size:1.5rem;
-      color: var(--accent-color);
-      letter-spacing:.2px;
-    }
-    nav a{
-      color: var(--text-color);
-      text-decoration: none;
-      margin-left: 1rem;
-      transition: color .2s ease;
-      font-weight:500;
-    }
-    nav a:hover{ color: var(--accent-color); }
+    header{position:sticky;top:0;background:rgba(13,17,23,.8);backdrop-filter:blur(10px);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);z-index:10}
+    header h1{margin:0;font-size:1.5rem;color:var(--accent-color);letter-spacing:.2px}
+    nav a{color:var(--text-color);text-decoration:none;margin-left:1rem;transition:color .2s;font-weight:500}
+    nav a:hover{color:var(--accent-color)}
 
-    .container{
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
+    .container{max-width:900px;margin:2rem auto;padding:0 1rem}
 
     /* Liste kartları */
-    .blog-post{
-      background-color: var(--card-color);
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      margin-bottom: 2rem;
-      border: 1px solid var(--border);
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-    .blog-post:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.38);
-    }
-    .blog-post h2{
-      margin: 0 0 .35rem 0;
-      font-size: 1.35rem;
-      line-height:1.3;
-    }
-    .blog-post h2 a{
-      color: var(--accent-color);
-      text-decoration:none;
-    }
-    .blog-post h2 a:hover{ text-decoration:underline; }
-    .blog-post p{ margin:.35rem 0 0 0; }
-    .meta{ display:block; margin-top:.6rem; font-size:.85rem; color:var(--muted); }
+    .blog-post{background:var(--card-color);padding:1.5rem;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.3);margin-bottom:2rem;border:1px solid var(--border);transition:transform .18s, box-shadow .18s}
+    .blog-post:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(0,0,0,.38)}
+    .blog-post h2{margin:0 0 .35rem;font-size:1.35rem;line-height:1.3}
+    .blog-post h2 a{color:var(--accent-color);text-decoration:none}
+    .blog-post h2 a:hover{text-decoration:underline}
+    .blog-post p{margin:.35rem 0 0}
+    .meta{display:block;margin-top:.6rem;font-size:.85rem;color:var(--muted)}
 
     /* Makale detay */
-    .article{
-      background-color: var(--card-color);
-      padding: 2rem;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      margin-bottom: 2rem;
-    }
-    .article h1{
-      margin-top: 0;
-      color: var(--accent-color);
-      font-size: 1.8rem;
-      line-height:1.25;
-    }
-    .article .date{ color:var(--muted); font-style:italic; margin:.25rem 0 1rem; display:block; }
-    .article p{ margin: 1rem 0; line-height:1.75; }
-    .backlink{ display:inline-block; margin-bottom:1rem; }
+    .article{background:var(--card-color);padding:2rem;border-radius:12px;border:1px solid var(--border);margin-bottom:2rem}
+    .article h1{margin-top:0;color:var(--accent-color);font-size:1.8rem;line-height:1.25}
+    .article .date{color:var(--muted);font-style:italic;margin:.25rem 0 1rem;display:block}
+    .article :where(p,ul,ol,blockquote,figure){margin:1rem 0}
+    .article img{max-width:100%;height:auto;border-radius:8px}
+    .backlink{display:inline-block;margin-bottom:1rem}
 
-    footer{
-      text-align:center;
-      padding:2rem 1rem;
-      color:#8b949e;
-      font-size:.9rem;
-      border-top:1px solid var(--border);
-    }
+    footer{text-align:center;padding:2rem 1rem;color:#8b949e;font-size:.9rem;border-top:1px solid var(--border)}
 
-    @media (max-width:600px){
-      header{flex-direction:column; align-items:flex-start}
-      nav{margin-top:.5rem}
-    }
+    @media (max-width:600px){header{flex-direction:column;align-items:flex-start} nav{margin-top:.5rem}}
   </style>
 </head>
 <body>
@@ -134,234 +59,135 @@
   </header>
 
   <main class="container" id="app" role="main">
-    <!-- JS burayı dolduracak -->
-    <noscript>
-      <p>Bu sayfa JavaScript ile çalışır. Lütfen tarayıcınızda JavaScript'i etkinleştirin.</p>
-    </noscript>
+    <noscript><p>Bu sayfa JavaScript ile çalışır. Lütfen tarayıcınızda JavaScript'i etkinleştirin.</p></noscript>
   </main>
 
-  <footer>
-    © 2025 Melike Balkın Karakaya
-  </footer>
+  <footer>© 2025 Melike Balkın Karakaya</footer>
 
-  <!-- Makaleler: tek dosyada veri + içerik -->
   <script>
-    // 1) Makale verileri (slug, başlık, tarih ve içerik HTML)
+    // ---- 1) Makale listesi (slug, başlık, tarih, opsiyonel kısa açıklama) ----
     const posts = [
-      {
-        slug: "raconun-bittigi-yer",
-        title: "Raconun Bittiği Yer: Mafya Kılıfında Haysiyetsizlik",
-        date: "01 Eylül 2025",
-        excerpt: "Bir zamanlar yeraltı dünyasında bile bir kural vardı: “Kadının ve çocuğun yanında silah konuşmaz.” Bugün ise gördüğümüz manzara, bu raconun bile çöpe atıldığını gösteriyor.",
-        content: `
-          <p>Bir zamanlar yeraltı dünyasında bile bir kural vardı: “Kadının ve çocuğun yanında silah konuşmaz.” Bugün gördüğümüz manzara, bu raconun bile çöpe atıldığını gösteriyor. Artık yalnızca canlar alınmıyor, geride kalan eş ve çocuk da hedef haline getiriliyor.</p>
-          <p>Bu tablo, suça kılıf olarak giydirilen sahte onurun çöküşüdür. Toplumsal vicdanın yeniden inşası için adalet duygusunu, medya dilini ve siyasi iradeyi aynı masaya oturtmak zorundayız.</p>
-        `
-      },
-      {
-        slug: "dijital-peygamberlik",
-        title: "Dijital Peygamberlik: Grok’un Ardındaki Algı Dini",
-        date: "13 Temmuz 2025",
-        excerpt: "Elon Musk'ın yapay zekası Grok'un ürettiği içerikler, bir yazılım hatası değil, zihinsel bir operasyondur.",
-        content: `
-          <p>Grok'un ürettiği içerikler basit bir “model hatası” değil; kültürel kodlara nüfuz eden bir algı operasyonunun izlerini taşıyor. Bu nedenle dijital platformların nötr değil, güç mimarileri olduğunu kabul etmeliyiz.</p>
-          <p>Çözüm; şeffaflık, bağımsız denetim ve kullanıcı özerkliği üçlüsünün aynı anda kurulmasıdır.</p>
-        `
-      },
-      {
-        slug: "egitimde-ideolojik-dil",
-        title: "Eğitimde İdeolojik Dilin Çocuk Psikolojisine Etkisi",
-        date: "17 Temmuz 2025",
-        excerpt: "Eğitimde ideolojik söylemlerin çocuk psikolojisi üzerindeki olumsuz etkileri üzerine bir klinik psikolog ve toplum bilimci analizi.",
-        content: `
-          <p>İdeolojik yüklenmiş dil, çocukta dünyayı “biz-onlar” kodlarıyla katılaştırır. Bu kodlar, merak ve oyun fonksiyonlarının yerine kaygı ve itaat mekanizmalarını koyar.</p>
-          <p>Okul ortamının psikolojik güvenliği, çocuk gelişiminde akademik başarıdan önce gelir.</p>
-        `
-      },
-      {
-        slug: "cocuk-icin-adalet",
-        title: "ÇOCUK İÇİN ADALET: DEVLETİN ARTIK YOLU BELLİDİR",
-        date: "21 Ağustos 2025",
-        excerpt: "Çocuğa yönelik cinsel saldırı ve tecavüz suçları için şartlı tahliyesiz müebbet veya idam düzenlemesi. Bu bir hukuk meselesi değil, ahlak ve vicdan testidir.",
-        content: `
-          <p>Çocuğa yönelik ağır cinsel suçlarda cezaların caydırıcılığı tartışma konusu değildir; toplumsal vicdan burada bağlayıcı normu ilan etmiştir.</p>
-          <p>Yargı süreçlerinin hızlandırılması ve mağdurun ikincil travmadan korunması en az ceza kadar önemlidir.</p>
-        `
-      },
-      {
-        slug: "kalpten-evrensele",
-        title: "Kalpten Evrensele: Dillerin Ötesinde Bir Ses",
-        date: "31 Temmuz 2025",
-        excerpt: "Bir kitabın 9 farklı dilde yankı bulması, sadece kişisel bir başarı değil, kolektif bir çağrıdır.",
-        content: `
-          <p>Diller değişse de kalbin çağrısı aynıdır. Çok dilli yayıncılık, yalnızca erişim değil; düşüncenin evrensel yankısını çoğaltma çabasıdır.</p>
-          <p>Okurla kurulan bağ, pazarlama metriklerinden önce gelir.</p>
-        `
-      },
-      {
-        slug: "ahmet-icin-adalet",
-        title: "Benim Çocuğumun Hayatını Hiçbir Ceza Geri Getiremez… Şimdi de İndirim mi Düşünüyorsunuz?",
-        date: "23 Temmuz 2025",
-        excerpt: "Failin yaşı mı önemli, yoksa toprağa düşen canın yaşı mı? Bir annenin gözünden adalet arayışı.",
-        content: `
-          <p>Adalet, “indirim reçeteleri” ile işletildiğinde toplumun güven duygusu erozyona uğrar. Ceza adaleti ile onarma adaleti dengesi yeniden kurulmalıdır.</p>
-          <p>Mağdurun sesi, dosyada sadece bir ifade değil; hükmün vicdani temelidir.</p>
-        `
-      },
-      {
-        slug: "mizahin-ince-cizgisi",
-        title: "Mizahın İnce Çizgisi: Doğan Pehlevan Üzerine Kişisel Bir Okuma",
-        date: "01 Temmuz 2025",
-        excerpt: "Mizahın, toplumsal belleği nasıl şekillendirdiği üzerine bir analiz.",
-        content: `
-          <p>Mizah, travmayı taşınabilir kılar; fakat provokasyon çizgisi aşıldığında kamusal alanda yeni yaralar açabilir.</p>
-          <p>İnce çizgi, niyet ve bağlamın ortak terazisinde anlaşılır.</p>
-        `
-      },
-      {
-        slug: "kenevir-yasasi-ve-sessiz-kaygilar",
-        title: "Kenevir Yasası ve Sessiz Kaygılar",
-        date: "30 Haziran 2025",
-        excerpt: "Tıbbi kenevir düzenlemesi tartışmaları kamu sağlığı ve pazar dengeleri ekseninde büyüyor.",
-        content: `
-          <p>Akılcı düzenleme, kaçınılmaz olarak çok paydaşlı dengeyi gerektirir: klinik yarar, bağımlılık riski, ekonomik çıkar ve etik yönetim.</p>
-          <p>Toplumsal fayda, hiçbir sermaye grubunun konfor alanına feda edilemez.</p>
-        `
-      },
-      {
-        slug: "tibbi-kenevir",
-        title: "Tıbbi Kenevir Meclis Gündeminde: Yasak Değil, Akılcı Kontrol Gerekli",
-        date: "30 Haziran 2025",
-        excerpt: "Bağımlılıkla mücadelede yasakçılık yerine akılcı kontrol ve rehabilitasyonun önemi.",
-        content: `
-          <p>Politika tasarımında veri odaklı izleme, denetimli erişim ve rehabilitasyon üçlüsü birlikte düşünülmelidir.</p>
-          <p>Toplum sağlığı stratejileri cezalandırmadan çok, dönüşüm mimarisine yaslanmalıdır.</p>
-        `
-      },
-      {
-        slug: "enerji-okumasi",
-        title: "“Enerji Okuması” Liderliğin Gizli Silahı mı?",
-        date: "08 Temmuz 2025",
-        excerpt: "Varlığıyla ortamı yatıştıran liderliğin yeni yüzü.",
-        content: `
-          <p>Enerji okuması, sözel olmayan sinyallerin bütünsel yorumudur. Krizde regülasyon becerisi, teknik çözümlerden önce gelir.</p>
-          <p>Lider, odaya girdiğinde tansiyonu düşürebiliyorsa; bu bir yöntemdir, tesadüf değil.</p>
-        `
-      },
-      {
-        slug: "ortadogu-satranci",
-        title: "Ortadoğu Satrancı ve Türkiye",
-        date: "28 Mayıs 2025",
-        excerpt: "Ortadoğu’daki jeopolitik dengeler ve Türkiye'nin stratejisi.",
-        content: `
-          <p>Alan gerçekliği sabit değildir; ittifaklar ve tehdit algıları dinamik bir denge kurar. Türkiye'nin stratejisi, çok katmanlı diplomasiyi zorunlu kılar.</p>
-        `
-      },
-      {
-        slug: "gencler-arasi-siddet",
-        title: "Gençler Arasında Yükselen Şiddet: Öfke Kontrolsüzlüğü mü, Sessiz Bir Çığlık mı?",
-        date: "01 Mayıs 2025",
-        excerpt: "Bastırılmış öfke ve görülmemiş yaralar şiddet davranışının arka planında.",
-        content: `
-          <p>Gençlerde dışa vurulan şiddet, çoğu kez anlatılamamış hikâyelerin sesidir. Erken uyarı sistemleri ve okul temelli ruh sağlığı hizmetleri kritik önemdedir.</p>
-        `
-      },
-      {
-        slug: "askin-cozulmesi",
-        title: "Aşkın Çözülmesi: Tanrı’ya Uzanan Ruhsal Bir Yolculuk",
-        date: "05 Mayıs 2025",
-        excerpt: "Aşkın bizi nasıl çözdüğü ve bu çözülmenin bizi nereye götürdüğü…",
-        content: `
-          <p>Aşk, egonun kabuğunu inceltir; incelen kabukta ışık belirir. Yol, çözülmenin teslimiyetinde açılır.</p>
-        `
-      },
-      {
-        slug: "krizler-guc-kaynagi-olabilir-mi",
-        title: "Krizler Güç Kaynağı Olabilir mi?",
-        date: "04 Nisan 2025",
-        excerpt: "Krizler yıkım değil; doğru işlenirse yeniden doğuş potansiyelidir.",
-        content: `
-          <p>Post-travmatik büyüme, acının anlamlandırılmasıyla başlar. Hikâyeyi yeniden yazmak, kontrol hissini geri verir.</p>
-        `
-      }
+      { slug:"raconun-bittigi-yer", title:"Raconun Bittiği Yer: Mafya Kılıfında Haysiyetsizlik", date:"01 Eylül 2025", excerpt:"Bir zamanlar yeraltı dünyasında bile bir kural vardı…"},
+      { slug:"dijital-peygamberlik", title:"Dijital Peygamberlik: Grok’un Ardındaki Algı Dini", date:"13 Temmuz 2025", excerpt:"Grok’un içerikleri yazılım hatası değil; zihinsel bir operasyon…"},
+      { slug:"egitimde-ideolojik-dil", title:"Eğitimde İdeolojik Dilin Çocuk Psikolojisine Etkisi", date:"17 Temmuz 2025", excerpt:"İdeolojik dilin çocuk psikolojisine etkileri…"},
+      { slug:"cocuk-icin-adalet", title:"ÇOCUK İÇİN ADALET: DEVLETİN ARTIK YOLU BELLİDİR", date:"21 Ağustos 2025", excerpt:"Ağır cinsel suçlarda caydırıcılık ve vicdani norm…"},
+      { slug:"kalpten-evrensele", title:"Kalpten Evrensele: Dillerin Ötesinde Bir Ses", date:"31 Temmuz 2025", excerpt:"Çok dilli yayıncılık ve evrensel yankı…"},
+      { slug:"ahmet-icin-adalet", title:"Benim Çocuğumun Hayatını Hiçbir Ceza Geri Getiremez… Şimdi de İndirim mi Düşünüyorsunuz?", date:"23 Temmuz 2025", excerpt:"Ceza adaleti – onarma adaleti dengesi…"},
+      { slug:"mizahin-ince-cizgisi", title:"Mizahın İnce Çizgisi: Doğan Pehlevan Üzerine Kişisel Bir Okuma", date:"01 Temmuz 2025", excerpt:"Mizah, bellek ve provokasyon çizgisi…"},
+      { slug:"kenevir-yasasi-ve-sessiz-kaygilar", title:"Kenevir Yasası ve Sessiz Kaygılar", date:"30 Haziran 2025", excerpt:"Tıbbi kenevir düzenlemesi ve toplumsal fayda…"},
+      { slug:"tibbi-kenevir", title:"Tıbbi Kenevir Meclis Gündeminde: Yasak Değil, Akılcı Kontrol Gerekli", date:"30 Haziran 2025", excerpt:"Veri odaklı izleme ve rehabilitasyon…"},
+      { slug:"enerji-okumasi", title:"“Enerji Okuması” Liderliğin Gizli Silahı mı?", date:"08 Temmuz 2025", excerpt:"Sözel olmayan sinyaller ve regülasyon…"},
+      { slug:"ortadogu-satranci", title:"Ortadoğu Satrancı ve Türkiye", date:"28 Mayıs 2025", excerpt:"Dinamik denge ve çok katmanlı diplomasi…"},
+      { slug:"gencler-arasi-siddet", title:"Gençler Arasında Yükselen Şiddet: Öfke Kontrolsüzlüğü mü, Sessiz Bir Çığlık mı?", date:"01 Mayıs 2025", excerpt:"Anlatılamamış hikâyeler ve erken uyarı…"},
+      { slug:"askin-cozulmesi", title:"Aşkın Çözülmesi: Tanrı’ya Uzanan Ruhsal Bir Yolculuk", date:"05 Mayıs 2025", excerpt:"Çözülmenin teslimiyeti ve yol…"},
+      { slug:"krizler-guc-kaynagi-olabilir-mi", title:"Krizler Güç Kaynağı Olabilir mi?", date:"04 Nisan 2025", excerpt:"PTG ve hikâyeyi yeniden yazmak…"}
     ];
 
-    // 2) Yardımcı: element oluşturucu
+    // ---- 2) Yardımcılar ----
+    const $ = sel => document.querySelector(sel);
     const el = (tag, attrs={}, html="")=>{
-      const node = document.createElement(tag);
+      const node=document.createElement(tag);
       Object.entries(attrs).forEach(([k,v])=> node.setAttribute(k,v));
       if(html) node.innerHTML = html;
       return node;
     };
-
-    // 3) Router: ?post=slug varsa detay, yoksa liste
-    function getSlug(){
-      const params = new URLSearchParams(location.search);
-      return params.get("post");
-    }
-
+    const getSlug = ()=> new URLSearchParams(location.search).get("post");
     function navigateTo(slug){
       const url = new URL(location.href);
-      if(slug){
-        url.searchParams.set("post", slug);
-      }else{
-        url.searchParams.delete("post");
-      }
+      if(slug){ url.searchParams.set("post", slug); } else { url.searchParams.delete("post"); }
       history.pushState({}, "", url);
       render();
       window.scrollTo({top:0, behavior:"instant"});
     }
 
+    // ---- 3) Liste görünümü ----
     function renderList(container){
       posts.forEach(p=>{
         const art = el("article", {class:"blog-post"});
         const h2 = el("h2", {}, `<a href="#" data-slug="${p.slug}">${p.title}</a>`);
-        const pEl = el("p", {}, p.excerpt);
-        const meta = el("span", {class:"meta"}, p.date);
-        art.append(h2, pEl, meta);
+        const excerpt = p.excerpt ? el("p", {}, p.excerpt) : null;
+        const meta = el("span", {class:"meta"}, p.date || "");
+        art.append(h2);
+        if(excerpt) art.append(excerpt);
+        art.append(meta);
         container.appendChild(art);
       });
-
-      // linkleri yakala
       container.querySelectorAll('a[data-slug]').forEach(a=>{
-        a.addEventListener('click', (e)=>{
-          e.preventDefault();
-          navigateTo(a.getAttribute('data-slug'));
-        });
+        a.addEventListener('click', e=>{ e.preventDefault(); navigateTo(a.getAttribute('data-slug')); });
       });
+      document.title = "Melike Balkın Karakaya | Blog";
     }
 
-    function renderDetail(container, slug){
-      const post = posts.find(x=>x.slug===slug);
-      if(!post){
-        container.appendChild(el("p", {}, "Aradığınız makale bulunamadı."));
-        return;
-      }
+    // ---- 4) Detay görünümü: TAM METNİ diskteki .html dosyasından çek ----
+    async function renderDetail(container, slug){
+      const meta = posts.find(x=>x.slug===slug);
       const back = el("a", {href:"#", class:"backlink"}, "← Tüm makalelere dön");
-      back.addEventListener('click', (e)=>{ e.preventDefault(); navigateTo(null); });
+      back.addEventListener('click', e=>{ e.preventDefault(); navigateTo(null); });
 
       const art = el("article", {class:"article"});
-      const h1 = el("h1", {}, post.title);
-      const date = el("span", {class:"date"}, post.date);
-      const body = el("div", {}, post.content);
-
-      art.append(h1, date, body);
+      const loading = el("p", {}, "Yükleniyor…");
+      art.append(loading);
       container.append(back, art);
-      document.title = `${post.title} | Melike Balkın Karakaya`;
-    }
 
-    function render(){
-      const app = document.getElementById("app");
-      app.innerHTML = "";
-      const slug = getSlug();
-      if(slug){
-        renderDetail(app, slug);
-      }else{
-        renderList(app);
-        document.title = "Melike Balkın Karakaya | Blog";
+      try{
+        // Örn: raconun-bittigi-yer.html
+        const path = `${slug}.html`;
+        const res = await fetch(path, {credentials:"same-origin"});
+        if(!res.ok) throw new Error(`Yüklenemedi (${res.status})`);
+        let html = await res.text();
+
+        // <script> etiketlerini çıkar (güvenlik ve çakışma için)
+        html = html.replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, "");
+
+        // Geçici DOM oluştur
+        const tmp = document.createElement("html");
+        tmp.innerHTML = html;
+
+        // Başlık güncelle (varsa)
+        const fetchedTitle = tmp.querySelector("title")?.textContent?.trim();
+        if(fetchedTitle) document.title = `${fetchedTitle} | Melike Balkın Karakaya`;
+        else if(meta?.title) document.title = `${meta.title} | Melike Balkın Karakaya`;
+
+        // İçerik seçimi: öncelik sırası -> article, main, .article-content, body
+        let contentNode = tmp.querySelector("article") ||
+                          tmp.querySelector("main") ||
+                          tmp.querySelector(".article-content") ||
+                          tmp.querySelector("body");
+        const titleText =
+          tmp.querySelector("h1")?.textContent?.trim() || meta?.title || "";
+
+        // Makale başlığı + tarih (varsa) + içerik
+        art.innerHTML = ""; // temizle
+        const h1 = el("h1", {}, titleText);
+        const date = meta?.date ? el("span",{class:"date"}, meta.date) : null;
+        const bodyDiv = el("div", {}, contentNode ? contentNode.innerHTML : "<p>İçerik bulunamadı.</p>");
+
+        art.append(h1);
+        if(date) art.append(date);
+        art.append(bodyDiv);
+
+        // İçerik içindeki göreli linklerin yeni sekmede açılması ve XSS korunumu hafif dokunuşlar:
+        art.querySelectorAll('a[href]').forEach(a=>{
+          const href = a.getAttribute('href');
+          if(href && !href.startsWith('#') && !/^https?:\/\//i.test(href)){
+            // göreli linkleri olduğu gibi bırak ama yeni sekmede aç
+            a.setAttribute('target','_blank'); a.setAttribute('rel','noopener');
+          }
+        });
+
+      }catch(err){
+        art.innerHTML = `<p>Makale yüklenirken sorun oluştu: ${err.message}</p>`;
       }
     }
 
+    // ---- 5) Router ----
+    function render(){
+      const app = $("#app");
+      app.innerHTML = "";
+      const slug = getSlug();
+      if(slug){ renderDetail(app, slug); }
+      else { renderList(app); }
+    }
     window.addEventListener("popstate", render);
     render();
   </script>
