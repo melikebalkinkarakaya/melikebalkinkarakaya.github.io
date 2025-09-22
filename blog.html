@@ -3,138 +3,229 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Melike'nin Blogu</title>
+  <title>Melike Balkın Karakaya | Blog</title>
+  <meta name="description" content="Melike Balkın Karakaya'nın psikoloji, felsefe ve din felsefesi eksenindeki makaleleri, analizleri ve düşünceleri.">
+  <link rel="canonical" href="https://melikebalkinkarakaya.org/blog.html" />
+  <link rel="icon" href="/favicon.ico?v=1">
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0d1117">
+
   <style>
-    :root {
-      --bg-color: #0d1117;
-      --card-color: #161b22;
-      --text-color: #e6edf3;
-      --accent-color: #58a6ff;
+    :root{
+      --bg-color:#0d1117;
+      --card-color:#161b22;
+      --text-color:#e6edf3;
+      --muted:#9aa4af;
+      --accent-color:#58a6ff;
+      --border:#30363d;
     }
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
+      line-height:1.6;
     }
 
-    header {
+    /* Header / Nav (stil 2) */
+    header{
       position: sticky;
       top: 0;
-      background-color: rgba(13, 17, 23, 0.8);
+      background-color: rgba(13,17,23,0.8);
       backdrop-filter: blur(10px);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #30363d;
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
     }
-
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
+    header h1{
+      margin:0;
+      font-size:1.5rem;
       color: var(--accent-color);
+      letter-spacing:.2px;
     }
-
-    nav a {
+    nav a{
       color: var(--text-color);
       text-decoration: none;
       margin-left: 1rem;
-      transition: color 0.3s;
+      transition: color .2s ease;
+      font-weight:500;
     }
+    nav a:hover{ color: var(--accent-color); }
 
-    nav a:hover {
-      color: var(--accent-color);
-    }
-
-    .container {
+    .container{
       max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
 
-    .blog-post {
+    /* Blog kartları (stil 2 tabanlı) */
+    .blog-post{
       background-color: var(--card-color);
       padding: 1.5rem;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       margin-bottom: 2rem;
-      transition: transform 0.3s;
+      border: 1px solid var(--border);
+      transition: transform .18s ease, box-shadow .18s ease;
     }
-
-    .blog-post:hover {
-      transform: scale(1.01);
+    .blog-post:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.38);
     }
-
-    .blog-post h2 {
-      margin-top: 0;
+    .blog-post h2{
+      margin: 0 0 .35rem 0;
+      font-size: 1.35rem;
+      line-height:1.3;
+    }
+    .blog-post h2 a{
       color: var(--accent-color);
+      text-decoration:none;
+    }
+    .blog-post h2 a:hover{
+      text-decoration:underline;
+    }
+    .blog-post p{
+      margin: .35rem 0 0 0;
+    }
+    .meta{
+      display:block;
+      margin-top:.6rem;
+      font-size:.85rem;
+      color: var(--muted);
     }
 
-    .blog-post p {
-      line-height: 1.6;
+    footer{
+      text-align:center;
+      padding:2rem 1rem;
+      color:#8b949e;
+      font-size:.9rem;
+      border-top:1px solid var(--border);
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #8b949e;
-      font-size: 0.9rem;
-      border-top: 1px solid #30363d;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        margin-top: 0.5rem;
-      }
+    @media (max-width:600px){
+      header{flex-direction:column; align-items:flex-start}
+      nav{margin-top:.5rem}
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Melike'nin Blogu</h1>
+    <h1>Melike Balkın Karakaya | Blog</h1>
     <nav>
-      <a href="#">Ana Sayfa</a>
-      <a href="#">Hakkımda</a>
-      <a href="#">İletişim</a>
+      <a href="index.html">Ana Sayfa</a>
+      <a href="index.html#hakkimda">Hakkımda</a>
+      <a href="index.html#iletisim">İletişim</a>
     </nav>
   </header>
 
-  <div class="container">
-    <div class="blog-post">
-      <h2>Yapay Zeka Nedir?</h2>
-      <p>Yapay zeka, makinelerin insan benzeri düşünme ve öğrenme yetenekleri kazanmasını sağlayan bir teknolojidir. Günümüzde birçok alanda kullanılmaktadır.</p>
-    </div>
+  <main class="container" role="main">
+    <!-- Raconun Bittiği Yer -->
+    <article class="blog-post">
+      <h2><a href="raconun-bittigi-yer.html">Raconun Bittiği Yer: Mafya Kılıfında Haysiyetsizlik</a></h2>
+      <p>Bir zamanlar yeraltı dünyasında bile bir kural vardı: “Kadının ve çocuğun yanında silah konuşmaz.” Bugün ise gördüğümüz manzara, bu raconun bile çöpe atıldığını gösteriyor. Artık yalnızca canlar alınmıyor, geride kalan eş ve çocuk da hedef haline getiriliyor.</p>
+      <span class="meta">01 Eylül 2025</span>
+    </article>
 
-    <div class="blog-post">
-      <h2>HTML ile Web Sayfası Oluşturma</h2>
-      <p>HTML, web sayfalarının iskeletini oluşturan bir işaretleme dilidir. Başlıklar, paragraflar, bağlantılar ve görseller gibi öğeleri tanımlamak için kullanılır.</p>
-    </div>
+    <!-- Dijital Peygamberlik -->
+    <article class="blog-post">
+      <h2><a href="dijital-peygamberlik.html">Dijital Peygamberlik: Grok’un Ardındaki Algı Dini</a></h2>
+      <p>Elon Musk'ın yapay zekası Grok'un ürettiği içerikler, bir yazılım hatası değil, zihinsel bir operasyondur. Bu, yapay zekanın kültürel ve toplumsal etkileri üzerine bir uyarı çağrısıdır.</p>
+      <span class="meta">13 Temmuz 2025</span>
+    </article>
 
-    <div class="blog-post">
-      <h2>CSS ile Stil Verme</h2>
-      <p>CSS, HTML öğelerine stil vermek için kullanılır. Renkler, yazı tipleri, boşluklar ve konumlandırma gibi görsel düzenlemeleri sağlar.</p>
-    </div>
+    <!-- Eğitimde İdeolojik Dil -->
+    <article class="blog-post">
+      <h2><a href="egitimde-ideolojik-dil.html">Eğitimde İdeolojik Dilin Çocuk Psikolojisine Etkisi</a></h2>
+      <p>Eğitimde ideolojik söylemlerin çocuk psikolojisi üzerindeki olumsuz etkileri üzerine bir klinik psikolog ve toplum bilimci analizi.</p>
+      <span class="meta">17 Temmuz 2025</span>
+    </article>
 
-    <div class="blog-post">
-      <h2>JavaScript ile Etkileşim</h2>
-      <p>JavaScript, web sayfalarına etkileşim kazandırmak için kullanılan bir programlama dilidir. Butonlara tıklama, form doğrulama gibi işlemleri yönetir.</p>
-    </div>
+    <!-- Çocuk İçin Adalet -->
+    <article class="blog-post">
+      <h2><a href="cocuk-icin-adalet.html">ÇOCUK İÇİN ADALET: DEVLETİN ARTIK YOLU BELLİDİR</a></h2>
+      <p>Çocuğa yönelik cinsel saldırı ve tecavüz suçları için şartlı tahliyesiz müebbet veya idam düzenlemesi. Bu bir hukuk meselesi değil, ahlak ve vicdan testidir.</p>
+      <span class="meta">21 Ağustos 2025</span>
+    </article>
 
-    <div class="blog-post">
-      <h2>Responsive Tasarım Nedir?</h2>
-      <p>Responsive tasarım, web sayfalarının farklı ekran boyutlarına uyumlu hale getirilmesidir. Mobil, tablet ve masaüstü cihazlarda iyi görünmesini sağlar.</p>
-    </div>
-  </div>
+    <!-- Kalpten Evrensele -->
+    <article class="blog-post">
+      <h2><a href="kalpten-evrensele.html">Kalpten Evrensele: Dillerin Ötesinde Bir Ses</a></h2>
+      <p>Bir kitabın 9 farklı dilde yankı bulması, sadece kişisel bir başarı değil, kolektif bir çağrıdır. Yeni bir bilincin ve dünyanın sesi.</p>
+      <span class="meta">31 Temmuz 2025</span>
+    </article>
+
+    <!-- Ahmet için Adalet -->
+    <article class="blog-post">
+      <h2><a href="ahmet-icin-adalet.html">Benim Çocuğumun Hayatını Hiçbir Ceza Geri Getiremez… Şimdi de İndirim mi Düşünüyorsunuz?</a></h2>
+      <p>Failin yaşı mı önemli, yoksa toprağa düşen canın yaşı mı? Bir annenin gözünden adalet arayışı ve toplumsal vicdanın sorgulanışı.</p>
+      <span class="meta">23 Temmuz 2025</span>
+    </article>
+
+    <!-- Mizahın İnce Çizgisi -->
+    <article class="blog-post">
+      <h2><a href="mizahin-ince-cizgisi.html">Mizahın İnce Çizgisi: Doğan Pehlevan Üzerine Kişisel Bir Okuma</a></h2>
+      <p>Mizahın, toplumsal belleği nasıl şekillendirdiği ve eleştiri ile provokasyon arasındaki ince çizgi üzerine bir analiz.</p>
+      <span class="meta">01 Temmuz 2025</span>
+    </article>
+
+    <!-- Kenevir Yasası ve Sessiz Kaygılar -->
+    <article class="blog-post">
+      <h2><a href="kenevir-yasasi-ve-sessiz-kaygilar.html">Kenevir Yasası ve Sessiz Kaygılar</a></h2>
+      <p>Tıbbi kenevir düzenlemesi, kamu sağlığı ve pazar dengeleri üzerine tartışmalar yaratıyor. Toplumun iyiliği, hiçbir sermaye grubunun konfor alanına feda edilemez.</p>
+      <span class="meta">30 Haziran 2025</span>
+    </article>
+
+    <!-- Tıbbi Kenevir Meclis Gündeminde -->
+    <article class="blog-post">
+      <h2><a href="tibbi-kenevir.html">Tıbbi Kenevir Meclis Gündeminde: Yasak Değil, Akılcı Kontrol Gerekli</a></h2>
+      <p>Tıbbi kenevir düzenlemesi, bağımlılıkla mücadelede yeni bir paradigma sunuyor. Yasakçılık yerine akılcı kontrol ve rehabilitasyonun önemi üzerine.</p>
+      <span class="meta">30 Haziran 2025</span>
+    </article>
+
+    <!-- Enerji Okuması -->
+    <article class="blog-post">
+      <h2><a href="enerji-okumasi.html">“Enerji Okuması” Liderliğin Gizli Silahı mı?</a></h2>
+      <p>Bir kriz anında hiç konuşmadan sadece varlığıyla ortamı yatıştıran insanlar, enerji okuması pratiğiyle liderliğin yeni yüzünü temsil ediyor.</p>
+      <span class="meta">08 Temmuz 2025</span>
+    </article>
+
+    <!-- Ortadoğu Satrancı -->
+    <article class="blog-post">
+      <h2><a href="ortadogu-satranci.html">Ortadoğu Satrancı ve Türkiye</a></h2>
+      <p>Ortadoğu’daki jeopolitik dengeler ve Türkiye'nin bu süreçte izlemesi gereken stratejiler üzerine bir analiz.</p>
+      <span class="meta">28 Mayıs 2025</span>
+    </article>
+
+    <!-- Gençler Arasında Yükselen Şiddet -->
+    <article class="blog-post">
+      <h2><a href="gencler-arasi-siddet.html">Gençler Arasında Yükselen Şiddet: Öfke Kontrolsüzlüğü mü, Sessiz Bir Çığlık mı?</a></h2>
+      <p>Gençlerin içindeki bastırılmış öfke, dışa vurulan şiddetin altında yatan anlatılamamış hikayeleri ve görülmemiş yaraları inceliyor.</p>
+      <span class="meta">01 Mayıs 2025</span>
+    </article>
+
+    <!-- Aşkın Çözülmesi -->
+    <article class="blog-post">
+      <h2><a href="askin-cozulmesi.html">Aşkın Çözülmesi: Tanrı’ya Uzanan Ruhsal Bir Yolculuk</a></h2>
+      <p>Aşkın bizi nasıl çözdüğünü, ama bu çözülmenin bizi nasıl Tanrı’ya götürdüğünü anlamaya çalışan bir iç yolculuğun notlarıdır.</p>
+      <span class="meta">05 Mayıs 2025</span>
+    </article>
+
+    <!-- Krizler Güç Kaynağı Olabilir mi? -->
+    <article class="blog-post">
+      <h2><a href="krizler-guc-kaynagi-olabilir-mi.html">Krizler Güç Kaynağı Olabilir mi?</a></h2>
+      <p>Hayatın krizleri, bir yıkım gibi görünse de içlerinde yeniden doğuş potansiyeli taşır. Post-travmatik büyüme ve kendini bulma yolculuğu üzerine.</p>
+      <span class="meta">04 Nisan 2025</span>
+    </article>
+  </main>
 
   <footer>
-    © 2025 Melike. Tüm hakları saklıdır.
+    © 2025 Melike Balkın Karakaya
   </footer>
 </body>
 </html>
