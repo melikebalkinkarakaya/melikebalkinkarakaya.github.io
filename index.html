@@ -63,7 +63,12 @@
   .item-card:hover {transform: translateY(-5px)}
   .item-card img {width:100%;border-radius:10px;margin-bottom:12px;aspect-ratio:3/4;object-fit:cover}
   .item-card h3 {font-size:17px;margin:10px 0;min-height:2.5em;display:flex;align-items:center;justify-content:center}
-  .item-card p {font-size:13px;color:var(--muted);margin-bottom:15px}
+
+  /* Hakkımda İçerik Stili */
+  .about-content h3 {color: var(--brand); font-size: 18px; margin-top: 20px;}
+  .about-content ul {list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;}
+  .about-content li::before {content: "•"; color: var(--brand); margin-right: 8px; font-weight: bold;}
+  .about-content p {margin-bottom: 15px; line-height: 1.8;}
 
   .social-grid {display:grid;grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));gap:12px;margin-top:20px}
   .social-link {
@@ -82,6 +87,7 @@
     .hero-grid{flex-direction:column;text-align:center}
     .cta{justify-content:center}
     h1{font-size:32px}
+    .about-content ul {grid-template-columns: 1fr;}
   }
   </style>
 </head>
@@ -127,9 +133,7 @@
           <img src="travmakodu.jpeg" alt="The Trauma Code">
           <h3>The Trauma Code</h3>
           <a class="btn" target="_blank" href="https://amzn.asia/d/69u7qBn">Amazon</a>
-          <div class="flag-list">
-            <span class="fi fi-gb" title="English"></span>
-          </div>
+          <div class="flag-list"><span class="fi fi-gb" title="English"></span></div>
         </article>
 
         <article class="item-card">
@@ -137,12 +141,7 @@
           <h3 data-i18n="book_new_title">Anatomy of Belief</h3>
           <a class="btn" target="_blank" href="https://amzn.asia/d/2PzdlQH">Amazon</a>
           <div class="flag-list">
-            <span class="fi fi-tr" title="Türkçe"></span>
-            <span class="fi fi-gb" title="English"></span>
-            <span class="fi fi-de" title="Deutsch"></span>
-            <span class="fi fi-fr" title="Français"></span>
-            <span class="fi fi-jp" title="Japanese"></span>
-            <span class="fi fi-es" title="Español"></span>
+            <span class="fi fi-tr"></span><span class="fi fi-gb"></span><span class="fi fi-de"></span><span class="fi fi-fr"></span><span class="fi fi-jp"></span><span class="fi fi-es"></span>
           </div>
         </article>
 
@@ -151,15 +150,7 @@
           <h3>Zehir Değil Çığlık</h3>
           <a class="btn" target="_blank" href="https://www.amazon.com/gp/product/B0FK6KLYJ6">Amazon</a>
           <div class="flag-list">
-            <span class="fi fi-tr" title="Türkçe"></span>
-            <span class="fi fi-gb" title="English"></span>
-            <span class="fi fi-de" title="Deutsch"></span>
-            <span class="fi fi-es" title="Español"></span>
-            <span class="fi fi-sa" title="Arabic"></span>
-            <span class="fi fi-it" title="Italiano"></span>
-            <span class="fi fi-fr" title="Français"></span>
-            <span class="fi fi-ru" title="Russian"></span>
-            <span class="fi fi-jp" title="Japanese"></span>
+            <span class="fi fi-tr"></span><span class="fi fi-gb"></span><span class="fi fi-de"></span><span class="fi fi-es"></span><span class="fi fi-sa"></span><span class="fi fi-it"></span><span class="fi fi-fr"></span><span class="fi fi-ru"></span><span class="fi fi-jp"></span>
           </div>
         </article>
 
@@ -168,15 +159,7 @@
           <h3>Kalbin Bütçesi</h3>
           <a class="btn" target="_blank" href="https://www.amazon.com/gp/product/B0FKTCQSBS">Amazon</a>
           <div class="flag-list">
-            <span class="fi fi-tr" title="Türkçe"></span>
-            <span class="fi fi-gb" title="English"></span>
-            <span class="fi fi-de" title="Deutsch"></span>
-            <span class="fi fi-es" title="Español"></span>
-            <span class="fi fi-sa" title="Arabic"></span>
-            <span class="fi fi-it" title="Italiano"></span>
-            <span class="fi fi-fr" title="Français"></span>
-            <span class="fi fi-ru" title="Russian"></span>
-            <span class="fi fi-jp" title="Japanese"></span>
+            <span class="fi fi-tr"></span><span class="fi fi-gb"></span><span class="fi fi-de"></span><span class="fi fi-es"></span><span class="fi fi-sa"></span><span class="fi fi-it"></span><span class="fi fi-fr"></span><span class="fi fi-ru"></span><span class="fi fi-jp"></span>
           </div>
         </article>
 
@@ -185,12 +168,7 @@
           <h3>Aşkın Haritası</h3>
           <a class="btn" target="_blank" href="https://www.amazon.com/gp/product/B0FMYXK27M">Amazon</a>
           <div class="flag-list">
-            <span class="fi fi-tr" title="Türkçe"></span>
-            <span class="fi fi-gb" title="English"></span>
-            <span class="fi fi-de" title="Deutsch"></span>
-            <span class="fi fi-fr" title="Français"></span>
-            <span class="fi fi-jp" title="Japanese"></span>
-            <span class="fi fi-es" title="Español"></span>
+            <span class="fi fi-tr"></span><span class="fi fi-gb"></span><span class="fi fi-de"></span><span class="fi fi-fr"></span><span class="fi fi-jp"></span><span class="fi fi-es"></span>
           </div>
         </article>
       </div>
@@ -198,89 +176,4 @@
   </section>
 
   <section id="projeler" class="section">
-    <div class="container">
-      <h2 class="section-title" data-i18n="nav_projects">Projeler & Araştırmalar</h2>
-      <div class="grid">
-        <article class="item-card">
-          <img src="imtp.jpeg" alt="IMTP">
-          <h3>IMTP — Imagery–Memory Transformation Protocol</h3>
-          <p data-i18n="p1_d">Travmatik anıların duygusal yükünü dönüştürmeye yönelik protokol.</p>
-        </article>
-        <article class="item-card">
-          <img src="dim-imec.jpeg" alt="DIM-IMEC">
-          <h3>DIM–IMEC Project</h3>
-          <p data-i18n="p2_d">Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="hakkimda" class="section">
-    <div class="card container">
-      <h2 class="section-title" data-i18n="nav_about">Hakkımda</h2>
-      <p data-i18n="about_p1">Felsefe ve din felsefesi odaklı araştırmacı-yazar; klinik psikolog. Akademik birikimimi manevî içgörüyle birleştirerek travma dönüşümü çalışıyorum.</p>
-    </div>
-  </section>
-
-  <section id="iletisim" class="section">
-    <div class="container card">
-      <h2 class="section-title" data-i18n="nav_contact">İletişim & Platformlar</h2>
-      <div class="social-grid">
-        <a href="https://x.com/melikekadence" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
-        <a href="https://youtube.com/@melikebalkinkarakaya" target="_blank" class="social-link"><i class="fab fa-youtube"></i> YouTube</a>
-        <a href="https://medium.com/@melikebalknkarakaya" target="_blank" class="social-link"><i class="fab fa-medium"></i> Medium</a>
-        <a href="https://patreon.com/MelikeBalkinKarakaya_ConsciousnessMysticPsychology" target="_blank" class="social-link"><i class="fab fa-patreon"></i> Patreon</a>
-        <a href="https://www.facebook.com/share/1FprxA2zfT/" target="_blank" class="social-link"><i class="fab fa-facebook"></i> Facebook</a>
-        <a href="https://www.reddit.com/user/MelikeBalkinkarakaya/" target="_blank" class="social-link"><i class="fab fa-reddit"></i> Reddit</a>
-        <a href="https://orcid.org/0009-0009-8616-3129" target="_blank" class="social-link"><i class="fab fa-orcid"></i> ORCID</a>
-        <a href="https://zenodo.org/me/uploads?q=&f=shared_with_me%3Afalse&l=list&p=1&s=10&sort=newest" target="_blank" class="social-link"><i class="fas fa-graduation-cap"></i> Zenodo</a>
-        <a href="https://www.linkedin.com/in/melike-balk%C4%B1n-karakaya-36a684167/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://www.instagram.com/melike_hiram_kadence" target="_blank" class="social-link"><i class="fab fa-instagram"></i> Instagram</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">© 2025 Melike Balkın Karakaya. Tüm Hakları Saklıdır.</div>
-  </footer>
-
-  <script>
-  const tr = {
-    site_title:"Melike Balkın Karakaya",
-    nav_about:"Hakkımda", nav_books:"Kitaplarım", nav_projects:"Projeler", nav_contact:"İletişim",
-    hero_title:"Merhaba, ben Melike Balkın Karakaya",
-    hero_lead:"Klinik Psikolog, Din Felsefesi ve Siyaset Bilimi Araştırmacısı. Bilinç ve travma dönüşümü üzerine çalışıyorum.",
-    book_new_title: "İnancın Anatomisi",
-    about_p1:"Felsefe ve din felsefesi odaklı araştırmacı-yazar; klinik psikolog. Akademik birikimimi manevî içgörüyle birleştirerek travma dönüşümü çalışıyorum.",
-    p1_d:"Travmatik anıların duygusal yükünü dönüştürmeye yönelik protokol.",
-    p2_d:"Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli."
-  };
-  const en = {
-    site_title:"Melike Balkın Karakaya",
-    nav_about:"About", nav_books:"My Books", nav_projects:"Projects", nav_contact:"Contact",
-    hero_title:"Hi, I'm Melike Balkın Karakaya",
-    hero_lead:"Clinical Psychologist, Researcher in Philosophy of Religion and Political Science. Working on consciousness and trauma transformation.",
-    book_new_title: "Anatomy of Belief",
-    about_p1:"Researcher-author focused on philosophy of religion; clinical psychologist. I combine academic training with spiritual insight to study trauma transformation.",
-    p1_d:"A protocol aimed at transforming the emotional burden of traumatic memories.",
-    p2_d:"A multilayered consciousness model bridging science, philosophy, and faith."
-  };
-
-  function applyLang(lang){
-    const safe = (lang === 'en') ? 'en' : 'tr';
-    const dict = (safe === 'en') ? en : tr;
-    document.querySelectorAll('[data-i18n]').forEach(el=>{
-      const key = el.getAttribute('data-i18n');
-      if(dict[key]) el.textContent = dict[key];
-    });
-    document.getElementById('btn-tr').classList.toggle('active', safe==='tr');
-    document.getElementById('btn-en').classList.toggle('active', safe==='en');
-    localStorage.setItem('lang', safe);
-  }
-
-  applyLang(localStorage.getItem('lang') || 'tr');
-  document.getElementById('btn-tr').onclick = ()=>applyLang('tr');
-  document.getElementById('btn-en').onclick = ()=>applyLang('en');
-  </script>
-</body>
-</html>
+    <div class="container
