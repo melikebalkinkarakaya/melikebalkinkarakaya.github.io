@@ -58,12 +58,15 @@
   .section-title{font-size:24px;margin:0 0 20px;border-left:4px solid var(--brand);padding-left:12px}
   .card{background:var(--card);border:1px solid #30363d;border-radius:var(--radius);padding:24px}
 
-  .books-grid {display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:25px}
-  .book-card {background:var(--card);border:1px solid #30363d;border-radius:14px;padding:16px;text-align:center;transition:transform 0.2s}
-  .book-card:hover {transform: translateY(-5px)}
-  .book-card img {width:100%;border-radius:10px;margin-bottom:12px;aspect-ratio:1/1;object-fit:cover}
-  .book-card h3 {font-size:17px;margin:10px 0;min-height:2.5em;display:flex;align-items:center;justify-content:center}
+  /* Kitaplar & Projeler Izgarası */
+  .grid {display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:25px}
+  .item-card {background:var(--card);border:1px solid #30363d;border-radius:14px;padding:16px;text-align:center;transition:transform 0.2s}
+  .item-card:hover {transform: translateY(-5px)}
+  .item-card img {width:100%;border-radius:10px;margin-bottom:12px;aspect-ratio:1/1;object-fit:cover}
+  .item-card h3 {font-size:17px;margin:10px 0;min-height:2.5em;display:flex;align-items:center;justify-content:center}
+  .item-card p {font-size:13px;color:var(--muted);margin-bottom:15px}
 
+  /* Sosyal Medya Izgarası */
   .social-grid {display:grid;grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));gap:12px;margin-top:20px}
   .social-link {
     background:#21262d;border:1px solid #30363d;border-radius:12px;padding:12px;
@@ -89,6 +92,7 @@
       <a class="brand" href="#hero">Melike Balkın Karakaya</a>
       <div class="menu">
         <a href="#kitaplar" data-i18n="nav_books">Kitaplar</a>
+        <a href="#projeler" data-i18n="nav_projects">Projeler</a>
         <a href="#hakkimda" data-i18n="nav_about">Hakkımda</a>
         <a href="#iletisim" data-i18n="nav_contact">İletişim</a>
       </div>
@@ -105,8 +109,8 @@
         <h1 data-i18n="hero_title">Merhaba, ben Melike Balkın Karakaya</h1>
         <p class="lead" data-i18n="hero_lead">Klinik Psikolog, Din Felsefesi ve Siyaset Bilimi Araştırmacısı. Bilinç ve travma dönüşümü üzerine çalışıyorum.</p>
         <div class="cta">
-          <a class="btn" href="#kitaplar"><i class="fas fa-book"></i> <span data-i18n="btn_books">Kitaplar</span></a>
-          <a class="btn alt" href="#iletisim"><i class="fas fa-envelope"></i> <span data-i18n="nav_contact">İletişim</span></a>
+          <a class="btn" href="#kitaplar"><i class="fas fa-book"></i> <span data-i18n="nav_books">Kitaplar</span></a>
+          <a class="btn alt" href="#projeler"><i class="fas fa-microscope"></i> <span data-i18n="nav_projects">Projeler</span></a>
         </div>
       </div>
       <div class="hero-image">
@@ -118,32 +122,32 @@
   <section id="kitaplar" class="section">
     <div class="container">
       <h2 class="section-title" data-i18n="nav_books">Kitaplarım</h2>
-      <div class="books-grid">
-        <article class="book-card">
+      <div class="grid">
+        <article class="item-card">
           <img src="travmakodu.jpeg" alt="The Trauma Code">
           <h3>The Trauma Code</h3>
           <a class="btn" target="_blank" href="https://amzn.asia/d/69u7qBn">Amazon</a>
           <div class="flag-list"><span class="fi fi-gb flag"></span></div>
         </article>
-        <article class="book-card">
+        <article class="item-card">
           <img src="inancin_anatomisi.png" alt="Anatomy of Belief">
           <h3>Anatomy of Belief</h3>
           <a class="btn" target="_blank" href="https://amzn.asia/d/2PzdlQH">Amazon</a>
           <div class="flag-list"><span class="fi fi-gb flag"></span><span class="fi fi-de flag"></span><span class="fi fi-fr flag"></span></div>
         </article>
-        <article class="book-card">
+        <article class="item-card">
           <img src="zehir-degil-ciglik.png" alt="Zehir Değil Çığlık">
           <h3>Zehir Değil Çığlık</h3>
           <a class="btn" target="_blank" href="https://www.amazon.com/gp/product/B0FK6KLYJ6">Amazon</a>
           <div class="flag-list"><span class="fi fi-tr flag"></span><span class="fi fi-gb flag"></span></div>
         </article>
-        <article class="book-card">
+        <article class="item-card">
           <img src="kalbin-butcesi.jpg" alt="Kalbin Bütçesi">
           <h3>Kalbin Bütçesi</h3>
           <a class="btn" target="_blank" href="https://www.amazon.com/gp/product/B0FKTCQSBS">Amazon</a>
           <div class="flag-list"><span class="fi fi-tr flag"></span><span class="fi fi-gb flag"></span></div>
         </article>
-        <article class="book-card">
+        <article class="item-card">
           <img src="askin-haritasi.jpeg" alt="Aşkın Haritası">
           <h3>Aşkın Haritası</h3>
           <a class="btn" target="_blank" href="https://www.amazon.com/gp/product/B0FMYXK27M">Amazon</a>
@@ -153,11 +157,34 @@
     </div>
   </section>
 
+  <section id="projeler" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="nav_projects">Projeler & Araştırmalar</h2>
+      <div class="grid">
+        <article class="item-card">
+          <img src="imtp.jpeg" alt="IMTP">
+          <h3>IMTP — Imagery–Memory Transformation Protocol</h3>
+          <p data-i18n="p1_d">Travmatik anıların duygusal yükünü dönüştürmeye yönelik protokol.</p>
+        </article>
+        <article class="item-card">
+          <img src="dim-imec.jpeg" alt="DIM-IMEC">
+          <h3>DIM–IMEC Project</h3>
+          <p data-i18n="p2_d">Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="hakkimda" class="section">
+    <div class="card container">
+      <h2 class="section-title" data-i18n="nav_about">Hakkımda</h2>
+      <p data-i18n="about_p1">Felsefe ve din felsefesi odaklı araştırmacı-yazar; klinik psikolog. Akademik birikimimi manevî içgörüyle birleştirerek travma dönüşümü çalışıyorum.</p>
+    </div>
+  </section>
+
   <section id="iletisim" class="section">
     <div class="container card">
       <h2 class="section-title" data-i18n="nav_contact">İletişim & Platformlar</h2>
-      <p data-i18n="contact_lead">Çalışmalarımı takip etmek ve bağlantı kurmak için aşağıdaki platformları kullanabilirsiniz:</p>
-      
       <div class="social-grid">
         <a href="https://x.com/melikekadence" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
         <a href="https://youtube.com/@melikebalkinkarakaya" target="_blank" class="social-link"><i class="fab fa-youtube"></i> YouTube</a>
@@ -173,27 +200,27 @@
   </section>
 
   <footer class="footer">
-    <div class="container">
-      <p>© 2025 Melike Balkın Karakaya. Tüm Hakları Saklıdır.</p>
-    </div>
+    <div class="container">© 2025 Melike Balkın Karakaya. Tüm Hakları Saklıdır.</div>
   </footer>
 
   <script>
   const tr = {
     site_title:"Melike Balkın Karakaya",
-    nav_about:"Hakkımda", nav_books:"Kitaplarım", nav_contact:"İletişim",
+    nav_about:"Hakkımda", nav_books:"Kitaplarım", nav_projects:"Projeler", nav_contact:"İletişim",
     hero_title:"Merhaba, ben Melike Balkın Karakaya",
     hero_lead:"Klinik Psikolog, Din Felsefesi ve Siyaset Bilimi Araştırmacısı. Bilinç ve travma dönüşümü üzerine çalışıyorum.",
-    btn_books: "Kitaplar",
-    contact_lead: "Çalışmalarımı takip etmek için aşağıdaki platformları kullanabilirsiniz:"
+    about_p1:"Felsefe ve din felsefesi odaklı araştırmacı-yazar; klinik psikolog. Akademik birikimimi manevî içgörüyle birleştirerek travma dönüşümü çalışıyorum.",
+    p1_d:"Travmatik anıların duygusal yükünü dönüştürmeye yönelik protokol.",
+    p2_d:"Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli."
   };
   const en = {
     site_title:"Melike Balkın Karakaya",
-    nav_about:"About", nav_books:"My Books", nav_contact:"Contact",
+    nav_about:"About", nav_books:"My Books", nav_projects:"Projects", nav_contact:"Contact",
     hero_title:"Hi, I'm Melike Balkın Karakaya",
     hero_lead:"Clinical Psychologist, Researcher in Philosophy of Religion and Political Science. Working on consciousness and trauma transformation.",
-    btn_books: "Books",
-    contact_lead: "You can use the following platforms to follow my work and connect:"
+    about_p1:"Researcher-author focused on philosophy of religion; clinical psychologist. I combine academic training with spiritual insight to study trauma transformation.",
+    p1_d:"A protocol aimed at transforming the emotional burden of traumatic memories.",
+    p2_d:"A multilayered consciousness model bridging science, philosophy, and faith."
   };
 
   function applyLang(lang){
