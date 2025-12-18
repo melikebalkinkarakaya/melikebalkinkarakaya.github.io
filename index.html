@@ -58,15 +58,13 @@
   .section-title{font-size:24px;margin:0 0 20px;border-left:4px solid var(--brand);padding-left:12px}
   .card{background:var(--card);border:1px solid #30363d;border-radius:var(--radius);padding:24px}
 
-  /* Kitaplar & Projeler Izgarası */
-  .grid {display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:25px}
+  .grid {display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:25px}
   .item-card {background:var(--card);border:1px solid #30363d;border-radius:14px;padding:16px;text-align:center;transition:transform 0.2s}
   .item-card:hover {transform: translateY(-5px)}
-  .item-card img {width:100%;border-radius:10px;margin-bottom:12px;aspect-ratio:1/1;object-fit:cover}
+  .item-card img {width:100%;border-radius:10px;margin-bottom:12px;aspect-ratio:3/4;object-fit:cover}
   .item-card h3 {font-size:17px;margin:10px 0;min-height:2.5em;display:flex;align-items:center;justify-content:center}
   .item-card p {font-size:13px;color:var(--muted);margin-bottom:15px}
 
-  /* Sosyal Medya Izgarası */
   .social-grid {display:grid;grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));gap:12px;margin-top:20px}
   .social-link {
     background:#21262d;border:1px solid #30363d;border-radius:12px;padding:12px;
@@ -75,7 +73,9 @@
   .social-link:hover {background:var(--brand);color:#0b1020;border-color:transparent}
   .social-link i {font-size:18px;width:20px;text-align:center}
 
-  .flag-list{display:flex;gap:5px;justify-content:center;margin-top:8px}
+  .flag-list{display:flex;gap:6px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+  .flag-list .fi {border-radius:2px; font-size: 14px;}
+  
   .footer{padding:40px 0;text-align:center;color:var(--muted);border-top:1px solid #30363d}
 
   @media (max-width:768px){
@@ -123,36 +123,78 @@
     <div class="container">
       <h2 class="section-title" data-i18n="nav_books">Kitaplarım</h2>
       <div class="grid">
+        
         <article class="item-card">
           <img src="travmakodu.jpeg" alt="The Trauma Code">
           <h3>The Trauma Code</h3>
           <a class="btn" target="_blank" href="https://amzn.asia/d/69u7qBn">Amazon</a>
-          <div class="flag-list"><span class="fi fi-gb flag"></span></div>
+          <div class="flag-list">
+            <span class="fi fi-gb" title="English"></span>
+          </div>
         </article>
+
         <article class="item-card">
           <img src="inancin_anatomisi.png" alt="Anatomy of Belief">
-          <h3>Anatomy of Belief</h3>
+          <h3 data-i18n="book_new_title">Anatomy of Belief</h3>
           <a class="btn" target="_blank" href="https://amzn.asia/d/2PzdlQH">Amazon</a>
-          <div class="flag-list"><span class="fi fi-gb flag"></span><span class="fi fi-de flag"></span><span class="fi fi-fr flag"></span></div>
+          <div class="flag-list">
+            <span class="fi fi-tr" title="Türkçe"></span>
+            <span class="fi fi-gb" title="English"></span>
+            <span class="fi fi-de" title="Deutsch"></span>
+            <span class="fi fi-fr" title="Français"></span>
+            <span class="fi fi-jp" title="Japanese"></span>
+            <span class="fi fi-es" title="Español"></span>
+          </div>
         </article>
+
         <article class="item-card">
           <img src="zehir-degil-ciglik.png" alt="Zehir Değil Çığlık">
           <h3>Zehir Değil Çığlık</h3>
           <a class="btn" target="_blank" href="https://www.amazon.com/gp/product/B0FK6KLYJ6">Amazon</a>
-          <div class="flag-list"><span class="fi fi-tr flag"></span><span class="fi fi-gb flag"></span></div>
+          <div class="flag-list">
+            <span class="fi fi-tr" title="Türkçe"></span>
+            <span class="fi fi-gb" title="English"></span>
+            <span class="fi fi-de" title="Deutsch"></span>
+            <span class="fi fi-es" title="Español"></span>
+            <span class="fi fi-sa" title="Arabic"></span>
+            <span class="fi fi-it" title="Italiano"></span>
+            <span class="fi fi-fr" title="Français"></span>
+            <span class="fi fi-ru" title="Russian"></span>
+            <span class="fi fi-jp" title="Japanese"></span>
+          </div>
         </article>
+
         <article class="item-card">
           <img src="kalbin-butcesi.jpg" alt="Kalbin Bütçesi">
           <h3>Kalbin Bütçesi</h3>
           <a class="btn" target="_blank" href="https://www.amazon.com/gp/product/B0FKTCQSBS">Amazon</a>
-          <div class="flag-list"><span class="fi fi-tr flag"></span><span class="fi fi-gb flag"></span></div>
+          <div class="flag-list">
+            <span class="fi fi-tr" title="Türkçe"></span>
+            <span class="fi fi-gb" title="English"></span>
+            <span class="fi fi-de" title="Deutsch"></span>
+            <span class="fi fi-es" title="Español"></span>
+            <span class="fi fi-sa" title="Arabic"></span>
+            <span class="fi fi-it" title="Italiano"></span>
+            <span class="fi fi-fr" title="Français"></span>
+            <span class="fi fi-ru" title="Russian"></span>
+            <span class="fi fi-jp" title="Japanese"></span>
+          </div>
         </article>
+
         <article class="item-card">
           <img src="askin-haritasi.jpeg" alt="Aşkın Haritası">
           <h3>Aşkın Haritası</h3>
           <a class="btn" target="_blank" href="https://www.amazon.com/gp/product/B0FMYXK27M">Amazon</a>
-          <div class="flag-list"><span class="fi fi-tr flag"></span><span class="fi fi-gb flag"></span><span class="fi fi-de flag"></span></div>
+          <div class="flag-list">
+            <span class="fi fi-tr" title="Türkçe"></span>
+            <span class="fi fi-gb" title="English"></span>
+            <span class="fi fi-de" title="Deutsch"></span>
+            <span class="fi fi-fr" title="Français"></span>
+            <span class="fi fi-jp" title="Japanese"></span>
+            <span class="fi fi-es" title="Español"></span>
+          </div>
         </article>
+
       </div>
     </div>
   </section>
@@ -209,6 +251,7 @@
     nav_about:"Hakkımda", nav_books:"Kitaplarım", nav_projects:"Projeler", nav_contact:"İletişim",
     hero_title:"Merhaba, ben Melike Balkın Karakaya",
     hero_lead:"Klinik Psikolog, Din Felsefesi ve Siyaset Bilimi Araştırmacısı. Bilinç ve travma dönüşümü üzerine çalışıyorum.",
+    book_new_title: "İnancın Anatomisi",
     about_p1:"Felsefe ve din felsefesi odaklı araştırmacı-yazar; klinik psikolog. Akademik birikimimi manevî içgörüyle birleştirerek travma dönüşümü çalışıyorum.",
     p1_d:"Travmatik anıların duygusal yükünü dönüştürmeye yönelik protokol.",
     p2_d:"Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli."
@@ -218,6 +261,7 @@
     nav_about:"About", nav_books:"My Books", nav_projects:"Projects", nav_contact:"Contact",
     hero_title:"Hi, I'm Melike Balkın Karakaya",
     hero_lead:"Clinical Psychologist, Researcher in Philosophy of Religion and Political Science. Working on consciousness and trauma transformation.",
+    book_new_title: "Anatomy of Belief",
     about_p1:"Researcher-author focused on philosophy of religion; clinical psychologist. I combine academic training with spiritual insight to study trauma transformation.",
     p1_d:"A protocol aimed at transforming the emotional burden of traumatic memories.",
     p2_d:"A multilayered consciousness model bridging science, philosophy, and faith."
