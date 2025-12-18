@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
   <title>Melike Balkın Karakaya | Global Blog</title>
-  <meta name="description" content="Melike Balkın Karakaya's articles on psychology and social analysis.">
+  <meta name="description" content="Melike Balkın Karakaya's articles on psychology, philosophy, and social analysis.">
   <link rel="canonical" href="https://melikebalkinkarakaya.org/blog-en.html" />
   <link rel="icon" href="/favicon.ico?v=1">
   <meta name="theme-color" content="#0d1117">
@@ -36,6 +36,13 @@
 
   .section{padding:48px 0}
   .section-title{font-size:32px;margin:0 0 24px;color:#fff;text-align:center;}
+
+  /* About Section Style */
+  .about-card {background:var(--card); border:1px solid #30363d; border-radius:var(--radius); padding:30px; margin-bottom:50px; line-height:1.8;}
+  .about-card h2 {color:var(--brand); margin-top:0;}
+  .about-grid {display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:30px; margin-top:20px;}
+  .about-item h3 {color:var(--brand); font-size:18px; border-bottom:1px solid #30363d; padding-bottom:8px;}
+  .about-item ul {padding-left:20px; color:var(--muted); font-size:15px;}
   
   .blog-list{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));}
   .blog-card{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid #30363d;box-shadow:0 4px 10px rgba(0,0,0,.25);transition:transform .2s ease-in-out,box-shadow .2s ease-in-out;height:100%;display:flex;flex-direction:column;text-decoration:none;color:inherit;}
@@ -54,8 +61,7 @@
     <div class="container nav-row">
       <a class="brand" href="index.html">Melike Balkın Karakaya</a>
       <div class="menu">
-        <a href="index.html#hakkimda">About</a>
-        <a href="index.html#kitaplar">Books</a>
+        <a href="#about">About</a>
         <a href="blog-en.html" style="color:var(--brand); font-weight:bold;">Blog</a>
         <a href="index.html#iletisim">Contact</a>
       </div>
@@ -66,8 +72,38 @@
     </div>
   </nav>
 
-  <main class="section">
-    <div class="container">
+  <main class="container">
+    
+    <section id="about" class="section">
+      <div class="about-card">
+        <h2>About Melike Balkın Karakaya</h2>
+        <p>Melike Balkın Karakaya is a Clinical Psychologist, Philosopher of Religion, and Political Science Researcher. She integrates academic expertise with spiritual insight, focusing her work on trauma transformation, addiction psychology, belief dynamics, and perception management.</p>
+        
+        <div class="about-grid">
+          <div class="about-item">
+            <h3>🔹 Languages</h3>
+            <ul>
+              <li>English (Upper-Intermediate to Advanced)</li>
+              <li>Arabic, Persian, German (Basic)</li>
+            </ul>
+          </div>
+          <div class="about-item">
+            <h3>🔹 Areas of Expertise</h3>
+            <ul>
+              <li>Family and Couples Therapy / Addiction</li>
+              <li>Cognitive Behavioral Therapy (CBT) & ACT</li>
+              <li>Integrative Psychotherapy & Mindfulness</li>
+              <li>Hypnotherapy & Regression Therapy</li>
+              <li>Strategic Manipulation & Psychological Warfare</li>
+            </ul>
+          </div>
+          <div class="about-item" style="grid-column: 1 / -1;">
+            <h3>🔹 Academic Interests</h3>
+            <p style="font-size:15px; color:var(--muted);">Philosophy of Religion and Sufi Thought, Psychology of Belief and Metaphysical Inquiry, Social Perception Management and Political Communication. Her research is situated at the intersection of consciousness, spirituality, philosophy, and political science.</p>
+          </div>
+        </div>
+      </div>
+
       <h1 class="section-title">Global Thoughts</h1>
       <div class="blog-list">
         
@@ -96,7 +132,7 @@
         </a>
        
       </div>
-    </div>
+    </section>
   </main>
 
   <footer class="footer">
