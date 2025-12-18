@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
 
   <style>
-  :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--ring:rgba(88,166,255,.25);--container:1100px;--radius:18px}
+  :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--ring:rgba(88,166,255,.25);--container:1100px;--radius:18px;--danger:#f85149}
   *{box-sizing:border-box} html{scroll-behavior:smooth}
   body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial;color:var(--text);background:var(--bg)}
   a{color:var(--brand);text-decoration:none} img{max-width:100%;display:block}
@@ -36,7 +36,6 @@
   .menu a{padding:8px 12px;border-radius:10px;color:#c9d1d9;font-size:14px}
   .menu a:hover{background:#21262d}
 
-  /* Bayraklı Dil Butonları */
   .lang{display:flex;gap:10px;align-items:center}
   .lang-btn{
     background:#21262d;border:1px solid #30363d;border-radius:12px;
@@ -54,6 +53,18 @@
   .btn{background:var(--brand);color:#0b1020;padding:12px 18px;border-radius:12px;font-weight:600;display:inline-flex;align-items:center;gap:8px}
   .btn.alt{background:#21262d;color:#e6edf3}
   .hero-image img{max-width:250px;border-radius:50%;border:3px solid var(--brand);box-shadow:0 4px 15px rgba(0,0,0,.4)}
+
+  /* Son Yazı Bölümü Stili */
+  .latest-post-section {margin-top: -30px; position: relative; z-index: 10;}
+  .latest-post-card {
+    background: #1c2128; border: 1px solid var(--brand); border-radius: 16px; 
+    padding: 20px; display: flex; align-items: center; gap: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: 0.3s;
+  }
+  .latest-post-card:hover {transform: translateY(-3px); border-color: #fff;}
+  .latest-tag {background: var(--brand); color: #0d1117; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: bold; text-transform: uppercase;}
+  .latest-title {font-size: 18px; font-weight: bold; color: #fff; margin: 5px 0;}
+  .latest-link {margin-left: auto; background: rgba(88,166,255,0.1); color: var(--brand); padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: bold;}
 
   .section{padding:48px 0}
   .section-title{font-size:24px;margin:0 0 20px;border-left:4px solid var(--brand);padding-left:12px}
@@ -78,16 +89,14 @@
   .social-link:hover {background:var(--brand);color:#0b1020;border-color:transparent}
   .social-link i {font-size:18px;width:20px;text-align:center}
 
-  .flag-list{display:flex;gap:6px;justify-content:center;margin-top:10px;flex-wrap:wrap}
-  .flag-list .fi {border-radius:2px; font-size: 14px;}
-  
   .footer{padding:40px 0;text-align:center;color:var(--muted);border-top:1px solid #30363d}
 
   @media (max-width:768px){
     .hero-grid{flex-direction:column;text-align:center}
     .cta{justify-content:center}
     h1{font-size:32px}
-    .about-content ul {grid-template-columns: 1fr;}
+    .latest-post-card {flex-direction: column; text-align: center;}
+    .latest-link {margin: 10px 0 0 0; width: 100%;}
   }
   </style>
 </head>
@@ -126,11 +135,21 @@
     </div>
   </header>
 
+  <div class="container latest-post-section">
+    <a href="#" id="latest-post-link" class="latest-post-card">
+      <div class="latest-tag" data-i18n="latest_tag">Son Yazı</div>
+      <div>
+        <div class="latest-title" id="latest-post-title">AVM Kuyruklarını Refah Sanan Zihniyet</div>
+        <div style="font-size: 13px; color: var(--muted);" id="latest-post-date">18 Aralık 2025</div>
+      </div>
+      <div class="latest-link" data-i18n="read_more">Oku →</div>
+    </a>
+  </div>
+
   <section id="hakkimda" class="section">
     <div class="container card about-content">
       <h2 class="section-title" data-i18n="nav_about">Hakkımda</h2>
-      <div id="about-text-container">
-        </div>
+      <div id="about-text-container"></div>
     </div>
   </section>
 
@@ -219,6 +238,10 @@
     hero_title:"Merhaba, ben Melike Balkın Karakaya",
     hero_lead:"Klinik Psikolog, Din Felsefesi ve Siyaset Bilimi Araştırmacısı. Bilinç ve travma dönüşümü üzerine çalışıyorum.",
     book_new_title: "İnancın Anatomisi",
+    latest_tag: "Son Yazı",
+    latest_title: "AVM Kuyruklarını Refah Sanan Zihniyet",
+    latest_url: "the-mindset-mistaking-mall-queues-for-prosperity.html",
+    read_more: "Oku →",
     p1_d:"Travmatik anıların duygusal yükünü dönüştürmeye yönelik protokol.",
     p2_d:"Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli.",
     about_html: `
@@ -226,9 +249,7 @@
       <h3>🔹 Diller</h3>
       <ul><li>İngilizce (Orta-İleri)</li><li>Arapça (Temel)</li><li>Farsça (Temel)</li><li>Almanca (Temel)</li></ul>
       <h3>🔹 Uzmanlık Alanları</h3>
-      <ul><li>Aile ve Çift Terapisi</li><li>Bağımlılık ve Madde Kullanımı</li><li>Ayrılık Kaygısı</li><li>Bilişsel Davranışçı Terapi (BDT)</li><li>Bütünleyici Psikoterapi</li><li>Farkındalık (Mindfulness)</li><li>Duygusal Düzenleme</li><li>Hipnoterapi & Regresyon Terapisi</li><li>Kabul ve Bağlılık Terapisi (KKT)</li><li>Manevi Danışmanlık</li><li>Algı Yönetimi & Sosyal Psikoloji</li><li>Stratejik Manipülasyon ve Psikolojik Savaş</li><li>Liderlik & Online Terapi</li></ul>
-      <h3>🔹 Akademik İlgi Alanları</h3>
-      <ul><li>Din felsefesi ve Sufi düşüncesi</li><li>İnanç psikolojisi ve metafiziksel sorgulama</li><li>Sosyal algı yönetimi ve siyasi iletişim</li><li>Bilinç ve sosyal dönüşüm arasındaki ilişki</li></ul>
+      <ul><li>Aile ve Çift Terapisi</li><li>Bağımlılık ve Madde Kullanımı</li><li>Bilinç ve sosyal dönüşüm arasındaki ilişki</li></ul>
       <p style="margin-top:20px;">Araştırmaları bilinç, maneviyat, felsefe ve siyaset bilimi kesişiminde yer almaktadır...</p>
     `
   };
@@ -239,17 +260,18 @@
     hero_title:"Hi, I'm Melike Balkın Karakaya",
     hero_lead:"Clinical Psychologist, Researcher in Philosophy of Religion and Political Science. I focus on consciousness and trauma transformation.",
     book_new_title: "Anatomy of Belief",
+    latest_tag: "Latest Post",
+    latest_title: "The Mindset Mistaking Mall Queues for Prosperity",
+    latest_url: "the-mindset-mistaking-mall-queues-for-prosperity.html",
+    read_more: "Read →",
     p1_d:"A protocol aimed at transforming the emotional burden of traumatic memories.",
     p2_d:"A multilayered consciousness model bridging science, philosophy, and faith.",
     about_html: `
-      <p>Melike Balkın Karakaya is a Clinical Psychologist, Philosopher of Religion, and Political Science Researcher. She integrates academic expertise with spiritual insight, focusing her work on trauma transformation, addiction psychology, belief dynamics, and perception management.</p>
+      <p>Melike Balkın Karakaya is a Clinical Psychologist, Philosopher of Religion, and Political Science Researcher. She integrates academic expertise with spiritual insight.</p>
       <h3>🔹 Languages</h3>
-      <ul><li>English (Upper-Intermediate to Advanced)</li><li>Arabic (Basic)</li><li>Persian (Basic)</li><li>German (Basic)</li></ul>
+      <ul><li>English (Advanced)</li><li>Arabic (Basic)</li><li>Persian (Basic)</li><li>German (Basic)</li></ul>
       <h3>🔹 Areas of Expertise</h3>
-      <ul><li>Family and Couples Therapy</li><li>Addiction and Substance Use</li><li>Separation Anxiety</li><li>Cognitive Behavioral Therapy (CBT)</li><li>Integrative Psychotherapy</li><li>Mindfulness-Based Approaches</li><li>Emotional Regulation</li><li>Hypnotherapy & Regression Therapy</li><li>Acceptance and Commitment Therapy (ACT)</li><li>Spiritual Counseling</li><li>Perception Management & Social Psychology</li><li>Strategic Manipulation and Psychological Warfare</li><li>Leadership & Online Therapy</li></ul>
-      <h3>🔹 Academic Interests</h3>
-      <ul><li>Philosophy of Religion and Sufi Thought</li><li>Psychology of Belief and Metaphysical Inquiry</li><li>Social Perception Management and Political Communication</li><li>The Relationship Between Consciousness and Social Transformation</li></ul>
-      <p style="margin-top:20px;">Her research is situated at the intersection of consciousness, spirituality, philosophy, and political science.</p>
+      <ul><li>Family and Couples Therapy</li><li>Addiction and Substance Use</li><li>Relationship Between Consciousness and Social Transformation</li></ul>
     `
   };
 
@@ -257,21 +279,21 @@
     const safe = (lang === 'en') ? 'en' : 'tr';
     const dict = (safe === 'en') ? en : tr;
     
-    // Metinleri Güncelle
     document.querySelectorAll('[data-i18n]').forEach(el=>{
       const key = el.getAttribute('data-i18n');
       if(dict[key]) el.textContent = dict[key];
     });
 
-    // Hakkımda İçeriğini Güncelle
     document.getElementById('about-text-container').innerHTML = dict.about_html;
 
-    // Blog Linklerini Güncelle
+    // Son Yazı Güncelleme
+    document.getElementById('latest-post-title').textContent = dict.latest_title;
+    document.getElementById('latest-post-link').href = dict.latest_url;
+
     const blogUrl = (safe === 'en') ? 'blog-en.html' : 'blog.html';
     document.getElementById('nav-blog-link').href = blogUrl;
     document.getElementById('hero-blog-btn').href = blogUrl;
 
-    // Buton Durumları
     document.getElementById('btn-tr').classList.toggle('active', safe==='tr');
     document.getElementById('btn-en').classList.toggle('active', safe==='en');
     localStorage.setItem('lang', safe);
