@@ -65,7 +65,7 @@
   <footer>© 2025 Melike Balkın Karakaya</footer>
 
   <script>
-    // ---- 1) Makale listesi (Yeni yazınız en üstte eklendi) ----
+    // ---- 1) Makale listesi ----
     const posts = [
       { slug:"AVM Kuyruklarını Refah Sanan Zihin", title:"AVM Kuyruklarını Refah Sanan Zihin", date:"18 Aralık 2025", excerpt:"Türkiye ekonomisini anlamayı reddeden yeni cehalet biçimi üzerine bir analiz..."},
       { slug:"raconun-bittigi-yer", title:"Raconun Bittiği Yer: Mafya Kılıfında Haysiyetsizlik", date:"01 Eylül 2025", excerpt:"Bir zamanlar yeraltı dünyasında bile bir kural vardı…"},
@@ -131,9 +131,11 @@
       container.append(back, art);
 
       try{
-        const path = `${slug}.html`;
+        // encodeURIComponent dosya adındaki boşlukları web uyumlu hale getirir
+        const path = `${encodeURIComponent(slug)}.html`;
         const res = await fetch(path);
-        if(!res.ok) throw new Error(`Yüklenemedi (${res.status})`);
+        if(!res.ok) throw new Error(`Dosya bulunamadı (${res.status})`);
+        
         let html = await res.text();
         html = html.replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, "");
         const tmp = document.createElement("div");
@@ -151,8 +153,11 @@
         if(date) art.append(date);
         art.append(bodyDiv);
 
+        document.title = `${titleText} | Melike Balkın Karakaya`;
+
       }catch(err){
-        art.innerHTML = `<p>Makale yüklenirken sorun oluştu: ${err.message}</p>`;
+        art.innerHTML = `<p>Makale yüklenirken sorun oluştu: ${err.message}</p>
+                         <p>Lütfen sunucuda <b>${slug}.html</b> dosyasının varlığından emin olun.</p>`;
       }
     }
 
