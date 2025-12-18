@@ -19,7 +19,7 @@
   </script>
 
   <style>
-  :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--ring:rgba(88,166,255,.25);--container:1100px;--radius:18px}
+  :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--ring:rgba(88,166,255,.25);--container:1100px;--radius:18px;--danger:#f85149}
   *{box-sizing:border-box} html{scroll-behavior:smooth}
   body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg)}
   a{color:var(--brand);text-decoration:none}
@@ -49,6 +49,7 @@
   .blog-list{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));}
   .blog-card{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid #30363d;box-shadow:0 4px 10px rgba(0,0,0,.25);transition:transform .2s ease-in-out,box-shadow .2s ease-in-out;height:100%;display:flex;flex-direction:column;text-decoration:none;color:inherit;}
   .blog-card:hover{transform:translateY(-5px);box-shadow:0 8px 15px rgba(0,0,0,.4);border-color:var(--brand);}
+  .blog-card.highlight:hover{border-color:var(--danger);}
   .blog-card .card-content{padding:24px;}
   .blog-card h3{margin:0 0 12px;font-size:22px;color:var(--brand);line-height:1.3;}
   .blog-card p{font-size:15px;color:var(--muted);line-height:1.6;margin:0;}
@@ -78,34 +79,33 @@
     <section id="about" class="section">
       <div class="about-card">
         <h2>About Melike Balkın Karakaya</h2>
-        <p>Melike Balkın Karakaya is a Clinical Psychologist, Philosopher of Religion, and Political Science Researcher. She integrates academic expertise with spiritual insight, focusing her work on trauma transformation, addiction psychology, belief dynamics, and perception management.</p>
+        <p>Melike Balkın Karakaya is a Clinical Psychologist, Philosopher of Religion, and Political Science Researcher. She integrates academic expertise with spiritual insight, focusing her work on trauma transformation, addiction psychology, and social analysis.</p>
         <div class="about-grid">
-          <div class="about-item">
-            <h3>🔹 Languages</h3>
-            <ul>
-              <li>English (Upper-Intermediate to Advanced)</li>
-              <li>Arabic, Persian, German (Basic)</li>
-            </ul>
-          </div>
           <div class="about-item">
             <h3>🔹 Areas of Expertise</h3>
             <ul>
               <li>Family and Couples Therapy / Addiction</li>
-              <li>Cognitive Behavioral Therapy (CBT) & ACT</li>
               <li>Integrative Psychotherapy & Mindfulness</li>
-              <li>Hypnotherapy & Regression Therapy</li>
               <li>Strategic Manipulation & Psychological Warfare</li>
             </ul>
           </div>
-          <div class="about-item" style="grid-column: 1 / -1;">
-            <h3>🔹 Academic Interests</h3>
-            <p style="font-size:15px; color:var(--muted);">Philosophy of Religion and Sufi Thought, Psychology of Belief and Metaphysical Inquiry, Social Perception Management and Political Communication.</p>
+          <div class="about-item">
+            <h3>🔹 Philosophy</h3>
+            <p style="font-size:15px; color:var(--muted);">Sufi-Oriented Thinking combined with modern Clinical Psychology to analyze collective mind dynamics and individual transformation.</p>
           </div>
         </div>
       </div>
 
       <h1 class="section-title">Global Thoughts</h1>
       <div class="blog-list">
+
+        <a href="Benim Çocuğumun.html" class="blog-card highlight" style="border-top: 3px solid var(--danger);">
+          <div class="card-content">
+            <h3 style="color:var(--danger)">“No Sentence Can Bring My Child Back...”</h3>
+            <p>A mother's demand for justice: Why the age of a perpetrator should not outweigh the loss of a life. A powerful call for a moral reform in the legal system.</p>
+            <span class="meta">July 23, 2025</span>
+          </div>
+        </a>
 
         <a href="Liderliğin Gizli Silahı.html" class="blog-card">
           <div class="card-content">
