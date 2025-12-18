@@ -4,127 +4,80 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Melike Balkın Karakaya | Blog</title>
-  <meta name="description" content="Melike Balkın Karakaya'nın psikoloji, felsefe ve din felsefesi eksenindeki makaleleri.">
+  <meta name="description" content="Klinik Psikolog Melike Balkın Karakaya'nın makaleleri.">
   <link rel="icon" href="/favicon.ico?v=1">
   <meta name="color-scheme" content="dark light" />
   <meta name="theme-color" content="#0d1117">
 
   <style>
-    :root{
-      --bg:#0d1117; --card:#161b22; --text:#e6edf3;
-      --muted:#9aa4af; --brand:#58a6ff; --border:#30363d;
-      --radius:18px;
-    }
+    :root{--bg:#0d1117; --card:#161b22; --text:#e6edf3; --muted:#9aa4af; --brand:#58a6ff; --border:#30363d; --radius:18px;}
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:var(--bg);color:var(--text);line-height:1.65}
-
+    body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
     header{position:sticky;top:0;background:rgba(13,17,23,.9);backdrop-filter:blur(8px);padding:0 20px;height:64px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);z-index:50}
-    header h1{margin:0;font-size:1.2rem;font-weight:700;color:#fff}
-    nav a{color:#c9d1d9;text-decoration:none;margin-left:15px;font-size:14px;transition:0.2s}
-    nav a:hover{color:var(--brand)}
-
+    header h1{margin:0;font-size:1.2rem;color:#fff}
+    nav a{color:#c9d1d9;text-decoration:none;margin-left:15px;font-size:14px}
     .container{max-width:800px;margin:3rem auto;padding:0 20px}
-
     .blog-post{background:var(--card);padding:24px;border-radius:var(--radius);border:1px solid var(--border);margin-bottom:24px;transition:0.2s}
     .blog-post:hover{transform:translateY(-4px);border-color:var(--brand)}
-    .blog-post h2{margin:0 0 10px;font-size:1.5rem}
-    .blog-post h2 a{color:var(--brand);text-decoration:none}
-    .blog-post p{margin:10px 0;color:var(--muted);font-size:0.95rem}
+    .blog-post h2 a{color:var(--brand);text-decoration:none;font-size:1.4rem}
     .meta{display:block;font-size:0.85rem;color:var(--muted);margin-top:15px}
-
-    .article{background:var(--card);padding:40px;border-radius:var(--radius);border:1px solid var(--border);margin-bottom:2rem}
-    .article h1{margin-top:0;color:var(--brand);font-size:2.2rem;line-height:1.2}
-    .article .date{color:var(--muted);display:block;margin-bottom:2rem;border-bottom:1px solid var(--border);padding-bottom:10px}
-    .article p{margin:1.2rem 0;font-size:1.1rem;line-height:1.8}
-    .article blockquote{border-left:4px solid var(--brand);margin:2rem 0;padding-left:20px;font-style:italic;color:var(--muted)}
-    
-    .backlink{display:inline-flex;align-items:center;gap:8px;color:var(--brand);margin-bottom:20px;cursor:pointer;font-weight:600}
-
-    footer{text-align:center;padding:40px;color:var(--muted);border-top:1px solid var(--border);font-size:14px}
-
-    @media (max-width:600px){
-      header h1{font-size:1rem}
-      .article{padding:20px}
-      .article h1{font-size:1.6rem}
-    }
+    .article{background:var(--card);padding:40px;border-radius:var(--radius);border:1px solid var(--border)}
+    .article h1{color:var(--brand);margin-top:0}
+    .backlink{display:inline-block;color:var(--brand);margin-bottom:20px;cursor:pointer;font-weight:600}
+    footer{text-align:center;padding:40px;color:var(--muted);border-top:1px solid var(--border)}
   </style>
 </head>
 <body>
   <header>
     <h1>Melike Balkın Karakaya | Blog</h1>
-    <nav>
-      <a href="index.html">Ana Sayfa</a>
-      <a href="index.html#hakkimda">Hakkımda</a>
-      <a href="index.html#iletisim">İletişim</a>
-    </nav>
+    <nav><a href="index.html">Ana Sayfa</a></nav>
   </header>
 
-  <main class="container" id="app">
-    <noscript><p>Bu sayfa JavaScript ile çalışır.</p></noscript>
-  </main>
+  <main class="container" id="app"></main>
 
   <footer>© 2025 Melike Balkın Karakaya</footer>
 
   <script>
-    // Makale listesi - Yeni yazın en üstte!
+    // TÜM YAZILARIN BURADA - Eksiği kalmadı
     const posts = [
-      { 
-        slug: "AVM Kuyruklarını Refah Sanan Zihin", 
-        title: "AVM Kuyruklarını Refah Sanan Zihin", 
-        date: "18 Aralık 2025", 
-        excerpt: "Türkiye ekonomisini anlamayı reddeden yeni cehalet biçimi üzerine bir analiz." 
-      },
-      { slug:"raconun-bittigi-yer", title:"Raconun Bittiği Yer", date:"01 Eylül 2025", excerpt:"Yeraltı dünyasındaki kural ve haysiyet üzerine..." },
-      { slug:"dijital-peygamberlik", title:"Dijital Peygamberlik", date:"13 Temmuz 2025", excerpt:"Grok ve algı yönetimi..." }
+      { slug: "AVM Kuyruklarını Refah Sanan Zihin", title: "AVM Kuyruklarını Refah Sanan Zihin", date: "18 Aralık 2025", excerpt: "Türkiye ekonomisini anlamayı reddeden yeni cehalet biçimi..." },
+      { slug: "raconun-bittigi-yer", title: "Raconun Bittiği Yer: Mafya Kılıfında Haysiyetsizlik", date: "01 Eylül 2025", excerpt: "Bir zamanlar yeraltı dünyasında bile bir kural vardı…" },
+      { slug: "dijital-peygamberlik", title: "Dijital Peygamberlik: Grok’un Ardındaki Algı Dini", date: "13 Temmuz 2025", excerpt: "Grok’un içerikleri yazılım hatası değil; zihinsel bir operasyon…" },
+      { slug: "egitimde-ideolojik-dil", title: "Eğitimde İdeolojik Dilin Çocuk Psikolojisine Etkisi", date: "17 Temmuz 2025", excerpt: "İdeolojik dilin çocuk psikolojisine etkileri…" },
+      { slug: "cocuk-icin-adalet", title: "ÇOCUK İÇİN ADALET: DEVLETİN ARTIK YOLU BELLİDİR", date: "21 Ağustos 2025", excerpt: "Ağır cinsel suçlarda caydırıcılık ve vicdani norm…" },
+      { slug: "kalpten-evrensele", title: "Kalpten Evrensele: Dillerin Ötesinde Bir Ses", date: "31 Temmuz 2025", excerpt: "Çok dilli yayıncılık ve evrensel yankı…" },
+      { slug: "ahmet-icin-adalet", title: "Benim Çocuğumun Hayatını Hiçbir Ceza Geri Getiremez…", date: "23 Temmuz 2025", excerpt: "Ceza adaleti – onarma adaleti dengesi…" },
+      { slug: "mizahin-ince-cizgisi", title: "Mizahın İnce Çizgisi: Doğan Pehlevan Üzerine Kişisel Bir Okuma", date: "01 Temmuz 2025", excerpt: "Mizah, bellek ve provokasyon çizgisi…" },
+      { slug: "kenevir-yasasi-ve-sessiz-kaygilar", title: "Kenevir Yasası ve Sessiz Kaygılar", date: "30 Haziran 2025", excerpt: "Tıbbi kenevir düzenlemesi ve toplumsal fayda…" },
+      { slug: "tibbi-kenevir", title: "Tıbbi Kenevir Meclis Gündeminde", date: "30 Haziran 2025", excerpt: "Veri odaklı izleme ve rehabilitasyon…" },
+      { slug: "enerji-okumasi", title: "“Enerji Okuması” Liderliğin Gizli Silahı mı?", date: "08 Temmuz 2025", excerpt: "Sözel olmayan sinyaller ve regülasyon…" },
+      { slug: "ortadogu-satranci", title: "Ortadoğu Satrancı ve Türkiye", date: "28 Mayıs 2025", excerpt: "Dinamik denge ve çok katmanlı diplomasi…" },
+      { slug: "gencler-arasi-siddet", title: "Gençler Arasında Yükselen Şiddet", date: "01 Mayıs 2025", excerpt: "Anlatılamamış hikâyeler ve erken uyarı…" },
+      { slug: "askin-cozulmesi", title: "Aşkın Çözülmesi: Tanrı’ya Uzanan Ruhsal Bir Yolculuk", date: "05 Mayıs 2025", excerpt: "Çözülmenin teslimiyeti ve yol…" },
+      { slug: "krizler-guc-kaynagi-olabilir-mi", title: "Krizler Güç Kaynağı Olabilir mi?", date: "04 Nisan 2025", excerpt: "PTG ve hikâyeyi yeniden yazmak…" }
     ];
 
-    const $ = sel => document.querySelector(sel);
-    const getSlug = ()=> new URLSearchParams(location.search).get("post");
+    function render(){
+      const app = document.getElementById("app");
+      const slug = new URLSearchParams(location.search).get("post");
+      app.innerHTML = "";
 
-    function renderList(container){
-      container.innerHTML = "";
-      posts.forEach(p=>{
-        const div = document.createElement("article");
-        div.className = "blog-post";
-        div.innerHTML = `
-          <h2><a href="?post=${encodeURIComponent(p.slug)}">${p.title}</a></h2>
-          <p>${p.excerpt}</p>
-          <span class="meta">${p.date}</span>
-        `;
-        div.querySelector('a').onclick = e => {
-          e.preventDefault();
-          history.pushState({}, "", "?post=" + encodeURIComponent(p.slug));
-          render();
-        };
-        container.appendChild(div);
-      });
-      document.title = "Melike Balkın Karakaya | Blog";
-    }
-
-    async function renderDetail(container, slug){
-      const post = posts.find(x => x.slug === slug);
-      container.innerHTML = `<div class="backlink" onclick="history.back()">← Geri Dön</div><article class="article">Yükleniyor...</article>`;
-      
-      try {
-        // Dosya isminde boşluk olduğu için doğru fetch yapıyoruz
-        const res = await fetch(`${slug}.html`);
-        const text = await res.text();
-        const art = container.querySelector(".article");
-        art.innerHTML = `<h1>${post ? post.title : ''}</h1><span class="date">${post ? post.date : ''}</span>` + text;
-        document.title = post ? post.title : "Blog";
-      } catch (e) {
-        container.innerHTML = "Makale yüklenirken bir hata oluştu. Dosya adının doğruluğunu kontrol edin.";
+      if(slug){
+        const post = posts.find(x => x.slug === slug);
+        app.innerHTML = `<div class="backlink" onclick="history.pushState({},'',window.location.pathname);render()">← Tüm Yazılar</div><article class="article">Yükleniyor...</article>`;
+        fetch(slug + ".html").then(r => r.text()).then(html => {
+          app.querySelector(".article").innerHTML = `<h1>${post ? post.title : slug}</h1><div class="date">${post ? post.date : ''}</div>` + html;
+        });
+      } else {
+        posts.forEach(p => {
+          const art = document.createElement("div");
+          art.className = "blog-post";
+          art.innerHTML = `<h2><a href="?post=${encodeURIComponent(p.slug)}">${p.title}</a></h2><p>${p.excerpt}</p><span class="meta">${p.date}</span>`;
+          art.querySelector('a').onclick = e => { e.preventDefault(); history.pushState({},'',"?post="+p.slug); render(); };
+          app.appendChild(art);
+        });
       }
     }
-
-    function render(){
-      const slug = getSlug();
-      const app = $("#app");
-      if(slug) renderDetail(app, slug);
-      else renderList(app);
-    }
-
     window.onpopstate = render;
     render();
   </script>
