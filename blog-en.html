@@ -4,10 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
-  <title>Melike Balkın Karakaya | Blog</title>
-  <meta name="description" content="Melike Balkın Karakaya's articles, analyses, and thoughts on psychology, philosophy, and philosophy of religion.">
+  <title>Melike Balkın Karakaya | Global Blog</title>
+  <meta name="description" content="Melike Balkın Karakaya's articles on psychology and social analysis.">
   <link rel="canonical" href="https://melikebalkinkarakaya.org/blog-en.html" />
-
   <link rel="icon" href="/favicon.ico?v=1">
   <meta name="theme-color" content="#0d1117">
   
@@ -23,7 +22,7 @@
   :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--ring:rgba(88,166,255,.25);--container:1100px;--radius:18px}
   *{box-sizing:border-box} html{scroll-behavior:smooth}
   body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg)}
-  a{color:var(--brand);text-decoration:none} img{max-width:100%;display:block}
+  a{color:var(--brand);text-decoration:none}
   .container{max-width:var(--container);margin:auto;padding:0 20px}
 
   .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:rgba(13,17,23,.9);border-bottom:1px solid #30363d}
@@ -32,22 +31,21 @@
   .menu{display:flex;gap:16px;flex-wrap:wrap}
   .menu a{padding:8px 12px;border-radius:10px;color:#c9d1d9}
   .menu a:hover{background:#21262d}
-  .lang{display:flex;gap:8px;align-items:center}
   .lang button{background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:999px;padding:6px 10px;font-weight:600;cursor:pointer}
   .lang button.active{background:var(--brand);color:#0b1020;border-color:transparent}
 
   .section{padding:48px 0}
-  .section-title{font-size:24px;margin:0 0 16px}
+  .section-title{font-size:32px;margin:0 0 24px;color:#fff;text-align:center;}
   
-  .blog-list{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
-  .blog-card{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid #30363d;box-shadow:0 4px 10px rgba(0,0,0,.25);transition:transform .2s ease-in-out,box-shadow .2s ease-in-out;height:100%;display:flex;flex-direction:column;text-decoration:none;color:inherit;}
-  .blog-card:hover{transform:translateY(-5px);box-shadow:0 8px 15px rgba(0,0,0,.4);}
-  .blog-card .card-content{padding:18px;}
-  .blog-card h3{margin:0 0 8px;font-size:20px;color:var(--brand);}
-  .blog-card p{font-size:14px;color:var(--muted);line-height:1.5;margin:0;}
-  .blog-card .meta{font-size:12px;color:var(--muted);display:block;margin-top:10px;}
+  .blog-list{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));}
+  .blog-card{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid #30363d;box-shadow:0 4px 10px rgba(0,0,0,.25);transition:transform .2s ease-in-out,box-shadow .2s ease-in-out;height:100%;display:flex;flex-direction:column;text-decoration:none;color:inherit;}
+  .blog-card:hover{transform:translateY(-5px);box-shadow:0 8px 15px rgba(0,0,0,.4);border-color:var(--brand);}
+  .blog-card .card-content{padding:24px;}
+  .blog-card h3{margin:0 0 12px;font-size:22px;color:var(--brand);line-height:1.3;}
+  .blog-card p{font-size:15px;color:var(--muted);line-height:1.6;margin:0;}
+  .blog-card .meta{font-size:13px;color:var(--muted);display:block;margin-top:20px;font-weight:500;}
 
-  .footer{padding:24px 0 40px;color:#8b949e;text-align:center;border-top:1px solid #30363d}
+  .footer{padding:40px 0;color:#8b949e;text-align:center;border-top:1px solid #30363d;margin-top:60px;}
   </style>
 </head>
 <body>
@@ -59,25 +57,32 @@
         <a href="index.html#hakkimda">About</a>
         <a href="index.html#kitaplar">Books</a>
         <a href="blog-en.html" style="color:var(--brand); font-weight:bold;">Blog</a>
-        <a href="index.html#projeler">Projects</a>
         <a href="index.html#iletisim">Contact</a>
       </div>
       <div class="lang">
-        <a href="blog.html"><button id="btn-tr">TR</button></a>
-        <button id="btn-en" class="active">EN</button>
+        <a href="blog.html"><button>TR</button></a>
+        <button class="active">EN</button>
       </div>
     </div>
   </nav>
 
   <main class="section">
     <div class="container">
-      <h1 class="section-title">Global Blog</h1>
+      <h1 class="section-title">Global Thoughts</h1>
       <div class="blog-list">
         
+        <a href="CAN CRISES BECOME A SOURCE OF STRENGTH.html" class="blog-card">
+          <div class="card-content">
+            <h3>Can Crises Become a Source of Strength?</h3>
+            <p>“The Human Who Rises from the Ashes” - Exploring post-traumatic growth and the potential for rebirth within every collapse.</p>
+            <span class="meta">April 04, 2025</span>
+          </div>
+        </a>
+
         <a href="the-mindset-mistaking-mall-queues-for-prosperity.html" class="blog-card">
           <div class="card-content">
             <h3>The Mindset Mistaking Mall Queues for Prosperity</h3>
-            <p>An analysis of the new form of economic ignorance that refuses to understand the reality behind Turkey's economic landscape.</p>
+            <p>An analysis of the new form of economic ignorance and its psychological implications in Turkey's current landscape.</p>
             <span class="meta">December 18, 2025</span>
           </div>
         </a>
@@ -85,7 +90,7 @@
         <a href="digital-prophethood.html" class="blog-card">
           <div class="card-content">
             <h3>Digital Prophethood: The Perception Religion Behind Grok</h3>
-            <p>Elon Musk’s AI, Grok, has started to produce content that calls for its re-evaluation not merely as an AI but as an actor of psychological warfare.</p>
+            <p>Evaluating AI not merely as a tool, but as an actor of psychological warfare and collective perception management.</p>
             <span class="meta">July 13, 2025</span>
           </div>
         </a>
