@@ -10,10 +10,6 @@
 
   <link rel="icon" href="/favicon.ico?v=1">
   <meta name="theme-color" content="#0d1117">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Melike Balkın Karakaya">
-  <meta property="og:description" content="Klinik Psikolog; din felsefesi ve siyaset bilimi araştırmacısı.">
-  <meta property="og:url" content="https://melikebalkinkarakaya.org/">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BKY0021LPP"></script>
   <script>
@@ -23,6 +19,7 @@
     gtag('config', 'G-BKY0021LPP');
   </script>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
 
   <style>
@@ -35,8 +32,8 @@
   .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:rgba(13,17,23,.9);border-bottom:1px solid #30363d}
   .nav-row{display:flex;align-items:center;justify-content:space-between;height:64px}
   .brand{font-weight:700;color:#fff}
-  .menu{display:flex;gap:16px;flex-wrap:wrap}
-  .menu a{padding:8px 12px;border-radius:10px;color:#c9d1d9}
+  .menu{display:flex;gap:12px;flex-wrap:wrap}
+  .menu a{padding:8px 12px;border-radius:10px;color:#c9d1d9;font-size:14px}
   .menu a:hover{background:#21262d}
 
   .lang{display:flex;gap:8px;align-items:center}
@@ -44,56 +41,45 @@
     display:flex;align-items:center;justify-content:center;
     width:36px;height:28px;padding:0;
     background:#21262d;color:#c9d1d9;border:1px solid #30363d;
-    border-radius:999px;font-weight:600;cursor:pointer
+    border-radius:999px;cursor:pointer
   }
   .lang button.active{background:var(--brand);color:#0b1020;border-color:transparent}
-  .lang .flag{width:20px;height:15px;border-radius:2px;box-shadow:none}
 
-  .hero{padding:84px 0 48px;background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(88,166,255,.18), transparent),
-    linear-gradient(135deg,#0d1117 0%,#161b22 100%)}
+  .hero{padding:84px 0 48px;background:radial-gradient(1200px 600px at 80% -10%, rgba(88,166,255,.18), transparent), linear-gradient(135deg,#0d1117 0%,#161b22 100%)}
   .hero-grid{display:flex;align-items:center;justify-content:space-between;gap:24px}
-  .kicker{font-size:13px;color:var(--muted);margin-bottom:8px}
   h1{font-size:42px;line-height:1.15;margin:0 0 10px}
   .lead{color:var(--muted);max-width:58ch;margin:6px 0 18px}
   .cta{display:flex;gap:12px;flex-wrap:wrap}
-  .btn{background:var(--brand);color:#0b1020;padding:12px 18px;border-radius:12px;font-weight:600;box-shadow:0 6px 18px var(--ring)}
+  .btn{background:var(--brand);color:#0b1020;padding:12px 18px;border-radius:12px;font-weight:600;display:inline-flex;align-items:center;gap:8px}
   .btn.alt{background:#21262d;color:#e6edf3}
-  .hero-image img{max-width:250px;border-radius:50%;box-shadow:0 4px 15px rgba(0,0,0,.4);border:3px solid var(--brand)}
+  .hero-image img{max-width:250px;border-radius:50%;border:3px solid var(--brand);box-shadow:0 4px 15px rgba(0,0,0,.4)}
 
   .section{padding:48px 0}
-  .section-title{font-size:24px;margin:0 0 16px}
-  .card{background:var(--card);border:1px solid #30363d;border-radius:var(--radius);box-shadow:0 4px 16px rgba(0,0,0,.4);padding:18px}
+  .section-title{font-size:24px;margin:0 0 20px;border-left:4px solid var(--brand);padding-left:12px}
+  .card{background:var(--card);border:1px solid #30363d;border-radius:var(--radius);padding:24px}
 
-  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:20px}
-  .project-card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.5);text-align:center}
-  .project-card h3{margin:0 0 10px;color:#fff}
-  .project-card p{font-size:14px;color:#a8b3bf;margin:0 0 15px}
-  .project-logo{width:80px;height:auto;margin:0 auto 10px auto;border-radius:12px;border:1px solid #30363d}
+  .books-grid {display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:25px}
+  .book-card {background:var(--card);border:1px solid #30363d;border-radius:14px;padding:16px;text-align:center;transition:transform 0.2s}
+  .book-card:hover {transform: translateY(-5px)}
+  .book-card img {width:100%;border-radius:10px;margin-bottom:12px;aspect-ratio:1/1;object-fit:cover}
+  .book-card h3 {font-size:17px;margin:10px 0;min-height:2.5em;display:flex;align-items:center;justify-content:center}
 
-  #kitaplar .books{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;margin-top:16px}
-  .book-card{background:var(--card);border:1px solid #30363d;border-radius:14px;padding:14px;box-shadow:0 2px 10px rgba(0,0,0,.35);text-align:center;display:flex;flex-direction:column;justify-content:space-between}
-  .book-card img{width:100%;height:auto;border-radius:10px;aspect-ratio:1/1;object-fit:cover}
-  .book-card h3{margin:12px 0 10px;font-size:17px;color:#fff;min-height:2.4em;display:flex;align-items:center;justify-content:center}
-  .book-card .btn{display:inline-block;padding:9px 12px;border-radius:10px;background:var(--brand);color:#0b1020;font-weight:700;font-size:14px}
-  .book-card .btn:hover{filter:brightness(.95)}
-  .book-card small{display:block;color:var(--muted);margin-top:4px}
+  .social-grid {display:grid;grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));gap:12px;margin-top:20px}
+  .social-link {
+    background:#21262d;border:1px solid #30363d;border-radius:12px;padding:12px;
+    display:flex;align-items:center;gap:10px;color:#c9d1d9;transition:0.2s;font-size:14px
+  }
+  .social-link:hover {background:var(--brand);color:#0b1020;border-color:transparent}
+  .social-link i {font-size:18px;width:20px;text-align:center}
 
-  .flag-list{display:flex;gap:6px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:8px}
-  .flag{display:inline-block;width:20px;height:15px;border-radius:2px;box-shadow:0 0 0 1px #30363d inset}
-  .flag.sm{width:18px;height:13.5px}
+  .flag-list{display:flex;gap:5px;justify-content:center;margin-top:8px}
+  .footer{padding:40px 0;text-align:center;color:var(--muted);border-top:1px solid #30363d}
 
-  .footer{padding:24px 0 40px;color:#8b949e;text-align:center;border-top:1px solid #30363d}
-  .socials{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
-  .chip{background:#21262d;border-radius:999px;padding:8px 12px;font-size:14px;color:#c9d1d9;border:1px solid #30363d}
-
-  #hakkimda .info-grid{display:grid;gap:30px;margin:20px 0;grid-template-columns:repeat(3,minmax(0,1fr));justify-items:center;text-align:center}
-  #hakkimda .info-grid h3{margin:0 0 10px;font-weight:600;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:6px}
-  #hakkimda .info-grid ul{list-style:none;padding:0;margin:0}
-  #hakkimda .info-grid li{margin-bottom:6px;line-height:1.6}
-
-  @media (max-width:980px){h1{font-size:36px}.hero-grid{flex-direction:column;align-items:flex-start}.hero-image img{max-width:220px}#hakkimda .info-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-  @media (max-width:768px){#hakkimda .info-grid{grid-template-columns:1fr}}
+  @media (max-width:768px){
+    .hero-grid{flex-direction:column;text-align:center}
+    .cta{justify-content:center}
+    h1{font-size:32px}
+  }
   </style>
 </head>
 <body>
@@ -102,207 +88,129 @@
     <div class="container nav-row">
       <a class="brand" href="#hero">Melike Balkın Karakaya</a>
       <div class="menu">
-        <a href="#hakkimda" data-i18n="nav_about">Hakkımda</a>
         <a href="#kitaplar" data-i18n="nav_books">Kitaplar</a>
-        <a href="blog.html" data-i18n="nav_blog">Blog</a>
-        <a href="#projeler" data-i18n="nav_projects">Projeler</a>
+        <a href="#hakkimda" data-i18n="nav_about">Hakkımda</a>
         <a href="#iletisim" data-i18n="nav_contact">İletişim</a>
       </div>
       <div class="lang">
-        <button id="btn-tr" class="active" aria-pressed="true" aria-label="Türkçe">
-          <span class="fi fi-tr flag" aria-hidden="true"></span>
-        </button>
-        <button id="btn-en" aria-pressed="false" aria-label="English">
-          <span class="fi fi-gb flag" aria-hidden="true"></span>
-        </button>
+        <button id="btn-tr" class="active">TR</button>
+        <button id="btn-en">EN</button>
       </div>
     </div>
   </nav>
 
   <header id="hero" class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-text">
-          <p class="kicker" data-i18n="hero_kicker">Klinik Psikolog • Din Felsefesi • Siyaset Bilimi</p>
-          <h1 data-i18n="hero_title">Merhaba, ben Melike Balkın Karakaya</h1>
-          <p class="lead" data-i18n="hero_lead">Psikoloji, felsefe ve tasavvuf ekseninde yazıyor; bilinç, algı ve travma dönüşümü üzerine çalışıyorum.</p>
-          <div class="cta">
-            <a class="btn" href="#kitaplar" data-i18n="btn_books">Kitaplarımı Gör</a>
-            <a class="btn alt" href="#projeler" data-i18n="btn_projects">Projeler &amp; Makaleler</a>
-          </div>
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1 data-i18n="hero_title">Merhaba, ben Melike Balkın Karakaya</h1>
+        <p class="lead" data-i18n="hero_lead">Klinik Psikolog, Din Felsefesi ve Siyaset Bilimi Araştırmacısı. Bilinç ve travma dönüşümü üzerine çalışıyorum.</p>
+        <div class="cta">
+          <a class="btn" href="#kitaplar"><i class="fas fa-book"></i> <span data-i18n="btn_books">Kitaplar</span></a>
+          <a class="btn alt" href="#iletisim"><i class="fas fa-envelope"></i> <span data-i18n="nav_contact">İletişim</span></a>
         </div>
-        <div class="hero-image">
-          <img src="melike.jpeg?v=2" alt="Melike Balkın Karakaya" loading="lazy" decoding="async">
-        </div>
+      </div>
+      <div class="hero-image">
+        <img src="melike.jpeg?v=2" alt="Melike Balkın Karakaya">
       </div>
     </div>
   </header>
 
-  <section id="hakkimda" class="section">
-    <div class="card container">
-      <h2 class="section-title" data-i18n="about_title">Hakkımda</h2>
-      <p data-i18n="about_p1">Felsefe ve din felsefesi odaklı araştırmacı-yazar; klinik psikolog. Akademik birikimimi manevî içgörüyle birleştirerek travma dönüşümü, bağımlılık psikolojisi, inanç dinamikleri ve algı yönetimi üzerine çalışıyorum. DIM–IMEC modelinin geliştiricisiyim.</p>
-
-      <div class="info-grid">
-        <div>
-          <h3 data-i18n="col_langs">Diller</h3>
-          <ul>
-            <li data-i18n="lang_tr">Türkçe (anadil)</li>
-            <li data-i18n="lang_en">İngilizce (B1–B2)</li>
-            <li data-i18n="lang_ar">Arapça (temel)</li>
-            <li data-i18n="lang_fa">Farsça (temel)</li>
-            <li data-i18n="lang_de">Almanca (temel)</li>
-          </ul>
-        </div>
-        <div>
-          <h3 data-i18n="col_expertise">Uzmanlık Alanları</h3>
-          <ul>
-            <li data-i18n="ex1">Aile ve Çift Danışmanlığı</li>
-            <li data-i18n="ex2">Bağımlılık ve Madde Kullanımı</li>
-            <li data-i18n="ex12">Algı Yönetimi</li>
-            <li data-i18n="ex13">Stratejik Manipülasyon ve Psikolojik Harp</li>
-            <li data-i18n="ex15">Online Terapi</li>
-          </ul>
-        </div>
-        <div>
-          <h3 data-i18n="col_interests">Akademik İlgi Alanları</h3>
-          <ul>
-            <li data-i18n="ai1">Din felsefesi ve tasavvuf düşüncesi</li>
-            <li data-i18n="ai2">İnanç psikolojisi ve metafizik sorgulamalar</li>
-            <li data-i18n="ai5">DIM–IMEC: Bilim, felsefe ve inancın ortak dili</li>
-          </ul>
-        </div>
-      </div>
-      <p data-i18n="about_p2">Çalışmalarım; bilinç, maneviyat, felsefe ve siyaset biliminin kesişiminde konumlanır.</p>
-    </div>
-  </section>
-
   <section id="kitaplar" class="section">
     <div class="container">
-      <h2 class="section-title" data-i18n="books_title">Kitaplarım</h2>
-      <div class="books">
-
+      <h2 class="section-title" data-i18n="nav_books">Kitaplarım</h2>
+      <div class="books-grid">
         <article class="book-card">
-          <img src="travmakodu.jpeg" alt="The Trauma Code kapak görseli" loading="lazy" decoding="async">
-          <h3 data-i18n="book_trauma_title">The Trauma Code</h3>
-          <a class="btn" target="_blank" rel="noopener" href="https://amzn.asia/d/69u7qBn">Amazon’da Satın Al</a>
-          <small>e-Kitap</small>
-          <div class="flag-list">
-            <span class="fi fi-gb flag sm" title="İngilizce"></span>
-          </div>
+          <img src="travmakodu.jpeg" alt="The Trauma Code">
+          <h3>The Trauma Code</h3>
+          <a class="btn" target="_blank" href="https://amzn.asia/d/69u7qBn">Amazon</a>
+          <div class="flag-list"><span class="fi fi-gb flag"></span></div>
         </article>
-
         <article class="book-card">
-          <img src="inancin_anatomisi.png" alt="Inancın Anatomisi kapak görseli" loading="lazy" decoding="async">
-          <h3 data-i18n="book_new_title">Anatomy of Belief</h3>
-          <a class="btn" target="_blank" rel="noopener" href="https://amzn.asia/d/2PzdlQH">Amazon’da Satın Al</a>
-          <small>e-Kitap</small>
-          <div class="flag-list">
-            <span class="fi fi-gb flag sm" title="İngilizce"></span>
-            <span class="fi fi-de flag sm" title="Almanca"></span>
-            <span class="fi fi-fr flag sm" title="Fransızca"></span>
-            <span class="fi fi-es flag sm" title="İspanyolca"></span>
-          </div>
+          <img src="inancin_anatomisi.png" alt="Anatomy of Belief">
+          <h3>Anatomy of Belief</h3>
+          <a class="btn" target="_blank" href="https://amzn.asia/d/2PzdlQH">Amazon</a>
+          <div class="flag-list"><span class="fi fi-gb flag"></span><span class="fi fi-de flag"></span><span class="fi fi-fr flag"></span></div>
         </article>
-
         <article class="book-card">
-          <img src="zehir-degil-ciglik.png?v=2" alt="Zehir Değil Çığlık kapak görseli" loading="lazy" decoding="async">
+          <img src="zehir-degil-ciglik.png" alt="Zehir Değil Çığlık">
           <h3>Zehir Değil Çığlık</h3>
-          <a class="btn" target="_blank" rel="noopener" href="https://www.amazon.com/gp/product/B0FK6KLYJ6">Amazon’da Satın Al</a>
-          <small>e-Kitap</small>
-          <div class="flag-list">
-            <span class="fi fi-tr flag sm"></span><span class="fi fi-gb flag sm"></span><span class="fi fi-de flag sm"></span><span class="fi fi-es flag sm"></span>
-          </div>
+          <a class="btn" target="_blank" href="https://www.amazon.com/gp/product/B0FK6KLYJ6">Amazon</a>
+          <div class="flag-list"><span class="fi fi-tr flag"></span><span class="fi fi-gb flag"></span></div>
         </article>
-
         <article class="book-card">
-          <img src="kalbin-butcesi.jpg?v=2" alt="Kalbin Bütçesi kapak görseli" loading="lazy" decoding="async">
+          <img src="kalbin-butcesi.jpg" alt="Kalbin Bütçesi">
           <h3>Kalbin Bütçesi</h3>
-          <a class="btn" target="_blank" rel="noopener" href="https://www.amazon.com/gp/product/B0FKTCQSBS">Amazon’da Satın Al</a>
-          <small>e-Kitap</small>
-          <div class="flag-list">
-            <span class="fi fi-tr flag sm"></span><span class="fi fi-gb flag sm"></span><span class="fi fi-sa flag sm"></span>
-          </div>
+          <a class="btn" target="_blank" href="https://www.amazon.com/gp/product/B0FKTCQSBS">Amazon</a>
+          <div class="flag-list"><span class="fi fi-tr flag"></span><span class="fi fi-gb flag"></span></div>
         </article>
-
         <article class="book-card">
-          <img src="askin-haritasi.jpeg?v=2" alt="Aşkın Haritası kapak görseli" loading="lazy" decoding="async">
+          <img src="askin-haritasi.jpeg" alt="Aşkın Haritası">
           <h3>Aşkın Haritası</h3>
-          <a class="btn" target="_blank" rel="noopener" href="https://www.amazon.com/gp/product/B0FMYXK27M">Amazon’da Satın Al</a>
-          <small>e-Kitap</small>
-          <div class="flag-list">
-            <span class="fi fi-tr flag sm"></span><span class="fi fi-gb flag sm"></span><span class="fi fi-de flag sm"></span>
-          </div>
+          <a class="btn" target="_blank" href="https://www.amazon.com/gp/product/B0FMYXK27M">Amazon</a>
+          <div class="flag-list"><span class="fi fi-tr flag"></span><span class="fi fi-gb flag"></span><span class="fi fi-de flag"></span></div>
         </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="projeler" class="section">
-    <div class="container">
-      <h2 class="section-title" data-i18n="projects_title">Projeler &amp; Makaleler</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <img class="project-logo" src="imtp.jpeg?v=2" alt="IMTP Logo" width="80" height="80">
-          <h3>IMTP — Imagery–Memory Transformation Protocol</h3>
-          <p>Travmatik anıların duygusal yükünü dönüştürmeye yönelik protokol.</p>
-        </div>
-        <div class="project-card">
-          <img class="project-logo" src="dim-imec.jpeg?v=2" alt="DIM–IMEC Logo" width="80" height="80">
-          <h3 data-i18n="p2_t">DIM–IMEC Project</h3>
-          <p data-i18n="p2_d">Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli.</p>
-        </div>
       </div>
     </div>
   </section>
 
   <section id="iletisim" class="section">
     <div class="container card">
-      <h2 class="section-title" data-i18n="contact_title">İletişim</h2>
-      <p><span data-i18n="contact_mail_label">E-posta:</span> <a href="mailto:research@melikebalkinkarakaya.org">research@melikebalkinkarakaya.org</a></p>
-      <div class="socials">
-        <a class="chip" href="https://www.amazon.com/stores/Melike-Balk%C4%B1n-Karakaya/author/B0FKH5PW2P" target="_blank">Amazon Author</a>
-        <a class="chip" href="https://www.linkedin.com/in/melike-balk%C4%B1n-karakaya-36a684167/" target="_blank">LinkedIn</a>
-        <a class="chip" href="https://www.instagram.com/melike_hiram_kadence" target="_blank">Instagram</a>
+      <h2 class="section-title" data-i18n="nav_contact">İletişim & Platformlar</h2>
+      <p data-i18n="contact_lead">Çalışmalarımı takip etmek ve bağlantı kurmak için aşağıdaki platformları kullanabilirsiniz:</p>
+      
+      <div class="social-grid">
+        <a href="https://x.com/melikekadence" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+        <a href="https://youtube.com/@melikebalkinkarakaya" target="_blank" class="social-link"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://patreon.com/MelikeBalkinKarakaya_ConsciousnessMysticPsychology" target="_blank" class="social-link"><i class="fab fa-patreon"></i> Patreon</a>
+        <a href="https://www.facebook.com/share/1FprxA2zfT/" target="_blank" class="social-link"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="https://www.reddit.com/user/MelikeBalkinkarakaya/" target="_blank" class="social-link"><i class="fab fa-reddit"></i> Reddit</a>
+        <a href="https://orcid.org/0009-0009-8616-3129" target="_blank" class="social-link"><i class="fab fa-orcid"></i> ORCID</a>
+        <a href="https://zenodo.org/" target="_blank" class="social-link"><i class="fas fa-graduation-cap"></i> Zenodo</a>
+        <a href="https://www.linkedin.com/in/melike-balk%C4%B1n-karakaya-36a684167/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://www.instagram.com/melike_hiram_kadence" target="_blank" class="social-link"><i class="fab fa-instagram"></i> Instagram</a>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container">© 2025 Melike Balkın Karakaya</div>
+    <div class="container">
+      <p>© 2025 Melike Balkın Karakaya. Tüm Hakları Saklıdır.</p>
+    </div>
   </footer>
 
   <script>
   const tr = {
     site_title:"Melike Balkın Karakaya",
-    nav_about:"Hakkımda", nav_books:"Kitaplar", nav_projects:"Projeler", nav_contact:"İletişim", nav_blog:"Blog",
-    hero_kicker:"Klinik Psikolog • Din Felsefesi • Siyaset Bilimi",
+    nav_about:"Hakkımda", nav_books:"Kitaplarım", nav_contact:"İletişim",
     hero_title:"Merhaba, ben Melike Balkın Karakaya",
-    hero_lead:"Psikoloji, felsefe ve tasavvuf ekseninde yazıyor; bilinç, algı ve travma dönüşümü üzerine çalışıyorum.",
-    btn_books:"Kitaplarımı Gör", btn_projects:"Projeler & Makaleler",
-    about_title:"Hakkımda",
-    about_p1:"Felsefe ve din felsefesi odaklı araştırmacı-yazar; klinik psikolog. Akademik birikimimi manevî içgörüyle birleştirerek travma dönüşümü, bağımlılık psikolojisi, inanç dinamikleri ve algı yönetimi üzerine çalışıyorum.",
-    col_langs:"Diller", col_expertise:"Uzmanlık Alanları", col_interests:"Akademik İlgi Alanları",
-    lang_tr:"Türkçe (anadil)", lang_en:"İngilizce (B1–B2)", lang_ar:"Arapça (temel)", lang_fa:"Farsça (temel)", lang_de:"Almanca (temel)",
-    ex1:"Aile ve Çift Danışmanlığı", ex2:"Bağımlılık ve Madde Kullanımı", ex12:"Algı Yönetimi", ex13:"Stratejik Manipülasyon ve Psikolojik Harp", ex15:"Online Terapi",
-    ai1:"Din felsefesi ve tasavvuf düşüncesi", ai2:"İnanç psikolojisi ve metafizik sorgulamalar", ai5:"DIM–IMEC: Bilim, felsefe ve inancın ortak dili",
-    about_p2:"Çalışmalarım; bilinç, maneviyat, felsefe ve siyaset biliminin kesişiminde konumlanır.",
-    books_title:"Kitaplarım",
-    book_new_title: "İnancın Anatomisi",
-    book_trauma_title: "Travma Kodu",
-    projects_title:"Projeler & Makaleler",
-    p2_t:"DIM–IMEC Project", p2_d:"Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli.",
-    contact_title:"İletişim", contact_mail_label:"E-posta:"
+    hero_lead:"Klinik Psikolog, Din Felsefesi ve Siyaset Bilimi Araştırmacısı. Bilinç ve travma dönüşümü üzerine çalışıyorum.",
+    btn_books: "Kitaplar",
+    contact_lead: "Çalışmalarımı takip etmek için aşağıdaki platformları kullanabilirsiniz:"
   };
-
   const en = {
     site_title:"Melike Balkın Karakaya",
-    nav_about:"About", nav_books:"Books", nav_projects:"Projects", nav_contact:"Contact", nav_blog:"Blog",
-    hero_kicker:"Clinical Psychologist • Philosophy of Religion • Political Science",
+    nav_about:"About", nav_books:"My Books", nav_contact:"Contact",
     hero_title:"Hi, I'm Melike Balkın Karakaya",
-    hero_lead:"I write at the intersection of psychology, philosophy and Sufism; I work on consciousness, perception and trauma transformation.",
-    btn_books:"See My Books", btn_projects:"Projects & Articles",
-    about_title:"About",
-    about_p1:"Researcher-author focused on philosophy of religion; clinical psychologist. I combine academic training with spiritual insight to study trauma transformation.",
-    col_langs:"Languages", col_expertise:"Areas of Expertise", col_interests:"
+    hero_lead:"Clinical Psychologist, Researcher in Philosophy of Religion and Political Science. Working on consciousness and trauma transformation.",
+    btn_books: "Books",
+    contact_lead: "You can use the following platforms to follow my work and connect:"
+  };
+
+  function applyLang(lang){
+    const safe = (lang === 'en') ? 'en' : 'tr';
+    const dict = (safe === 'en') ? en : tr;
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      if(dict[key]) el.textContent = dict[key];
+    });
+    document.getElementById('btn-tr').classList.toggle('active', safe==='tr');
+    document.getElementById('btn-en').classList.toggle('active', safe==='en');
+    localStorage.setItem('lang', safe);
+  }
+
+  applyLang(localStorage.getItem('lang') || 'tr');
+  document.getElementById('btn-tr').onclick = ()=>applyLang('tr');
+  document.getElementById('btn-en').onclick = ()=>applyLang('en');
+  </script>
+</body>
+</html>
