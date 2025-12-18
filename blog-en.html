@@ -31,8 +31,12 @@
   .menu{display:flex;gap:16px;flex-wrap:wrap}
   .menu a{padding:8px 12px;border-radius:10px;color:#c9d1d9}
   .menu a:hover{background:#21262d}
-  .lang button{background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:999px;padding:6px 10px;font-weight:600;cursor:pointer}
-  .lang button.active{background:var(--brand);color:#0b1020;border-color:transparent}
+  
+  /* Flag Language Switcher */
+  .lang-switcher{display:flex;gap:8px;align-items:center}
+  .lang-btn{background:#21262d;border:1px solid #30363d;border-radius:12px;padding:6px 12px;cursor:pointer;font-size:18px;transition:0.2s;text-decoration:none}
+  .lang-btn:hover{border-color:var(--brand)}
+  .lang-btn.active{background:rgba(88,166,255,0.15);border-color:var(--brand);box-shadow:0 0 10px var(--ring)}
 
   .section{padding:48px 0}
   .section-title{font-size:32px;margin:0 0 24px;color:#fff;text-align:center;}
@@ -65,9 +69,9 @@
         <a href="blog-en.html" style="color:var(--brand); font-weight:bold;">Blog</a>
         <a href="index.html#iletisim">Contact</a>
       </div>
-      <div class="lang">
-        <a href="blog.html"><button>TR</button></a>
-        <button class="active">EN</button>
+      <div class="lang-switcher">
+        <a href="blog.html" class="lang-btn" title="Türkçe">🇹🇷</a>
+        <a href="blog-en.html" class="lang-btn active" title="English">🇬🇧</a>
       </div>
     </div>
   </nav>
@@ -106,6 +110,14 @@
 
       <h1 class="section-title">Global Thoughts</h1>
       <div class="blog-list">
+
+        <a href="Aşkın Çözülmesi En.html" class="blog-card">
+          <div class="card-content">
+            <h3>The Dissolution of Love: A Spiritual Journey Toward God</h3>
+            <p>A record of an inner journey exploring how love dissolves the ego and leads the soul back to its Creator through the insights of Ibn ʿArabī and Rumi.</p>
+            <span class="meta">May 05, 2025</span>
+          </div>
+        </a>
         
         <a href="CAN CRISES BECOME A SOURCE OF STRENGTH.html" class="blog-card">
           <div class="card-content">
