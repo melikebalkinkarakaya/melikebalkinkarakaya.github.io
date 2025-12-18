@@ -136,13 +136,13 @@
   </header>
 
   <div class="container latest-post-section">
-    <a href="#" id="latest-post-link" class="latest-post-card">
-      <div class="latest-tag" data-i18n="latest_tag">Son Yazı</div>
+    <a href="blog.html" id="latest-post-link" class="latest-post-card">
+      <div class="latest-tag" data-i18n="latest_tag">Yeni Yazı</div>
       <div>
         <div class="latest-title" id="latest-post-title">AVM Kuyruklarını Refah Sanan Zihniyet</div>
         <div style="font-size: 13px; color: var(--muted);" id="latest-post-date">18 Aralık 2025</div>
       </div>
-      <div class="latest-link" data-i18n="read_more">Oku →</div>
+      <div class="latest-link" id="latest-btn-text">Yazıları Gör →</div>
     </a>
   </div>
 
@@ -238,10 +238,9 @@
     hero_title:"Merhaba, ben Melike Balkın Karakaya",
     hero_lead:"Klinik Psikolog, Din Felsefesi ve Siyaset Bilimi Araştırmacısı. Bilinç ve travma dönüşümü üzerine çalışıyorum.",
     book_new_title: "İnancın Anatomisi",
-    latest_tag: "Son Yazı",
+    latest_tag: "Yeni Yazı",
     latest_title: "AVM Kuyruklarını Refah Sanan Zihniyet",
-    latest_url: "the-mindset-mistaking-mall-queues-for-prosperity.html",
-    read_more: "Oku →",
+    read_more: "Yazıları Gör →",
     p1_d:"Travmatik anıların duygusal yükünü dönüştürmeye yönelik protokol.",
     p2_d:"Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli.",
     about_html: `
@@ -262,8 +261,7 @@
     book_new_title: "Anatomy of Belief",
     latest_tag: "Latest Post",
     latest_title: "The Mindset Mistaking Mall Queues for Prosperity",
-    latest_url: "the-mindset-mistaking-mall-queues-for-prosperity.html",
-    read_more: "Read →",
+    read_more: "View Posts →",
     p1_d:"A protocol aimed at transforming the emotional burden of traumatic memories.",
     p2_d:"A multilayered consciousness model bridging science, philosophy, and faith.",
     about_html: `
@@ -286,13 +284,15 @@
 
     document.getElementById('about-text-container').innerHTML = dict.about_html;
 
-    // Son Yazı Güncelleme
+    // Son Yazı Bilgileri
     document.getElementById('latest-post-title').textContent = dict.latest_title;
-    document.getElementById('latest-post-link').href = dict.latest_url;
+    document.getElementById('latest-btn-text').textContent = dict.read_more;
 
+    // Dil bazlı blog yönlendirmesi
     const blogUrl = (safe === 'en') ? 'blog-en.html' : 'blog.html';
     document.getElementById('nav-blog-link').href = blogUrl;
     document.getElementById('hero-blog-btn').href = blogUrl;
+    document.getElementById('latest-post-link').href = blogUrl; // Burayı blog listesine yönlendirdik
 
     document.getElementById('btn-tr').classList.toggle('active', safe==='tr');
     document.getElementById('btn-en').classList.toggle('active', safe==='en');
