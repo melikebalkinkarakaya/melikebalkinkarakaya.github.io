@@ -65,8 +65,14 @@
   <footer>© 2025 Melike Balkın Karakaya</footer>
 
   <script>
-    // ---- 1) Makale listesi ----
+    // ---- 1) Makale listesi (Yeni yazınız en üstte) ----
     const posts = [
+      { 
+        slug:"Türkiye İHA’yı Neden F-16 ile Vurdu", 
+        title:"Türkiye İHA’yı Neden F-16 ile Vurdu?", 
+        date:"19 Aralık 2025", 
+        excerpt:"Bu bir zayıflık mı, yoksa bilinçli bir devlet mesajı mı? Hava sahası egemenliği üzerine bir analiz..."
+      },
       { slug:"AVM Kuyruklarını Refah Sanan Zihin", title:"AVM Kuyruklarını Refah Sanan Zihin", date:"18 Aralık 2025", excerpt:"Türkiye ekonomisini anlamayı reddeden yeni cehalet biçimi üzerine bir analiz..."},
       { slug:"raconun-bittigi-yer", title:"Raconun Bittiği Yer: Mafya Kılıfında Haysiyetsizlik", date:"01 Eylül 2025", excerpt:"Bir zamanlar yeraltı dünyasında bile bir kural vardı…"},
       { slug:"dijital-peygamberlik", title:"Dijital Peygamberlik: Grok’un Ardındaki Algı Dini", date:"13 Temmuz 2025", excerpt:"Grok’un içerikleri yazılım hatası değil; zihinsel bir operasyon…"},
@@ -131,7 +137,7 @@
       container.append(back, art);
 
       try{
-        // encodeURIComponent dosya adındaki boşlukları web uyumlu hale getirir
+        // encodeURIComponent dosya adındaki özel karakterleri ve boşlukları URL uyumlu yapar
         const path = `${encodeURIComponent(slug)}.html`;
         const res = await fetch(path);
         if(!res.ok) throw new Error(`Dosya bulunamadı (${res.status})`);
@@ -157,7 +163,7 @@
 
       }catch(err){
         art.innerHTML = `<p>Makale yüklenirken sorun oluştu: ${err.message}</p>
-                         <p>Lütfen sunucuda <b>${slug}.html</b> dosyasının varlığından emin olun.</p>`;
+                         <p>Lütfen sunucuda <b>${slug}.html</b> dosyasının tam olarak bu isimle yüklü olduğundan emin olun.</p>`;
       }
     }
 
