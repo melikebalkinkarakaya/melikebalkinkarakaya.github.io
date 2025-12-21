@@ -71,44 +71,16 @@
   .about-content ul {list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;}
   .about-content li::before {content: "•"; color: var(--brand); margin-right: 8px; font-weight: bold;}
   
-  /* İletişim Stilleri */
   .social-grid {display:grid;grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));gap:12px;margin-top:20px}
   .social-link {background:#21262d;border:1px solid #30363d;border-radius:12px;padding:12px;display:flex;align-items:center;gap:10px;color:#c9d1d9;transition:0.2s;font-size:14px}
   .social-link:hover {background:var(--brand);color:#0b1020;border-color:transparent}
 
-  .email-featured {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 24px;
-  }
-  .email-link {
-    background: rgba(88,166,255,0.05);
-    border: 1px dashed var(--brand);
-    border-radius: 12px;
-    padding: 16px 24px;
-    color: var(--brand);
-    font-weight: 600;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    transition: 0.3s;
-    width: 100%;
-    justify-content: center;
-  }
-  .email-link:hover {
-    background: var(--brand);
-    color: #0b1020;
-    border-style: solid;
-  }
+  .email-featured {display: flex; justify-content: center; margin-bottom: 24px;}
+  .email-link {background: rgba(88,166,255,0.05); border: 1px dashed var(--brand); border-radius: 12px; padding: 16px 24px; color: var(--brand); font-weight: 600; font-size: 18px; display: flex; align-items: center; gap: 12px; transition: 0.3s; width: 100%; justify-content: center;}
+  .email-link:hover {background: var(--brand); color: #0b1020; border-style: solid;}
 
   .footer{padding:40px 0;text-align:center;color:var(--muted);border-top:1px solid #30363d}
-  @media (max-width:768px){
-    .hero-grid{flex-direction:column;text-align:center} 
-    .latest-post-card {flex-direction: column; text-align: center;} 
-    .latest-link {margin: 10px 0 0 0; width: 100%;}
-    .email-link {font-size: 15px;}
-  }
+  @media (max-width:768px){.hero-grid{flex-direction:column;text-align:center} .latest-post-card {flex-direction: column; text-align: center;} .latest-link {margin: 10px 0 0 0; width: 100%;} .email-link {font-size: 15px;}}
   </style>
 </head>
 <body>
@@ -235,6 +207,7 @@
         <a href="https://youtube.com/@melikebalkinkarakaya" target="_blank" class="social-link"><i class="fab fa-youtube"></i> YouTube</a>
         <a href="https://medium.com/@melikebalknkarakaya" target="_blank" class="social-link"><i class="fab fa-medium"></i> Medium</a>
         <a href="https://www.amazon.com/author/melikebalkinkarakaya" target="_blank" class="social-link"><i class="fas fa-feather-alt"></i> Amazon Author</a>
+        <a href="https://scholar.google.com/citations?user=F-E6qlYAAAAJ&hl=en&authuser=1" target="_blank" class="social-link"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
         
         <a href="https://x.com/melikekadence" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
         <a href="https://bsky.app/profile/melikeblknkarakaya.bsky.social" target="_blank" class="social-link"><i class="fa-solid fa-square-rss"></i> BlueSky</a>
@@ -243,7 +216,7 @@
         <a href="https://www.facebook.com/share/1FprxA2zfT/" target="_blank" class="social-link"><i class="fab fa-facebook"></i> Facebook</a>
         <a href="https://www.reddit.com/user/MelikeBalkinkarakaya/" target="_blank" class="social-link"><i class="fab fa-reddit"></i> Reddit</a>
         <a href="https://orcid.org/0009-0009-8616-3129" target="_blank" class="social-link"><i class="fab fa-orcid"></i> ORCID</a>
-        <a href="https://zenodo.org/me/uploads" target="_blank" class="social-link"><i class="fas fa-graduation-cap"></i> Zenodo</a>
+        <a href="https://zenodo.org/me/uploads" target="_blank" class="social-link"><i class="fas fa-scroll"></i> Zenodo</a>
         <a href="https://www.linkedin.com/in/melike-balk%C4%B1n-karakaya-36a684167/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="https://www.instagram.com/melike_hiram_kadence" target="_blank" class="social-link"><i class="fab fa-instagram"></i> Instagram</a>
       </div>
