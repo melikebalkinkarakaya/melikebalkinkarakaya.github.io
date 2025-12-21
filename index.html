@@ -71,12 +71,44 @@
   .about-content ul {list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;}
   .about-content li::before {content: "•"; color: var(--brand); margin-right: 8px; font-weight: bold;}
   
+  /* İletişim Stilleri */
   .social-grid {display:grid;grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));gap:12px;margin-top:20px}
   .social-link {background:#21262d;border:1px solid #30363d;border-radius:12px;padding:12px;display:flex;align-items:center;gap:10px;color:#c9d1d9;transition:0.2s;font-size:14px}
   .social-link:hover {background:var(--brand);color:#0b1020;border-color:transparent}
 
+  .email-featured {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .email-link {
+    background: rgba(88,166,255,0.05);
+    border: 1px dashed var(--brand);
+    border-radius: 12px;
+    padding: 16px 24px;
+    color: var(--brand);
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s;
+    width: 100%;
+    justify-content: center;
+  }
+  .email-link:hover {
+    background: var(--brand);
+    color: #0b1020;
+    border-style: solid;
+  }
+
   .footer{padding:40px 0;text-align:center;color:var(--muted);border-top:1px solid #30363d}
-  @media (max-width:768px){.hero-grid{flex-direction:column;text-align:center} .latest-post-card {flex-direction: column; text-align: center;} .latest-link {margin: 10px 0 0 0; width: 100%;}}
+  @media (max-width:768px){
+    .hero-grid{flex-direction:column;text-align:center} 
+    .latest-post-card {flex-direction: column; text-align: center;} 
+    .latest-link {margin: 10px 0 0 0; width: 100%;}
+    .email-link {font-size: 15px;}
+  }
   </style>
 </head>
 <body>
@@ -191,6 +223,13 @@
   <section id="iletisim" class="section">
     <div class="container card">
       <h2 class="section-title" data-i18n="nav_contact">İletişim & Platformlar</h2>
+      
+      <div class="email-featured">
+        <a href="mailto:research@melikebalkinkarakaya.org" class="email-link">
+          <i class="fas fa-envelope-open-text"></i> research@melikebalkinkarakaya.org
+        </a>
+      </div>
+
       <div class="social-grid">
         <a href="https://patreon.com/MelikeBalkinKarakaya_ConsciousnessMysticPsychology" target="_blank" class="social-link"><i class="fab fa-patreon"></i> Patreon</a>
         <a href="https://youtube.com/@melikebalkinkarakaya" target="_blank" class="social-link"><i class="fab fa-youtube"></i> YouTube</a>
