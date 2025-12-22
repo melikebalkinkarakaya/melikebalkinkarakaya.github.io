@@ -26,7 +26,6 @@
 
     .container{max-width:900px;margin:2rem auto;padding:0 1rem}
 
-    /* Liste kartları */
     .blog-post{background:var(--card-color);padding:1.5rem;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.3);margin-bottom:2rem;border:1px solid var(--border);transition:transform .18s, box-shadow .18s}
     .blog-post:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(0,0,0,.38)}
     .blog-post h2{margin:0 0 .35rem;font-size:1.35rem;line-height:1.3}
@@ -35,7 +34,6 @@
     .blog-post p{margin:.35rem 0 0}
     .meta{display:block;margin-top:.6rem;font-size:.85rem;color:var(--muted)}
 
-    /* Makale detay */
     .article{background:var(--card-color);padding:2rem;border-radius:12px;border:1px solid var(--border);margin-bottom:2rem}
     .article h1{margin-top:0;color:var(--accent-color);font-size:1.8rem;line-height:1.25}
     .article .date{color:var(--muted);font-style:italic;margin:.25rem 0 1rem;display:block}
@@ -65,8 +63,14 @@
   <footer>© 2025 Melike Balkın Karakaya</footer>
 
   <script>
-    // ---- 1) Makale listesi (Yeni yazınız en üstte) ----
+    // ---- 1) Makale listesi (En yeni yazı Yasak Arttıkça en üstte) ----
     const posts = [
+      { 
+        slug:"Yasak Arttıkça ", 
+        title:"Yasak Arttıkça Aşırılık Neden Büyür?", 
+        date:"22 Aralık 2025", 
+        excerpt:"Ahlak baskının ürünü değildir. Bastırılan her dürtü nasıl patolojik biçimde geri dönüyorsa, toplumsal gerçeklik de öyle..."
+      },
       { 
         slug:"Türkiye İHA’yı Neden F-16 ile Vurdu", 
         title:"Türkiye İHA’yı Neden F-16 ile Vurdu?", 
@@ -90,7 +94,6 @@
       { slug:"krizler-guc-kaynagi-olabilir-mi", title:"Krizler Güç Kaynağı Olabilir mi?", date:"04 Nisan 2025", excerpt:"PTG ve hikâyeyi yeniden yazmak…"}
     ];
 
-    // ---- 2) Yardımcılar ----
     const $ = sel => document.querySelector(sel);
     const el = (tag, attrs={}, html="")=>{
       const node=document.createElement(tag);
@@ -107,7 +110,6 @@
       window.scrollTo({top:0, behavior:"instant"});
     }
 
-    // ---- 3) Liste görünümü ----
     function renderList(container){
       posts.forEach(p=>{
         const art = el("article", {class:"blog-post"});
@@ -125,7 +127,6 @@
       document.title = "Melike Balkın Karakaya | Blog";
     }
 
-    // ---- 4) Detay görünümü ----
     async function renderDetail(container, slug){
       const meta = posts.find(x=>x.slug===slug);
       const back = el("a", {href:"#", class:"backlink"}, "← Tüm makalelere dön");
@@ -137,7 +138,7 @@
       container.append(back, art);
 
       try{
-        // encodeURIComponent dosya adındaki özel karakterleri ve boşlukları URL uyumlu yapar
+        // encodeURIComponent sayesinde "Yasak Arttıkça " dosyasını sunucudan doğru çeker
         const path = `${encodeURIComponent(slug)}.html`;
         const res = await fetch(path);
         if(!res.ok) throw new Error(`Dosya bulunamadı (${res.status})`);
@@ -167,7 +168,6 @@
       }
     }
 
-    // ---- 5) Router ----
     function render(){
       const app = $("#app");
       app.innerHTML = "";
