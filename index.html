@@ -122,10 +122,10 @@
     <a href="blog.html" id="latest-post-link" class="latest-post-card">
       <div class="latest-tag" data-i18n="latest_tag">Yeni Yazı</div>
       <div>
-        <div class="latest-title" id="latest-post-title">Türkiye İHA’yı Neden F-16 ile Vurdu?</div>
-        <div style="font-size: 13px; color: var(--muted);" id="latest-post-date">19 Aralık 2025</div>
+        <div class="latest-title" id="latest-post-title">Yasak Arttıkça Aşırılık Neden Büyür?</div>
+        <div style="font-size: 13px; color: var(--muted);" id="latest-post-date">22 Aralık 2025</div>
       </div>
-      <div class="latest-link" id="latest-btn-text">Yazıları Gör →</div>
+      <div class="latest-link" id="latest-btn-text">Yazıyı Oku →</div>
     </a>
   </div>
 
@@ -235,9 +235,9 @@
     hero_lead:"Klinik Psikolog, Din Felsefesi ve Siyaset Bilimi Araştırmacısı. Bilinç ve travma dönüşümü üzerine çalışıyorum.",
     book_new_title: "İnancın Anatomisi",
     latest_tag: "Yeni Yazı",
-    latest_title: "Türkiye İHA’yı Neden F-16 ile Vurdu?",
-    latest_date: "19 Aralık 2025",
-    read_more: "Yazıları Gör →",
+    latest_title: "Yasak Arttıkça Aşırılık Neden Büyür?",
+    latest_date: "22 Aralık 2025",
+    read_more: "Yazıyı Oku →",
     p1_d:"Travmatik anıların duygusal yükünü dönüştürmeye yönelik protokol.",
     p2_d:"Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli.",
     about_html: `
@@ -257,9 +257,9 @@
     hero_lead:"Clinical Psychologist, Researcher in Philosophy of Religion and Political Science. I focus on consciousness and trauma transformation.",
     book_new_title: "Anatomy of Belief",
     latest_tag: "Latest Post",
-    latest_title: "Why Did Türkiye Down a Drone with an F-16?",
-    latest_date: "December 19, 2025",
-    read_more: "View Posts →",
+    latest_title: "Why Does Excess Grow as Prohibition Increases?",
+    latest_date: "December 22, 2025",
+    read_more: "Read Post →",
     p1_d:"A protocol aimed at transforming the emotional burden of traumatic memories.",
     p2_d:"A multilayered consciousness model bridging science, philosophy, and faith.",
     about_html: `
@@ -283,7 +283,7 @@
 
     document.getElementById('about-text-container').innerHTML = dict.about_html;
     document.getElementById('latest-post-title').textContent = dict.latest_title;
-    document.getElementById('latest-post-date').textContent = (safe === 'en') ? en.latest_date : tr.latest_date;
+    document.getElementById('latest-post-date').textContent = dict.latest_date;
     document.getElementById('latest-btn-text').textContent = dict.read_more;
 
     const blogUrl = (safe === 'en') ? 'blog-en.html' : 'blog.html';
