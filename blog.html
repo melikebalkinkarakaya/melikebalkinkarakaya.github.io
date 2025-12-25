@@ -63,35 +63,41 @@
   <footer>© 2025 Melike Balkın Karakaya</footer>
 
   <script>
-    // ---- 1) Makale listesi (En yeni yazı Yasak Arttıkça en üstte) ----
+    // ---- 1) Makale listesi (Yeni yazı eklendi) ----
     const posts = [
       { 
-        slug:"Yasak Arttıkça ", 
-        title:"Yasak Arttıkça Aşırılık Neden Büyür?", 
-        date:"22 Aralık 2025", 
-        excerpt:"Ahlak baskının ürünü değildir. Bastırılan her dürtü nasıl patolojik biçimde geri dönüyorsa, toplumsal gerçeklik de öyle..."
+        slug: "En Zayıf Halka", 
+        title: "En Zayıf Halka Türkiye mi?", 
+        date: "25 Aralık 2025", 
+        excerpt: "Türkiye gerçekten zayıf mıydı? Yoksa 'zayıf halka' söylemi, gerçeklerden çok politik bir algının ürünü müydü? Stratejik bir analiz..." 
       },
       { 
-        slug:"Türkiye İHA’yı Neden F-16 ile Vurdu", 
-        title:"Türkiye İHA’yı Neden F-16 ile Vurdu?", 
-        date:"19 Aralık 2025", 
-        excerpt:"Bu bir zayıflık mı, yoksa bilinçli bir devlet mesajı mı? Hava sahası egemenliği üzerine bir analiz..."
+        slug: "Yasak Arttıkça ", 
+        title: "Yasak Arttıkça Aşırılık Neden Büyür?", 
+        date: "22 Aralık 2025", 
+        excerpt: "Ahlak baskının ürünü değildir. Bastırılan her dürtü nasıl patolojik biçimde geri dönüyorsa, toplumsal gerçeklik de öyle..."
       },
-      { slug:"AVM Kuyruklarını Refah Sanan Zihin", title:"AVM Kuyruklarını Refah Sanan Zihin", date:"18 Aralık 2025", excerpt:"Türkiye ekonomisini anlamayı reddeden yeni cehalet biçimi üzerine bir analiz..."},
-      { slug:"raconun-bittigi-yer", title:"Raconun Bittiği Yer: Mafya Kılıfında Haysiyetsizlik", date:"01 Eylül 2025", excerpt:"Bir zamanlar yeraltı dünyasında bile bir kural vardı…"},
-      { slug:"dijital-peygamberlik", title:"Dijital Peygamberlik: Grok’un Ardındaki Algı Dini", date:"13 Temmuz 2025", excerpt:"Grok’un içerikleri yazılım hatası değil; zihinsel bir operasyon…"},
-      { slug:"egitimde-ideolojik-dil", title:"Eğitimde İdeolojik Dilin Çocuk Psikolojisine Etkisi", date:"17 Temmuz 2025", excerpt:"İdeolojik dilin çocuk psikolojisine etkileri…"},
-      { slug:"cocuk-icin-adalet", title:"ÇOCUK İÇİN ADALET: DEVLETİN ARTIK YOLU BELLİDİR", date:"21 Ağustos 2025", excerpt:"Ağır cinsel suçlarda caydırıcılık ve vicdani norm…"},
-      { slug:"kalpten-evrensele", title:"Kalpten Evrensele: Dillerin Ötesinde Bir Ses", date:"31 Temmuz 2025", excerpt:"Çok dilli yayıncılık ve evrensel yankı…"},
-      { slug:"ahmet-icin-adalet", title:"Benim Çocuğumun Hayatını Hiçbir Ceza Geri Getiremez… Şimdi de İndirim mi Düşünüyorsunuz?", date:"23 Temmuz 2025", excerpt:"Ceza adaleti – onarma adaleti dengesi…"},
-      { slug:"mizahin-ince-cizgisi", title:"Mizahın İnce Çizgisi: Doğan Pehlevan Üzerine Kişisel Bir Okuma", date:"01 Temmuz 2025", excerpt:"Mizah, bellek ve provokasyon çizgisi…"},
-      { slug:"kenevir-yasasi-ve-sessiz-kaygilar", title:"Kenevir Yasası ve Sessiz Kaygılar", date:"30 Haziran 2025", excerpt:"Tıbbi kenevir düzenlemesi ve toplumsal fayda…"},
-      { slug:"tibbi-kenevir", title:"Tıbbi Kenevir Meclis Gündeminde: Yasak Değil, Akılcı Kontrol Gerekli", date:"30 Haziran 2025", excerpt:"Veri odaklı izleme ve rehabilitasyon…"},
-      { slug:"enerji-okumasi", title:"“Enerji Okuması” Liderliğin Gizli Silahı mı?", date:"08 Temmuz 2025", excerpt:"Sözel olmayan sinyaller ve regülasyon…"},
-      { slug:"ortadogu-satranci", title:"Ortadoğu Satrancı ve Türkiye", date:"28 Mayıs 2025", excerpt:"Dinamik denge ve çok katmanlı diplomasi…"},
-      { slug:"gencler-arasi-siddet", title:"Gençler Arasında Yükselen Şiddet: Öfke Kontrolsüzlüğü mü, Sessiz Bir Çığlık mı?", date:"01 Mayıs 2025", excerpt:"Anlatılamamış hikâyeler ve erken uyarı…"},
-      { slug:"askin-cozulmesi", title:"Aşkın Çözülmesi: Tanrı’ya Uzanan Ruhsal Bir Yolculuk", date:"05 Mayıs 2025", excerpt:"Çözülmenin teslimiyeti ve yol…"},
-      { slug:"krizler-guc-kaynagi-olabilir-mi", title:"Krizler Güç Kaynağı Olabilir mi?", date:"04 Nisan 2025", excerpt:"PTG ve hikâyeyi yeniden yazmak…"}
+      { 
+        slug: "Türkiye İHA’yı Neden F-16 ile Vurdu", 
+        title: "Türkiye İHA’yı Neden F-16 ile Vurdu?", 
+        date: "19 Aralık 2025", 
+        excerpt: "Bu bir zayıflık mı, yoksa bilinçli bir devlet mesajı mı? Hava sahası egemenliği üzerine bir analiz..."
+      },
+      { slug: "AVM Kuyruklarını Refah Sanan Zihin", title: "AVM Kuyruklarını Refah Sanan Zihin", date: "18 Aralık 2025", excerpt: "Türkiye ekonomisini anlamayı reddeden yeni cehalet biçimi üzerine bir analiz..."},
+      { slug: "raconun-bittigi-yer", title: "Raconun Bittiği Yer: Mafya Kılıfında Haysiyetsizlik", date: "01 Eylül 2025", excerpt: "Bir zamanlar yeraltı dünyasında bile bir kural vardı…"},
+      { slug: "dijital-peygamberlik", title: "Dijital Peygamberlik: Grok’un Ardındaki Algı Dini", date: "13 Temmuz 2025", excerpt: "Grok’un içerikleri yazılım hatası değil; zihinsel bir operasyon…"},
+      { slug: "egitimde-ideolojik-dil", title: "Eğitimde İdeolojik Dilin Çocuk Psikolojisine Etkisi", date: "17 Temmuz 2025", excerpt: "İdeolojik dilin çocuk psikolojisine etkileri…"},
+      { slug: "cocuk-icin-adalet", title: "ÇOCUK İÇİN ADALET: DEVLETİN ARTIK YOLU BELLİDİR", date: "21 Ağustos 2025", excerpt: "Ağır cinsel suçlarda caydırıcılık ve vicdani norm…"},
+      { slug: "kalpten-evrensele", title: "Kalpten Evrensele: Dillerin Ötesinde Bir Ses", date: "31 Temmuz 2025", excerpt: "Çok dilli yayıncılık ve evrensel yankı…"},
+      { slug: "ahmet-icin-adalet", title: "Benim Çocuğumun Hayatını Hiçbir Ceza Geri Getiremez… Şimdi de İndirim mi Düşünüyorsunuz?", date: "23 Temmuz 2025", excerpt: "Ceza adaleti – onarma adaleti dengesi…"},
+      { slug: "mizahin-ince-cizgisi", title: "Mizahın İnce Çizgisi: Doğan Pehlevan Üzerine Kişisel Bir Okuma", date: "01 Temmuz 2025", excerpt: "Mizah, bellek ve provokasyon çizgisi…"},
+      { slug: "kenevir-yasasi-ve-sessiz-kaygilar", title: "Kenevir Yasası ve Sessiz Kaygılar", date: "30 Haziran 2025", excerpt: "Tıbbi kenevir düzenlemesi ve toplumsal fayda…"},
+      { slug: "tibbi-kenevir", title: "Tıbbi Kenevir Meclis Gündeminde: Yasak Değil, Akılcı Kontrol Gerekli", date: "30 Haziran 2025", excerpt: "Veri odaklı izleme ve rehabilitasyon…"},
+      { slug: "enerji-okumasi", title: "“Enerji Okuması” Liderliğin Gizli Silahı mı?", date: "08 Temmuz 2025", excerpt: "Sözel olmayan sinyaller ve regülasyon…"},
+      { slug: "ortadogu-satranci", title: "Ortadoğu Satrancı ve Türkiye", date: "28 Mayıs 2025", excerpt: "Dinamik denge ve çok katmanlı diplomasi…"},
+      { slug: "gencler-arasi-siddet", title: "Gençler Arasında Yükselen Şiddet: Öfke Kontrolsüzlüğü mü, Sessiz Bir Çığlık mı?", date: "01 Mayıs 2025", excerpt: "Anlatılamamış hikâyeler ve erken uyarı…"},
+      { slug: "askin-cozulmesi", title: "Aşkın Çözülmesi: Tanrı’ya Uzanan Ruhsal Bir Yolculuk", date: "05 Mayıs 2025", excerpt: "Çözülmenin teslimiyeti ve yol…"},
+      { slug: "krizler-guc-kaynagi-olabilir-mi", title: "Krizler Güç Kaynağı Olabilir mi?", date: "04 Nisan 2025", excerpt: "PTG ve hikâyeyi yeniden yazmak…"}
     ];
 
     const $ = sel => document.querySelector(sel);
@@ -138,7 +144,6 @@
       container.append(back, art);
 
       try{
-        // encodeURIComponent sayesinde "Yasak Arttıkça " dosyasını sunucudan doğru çeker
         const path = `${encodeURIComponent(slug)}.html`;
         const res = await fetch(path);
         if(!res.ok) throw new Error(`Dosya bulunamadı (${res.status})`);
