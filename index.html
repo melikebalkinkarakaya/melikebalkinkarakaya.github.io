@@ -48,11 +48,18 @@
   .btn.alt{background:#21262d;color:#e6edf3}
   .hero-image img{max-width:250px;border-radius:50%;border:3px solid var(--brand);box-shadow:0 4px 15px rgba(0,0,0,.4)}
 
+  /* WhatsApp Box & Consent Step */
   .whatsapp-box {margin-top: 24px; text-align: center; background: rgba(37, 211, 102, 0.05); border: 1px solid rgba(37, 211, 102, 0.2); border-radius: 16px; padding: 24px;}
   .ws-notice {font-size: 14px; color: var(--muted); margin-bottom: 16px; line-height: 1.4;}
   .ws-btn {background: var(--whatsapp); color: #fff !important; padding: 14px 24px; border-radius: 12px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);}
   .ws-btn:hover {transform: scale(1.02); filter: brightness(1.1);}
+  .ws-btn.disabled {opacity: 0.3; pointer-events: none; filter: grayscale(1); box-shadow: none;}
   .ws-warning {font-size: 12px; color: var(--danger); font-weight: 600; margin-top: 12px; display: block;}
+  
+  .consent-area {margin-bottom: 20px; display: flex; justify-content: center;}
+  .consent-wrapper {display: flex; align-items: center; gap: 10px; cursor: pointer; background: rgba(255,255,255,0.05); padding: 12px 18px; border-radius: 10px; border: 1px solid #30363d; transition: 0.2s;}
+  .consent-wrapper:hover {border-color: var(--brand);}
+  .consent-wrapper input {width: 20px; height: 20px; cursor: pointer;}
 
   .latest-post-section {margin-top: -30px; position: relative; z-index: 10;}
   .latest-post-card {background: #1c2128; border: 1px solid var(--brand); border-radius: 16px; padding: 20px; display: flex; align-items: center; gap: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: 0.3s; text-decoration: none;}
@@ -69,8 +76,6 @@
   .item-card {background:var(--card);border:1px solid #30363d;border-radius:14px;padding:16px;text-align:center;transition:transform 0.2s;display:flex;flex-direction:column}
   .item-card img {width:100%;border-radius:10px;margin-bottom:12px;aspect-ratio:3/4;object-fit:cover}
   
-  .flag-list {display:flex; gap:5px; justify-content:center; margin-top:10px; font-size:14px;}
-
   .about-content h3 {color: var(--brand); font-size: 18px; margin-top: 25px; border-bottom: 1px solid #30363d; padding-bottom: 8px;}
   .about-content ul {list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; margin-top: 15px;}
   .about-content li::before {content: "•"; color: var(--brand); margin-right: 8px; font-weight: bold;}
@@ -198,7 +203,15 @@
       
       <div class="whatsapp-box">
         <p id="ws-notice-text" class="ws-notice"></p>
-        <a href="randevu.html" class="ws-btn">
+        
+        <div class="consent-area">
+          <label class="consent-wrapper">
+            <input type="checkbox" id="main-ws-consent">
+            <span id="consent-label" style="font-size: 14px; font-weight: 500;"></span>
+          </label>
+        </div>
+
+        <a href="https://wa.me/905325698152" target="_blank" class="ws-btn disabled" id="main-ws-btn">
           <i class="fab fa-whatsapp"></i> <span id="ws-btn-label"></span>
         </a>
         <span id="ws-warning-text" class="ws-warning"></span>
@@ -241,9 +254,10 @@
     latest_title: "Zihnin Görünmez Duvarları: Bir Toplum Ne Zaman Körleşir?",
     latest_date: "28 Aralık 2025",
     read_more: "Yazıyı Oku →",
-    ws_notice: "Tüm görüşmeler yazılı olarak yürütülmektedir. Görüntülü veya sesli görüşme yapılmamaktadır. WhatsApp yalnızca mesajlaşma amaçlıdır.",
-    ws_btn: "Randevu Bilgileri ve İletişim",
-    ws_warning: "Aramalara yanıt verilmez.",
+    ws_notice: "WhatsApp üzerinden yalnızca yazılı iletişim sağlanmaktadır. Görüntülü veya sesli görüşme yapılmamaktadır. Aramalara yanıt verilmez.",
+    ws_btn: "WhatsApp ile Yazılı İletişim",
+    ws_warning: "Arama taleplerine yanıt verilmez.",
+    consent_text: "Yazılı iletişim esaslı çalışmayı kabul ediyorum.",
     collab_text: `Akademik veya profesyonel iş birliği? <a href="collaboration.html" style="text-decoration:underline; color:var(--brand);">Küresel İş Birliği</a> sayfasını ziyaret edin.`,
     footer_html: `© 2025 Melike Balkın Karakaya | <a href="collaboration.html" style="color:var(--muted);">Global Collaboration</a>`,
     p1_d:"Travmatik anıların duygusal yükünü dönüştürmeye yönelik protokol.",
@@ -251,23 +265,9 @@
     about_html: `
       <p>Melike Balkın Karakaya, Klinik Psikolog, Din Felsefecisi ve Siyaset Bilimi Araştırmacısıdır. Akademik uzmanlığını stratejik sezgiyle birleştirerek toplumsal zihin dinamikleri, algı yönetimi ve kolektif travma üzerine çalışmaktadır.</p>
       <h3>🔹 Diller</h3>
-      <ul>
-        <li>Türkçe (Ana dil)</li>
-        <li>Kürtçe (Ana dil)</li>
-        <li>İngilizce (Orta-İleri Seviye)</li>
-        <li>Almanca (Temel Seviye)</li>
-        <li>Arapça (Temel Seviye)</li>
-        <li>Farsça (Temel Seviye)</li>
-      </ul>
+      <ul><li>Türkçe (Ana dil)</li><li>Kürtçe (Ana dil)</li><li>İngilizce (Orta-İleri)</li><li>Almanca (Temel)</li><li>Arapça (Temel)</li><li>Farsça (Temel)</li></ul>
       <h3>🔹 Uzmanlık Alanları</h3>
-      <ul>
-        <li>Psikolojik Harp ve Algı Yönetimi</li>
-        <li>Bilinçaltı Kodlama ve Sembol Dil Analizi</li>
-        <li>Kolektif Bilinç ve Toplumsal Dönüşüm</li>
-        <li>Aile, Çift Terapisi ve Bağımlılık Psikolojisi</li>
-        <li>Bilinç, Beyin ve Travma İlişkisi</li>
-      </ul>
-      <p style="margin-top:20px;">Araştırmaları; bireysel ruh sağlığı ile küresel güç stratejilerinin kesiştiği "psikopolitik" düzlemde yoğunlaşmaktadır.</p>
+      <ul><li>Psikolojik Harp ve Algı Yönetimi</li><li>Bilinçaltı Kodlama ve Sembol Dil Analizi</li><li>Kolektif Bilinç ve Toplumsal Dönüşüm</li><li>Aile, Çift Terapisi ve Bağımlılık Psikolojisi</li><li>Bilinç, Beyin ve Travma İlişkisi</li></ul>
     `
   };
 
@@ -281,32 +281,20 @@
     latest_title: "The Invisible Walls of the Mind: When Does a Society Go Blind?",
     latest_date: "December 28, 2025",
     read_more: "Read Post →",
-    ws_notice: "All communication is text-based only. No video or voice calls are provided. WhatsApp is used strictly for written messages.",
-    ws_btn: "Appointment Info & Contact",
+    ws_notice: "Communication via WhatsApp is text-based only. No video or voice calls are provided. Calls will not be answered.",
+    ws_btn: "WhatsApp Written Communication",
     ws_warning: "Calls are not accepted.",
+    consent_text: "I accept that communication is text-based only.",
     collab_text: `Academic or professional inquiries? Visit <a href="collaboration.html" style="text-decoration:underline; color:var(--brand);">Global Collaboration</a>`,
     footer_html: `© 2025 Melike Balkın Karakaya | <a href="collaboration.html" style="color:var(--muted);">Global Collaboration</a>`,
     p1_d:"A protocol aimed at transforming the emotional burden of traumatic memories.",
     p2_d:"A multilayered consciousness model bridging science, philosophy, and faith.",
     about_html: `
-      <p>Melike Balkın Karakaya is a Clinical Psychologist, Philosopher of Religion, and Political Science Researcher. She integrates academic expertise with strategic intuition, focusing on social mind dynamics and collective trauma.</p>
+      <p>Melike Balkın Karakaya is a Clinical Psychologist and Researcher. She integrates academic expertise with strategic intuition, focusing on social mind dynamics and collective trauma.</p>
       <h3>🔹 Languages</h3>
-      <ul>
-        <li>Turkish (Native)</li>
-        <li>Kurdish (Native)</li>
-        <li>English (Intermediate-Advanced)</li>
-        <li>German (Basic)</li>
-        <li>Arabic (Basic)</li>
-        <li>Persian (Basic)</li>
-      </ul>
+      <ul><li>Turkish (Native)</li><li>Kurdish (Native)</li><li>English (Intermediate-Advanced)</li><li>German (Basic)</li><li>Arabic (Basic)</li><li>Persian (Basic)</li></ul>
       <h3>🔹 Expertise</h3>
-      <ul>
-        <li>Psychological Warfare & Perception Management</li>
-        <li>Subconscious Coding & Symbolic Analysis</li>
-        <li>Collective Consciousness & Social Transformation</li>
-        <li>Family, Couples Therapy & Addiction</li>
-        <li>Consciousness, Brain, and Trauma</li>
-      </ul>
+      <ul><li>Psychological Warfare & Perception Management</li><li>Subconscious Coding & Symbolic Analysis</li><li>Collective Consciousness</li><li>Clinical Psychology & Addiction</li></ul>
     `
   };
 
@@ -327,6 +315,7 @@
     document.getElementById('ws-notice-text').textContent = dict.ws_notice;
     document.getElementById('ws-btn-label').textContent = dict.ws_btn;
     document.getElementById('ws-warning-text').textContent = dict.ws_warning;
+    document.getElementById('consent-label').textContent = dict.consent_text;
     document.getElementById('collab-link-container').innerHTML = dict.collab_text;
     document.getElementById('footer-text').innerHTML = dict.footer_html;
 
@@ -341,6 +330,18 @@
     document.getElementById('btn-en').classList.toggle('active', safe==='en');
     localStorage.setItem('lang', safe);
   }
+
+  // Checkbox ve Buton Mantığı
+  const consentCheck = document.getElementById('main-ws-consent');
+  const wsBtn = document.getElementById('main-ws-btn');
+
+  consentCheck.addEventListener('change', function() {
+    if(this.checked) {
+      wsBtn.classList.remove('disabled');
+    } else {
+      wsBtn.classList.add('disabled');
+    }
+  });
 
   applyLang(localStorage.getItem('lang') || 'tr');
   document.getElementById('btn-tr').onclick = ()=>applyLang('tr');
