@@ -96,7 +96,7 @@
         <a href="#kitaplar" data-i18n="nav_books">Kitaplar</a>
         <a href="#projeler" data-i18n="nav_projects">Projeler</a>
         <a href="#hakkimda" data-i18n="nav_about">Hakkımda</a>
-        <a href="#iletisim" data-i18n="nav_contact">İletişim</a>
+        <a href="randevu.html" id="nav-contact-link" data-i18n="nav_contact">İletişim</a>
       </div>
       <div class="lang">
         <button id="btn-tr" class="lang-btn active" title="Türkçe">🇹🇷</button>
@@ -201,8 +201,8 @@
       
       <div class="whatsapp-box">
         <p id="ws-notice-text" class="ws-notice">Tüm görüşmeler yazılı olarak yürütülmektedir. Görüntülü veya sesli görüşme yapılmamaktadır. WhatsApp yalnızca mesajlaşma amaçlıdır.</p>
-        <a href="https://wa.me/905325698152" target="_blank" class="ws-btn">
-          <i class="fab fa-whatsapp"></i> <span id="ws-btn-label">WhatsApp ile Yazılı İletişim</span>
+        <a href="randevu.html" class="ws-btn">
+          <i class="fab fa-whatsapp"></i> <span id="ws-btn-label">Randevu Bilgileri ve İletişim</span>
         </a>
         <span id="ws-warning-text" class="ws-warning">Aramalara yanıt verilmez.</span>
       </div>
@@ -235,7 +235,7 @@
     latest_date: "28 Aralık 2025",
     read_more: "Yazıyı Oku →",
     ws_notice: "Tüm görüşmeler yazılı olarak yürütülmektedir. Görüntülü veya sesli görüşme yapılmamaktadır. WhatsApp yalnızca mesajlaşma amaçlıdır.",
-    ws_btn: "WhatsApp ile Yazılı İletişim",
+    ws_btn: "Randevu Bilgileri ve İletişim",
     ws_warning: "Aramalara yanıt verilmez.",
     p1_d:"Travmatik anıların duygusal yükünü dönüştürmeye yönelik protokol.",
     p2_d:"Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli.",
@@ -255,7 +255,7 @@
     latest_date: "December 28, 2025",
     read_more: "Read Post →",
     ws_notice: "All communication is text-based only. No video or voice calls are provided. WhatsApp is used strictly for written messages.",
-    ws_btn: "WhatsApp Written Communication",
+    ws_btn: "Appointment Info & Contact",
     ws_warning: "Calls are not accepted.",
     p1_d:"A protocol aimed at transforming the emotional burden of traumatic memories.",
     p2_d:"A multilayered consciousness model bridging science, philosophy, and faith.",
@@ -278,7 +278,6 @@
     document.getElementById('latest-post-date').textContent = dict.latest_date;
     document.getElementById('latest-btn-text').textContent = dict.read_more;
     
-    // WhatsApp Metin Güncelleme
     document.getElementById('ws-notice-text').textContent = dict.ws_notice;
     document.getElementById('ws-btn-label').textContent = dict.ws_btn;
     document.getElementById('ws-warning-text').textContent = dict.ws_warning;
@@ -287,6 +286,9 @@
     document.getElementById('nav-blog-link').href = blogUrl;
     document.getElementById('hero-blog-btn').href = blogUrl;
     document.getElementById('latest-post-link').href = blogUrl; 
+
+    // İletişim linkini randevu.html'e yönlendiriyoruz
+    document.getElementById('nav-contact-link').href = "randevu.html";
 
     document.getElementById('btn-tr').classList.toggle('active', safe==='tr');
     document.getElementById('btn-en').classList.toggle('active', safe==='en');
