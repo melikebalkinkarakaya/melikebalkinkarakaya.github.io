@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
 
   <style>
-  :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--ring:rgba(88,166,255,.25);--container:1100px;--radius:18px;--danger:#f85149}
+  :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--ring:rgba(88,166,255,.25);--container:1100px;--radius:18px;--danger:#f85149;--whatsapp:#25D366}
   *{box-sizing:border-box} html{scroll-behavior:smooth}
   body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:var(--bg)}
   a{color:var(--brand);text-decoration:none} img{max-width:100%;display:block}
@@ -47,6 +47,13 @@
   .btn{background:var(--brand);color:#0b1020;padding:12px 18px;border-radius:12px;font-weight:600;display:inline-flex;align-items:center;gap:8px}
   .btn.alt{background:#21262d;color:#e6edf3}
   .hero-image img{max-width:250px;border-radius:50%;border:3px solid var(--brand);box-shadow:0 4px 15px rgba(0,0,0,.4)}
+
+  /* WhatsApp & İletişim Stilleri */
+  .whatsapp-box {margin-top: 24px; text-align: center; background: rgba(37, 211, 102, 0.05); border: 1px solid rgba(37, 211, 102, 0.2); border-radius: 16px; padding: 24px;}
+  .ws-notice {font-size: 14px; color: var(--muted); margin-bottom: 16px; line-height: 1.4;}
+  .ws-btn {background: var(--whatsapp); color: #fff !important; padding: 14px 24px; border-radius: 12px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);}
+  .ws-btn:hover {transform: scale(1.02); filter: brightness(1.1);}
+  .ws-warning {font-size: 12px; color: var(--danger); font-weight: 600; margin-top: 12px; display: block;}
 
   .latest-post-section {margin-top: -30px; position: relative; z-index: 10;}
   .latest-post-card {background: #1c2128; border: 1px solid var(--brand); border-radius: 16px; padding: 20px; display: flex; align-items: center; gap: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: 0.3s; text-decoration: none;}
@@ -75,12 +82,8 @@
   .social-link {background:#21262d;border:1px solid #30363d;border-radius:12px;padding:12px;display:flex;align-items:center;gap:10px;color:#c9d1d9;transition:0.2s;font-size:14px}
   .social-link:hover {background:var(--brand);color:#0b1020;border-color:transparent}
 
-  .email-featured {display: flex; justify-content: center; margin-bottom: 24px;}
-  .email-link {background: rgba(88,166,255,0.05); border: 1px dashed var(--brand); border-radius: 12px; padding: 16px 24px; color: var(--brand); font-weight: 600; font-size: 18px; display: flex; align-items: center; gap: 12px; transition: 0.3s; width: 100%; justify-content: center;}
-  .email-link:hover {background: var(--brand); color: #0b1020; border-style: solid;}
-
   .footer{padding:40px 0;text-align:center;color:var(--muted);border-top:1px solid #30363d}
-  @media (max-width:768px){.hero-grid{flex-direction:column;text-align:center} .latest-post-card {flex-direction: column; text-align: center;} .latest-link {margin: 10px 0 0 0; width: 100%;} .email-link {font-size: 15px;}}
+  @media (max-width:768px){.hero-grid{flex-direction:column;text-align:center} .latest-post-card {flex-direction: column; text-align: center;} .latest-link {margin: 10px 0 0 0; width: 100%;}}
   </style>
 </head>
 <body>
@@ -194,29 +197,22 @@
 
   <section id="iletisim" class="section">
     <div class="container card">
-      <h2 class="section-title" data-i18n="nav_contact">İletişim & Platformlar</h2>
+      <h2 class="section-title" data-i18n="nav_contact">İletişim & Randevu</h2>
       
-      <div class="email-featured">
-        <a href="mailto:research@melikebalkinkarakaya.org" class="email-link">
-          <i class="fas fa-envelope-open-text"></i> research@melikebalkinkarakaya.org
+      <div class="whatsapp-box">
+        <p id="ws-notice-text" class="ws-notice">Tüm görüşmeler yazılı olarak yürütülmektedir. Görüntülü veya sesli görüşme yapılmamaktadır. WhatsApp yalnızca mesajlaşma amaçlıdır.</p>
+        <a href="https://wa.me/905325698152" target="_blank" class="ws-btn">
+          <i class="fab fa-whatsapp"></i> <span id="ws-btn-label">WhatsApp ile Yazılı İletişim</span>
         </a>
+        <span id="ws-warning-text" class="ws-warning">Aramalara yanıt verilmez.</span>
       </div>
 
-      <div class="social-grid">
+      <div class="social-grid" style="margin-top: 40px;">
+        <a href="mailto:research@melikebalkinkarakaya.org" class="social-link"><i class="fas fa-envelope"></i> research@...</a>
         <a href="https://patreon.com/MelikeBalkinKarakaya_ConsciousnessMysticPsychology" target="_blank" class="social-link"><i class="fab fa-patreon"></i> Patreon</a>
         <a href="https://youtube.com/@melikebalkinkarakaya" target="_blank" class="social-link"><i class="fab fa-youtube"></i> YouTube</a>
         <a href="https://medium.com/@melikebalknkarakaya" target="_blank" class="social-link"><i class="fab fa-medium"></i> Medium</a>
-        <a href="https://www.amazon.com/author/melikebalkinkarakaya" target="_blank" class="social-link"><i class="fas fa-feather-alt"></i> Amazon Author</a>
-        <a href="https://scholar.google.com/citations?user=F-E6qlYAAAAJ&hl=en&authuser=1" target="_blank" class="social-link"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-        
         <a href="https://x.com/melikekadence" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
-        <a href="https://bsky.app/profile/melikeblknkarakaya.bsky.social" target="_blank" class="social-link"><i class="fa-solid fa-square-rss"></i> BlueSky</a>
-        <a href="https://glasp.co/melikebalkinkarakaya" target="_blank" class="social-link"><i class="fa-solid fa-note-sticky"></i> Glasp</a>
-        <a href="https://www.buymeacoffee.com/melikebalk2" target="_blank" class="social-link"><i class="fa-solid fa-mug-hot"></i> Buy Me a Coffee</a>
-        <a href="https://www.facebook.com/share/1FprxA2zfT/" target="_blank" class="social-link"><i class="fab fa-facebook"></i> Facebook</a>
-        <a href="https://www.reddit.com/user/MelikeBalkinkarakaya/" target="_blank" class="social-link"><i class="fab fa-reddit"></i> Reddit</a>
-        <a href="https://orcid.org/0009-0009-8616-3129" target="_blank" class="social-link"><i class="fab fa-orcid"></i> ORCID</a>
-        <a href="https://zenodo.org/records/16915202" target="_blank" class="social-link"><i class="fas fa-scroll"></i> Zenodo</a>
         <a href="https://www.linkedin.com/in/melike-balk%C4%B1n-karakaya-36a684167/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="https://www.instagram.com/melike_hiram_kadence" target="_blank" class="social-link"><i class="fab fa-instagram"></i> Instagram</a>
       </div>
@@ -238,21 +234,14 @@
     latest_title: "Zihnin Görünmez Duvarları: Bir Toplum Ne Zaman Körleşir?",
     latest_date: "28 Aralık 2025",
     read_more: "Yazıyı Oku →",
+    ws_notice: "Tüm görüşmeler yazılı olarak yürütülmektedir. Görüntülü veya sesli görüşme yapılmamaktadır. WhatsApp yalnızca mesajlaşma amaçlıdır.",
+    ws_btn: "WhatsApp ile Yazılı İletişim",
+    ws_warning: "Aramalara yanıt verilmez.",
     p1_d:"Travmatik anıların duygusal yükünü dönüştürmeye yönelik protokol.",
     p2_d:"Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli.",
-    about_html: `
-      <p>Melike Balkın Karakaya, Klinik Psikolog, Din Felsefecisi ve Siyaset Bilimi Araştırmacısıdır. Akademik uzmanlığını stratejik sezgiyle birleştirerek toplumsal zihin dinamikleri, algı yönetimi ve kolektif travma üzerine çalışmaktadır.</p>
-      <h3>🔹 Diller</h3>
-      <ul><li>Türkçe (Ana dil)</li><li>Kürtçe (Ana dil)</li><li>İngilizce (Orta-İleri)</li><li>Almanca (Temel)</li><li>Arapça (Temel)</li><li>Farsça (Temel)</li></ul>
+    about_html: `<p>Melike Balkın Karakaya, Klinik Psikolog, Din Felsefecisi ve Siyaset Bilimi Araştırmacısıdır. Akademik uzmanlığını stratejik sezgiyle birleştirerek toplumsal zihin dinamikleri, algı yönetimi ve kolektif travma üzerine çalışmaktadır.</p>
       <h3>🔹 Uzmanlık Alanları</h3>
-      <ul>
-        <li>Psikolojik Harp ve Algı Yönetimi</li>
-        <li>Bilinçaltı Kodlama ve Sembol Dil Analizi</li>
-        <li>Kolektif Bilinç ve Toplumsal Dönüşüm</li>
-        <li>Aile, Çift Terapisi ve Bağımlılık Psikolojisi</li>
-      </ul>
-      <p style="margin-top:20px;">Araştırmaları; bireysel ruh sağlığı ile küresel güç stratejilerinin kesiştiği "psikopolitik" düzlemde yoğunlaşmaktadır...</p>
-    `
+      <ul><li>Psikolojik Harp ve Algı Yönetimi</li><li>Bilinçaltı Kodlama ve Sembol Dil Analizi</li><li>Kolektif Bilinç ve Toplumsal Dönüşüm</li><li>Aile, Çift Terapisi ve Bağımlılık Psikolojisi</li></ul>`
   };
 
   const en = {
@@ -265,21 +254,14 @@
     latest_title: "The Invisible Walls of the Mind: When Does a Society Go Blind?",
     latest_date: "December 28, 2025",
     read_more: "Read Post →",
+    ws_notice: "All communication is text-based only. No video or voice calls are provided. WhatsApp is used strictly for written messages.",
+    ws_btn: "WhatsApp Written Communication",
+    ws_warning: "Calls are not accepted.",
     p1_d:"A protocol aimed at transforming the emotional burden of traumatic memories.",
     p2_d:"A multilayered consciousness model bridging science, philosophy, and faith.",
-    about_html: `
-      <p>Melike Balkın Karakaya is a Clinical Psychologist, Philosopher of Religion, and Political Science Researcher. She integrates academic expertise with strategic intuition, focusing on social mind dynamics, perception management, and collective trauma.</p>
-      <h3>🔹 Languages</h3>
-      <ul><li>Turkish (Native)</li><li>Kurdish (Native)</li><li>English (Intermediate-Advanced)</li><li>German (Basic)</li><li>Arabic (Basic)</li><li>Persian (Basic)</li></ul>
-      <h3>🔹 Areas of Expertise</h3>
-      <ul>
-        <li>Psychological Warfare & Perception Management</li>
-        <li>Subconscious Coding & Symbolic Language Analysis</li>
-        <li>Collective Consciousness & Social Transformation</li>
-        <li>Family, Couples Therapy & Addiction Psychology</li>
-      </ul>
-      <p style="margin-top:20px;">Her research focuses on the "psychopolitical" plane where individual mental health intersects with global power strategies...</p>
-    `
+    about_html: `<p>Melike Balkın Karakaya is a Clinical Psychologist and Researcher. She integrates academic expertise with strategic intuition, focusing on social mind dynamics and collective trauma.</p>
+      <h3>🔹 Expertise</h3>
+      <ul><li>Psychological Warfare & Perception Management</li><li>Subconscious Coding Analysis</li><li>Collective Consciousness</li><li>Clinical Psychology & Addiction</li></ul>`
   };
 
   function applyLang(lang){
@@ -295,6 +277,11 @@
     document.getElementById('latest-post-title').textContent = dict.latest_title;
     document.getElementById('latest-post-date').textContent = dict.latest_date;
     document.getElementById('latest-btn-text').textContent = dict.read_more;
+    
+    // WhatsApp Metin Güncelleme
+    document.getElementById('ws-notice-text').textContent = dict.ws_notice;
+    document.getElementById('ws-btn-label').textContent = dict.ws_btn;
+    document.getElementById('ws-warning-text').textContent = dict.ws_warning;
 
     const blogUrl = (safe === 'en') ? 'blog-en.html' : 'blog.html';
     document.getElementById('nav-blog-link').href = blogUrl;
