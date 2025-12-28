@@ -48,7 +48,6 @@
   .btn.alt{background:#21262d;color:#e6edf3}
   .hero-image img{max-width:250px;border-radius:50%;border:3px solid var(--brand);box-shadow:0 4px 15px rgba(0,0,0,.4)}
 
-  /* WhatsApp Box & Consent Step */
   .whatsapp-box {margin-top: 24px; text-align: center; background: rgba(37, 211, 102, 0.05); border: 1px solid rgba(37, 211, 102, 0.2); border-radius: 16px; padding: 24px;}
   .ws-notice {font-size: 14px; color: var(--muted); margin-bottom: 16px; line-height: 1.4;}
   .ws-btn {background: var(--whatsapp); color: #fff !important; padding: 14px 24px; border-radius: 12px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);}
@@ -265,9 +264,23 @@
     about_html: `
       <p>Melike Balkın Karakaya, Klinik Psikolog, Din Felsefecisi ve Siyaset Bilimi Araştırmacısıdır. Akademik uzmanlığını stratejik sezgiyle birleştirerek toplumsal zihin dinamikleri, algı yönetimi ve kolektif travma üzerine çalışmaktadır.</p>
       <h3>🔹 Diller</h3>
-      <ul><li>Türkçe (Ana dil)</li><li>Kürtçe (Ana dil)</li><li>İngilizce (Orta-İleri)</li><li>Almanca (Temel)</li><li>Arapça (Temel)</li><li>Farsça (Temel)</li></ul>
+      <ul>
+        <li>Türkçe (Ana dil)</li>
+        <li>Kürtçe (Ana dil)</li>
+        <li>İngilizce (Orta-İleri Seviye)</li>
+        <li>Almanca (Temel Seviye)</li>
+        <li>Arapça (Temel Seviye)</li>
+        <li>Farsça (Temel Seviye)</li>
+      </ul>
       <h3>🔹 Uzmanlık Alanları</h3>
-      <ul><li>Psikolojik Harp ve Algı Yönetimi</li><li>Bilinçaltı Kodlama ve Sembol Dil Analizi</li><li>Kolektif Bilinç ve Toplumsal Dönüşüm</li><li>Aile, Çift Terapisi ve Bağımlılık Psikolojisi</li><li>Bilinç, Beyin ve Travma İlişkisi</li></ul>
+      <ul>
+        <li>Psikolojik Harp ve Algı Yönetimi</li>
+        <li>Bilinçaltı Kodlama ve Sembol Dil Analizi</li>
+        <li>Kolektif Bilinç ve Toplumsal Dönüşüm</li>
+        <li>Aile, Çift Terapisi ve Bağımlılık Psikolojisi</li>
+        <li>Bilinç, Beyin ve Travma İlişkisi</li>
+      </ul>
+      <p style="margin-top:20px;">Araştırmaları; bireysel ruh sağlığı ile küresel güç stratejilerinin kesiştiği "psikopolitik" düzlemde yoğunlaşmaktadır.</p>
     `
   };
 
@@ -290,11 +303,25 @@
     p1_d:"A protocol aimed at transforming the emotional burden of traumatic memories.",
     p2_d:"A multilayered consciousness model bridging science, philosophy, and faith.",
     about_html: `
-      <p>Melike Balkın Karakaya is a Clinical Psychologist and Researcher. She integrates academic expertise with strategic intuition, focusing on social mind dynamics and collective trauma.</p>
+      <p>Melike Balkın Karakaya is a Clinical Psychologist, Philosopher of Religion, and Political Science Researcher. She integrates academic expertise with strategic intuition, focusing on social mind dynamics and collective trauma.</p>
       <h3>🔹 Languages</h3>
-      <ul><li>Turkish (Native)</li><li>Kurdish (Native)</li><li>English (Intermediate-Advanced)</li><li>German (Basic)</li><li>Arabic (Basic)</li><li>Persian (Basic)</li></ul>
+      <ul>
+        <li>Turkish (Native)</li>
+        <li>Kurdish (Native)</li>
+        <li>English (Intermediate-Advanced)</li>
+        <li>German (Basic)</li>
+        <li>Arabic (Basic)</li>
+        <li>Persian (Basic)</li>
+      </ul>
       <h3>🔹 Expertise</h3>
-      <ul><li>Psychological Warfare & Perception Management</li><li>Subconscious Coding & Symbolic Analysis</li><li>Collective Consciousness</li><li>Clinical Psychology & Addiction</li></ul>
+      <ul>
+        <li>Psychological Warfare & Perception Management</li>
+        <li>Subconscious Coding & Symbolic Analysis</li>
+        <li>Collective Consciousness & Social Transformation</li>
+        <li>Family, Couples Therapy & Addiction</li>
+        <li>Consciousness, Brain, and Trauma Relationship</li>
+      </ul>
+      <p style="margin-top:20px;">Her research focuses on the "psychopolitical" plane where individual mental health and global power strategies intersect.</p>
     `
   };
 
@@ -331,7 +358,6 @@
     localStorage.setItem('lang', safe);
   }
 
-  // Checkbox ve Buton Mantığı
   const consentCheck = document.getElementById('main-ws-consent');
   const wsBtn = document.getElementById('main-ws-btn');
 
