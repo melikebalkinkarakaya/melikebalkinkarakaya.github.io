@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title data-i18n="title">Global Collaboration | Melike Balkın Karakaya</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--danger:#f85149;--radius:18px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:var(--bg)}
+    a{color:var(--brand);text-decoration:none}
+    .container{max-width:900px;margin:auto;padding:0 20px}
+    
+    .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:rgba(13,17,23,.9);border-bottom:1px solid #30363d}
+    .nav-row{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{font-weight:700;color:#fff}
+    .lang-btn{background:#21262d;border:1px solid #30363d;border-radius:12px;padding:6px 10px;cursor:pointer;font-size:18px;text-decoration:none}
+    .lang-btn.active{background:rgba(88,166,255,0.15);border-color:var(--brand)}
+
+    .collab-header {padding:60px 0 40px; text-align:center}
+    .collab-header h1 {font-size:36px; color:var(--brand); margin-bottom:15px}
+    
+    .notice-card {background:rgba(248, 81, 73, 0.1); border:1px solid var(--danger); border-radius:var(--radius); padding:20px; margin-bottom:40px; display:flex; gap:15px; align-items:center}
+    .notice-card i {color:var(--danger); font-size:24px}
+    .notice-text {font-size:15px; font-weight:600}
+
+    .collab-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px}
+    .collab-card {background:var(--card); border:1px solid #30363d; border-radius:var(--radius); padding:30px; height:100%}
+    .collab-card h2 {font-size:20px; margin-top:0; color:var(--brand)}
+    .collab-card p {color:var(--muted); font-size:15px; margin-bottom:20px}
+
+    .email-box {background:#21262d; border-radius:12px; padding:15px; text-align:center; border:1px dashed var(--brand)}
+    .email-box a {font-weight:700; font-size:18px}
+
+    .academic-links {display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:20px}
+    .academic-btn {background:#21262d; border:1px solid #30363d; padding:12px; border-radius:10px; display:flex; align-items:center; gap:8px; font-size:14px; transition:0.2s}
+    .academic-btn:hover {background:var(--brand); color:#0b1020; border-color:transparent}
+
+    .footer{padding:40px 0; text-align:center; color:var(--muted); border-top:1px solid #30363d; margin-top:60px}
+    @media (max-width:600px) {.academic-links {grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-row">
+    <a class="brand" href="index.html">Melike Balkın Karakaya</a>
+    <div class="lang">
+      <button id="btn-tr" class="lang-btn">🇹🇷</button>
+      <button id="btn-en" class="lang-btn active">🇬🇧</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <header class="collab-header">
+    <h1 data-i18n="head">Global Collaboration</h1>
+    <p style="color:var(--muted)" data-i18n="subhead">Academic Research, Strategic Analysis & Professional Projects.</p>
+  </header>
+
+  <div class="notice-card">
+    <i class="fas fa-exclamation-triangle"></i>
+    <div class="notice-text" data-i18n="notice">
+      This area is not for therapy appointments. For sessions, please use the 
+      <a href="randevu.html" style="text-decoration:underline">Appointment Page</a>.
+    </div>
+  </div>
+
+  <div class="collab-grid">
+    <div class="collab-card">
+      <h2 data-i18n="c1_t">Direct Inquiries</h2>
+      <p data-i18n="c1_d">For international research proposals, strategic consultation, and publishing inquiries.</p>
+      <div class="email-box">
+        <a href="mailto:research@melikebalkinkarakaya.org">research@melikebalkinkarakaya.org</a>
+      </div>
+    </div>
+
+    <div class="collab-card">
+      <h2 data-i18n="c2_t">Academic & Professional</h2>
+      <p data-i18n="c2_d">Access datasets, academic citations, and professional background.</p>
+      <div class="academic-links">
+        <a href="https://scholar.google.com/citations?user=F-E6qlYAAAAJ" target="_blank" class="academic-btn"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+        <a href="https://orcid.org/0009-0009-8616-3129" target="_blank" class="academic-btn"><i class="fab fa-orcid"></i> ORCID</a>
+        <a href="https://zenodo.org/records/16915202" target="_blank" class="academic-btn"><i class="fas fa-scroll"></i> Zenodo</a>
+        <a href="https://www.linkedin.com/in/melike-balk%C4%B1n-karakaya-36a684167/" target="_blank" class="academic-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">© 2025 Melike Balkın Karakaya</div>
+</footer>
+
+<script>
+  const tr = {
+    title: "Global İş Birliği | Melike Balkın Karakaya",
+    head: "Küresel İş Birliği",
+    subhead: "Akademik Araştırma, Stratejik Analiz ve Profesyonel Projeler.",
+    notice: "Bu alan terapi randevusu için değildir. Seans talepleriniz için lütfen <a href='randevu.html' style='text-decoration:underline'>Randevu Sayfasını</a> kullanın.",
+    c1_t: "Doğrudan İletişim",
+    c1_d: "Uluslararası araştırma teklifleri, stratejik danışmanlık ve yayıncılık talepleri için.",
+    c2_t: "Akademik ve Profesyonel",
+    c2_d: "Veri setlerine, akademik atıflara ve profesyonel geçmişe erişin."
+  };
+
+  const en = {
+    title: "Global Collaboration | Melike Balkın Karakaya",
+    head: "Global Collaboration",
+    subhead: "Academic Research, Strategic Analysis & Professional Projects.",
+    notice: "This area is not for therapy appointments. For sessions, please use the <a href='randevu.html' style='text-decoration:underline'>Appointment Page</a>.",
+    c1_t: "Direct Inquiries",
+    c1_d: "For international research proposals, strategic consultation, and publishing inquiries.",
+    c2_t: "Academic & Professional",
+    c2_d: "Access datasets, academic citations, and professional background."
+  };
+
+  function applyLang(lang){
+    const safe = (lang === 'tr') ? 'tr' : 'en';
+    const dict = (safe === 'tr') ? tr : en;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if(dict[key]) el.innerHTML = dict[key];
+    });
+    document.title = dict.title;
+    document.getElementById('btn-tr').classList.toggle('active', safe==='tr');
+    document.getElementById('btn-en').classList.toggle('active', safe==='en');
+    localStorage.setItem('lang', safe);
+  }
+
+  applyLang(localStorage.getItem('lang') || 'en');
+  document.getElementById('btn-tr').onclick = () => applyLang('tr');
+  document.getElementById('btn-en').onclick = () => applyLang('en');
+</script>
+</body>
+</html>
