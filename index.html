@@ -67,14 +67,12 @@
 
   .grid {display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:25px}
   .item-card {background:var(--card);border:1px solid #30363d;border-radius:14px;padding:16px;text-align:center;transition:transform 0.2s;display:flex;flex-direction:column}
-  .item-card:hover {transform: translateY(-5px)}
   .item-card img {width:100%;border-radius:10px;margin-bottom:12px;aspect-ratio:3/4;object-fit:cover}
-  .item-card h3 {font-size:17px;margin:10px 0;min-height:2.5em;display:flex;align-items:center;justify-content:center}
   
   .flag-list {display:flex; gap:5px; justify-content:center; margin-top:10px; font-size:14px;}
 
-  .about-content h3 {color: var(--brand); font-size: 18px; margin-top: 20px;}
-  .about-content ul {list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;}
+  .about-content h3 {color: var(--brand); font-size: 18px; margin-top: 25px; border-bottom: 1px solid #30363d; padding-bottom: 8px;}
+  .about-content ul {list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; margin-top: 15px;}
   .about-content li::before {content: "•"; color: var(--brand); margin-right: 8px; font-weight: bold;}
   
   .social-grid {display:grid;grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));gap:12px;margin-top:20px}
@@ -199,15 +197,12 @@
       <h2 class="section-title" data-i18n="nav_contact">İletişim & Randevu</h2>
       
       <div class="whatsapp-box">
-        <p id="ws-notice-text" class="ws-notice">Tüm görüşmeler yazılı olarak yürütülmektedir. Görüntülü veya sesli görüşme yapılmamaktadır. WhatsApp yalnızca mesajlaşma amaçlıdır.</p>
+        <p id="ws-notice-text" class="ws-notice"></p>
         <a href="randevu.html" class="ws-btn">
-          <i class="fab fa-whatsapp"></i> <span id="ws-btn-label">Randevu Bilgileri ve İletişim</span>
+          <i class="fab fa-whatsapp"></i> <span id="ws-btn-label"></span>
         </a>
-        <span id="ws-warning-text" class="ws-warning">Aramalara yanıt verilmez.</span>
-        
-        <p style="margin-top:20px; font-size:13px; color:var(--muted);" id="collab-link-container">
-          Academic or professional inquiries? Visit <a href="collaboration.html" style="text-decoration:underline; color:var(--brand);">Global Collaboration</a>
-        </p>
+        <span id="ws-warning-text" class="ws-warning"></span>
+        <p style="margin-top:20px; font-size:13px; color:var(--muted);" id="collab-link-container"></p>
       </div>
 
       <div class="social-grid" style="margin-top: 40px;">
@@ -232,9 +227,7 @@
   </section>
 
   <footer class="footer">
-    <div class="container">
-        © 2025 Melike Balkın Karakaya | <a href="collaboration.html" style="color:var(--muted);">Global Collaboration</a>
-    </div>
+    <div class="container" id="footer-text"></div>
   </footer>
 
   <script>
@@ -252,11 +245,30 @@
     ws_btn: "Randevu Bilgileri ve İletişim",
     ws_warning: "Aramalara yanıt verilmez.",
     collab_text: `Akademik veya profesyonel iş birliği? <a href="collaboration.html" style="text-decoration:underline; color:var(--brand);">Küresel İş Birliği</a> sayfasını ziyaret edin.`,
+    footer_html: `© 2025 Melike Balkın Karakaya | <a href="collaboration.html" style="color:var(--muted);">Global Collaboration</a>`,
     p1_d:"Travmatik anıların duygusal yükünü dönüştürmeye yönelik protokol.",
     p2_d:"Bilim, felsefe ve inancı buluşturan çok katmanlı bilinç modeli.",
-    about_html: `<p>Melike Balkın Karakaya, Klinik Psikolog, Din Felsefecisi ve Siyaset Bilimi Araştırmacısıdır. Akademik uzmanlığını stratejik sezgiyle birleştirerek toplumsal zihin dinamikleri, algı yönetimi ve kolektif travma üzerine çalışmaktadır.</p>
+    about_html: `
+      <p>Melike Balkın Karakaya, Klinik Psikolog, Din Felsefecisi ve Siyaset Bilimi Araştırmacısıdır. Akademik uzmanlığını stratejik sezgiyle birleştirerek toplumsal zihin dinamikleri, algı yönetimi ve kolektif travma üzerine çalışmaktadır.</p>
+      <h3>🔹 Diller</h3>
+      <ul>
+        <li>Türkçe (Ana dil)</li>
+        <li>Kürtçe (Ana dil)</li>
+        <li>İngilizce (Orta-İleri Seviye)</li>
+        <li>Almanca (Temel Seviye)</li>
+        <li>Arapça (Temel Seviye)</li>
+        <li>Farsça (Temel Seviye)</li>
+      </ul>
       <h3>🔹 Uzmanlık Alanları</h3>
-      <ul><li>Psikolojik Harp ve Algı Yönetimi</li><li>Bilinçaltı Kodlama ve Sembol Dil Analizi</li><li>Kolektif Bilinç ve Toplumsal Dönüşüm</li><li>Aile, Çift Terapisi ve Bağımlılık Psikolojisi</li></ul>`
+      <ul>
+        <li>Psikolojik Harp ve Algı Yönetimi</li>
+        <li>Bilinçaltı Kodlama ve Sembol Dil Analizi</li>
+        <li>Kolektif Bilinç ve Toplumsal Dönüşüm</li>
+        <li>Aile, Çift Terapisi ve Bağımlılık Psikolojisi</li>
+        <li>Bilinç, Beyin ve Travma İlişkisi</li>
+      </ul>
+      <p style="margin-top:20px;">Araştırmaları; bireysel ruh sağlığı ile küresel güç stratejilerinin kesiştiği "psikopolitik" düzlemde yoğunlaşmaktadır.</p>
+    `
   };
 
   const en = {
@@ -273,11 +285,29 @@
     ws_btn: "Appointment Info & Contact",
     ws_warning: "Calls are not accepted.",
     collab_text: `Academic or professional inquiries? Visit <a href="collaboration.html" style="text-decoration:underline; color:var(--brand);">Global Collaboration</a>`,
+    footer_html: `© 2025 Melike Balkın Karakaya | <a href="collaboration.html" style="color:var(--muted);">Global Collaboration</a>`,
     p1_d:"A protocol aimed at transforming the emotional burden of traumatic memories.",
     p2_d:"A multilayered consciousness model bridging science, philosophy, and faith.",
-    about_html: `<p>Melike Balkın Karakaya is a Clinical Psychologist and Researcher. She integrates academic expertise with strategic intuition, focusing on social mind dynamics and collective trauma.</p>
+    about_html: `
+      <p>Melike Balkın Karakaya is a Clinical Psychologist, Philosopher of Religion, and Political Science Researcher. She integrates academic expertise with strategic intuition, focusing on social mind dynamics and collective trauma.</p>
+      <h3>🔹 Languages</h3>
+      <ul>
+        <li>Turkish (Native)</li>
+        <li>Kurdish (Native)</li>
+        <li>English (Intermediate-Advanced)</li>
+        <li>German (Basic)</li>
+        <li>Arabic (Basic)</li>
+        <li>Persian (Basic)</li>
+      </ul>
       <h3>🔹 Expertise</h3>
-      <ul><li>Psychological Warfare & Perception Management</li><li>Subconscious Coding Analysis</li><li>Collective Consciousness</li><li>Clinical Psychology & Addiction</li></ul>`
+      <ul>
+        <li>Psychological Warfare & Perception Management</li>
+        <li>Subconscious Coding & Symbolic Analysis</li>
+        <li>Collective Consciousness & Social Transformation</li>
+        <li>Family, Couples Therapy & Addiction</li>
+        <li>Consciousness, Brain, and Trauma</li>
+      </ul>
+    `
   };
 
   function applyLang(lang){
@@ -298,6 +328,7 @@
     document.getElementById('ws-btn-label').textContent = dict.ws_btn;
     document.getElementById('ws-warning-text').textContent = dict.ws_warning;
     document.getElementById('collab-link-container').innerHTML = dict.collab_text;
+    document.getElementById('footer-text').innerHTML = dict.footer_html;
 
     const blogUrl = (safe === 'en') ? 'blog-en.html' : 'blog.html';
     document.getElementById('nav-blog-link').href = blogUrl;
