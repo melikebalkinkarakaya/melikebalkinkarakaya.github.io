@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="tr" data-lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title data-i18n="title">Randevu Al - Yazılı Seanslar | Melike Balkın Karakaya</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--whatsapp:#25D366;--danger:#f85149;--radius:18px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:var(--bg)}
+    a{color:var(--brand);text-decoration:none}
+    .container{max-width:800px;margin:auto;padding:0 20px}
+    
+    .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:rgba(13,17,23,.9);border-bottom:1px solid #30363d}
+    .nav-row{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{font-weight:700;color:#fff}
+    .lang-btn{background:#21262d;border:1px solid #30363d;border-radius:12px;padding:6px 10px;cursor:pointer;font-size:18px;text-decoration:none}
+    .lang-btn.active{background:rgba(88,166,255,0.15);border-color:var(--brand)}
+
+    .appointment-header {padding:60px 0 20px; text-align:center}
+    .appointment-header h1 {font-size:32px; color:var(--brand); margin-bottom:10px}
+    
+    .info-card {background:var(--card); border:1px solid #30363d; border-radius:var(--radius); padding:32px; margin-bottom:40px; box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+    .info-card h2 {font-size:20px; margin-top:0; color:#fff; border-bottom:1px solid #30363d; padding-bottom:12px}
+    
+    .rules-list {list-style:none; padding:0; margin:20px 0}
+    .rules-list li {display:flex; gap:12px; margin-bottom:16px; align-items:flex-start}
+    .rules-list i {color:var(--brand); margin-top:5px}
+
+    .whatsapp-section {text-align:center; padding:20px 0}
+    .ws-btn {background:var(--whatsapp); color:#fff !important; padding:18px 32px; border-radius:14px; font-weight:700; font-size:18px; display:inline-flex; align-items:center; gap:12px; transition:0.3s; box-shadow:0 6px 20px rgba(37,211,102,0.25)}
+    .ws-btn:hover {transform:translateY(-2px); filter:brightness(1.1)}
+    .ws-warning {color:var(--danger); font-weight:600; margin-top:15px; display:block; font-size:14px}
+
+    .footer{padding:40px 0; text-align:center; color:var(--muted); border-top:1px solid #30363d; margin-top:60px}
+    @media (max-width:600px) {.appointment-header h1 {font-size:24px}}
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-row">
+    <a class="brand" href="index.html">Melike Balkın Karakaya</a>
+    <div class="lang">
+      <button id="btn-tr" class="lang-btn active">🇹🇷</button>
+      <button id="btn-en" class="lang-btn">🇬🇧</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <header class="appointment-header">
+    <h1 data-i18n="head">Randevu Al – Yazılı Seanslar</h1>
+    <p style="color:var(--muted)" data-i18n="subhead">Türkiye ve yurt dışından başvurular için profesyonel süreç bilgilendirmesi.</p>
+  </header>
+
+  <div class="info-card">
+    <h2 data-i18n="rules_title">Seans ve İletişim Kuralları</h2>
+    <ul class="rules-list">
+      <li><i class="fas fa-check-circle"></i> <span data-i18n="r1">Tüm görüşmeler profesyonel çerçevede <b>yalnızca yazılı</b> olarak yürütülmektedir.</span></li>
+      <li><i class="fas fa-times-circle" style="color:var(--danger)"></i> <span data-i18n="r2">Görüntülü veya sesli görüşme yapılmamaktadır.</span></li>
+      <li><i class="fas fa-comment-dots"></i> <span data-i18n="r3">WhatsApp hattı yalnızca mesajlaşma ve randevu organizasyonu amaçlıdır.</span></li>
+      <li><i class="fas fa-phone-slash" style="color:var(--danger)"></i> <span data-i18n="r4">Sesli veya görüntülü aramalara kesinlikle yanıt verilmez.</span></li>
+      <li><i class="fas fa-user-shield"></i> <span data-i18n="r5">Paylaşılan tüm bilgiler etik kurallar gereği tamamen gizli tutulur.</span></li>
+    </ul>
+  </div>
+
+  <div class="whatsapp-section">
+    <a href="https://wa.me/905325698152" target="_blank" class="ws-btn">
+      <i class="fab fa-whatsapp"></i> <span data-i18n="btn_text">WhatsApp ile Yazılı İletişim</span>
+    </a>
+    <span class="ws-warning" data-i18n="warning">Arama taleplerine yanıt verilmez.</span>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">© 2025 Melike Balkın Karakaya</div>
+</footer>
+
+<script>
+  const tr = {
+    title: "Randevu Al - Yazılı Seanslar | Melike Balkın Karakaya",
+    head: "Randevu Al – Yazılı Seanslar",
+    subhead: "Türkiye ve yurt dışından başvurular için profesyonel süreç bilgilendirmesi.",
+    rules_title: "Seans ve İletişim Kuralları",
+    r1: "Tüm görüşmeler profesyonel çerçevede yalnızca yazılı olarak yürütülmektedir.",
+    r2: "Görüntülü veya sesli görüşme yapılmamaktadır.",
+    r3: "WhatsApp hattı yalnızca mesajlaşma ve randevu organizasyonu amaçlıdır.",
+    r4: "Sesli veya görüntülü aramalara kesinlikle yanıt verilmez.",
+    r5: "Paylaşılan tüm bilgiler etik kurallar gereği tamamen gizli tutulur.",
+    btn_text: "WhatsApp ile Yazılı İletişim",
+    warning: "Arama taleplerine yanıt verilmez."
+  };
+
+  const en = {
+    title: "Get Appointment - Text-Based Sessions | Melike Balkın Karakaya",
+    head: "Book a Session – Text-Based",
+    subhead: "Professional process information for applicants from Türkiye and abroad.",
+    rules_title: "Session and Communication Rules",
+    r1: "All sessions are conducted strictly in a text-based format.",
+    r2: "No video or voice calls are provided.",
+    r3: "The WhatsApp line is for messaging and scheduling purposes only.",
+    r4: "Audio or video calls will strictly not be answered.",
+    r5: "All shared information is kept strictly confidential per ethical guidelines.",
+    btn_text: "WhatsApp Written Communication",
+    warning: "Calls are not accepted."
+  };
+
+  function applyLang(lang){
+    const safe = (lang === 'en') ? 'en' : 'tr';
+    const dict = (safe === 'en') ? en : tr;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if(dict[key]) el.innerHTML = dict[key];
+    });
+    document.title = dict.title;
+    document.getElementById('btn-tr').classList.toggle('active', safe==='tr');
+    document.getElementById('btn-en').classList.toggle('active', safe==='en');
+    localStorage.setItem('lang', safe);
+  }
+
+  applyLang(localStorage.getItem('lang') || 'tr');
+  document.getElementById('btn-tr').onclick = () => applyLang('tr');
+  document.getElementById('btn-en').onclick = () => applyLang('en');
+</script>
+</body>
+</html>
