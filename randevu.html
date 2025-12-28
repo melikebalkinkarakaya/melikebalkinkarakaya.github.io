@@ -1,63 +1,171 @@
-<style>
-  /* Onay Kutusu Stilleri */
-  .confirm-container {
-    background: rgba(88, 166, 255, 0.05);
-    border: 1px solid #30363d;
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  .checkbox-wrapper {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--text);
-  }
-  .checkbox-wrapper input {
-    width: 20px;
-    height: 20px;
-    margin-top: 2px;
-    cursor: pointer;
-  }
-  .ws-btn.disabled {
-    opacity: 0.3;
-    pointer-events: none;
-    filter: grayscale(1);
-  }
-</style>
+<!doctype html>
+<html lang="tr" data-lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title data-i18n="page_title">Randevu ve İletişim - Melike Balkın Karakaya</title>
+  <link rel="icon" href="/favicon.ico?v=1">
+  <meta name="theme-color" content="#0d1117">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <style>
+  :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--ring:rgba(88,166,255,.25);--container:800px;--radius:18px;--danger:#f85149;--whatsapp:#25D366}
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);display:flex;flex-direction:column;min-height:100vh}
+  a{color:var(--brand);text-decoration:none}
+  .container{max-width:var(--container);margin:auto;padding:40px 20px}
 
-<div class="whatsapp-section">
-  <div class="confirm-container">
-    <label class="checkbox-wrapper">
-      <input type="checkbox" id="consent-check">
-      <span data-i18n="consent_text">Yazılı iletişim esaslı çalışmayı kabul ediyorum.</span>
-    </label>
-  </div>
+  .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:rgba(13,17,23,.9);border-bottom:1px solid #30363d}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1100px;margin:auto;padding:0 20px}
+  .brand{font-weight:700;color:#fff}
+  .back-link{font-size:14px;color:var(--muted);display:flex;align-items:center;gap:6px}
 
-  <a href="https://wa.me/905325698152" target="_blank" class="ws-btn disabled" id="ws-submit-btn">
-    <i class="fab fa-whatsapp"></i> <span data-i18n="btn_text">WhatsApp ile Yazılı İletişim</span>
-  </a>
-  <span class="ws-warning" data-i18n="warning">Arama taleplerine yanıt verilmez.</span>
-</div>
+  .lang-btn{background:#21262d;border:1px solid #30363d;border-radius:10px;padding:5px 8px;cursor:pointer;font-size:16px;text-decoration:none}
 
-<script>
-  // ... (eski tr/en sözlükleri içine şunları ekleyin) ...
-  tr.consent_text = "Yazılı iletişim esaslı çalışmayı kabul ediyorum.";
-  en.consent_text = "I accept that communication is text-based only.";
+  .card{background:var(--card);border:1px solid #30363d;border-radius:var(--radius);padding:32px;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+  h1{font-size:28px;margin:0 0 20px;color:#fff;border-left:4px solid var(--brand);padding-left:15px}
+  
+  .rules-list{margin:24px 0;padding:0;list-style:none}
+  .rules-list li{background:rgba(255,255,255,0.03);margin-bottom:12px;padding:16px;border-radius:12px;border:1px solid #30363d;display:flex;gap:15px;align-items:flex-start}
+  .rules-list i{color:var(--brand);margin-top:4px}
+  .rules-list b{color:#fff;display:block;margin-bottom:4px}
 
-  const check = document.getElementById('consent-check');
-  const btn = document.getElementById('ws-submit-btn');
+  .whatsapp-section{margin-top:40px;text-align:center;border-top:1px solid #30363d;padding-top:30px}
+  
+  /* Onay Kutusu Tasarımı */
+  .consent-box {background: rgba(88, 166, 255, 0.05); border: 1px solid var(--brand); border-radius: 12px; padding: 20px; margin-bottom: 24px; text-align: left;}
+  .consent-label {display: flex; align-items: flex-start; gap: 12px; cursor: pointer; font-weight: 500;}
+  .consent-label input {width: 22px; height: 22px; margin-top: 2px; cursor: pointer;}
+  
+  .ws-btn{background:var(--whatsapp);color:#fff !important;padding:16px 32px;border-radius:14px;font-weight:700;display:inline-flex;align-items:center;gap:12px;font-size:18px;transition:0.3s;box-shadow:0 4px 15px rgba(37,211,102,0.3)}
+  .ws-btn:hover{transform:scale(1.02);filter:brightness(1.1)}
+  .ws-btn.disabled{opacity:0.2;pointer-events:none;filter:grayscale(1);box-shadow:none}
+  
+  .ws-warning{display:block;margin-top:15px;color:var(--danger);font-size:13px;font-weight:600}
+  
+  .footer{margin-top:auto;padding:30px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid #30363d}
+  @media (max-width:600px){.card{padding:20px} h1{font-size:22px}}
+  </style>
+</head>
+<body>
 
-  check.addEventListener('change', function() {
-    if(this.checked) {
-      btn.classList.remove('disabled');
-    } else {
-      btn.classList.add('disabled');
+  <nav class="nav">
+    <div class="nav-row">
+      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> <span data-i18n="back_home">Anasayfaya Dön</span></a>
+      <div class="lang">
+        <button id="btn-tr" class="lang-btn">🇹🇷</button>
+        <button id="btn-en" class="lang-btn">🇬🇧</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="card">
+      <h1 data-i18n="h1_title">Randevu ve İletişim Bilgileri</h1>
+      <p style="color:var(--muted)" data-i18n="lead_text">Seans başvurusu yapmadan önce lütfen aşağıdaki çalışma prensiplerini dikkatlice okuyunuz.</p>
+
+      <ul class="rules-list">
+        <li>
+          <i class="fas fa-keyboard"></i>
+          <div><b data-i18n="r1_t">Yalnızca Yazılı İletişim</b><span data-i18n="r1_d">Tüm terapi süreçleri ve ön görüşmeler yalnızca yazılı (mesaj yoluyla) yürütülmektedir. Sesli veya görüntülü arama yapılmamaktadır.</span></div>
+        </li>
+        <li>
+          <i class="fas fa-phone-slash"></i>
+          <div><b data-i18n="r2_t">Aramalara Yanıt Verilmez</b><span data-i18n="r2_d">WhatsApp üzerinden gelen sesli veya görüntülü aramalar kabul edilmez ve yanıtlanmaz.</span></div>
+        </li>
+        <li>
+          <i class="fas fa-clock"></i>
+          <div><b data-i18n="r3_t">Randevu Usulü</b><span data-i18n="r3_d">Seans saatleri önceden planlanır. Mesajlarınıza yoğunluk durumuna göre en kısa sürede dönüş sağlanacaktır.</span></div>
+        </li>
+      </ul>
+
+      <div class="whatsapp-section">
+        <div class="consent-box">
+          <label class="consent-label">
+            <input type="checkbox" id="consent-check">
+            <span data-i18n="consent_text">Yazılı iletişim esaslı çalışmayı, arama yapılmayacağını ve sesli/görüntülü görüşme sağlanmayacağını kabul ediyorum.</span>
+          </label>
+        </div>
+
+        <a href="https://wa.me/905325698152" target="_blank" class="ws-btn disabled" id="ws-btn">
+          <i class="fab fa-whatsapp"></i> <span data-i18n="btn_label">WhatsApp ile Yazılı İletişim</span>
+        </a>
+        <span class="ws-warning" data-i18n="warning_text">Arama taleplerine kesinlikle yanıt verilmez.</span>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2025 Melike Balkın Karakaya | <a href="collaboration.html">Global Collaboration</a>
+    </div>
+  </footer>
+
+  <script>
+    const tr = {
+      page_title: "Randevu ve İletişim - Melike Balkın Karakaya",
+      back_home: "Anasayfaya Dön",
+      h1_title: "Randevu ve Çalışma Prensipleri",
+      lead_text: "Profesyonel sınırlar ve seans verimliliği adına aşağıdaki kurallar geçerlidir:",
+      r1_t: "Yalnızca Yazılı İletişim",
+      r1_d: "Tüm süreç yazılı mesajlaşma üzerinden ilerler. Bu yöntem, sürecin kayıtlı kalmasını ve odaklanmayı artırır.",
+      r2_t: "Aramalar Kabul Edilmez",
+      r2_d: "Sesli veya görüntülü aramalar kesinlikle yanıtlanmaz. Lütfen sadece mesaj gönderiniz.",
+      r3_t: "Gizlilik ve Kayıt",
+      r3_d: "Yazılı seanslar tamamen gizlilik ilkesine bağlıdır ve profesyonel etik çerçevesinde yürütülür.",
+      consent_text: "Yazılı iletişim esaslı çalışmayı, arama yapılmayacağını ve sesli/görüntülü görüşme sağlanmayacağını kabul ediyorum.",
+      btn_label: "WhatsApp ile Yazılı İletişim",
+      warning_text: "Arama taleplerine kesinlikle yanıt verilmez."
+    };
+
+    const en = {
+      page_title: "Appointment & Contact - Melike Balkın Karakaya",
+      back_home: "Back to Home",
+      h1_title: "Appointment & Working Principles",
+      lead_text: "The following rules apply for professional boundaries and session efficiency:",
+      r1_t: "Text-Based Only",
+      r1_d: "All therapy processes and pre-interviews are conducted only via text messaging.",
+      r2_t: "No Calls Accepted",
+      r2_d: "Voice or video calls are strictly not answered. Please send messages only.",
+      r3_t: "Confidentiality",
+      r3_d: "Text sessions are strictly confidential and conducted within professional ethics.",
+      consent_text: "I accept that communication is text-based only and no voice/video calls are provided.",
+      btn_label: "WhatsApp Text Communication",
+      warning_text: "Calls are strictly not accepted."
+    };
+
+    function applyLang(lang){
+      const safe = (lang === 'en') ? 'en' : 'tr';
+      const dict = (safe === 'en') ? en : tr;
+      
+      document.title = dict.page_title;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if(dict[key]) el.textContent = dict[key];
+      });
+      
+      localStorage.setItem('lang', safe);
+      document.getElementById('btn-tr').style.opacity = (safe === 'tr') ? '1' : '0.5';
+      document.getElementById('btn-en').style.opacity = (safe === 'en') ? '1' : '0.5';
     }
-  });
-  // ... (applyLang fonksiyonu aynı kalacak) ...
-</script>
+
+    // Onay Kutusu Kontrolü
+    const check = document.getElementById('consent-check');
+    const btn = document.getElementById('ws-btn');
+
+    check.addEventListener('change', function() {
+      if(this.checked) {
+        btn.classList.remove('disabled');
+      } else {
+        btn.classList.add('disabled');
+      }
+    });
+
+    applyLang(localStorage.getItem('lang') || 'tr');
+    document.getElementById('btn-tr').onclick = () => applyLang('tr');
+    document.getElementById('btn-en').onclick = () => applyLang('en');
+  </script>
+</body>
+</html>
