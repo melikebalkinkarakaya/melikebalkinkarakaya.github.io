@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="color-scheme" content="dark light" />
-  <title data-i18n="site_title">Melike Balkın Karakaya</title>
+  <meta name="color-scheme" content="dark" /> <title data-i18n="site_title">Melike Balkın Karakaya</title>
   <meta name="description" content="Klinik Psikolog; din felsefesi ve siyaset bilimi araştırmacısı. Psikoloji, felsefe ve tasavvuf ekseninde yazılar; bilinç, algı ve travma dönüşümü.">
   <link rel="canonical" href="https://melikebalkinkarakaya.org/" />
   <link rel="icon" href="/favicon.ico?v=1">
@@ -24,7 +23,10 @@
   <style>
   :root{--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9aa4af;--brand:#58a6ff;--ring:rgba(88,166,255,.25);--container:1100px;--radius:18px;--danger:#f85149;--whatsapp:#25D366}
   *{box-sizing:border-box} html{scroll-behavior:smooth}
-  body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:var(--bg)}
+  
+  /* Zemin rengi burada !important ile zorunlu hale getirildi */
+  body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background-color:#0d1117 !important;}
+  
   a{color:var(--brand);text-decoration:none} img{max-width:100%;display:block}
   .container{max-width:var(--container);margin:auto;padding:0 20px}
 
@@ -44,7 +46,7 @@
   h1{font-size:42px;line-height:1.15;margin:0 0 10px}
   .lead{color:var(--muted);max-width:58ch;margin:6px 0 18px}
   .cta{display:flex;gap:12px;flex-wrap:wrap}
-  .btn{background:var(--brand);color:#0b1020;padding:12px 18px;border-radius:12px;font-weight:600;display:inline-flex;align-items:center;gap:8px}
+  .btn{background:var(--brand);color:#0b1020;padding:12px 18px;border-radius:12px;font-weight:600;display:inline-flex;align-items:center;gap:8px; border:none; cursor:pointer;}
   .btn.alt{background:#21262d;color:#e6edf3}
   .hero-image img{max-width:250px;border-radius:50%;border:3px solid var(--brand);box-shadow:0 4px 15px rgba(0,0,0,.4)}
 
@@ -68,7 +70,7 @@
   .latest-link {margin-left: auto; background: rgba(88,166,255,0.1); color: var(--brand); padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: bold;}
 
   .section{padding:48px 0}
-  .section-title{font-size:24px;margin:0 0 20px;border-left:4px solid var(--brand);padding-left:12px}
+  .section-title{font-size:24px;margin:0 0 20px;border-left:4px solid var(--brand);padding-left:12px; color:#fff;}
   .card{background:var(--card);border:1px solid #30363d;border-radius:var(--radius);padding:24px}
 
   .grid {display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:25px}
@@ -350,8 +352,6 @@
     document.getElementById('nav-blog-link').href = blogUrl;
     document.getElementById('hero-blog-btn').href = blogUrl;
     document.getElementById('latest-post-link').href = blogUrl; 
-
-    document.getElementById('nav-contact-link').href = "randevu.html";
 
     document.getElementById('btn-tr').classList.toggle('active', safe==='tr');
     document.getElementById('btn-en').classList.toggle('active', safe==='en');
