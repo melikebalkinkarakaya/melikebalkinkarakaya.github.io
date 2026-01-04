@@ -21,62 +21,58 @@
   <style>
   :root {
     color-scheme: dark !important;
-    --bg: #0d1117;
-    --card: #161b22;
-    --text: #e6edf3;
-    --muted: #9aa4af;
-    --brand: #58a6ff;
-    --ring: rgba(88,166,255,.25);
-    --container: 1100px;
-    --radius: 18px;
-    --danger: #f85149;
-    --highlight: #bc8cff;
+    --bg:#0d1117;
+    --card:#161b22;
+    --text:#e6edf3;
+    --muted:#9aa4af;
+    --brand:#58a6ff;
+    --ring:rgba(88,166,255,.25);
+    --container:1100px;
+    --radius:18px;
+    --danger:#f85149;
+    --highlight:#bc8cff;
   }
   
-  * { box-sizing: border-box; } 
-  html { scroll-behavior: smooth; }
+  * { box-sizing:border-box; } 
+  html { scroll-behavior:smooth; }
   
-  /* Arka planın beyaz olmasını engelleyen kesin çözüm */
-  html, body {
-    background-color: #0d1117 !important;
-    color: #e6edf3 !important;
-    margin: 0;
-    padding: 0;
-  }
-  
+  /* Arka planı !important ile kilitledik, artık beyaz olamaz */
   body {
-    font: 16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    margin:0;
+    font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    color:var(--text);
+    background-color: #0d1117 !important; 
   }
+
+  a { color:var(--brand); text-decoration:none; }
+  .container { max-width:var(--container); margin:auto; padding:0 20px; }
+
+  .nav { position:sticky; top:0; z-index:50; backdrop-filter:blur(8px); background:rgba(13,17,23,.9); border-bottom:1px solid #30363d; }
+  .nav-row { display:flex; align-items:center; justify-content:space-between; height:64px; }
+  .brand { font-weight:700; color:#fff; }
+  .menu { display:flex; gap:16px; flex-wrap:wrap; }
+  .menu a { padding:8px 12px; border-radius:10px; color:#c9d1d9; }
+  .menu a:hover { background:#21262d; }
   
-  a { color: var(--brand); text-decoration: none; }
-  .container { max-width: var(--container); margin: auto; padding: 0 20px; }
+  .lang-switcher { display:flex; gap:8px; align-items:center; }
+  .lang-btn { background:#21262d; border:1px solid #30363d; border-radius:12px; padding:6px 12px; cursor:pointer; font-size:18px; transition:0.2s; text-decoration:none; }
+  .lang-btn.active { background:rgba(88,166,255,0.15); border-color:var(--brand); box-shadow:0 0 10px var(--ring); }
 
-  .nav { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px); background: rgba(13,17,23,.9); border-bottom: 1px solid #30363d; }
-  .nav-row { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-  .brand { font-weight: 700; color: #fff; }
-  .menu { display: flex; gap: 16px; flex-wrap: wrap; }
-  .menu a { padding: 8px 12px; border-radius: 10px; color: #c9d1d9; font-size: 14px; }
-  .menu a:hover { background: #21262d; }
+  .section { padding:48px 0; }
+  .section-title { font-size:32px; margin:0 0 24px; color:#fff; text-align:center; }
+
+  .about-card { background:var(--card); border:1px solid #30363d; border-radius:var(--radius); padding:30px; margin-bottom:50px; line-height:1.8; }
+  .about-card h2 { color:var(--brand); margin-top:0; }
   
-  .lang-switcher { display: flex; gap: 8px; align-items: center; }
-  .lang-btn { background: #21262d; border: 1px solid #30363d; border-radius: 12px; padding: 6px 12px; cursor: pointer; font-size: 18px; transition: 0.2s; text-decoration: none; }
-  .lang-btn.active { background: rgba(88,166,255,0.15); border-color: var(--brand); }
+  .blog-list { display:grid; gap:24px; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); }
+  .blog-card { background:var(--card); border-radius:var(--radius); overflow:hidden; border:1px solid #30363d; box-shadow:0 4px 10px rgba(0,0,0,.25); transition:transform .2s ease-in-out,box-shadow .2s ease-in-out; height:100%; display:flex; flex-direction:column; text-decoration:none; color:inherit; }
+  .blog-card:hover { transform:translateY(-5px); box-shadow:0 8px 15px rgba(0,0,0,.4); border-color:var(--brand); }
+  .blog-card .card-content { padding:24px; }
+  .blog-card h3 { margin:0 0 12px; font-size:22px; color:var(--brand); line-height:1.3; }
+  .blog-card p { font-size:15px; color:var(--muted); line-height:1.6; margin:0; }
+  .blog-card .meta { font-size:13px; color:var(--muted); display:block; margin-top:20px; font-weight:500; }
 
-  .section { padding: 48px 0; }
-  .section-title { font-size: 32px; margin: 0 0 24px; color: #fff; text-align: center; }
-
-  .about-card { background: var(--card); border: 1px solid #30363d; border-radius: var(--radius); padding: 30px; margin-bottom: 50px; line-height: 1.8; }
-  .about-card h2 { color: var(--brand); margin-top: 0; }
-  
-  .blog-list { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
-  .blog-card { background: var(--card); border-radius: var(--radius); border: 1px solid #30363d; transition: transform .2s, border-color .2s; text-decoration: none; display: flex; flex-direction: column; }
-  .blog-card:hover { transform: translateY(-5px); border-color: var(--brand); }
-  .blog-card .card-content { padding: 24px; }
-  .blog-card h3 { margin: 0 0 12px; font-size: 21px; color: var(--brand); line-height: 1.3; }
-  .blog-card p { font-size: 15px; color: var(--muted); line-height: 1.6; margin: 0; }
-  .blog-card .meta { font-size: 13px; color: var(--muted); display: block; margin-top: 20px; font-weight: 500; }
-
-  .footer { padding: 40px 0; color: #8b949e; text-align: center; border-top: 1px solid #30363d; margin-top: 60px; }
+  .footer { padding:40px 0; color:#8b949e; text-align:center; border-top:1px solid #30363d; margin-top:60px; }
   </style>
 </head>
 <body>
@@ -100,7 +96,7 @@
     <section id="about" class="section">
       <div class="about-card">
         <h2>About Melike Balkın Karakaya</h2>
-        <p>Melike Balkın Karakaya is a Clinical Psychologist and Social Science Analyst.</p>
+        <p>Melike Balkın Karakaya is a Clinical Psychologist and Social Science Analyst. She explores the intersections of education, ideology, justice, and the collective mind.</p>
       </div>
 
       <h1 class="section-title">Global Thoughts</h1>
@@ -116,8 +112,8 @@
 
         <a href="The%20Invisible.html" class="blog-card" style="border-top: 3px solid var(--highlight);">
           <div class="card-content">
-            <h3 style="color:var(--highlight)">The Invisible Walls of the Mind</h3>
-            <p>A society is remembered by what it deliberately chooses not to speak of.</p>
+            <h3 style="color:var(--highlight)">The Invisible Walls of the Mind: When Does a Society Go Blind?</h3>
+            <p>A society is remembered not only by what it speaks of, but also by what it deliberately chooses not to speak of.</p>
             <span class="meta">December 28, 2025</span>
           </div>
         </a>
@@ -125,8 +121,24 @@
         <a href="Is%20Türkiye.html" class="blog-card" style="border-top: 3px solid var(--brand);">
           <div class="card-content">
             <h3>Is Türkiye the "Weakest Link"?</h3>
-            <p>Strategic analysis of the Falcon 50 incident and political perception.</p>
+            <p>A strategic analysis of the Falcon 50 incident and political perception management.</p>
             <span class="meta">December 25, 2025</span>
+          </div>
+        </a>
+
+        <a href="Why%20Does%20Excess%20.html" class="blog-card">
+          <div class="card-content">
+            <h3>Why Does Excess Grow as Prohibition Increases?</h3>
+            <p>An analysis of how suppressed impulses re-emerge as societal scandals.</p>
+            <span class="meta">December 22, 2025</span>
+          </div>
+        </a>
+
+        <a href="digital-prophethood.html" class="blog-card">
+          <div class="card-content">
+            <h3>Digital Prophethood: The Religion Behind Grok</h3>
+            <p>Evaluating AI as an actor of psychological warfare and perception management.</p>
+            <span class="meta">July 13, 2025</span>
           </div>
         </a>
 
