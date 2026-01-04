@@ -60,11 +60,17 @@
     <noscript><p>Bu sayfa JavaScript ile çalışır. Lütfen tarayıcınızda JavaScript'i etkinleştirin.</p></noscript>
   </main>
 
-  <footer>© 2025 Melike Balkın Karakaya</footer>
+  <footer>© 2026 Melike Balkın Karakaya</footer>
 
   <script>
-    // ---- 1) Makale listesi (Yeni yazı EN ÜSTE eklendi) ----
+    // ---- 1) Makale listesi (Yeni yazı "aldatma" eklendi) ----
     const posts = [
+      { 
+        slug: "aldatma", 
+        title: "Sessiz Kalan Travma: Aldatma, Erkeklik ve Toplumsal Körlük", 
+        date: "04 Ocak 2026", 
+        excerpt: "Bağırmayan ihanetler, yüceltilen suskunluklar ve yanlış yerde aranan masumiyet üzerine bir klinik analiz..." 
+      },
       { 
         slug: "sessiz", 
         title: "Zihnin Görünmez Duvarları: Bir Toplum Ne Zaman Körleşir?", 
@@ -166,7 +172,6 @@
         
         let contentNode = tmp.querySelector("article") || tmp.querySelector("main") || tmp;
         
-        // Gereksiz navigasyon ve footer kısımlarını temizleyelim
         const cleanContent = contentNode.innerHTML;
         const bodyDiv = el("div", {}, cleanContent);
 
