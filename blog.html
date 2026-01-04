@@ -7,7 +7,7 @@
   <meta name="description" content="Melike Balkın Karakaya'nın psikoloji, felsefe ve din felsefesi eksenindeki makaleleri, analizleri ve düşünceleri.">
   <link rel="canonical" href="https://melikebalkinkarakaya.org/blog.html" />
   <link rel="icon" href="/favicon.ico?v=1">
-  <meta name="color-scheme" content="dark light" />
+  <meta name="color-scheme" content="dark" />
   <meta name="theme-color" content="#0d1117">
 
   <style>
@@ -17,7 +17,15 @@
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--bg-color);color:var(--text-color);line-height:1.6}
+    
+    /* Beyaz zemini engelleyen kritik satır */
+    body{
+      margin:0;
+      font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+      background-color: #0d1117 !important; 
+      color:var(--text-color);
+      line-height:1.6;
+    }
 
     header{position:sticky;top:0;background:rgba(13,17,23,.8);backdrop-filter:blur(10px);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);z-index:10}
     header h1{margin:0;font-size:1.5rem;color:var(--accent-color);letter-spacing:.2px}
@@ -39,7 +47,7 @@
     .article .date{color:var(--muted);font-style:italic;margin:.25rem 0 1rem;display:block}
     .article :where(p,ul,ol,blockquote,figure){margin:1rem 0}
     .article img{max-width:100%;height:auto;border-radius:8px}
-    .backlink{display:inline-block;margin-bottom:1rem}
+    .backlink{display:inline-block;margin-bottom:1rem; color: var(--accent-color); font-weight: bold; text-decoration: none;}
 
     footer{text-align:center;padding:2rem 1rem;color:#8b949e;font-size:.9rem;border-top:1px solid var(--border)}
 
@@ -53,6 +61,7 @@
       <a href="index.html">Ana Sayfa</a>
       <a href="index.html#hakkimda">Hakkımda</a>
       <a href="index.html#iletisim">İletişim</a>
+      <a href="blog-en.html">English 🇬🇧</a>
     </nav>
   </header>
 
@@ -63,7 +72,7 @@
   <footer>© 2026 Melike Balkın Karakaya</footer>
 
   <script>
-    // ---- 1) Makale listesi (Yeni yazı "aldatma" eklendi) ----
+    // ---- 1) Makale listesi (Yeni yazı "aldatma" olarak bağlandı) ----
     const posts = [
       { 
         slug: "aldatma", 
