@@ -254,6 +254,7 @@
       ws_btn: "WhatsApp ile İletişime Geç",
       ws_warning: "Lütfen önce onay kutusunu işaretleyin.",
       collab_text: "Akademik iş birlikleri için: research@melikebalkinkarakaya.org",
+      // DİLLERİN OLDUĞU ÖZEL HAKKIMDA METNİ BURAYA GELİYOR
       about_html: `
         <p>Klinik psikoloji ve din felsefesi disiplinlerini harmanlayarak insan bilinci, inanç mekanizmaları ve travma dönüşümü üzerine yoğunlaşıyorum. Akademik çalışmalarımın yanı sıra kaleme aldığım kitaplarla, karmaşık zihinsel süreçleri erişilebilir kılmayı amaçlıyorum.</p>
         <h3>Akademik ve Profesyonel Odak Alanlarım:</h3>
@@ -263,6 +264,8 @@
           <li>Din Psikolojisi ve Politik Psikoloji</li>
           <li>Anı Dönüştürme Protokolleri (IMTP)</li>
         </ul>
+        <h3>Eserlerimin Yayınlandığı Diller:</h3>
+        <p>Kitaplarım şu dillerde mevcuttur: Türkçe, İngilizce, Almanca, Fransızca, Japonca, İspanyolca, Arapça, İtalyanca ve Rusça.</p>
       `
     };
 
@@ -296,19 +299,18 @@
           <li>Psychology of Religion & Political Psychology</li>
           <li>Memory Transformation Protocols (IMTP)</li>
         </ul>
+        <h3>Available Languages:</h3>
+        <p>My books are available in: Turkish, English, German, French, Japanese, Spanish, Arabic, Italian, and Russian.</p>
       `
     };
 
     function updateLang(lang) {
       const data = lang === 'tr' ? tr : en;
-      
-      // I18N elemanlarını güncelle
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (data[key]) el.textContent = data[key];
       });
 
-      // Dinamik alanları güncelle
       document.getElementById('latest-post-title').textContent = data.latest_title;
       document.getElementById('latest-post-date').textContent = data.latest_date;
       document.getElementById('latest-btn-text').textContent = data.latest_btn;
@@ -319,13 +321,11 @@
       document.getElementById('ws-warning-text').textContent = "";
       document.getElementById('collab-link-container').textContent = data.collab_text;
 
-      // Linkleri güncelle
       const blogPage = lang === 'tr' ? "blog.html" : "blog-en.html";
       document.getElementById('nav-blog-link').href = blogPage;
       document.getElementById('hero-blog-btn').href = blogPage;
       document.getElementById('latest-post-link').href = blogPage + "?post=kapalıyapı";
 
-      // Aktif buton görselini güncelle
       document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
       document.documentElement.lang = lang;
@@ -334,7 +334,6 @@
     document.getElementById('btn-tr').onclick = () => updateLang('tr');
     document.getElementById('btn-en').onclick = () => updateLang('en');
 
-    // WhatsApp Onay Mekanizması
     const consent = document.getElementById('main-ws-consent');
     const wsBtn = document.getElementById('main-ws-btn');
     const wsWarn = document.getElementById('ws-warning-text');
@@ -351,7 +350,6 @@
       }
     };
 
-    // Sayfa açılışında varsayılan dil
     updateLang('tr');
   </script>
 </body>
