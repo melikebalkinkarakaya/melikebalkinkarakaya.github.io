@@ -73,14 +73,39 @@
 
     .brand{
       display:flex;
-      flex-direction:column;
+      align-items:center;
+      gap:12px;
       color:#fff;
       font-weight:700;
       letter-spacing:.01em;
       white-space:nowrap;
     }
 
-    .brand small{
+    .brand-mark{
+      font-weight:800;
+      font-size:20px;
+      letter-spacing:1px;
+      color:var(--brand);
+      padding:6px 10px;
+      border:1px solid rgba(88,166,255,0.4);
+      border-radius:10px;
+      line-height:1;
+      background:rgba(88,166,255,.05);
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.2;
+    }
+
+    .brand-text span{
+      font-size:14px;
+      font-weight:600;
+      color:#fff;
+    }
+
+    .brand-text small{
       color:var(--muted);
       font-size:11px;
       font-weight:500;
@@ -578,6 +603,18 @@
       .hero-tags{grid-template-columns:1fr}
       h1{font-size:34px}
       .section-title{font-size:24px}
+      .brand{
+        gap:10px;
+      }
+      .brand-mark{
+        font-size:18px;
+      }
+      .brand-text span{
+        font-size:13px;
+      }
+      .brand-text small{
+        font-size:10px;
+      }
     }
   </style>
 </head>
@@ -586,8 +623,11 @@
   <nav class="nav">
     <div class="container nav-row">
       <a class="brand" href="#hero">
-        <span>Melike Balkın Karakaya</span>
-        <small data-i18n="brand_subtitle">Psychology • Consciousness • Philosophy</small>
+        <div class="brand-mark">IMTP</div>
+        <div class="brand-text">
+          <span>Melike Balkın Karakaya</span>
+          <small data-i18n="brand_subtitle">Psychology • Consciousness • Transformation</small>
+        </div>
       </a>
 
       <div class="menu">
@@ -791,7 +831,7 @@
   <script>
     const tr = {
       site_title: "Melike Balkın Karakaya",
-      brand_subtitle: "Psychology • Consciousness • Philosophy",
+      brand_subtitle: "Psychology • Consciousness • Transformation",
       nav_blog: "Blog",
       nav_books: "Kitaplar",
       nav_projects: "Projeler",
@@ -856,7 +896,7 @@
 
     const en = {
       site_title: "Melike Balkın Karakaya",
-      brand_subtitle: "Psychology • Consciousness • Philosophy",
+      brand_subtitle: "Psychology • Consciousness • Transformation",
       nav_blog: "Blog",
       nav_books: "Books",
       nav_projects: "Projects",
