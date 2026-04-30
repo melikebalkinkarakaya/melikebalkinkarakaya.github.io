@@ -216,165 +216,54 @@
       border:1px solid var(--border);
     }
 
-    .hero-note{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:12px;
+    /* Video Galeri Stilleri */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .video-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
-    .hero-stat{
-      background:rgba(255,255,255,.03);
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:14px;
+    /* TikTok Dikey Galeri Stilleri */
+    .tiktok-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+    .tiktok-card {
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      min-height: 580px;
+      display: flex;
+      flex-direction: column;
+    }
+    .tiktok-card blockquote {
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
-    .hero-stat strong{
-      display:block;
-      font-size:14px;
-      color:#fff;
-      margin-bottom:4px;
-    }
-
-    .hero-stat span{
-      font-size:13px;
-      color:var(--muted);
-      line-height:1.55;
-    }
-
-    .hero-side{
-      background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
-      border:1px solid var(--border);
-      border-radius:var(--radius-lg);
-      padding:22px;
-      box-shadow:var(--shadow);
-    }
-
-    .hero-side-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom:18px;
-    }
-
-    .hero-side-badge{
-      color:var(--muted);
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-    }
-
-    .hero-side-label{
-      color:#dce7f3;
-      background:#141a22;
-      border:1px solid var(--border);
-      border-radius:999px;
-      padding:6px 10px;
-      font-size:12px;
-    }
-
-    .hero-profile{
-      display:grid;
-      grid-template-columns:120px 1fr;
-      gap:18px;
-      align-items:center;
-      margin-bottom:18px;
-    }
-
-    .hero-image img{
-      width:120px;
-      height:120px;
-      object-fit:cover;
-      border-radius:22px;
-      border:2px solid rgba(88,166,255,.55);
-      box-shadow:0 8px 20px rgba(0,0,0,.28);
-    }
-
-    .hero-profile h2{
-      margin:0 0 6px;
-      font-size:24px;
-      line-height:1.15;
-      letter-spacing:-.02em;
-    }
-
-    .hero-profile p{
-      margin:0;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.6;
-    }
-
-    .hero-tags{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:10px;
-    }
-
-    .hero-tags span{
-      background:#121821;
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:10px 12px;
-      text-align:center;
-      font-size:13px;
-      color:#d6e1ec;
-    }
-
-    .latest-post-section{
-      margin-top:-24px;
-      position:relative;
-      z-index:10;
-    }
-
-    .latest-post-card{
-      background:linear-gradient(180deg,#1a2028,#161c24);
-      border:1px solid rgba(88,166,255,.5);
-      border-radius:18px;
-      padding:20px;
-      display:flex;
-      align-items:center;
-      gap:20px;
-      box-shadow:0 12px 28px rgba(0,0,0,.35);
-      transition:.25s;
-      text-decoration:none;
-    }
-
-    .latest-post-card:hover{
-      transform:translateY(-3px);
-      border-color:#fff;
-    }
-
-    .latest-tag{
-      background:var(--brand);
-      color:#0d1117;
-      padding:4px 10px;
-      border-radius:8px;
-      font-size:12px;
-      font-weight:800;
-      text-transform:uppercase;
-      white-space:nowrap;
-    }
-
-    .latest-title{
-      font-size:18px;
-      font-weight:700;
-      color:#fff;
-      margin:5px 0;
-    }
-
-    .latest-link{
-      margin-left:auto;
-      background:rgba(88,166,255,0.1);
-      color:var(--brand);
-      padding:8px 16px;
-      border-radius:8px;
-      font-size:14px;
-      font-weight:700;
-      white-space:nowrap;
-    }
-
-    .section{padding:58px 0}
     .section-title{
       font-size:28px;
       margin:0 0 22px;
@@ -424,68 +313,6 @@
       background:#0f141b;
     }
 
-    /* Video Galeri Stilleri */
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 24px;
-    }
-    .video-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-      height: 0;
-    }
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .item-card h3{
-      margin:0 0 10px;
-      font-size:20px;
-      line-height:1.28;
-      color:#fff;
-    }
-
-    .item-card p{
-      margin:0 0 14px;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.68;
-      flex:1;
-    }
-
-    .project-tag{
-      display:inline-flex;
-      width:max-content;
-      margin-bottom:10px;
-      padding:5px 10px;
-      border-radius:999px;
-      border:1px solid rgba(88,166,255,.35);
-      background:rgba(88,166,255,.08);
-      color:#bfdcff;
-      font-size:11px;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-    }
-
-    .about-content p{
-      margin:0 0 16px;
-      color:#d7dee7;
-    }
-
     .social-grid{
       display:grid;
       grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));
@@ -506,143 +333,9 @@
       font-size:14px;
     }
 
-    .social-link:hover{
-      background:var(--brand);
-      color:#0b1020;
-      border-color:transparent;
-    }
-
-    .flag-list{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:12px;
-      font-size:18px;
-    }
-
-    .whatsapp-box{
-      margin-top:8px;
-      text-align:center;
-      background:rgba(37, 211, 102, 0.05);
-      border:1px solid rgba(37, 211, 102, 0.2);
-      border-radius:16px;
-      padding:24px;
-    }
-
-    .ws-notice{
-      font-size:14px;
-      color:var(--muted);
-      margin-bottom:16px;
-      line-height:1.4;
-    }
-
-    .ws-btn{
-      background:var(--whatsapp);
-      color:#fff !important;
-      padding:14px 24px;
-      border-radius:12px;
-      font-weight:700;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      transition:.3s;
-      box-shadow:0 4px 15px rgba(37, 211, 102, 0.3);
-    }
-
-    .ws-btn:hover{
-      transform:scale(1.02);
-      filter:brightness(1.08);
-    }
-
-    .ws-btn.disabled{
-      opacity:.3;
-      pointer-events:none;
-      filter:grayscale(1);
-      box-shadow:none;
-    }
-
-    .ws-warning{
-      font-size:12px;
-      color:var(--danger);
-      font-weight:600;
-      margin-top:12px;
-      display:block;
-    }
-
-    .consent-area{
-      margin-bottom:20px;
-      display:flex;
-      justify-content:center;
-    }
-
-    .consent-wrapper{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      cursor:pointer;
-      background:rgba(255,255,255,0.05);
-      padding:12px 18px;
-      border-radius:10px;
-      border:1px solid var(--border);
-      transition:.2s;
-    }
-
-    .consent-wrapper:hover{border-color:var(--brand)}
-    .consent-wrapper input{width:20px;height:20px;cursor:pointer}
-
-    .footer{
-      padding:40px 0;
-      text-align:center;
-      color:var(--muted);
-      border-top:1px solid var(--border);
-    }
-
     @media (max-width: 980px){
       .hero-grid{grid-template-columns:1fr}
-      .hero-note{grid-template-columns:1fr}
       .video-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width:768px){
-      .nav-row{
-        flex-direction:column;
-        align-items:flex-start;
-        padding:14px 0;
-      }
-      .hero{
-        padding:72px 0 46px;
-      }
-      .hero-profile{
-        grid-template-columns:1fr;
-      }
-      .latest-post-card{
-        flex-direction:column;
-        text-align:center;
-      }
-      .latest-link{
-        margin:10px 0 0 0;
-        width:100%;
-      }
-    }
-
-    @media (max-width:560px){
-      .menu{gap:8px}
-      .menu a{padding:7px 10px;font-size:13px}
-      .hero-tags{grid-template-columns:1fr}
-      h1{font-size:34px}
-      .section-title{font-size:24px}
-      .brand{
-        gap:10px;
-      }
-      .brand-mark{
-        font-size:18px;
-      }
-      .brand-text span{
-        font-size:13px;
-      }
-      .brand-text small{
-        font-size:10px;
-      }
     }
   </style>
 </head>
@@ -663,6 +356,7 @@
         <a href="#kitaplar" data-i18n="nav_books">Kitaplar</a>
         <a href="#projeler" data-i18n="nav_projects">Projeler</a>
         <a href="#videolar" data-i18n="nav_videos">Videolar</a>
+        <a href="#tiktok-harp" data-i18n="nav_tiktok">Psikolojik Harp</a>
         <a href="#hakkimda" data-i18n="nav_about">Hakkımda</a>
         <a href="#iletisim" id="nav-contact-link" data-i18n="nav_contact">İletişim</a>
       </div>
@@ -685,68 +379,12 @@
           <a class="btn" href="#projeler"><i class="fas fa-diagram-project"></i> <span data-i18n="hero_btn_1">Projeler</span></a>
           <a class="btn alt" href="blog.html" id="hero-blog-btn"><i class="fas fa-pen-nib"></i> <span data-i18n="hero_btn_2">Yazılar</span></a>
         </div>
-
-        <div class="hero-note">
-          <div class="hero-stat">
-            <strong data-i18n="hero_stat_1_title">Odak Alanı</strong>
-            <span data-i18n="hero_stat_1_text">Travma, algı, bilinç, inanç sistemleri ve insan davranışı.</span>
-          </div>
-          <div class="hero-stat">
-            <strong data-i18n="hero_stat_2_title">Üretim</strong>
-            <span data-i18n="hero_stat_2_text">Kitaplar, araştırma projeleri, analiz yazıları ve teorik modeller.</span>
-          </div>
-          <div class="hero-stat">
-            <strong data-i18n="hero_stat_3_title">Yaklaşım</strong>
-            <span data-i18n="hero_stat_3_text">Psikoloji, felsefe ve bilinç çalışmalarını bir araya getiren çok disiplinli yapı.</span>
-          </div>
-        </div>
       </div>
-
       <div class="hero-side">
-        <div class="hero-side-top">
-          <div class="hero-side-badge" data-i18n="hero_side_badge">Academic Profile</div>
-          <div class="hero-side-label" data-i18n="hero_side_label">Researcher & Author</div>
-        </div>
-
-        <div class="hero-profile">
-          <div class="hero-image">
-            <img src="melike.jpeg?v=2" alt="Melike Balkın Karakaya">
-          </div>
-          <div>
-            <h2 data-i18n="hero_side_name">Melike Balkın Karakaya</h2>
-            <p data-i18n="hero_side_text">Klinik psikoloji, bilinç çalışmaları ve din felsefesi ekseninde çalışan araştırmacı ve yazar.</p>
-          </div>
-        </div>
-
-        <div class="hero-tags">
-          <span data-i18n="tag_1">Clinical Psychology</span>
-          <span data-i18n="tag_2">Consciousness Studies</span>
-          <span data-i18n="tag_3">Philosophy of Religion</span>
-          <span data-i18n="tag_4">Trauma Transformation</span>
-        </div>
+          <img src="melike.jpeg?v=2" style="border-radius:24px; border:2px solid var(--brand); box-shadow: var(--shadow);" alt="Melike Balkın Karakaya">
       </div>
     </div>
   </header>
-
-  <div class="container latest-post-section">
-    <a href="blog.html?post=kapalıyapı" id="latest-post-link" class="latest-post-card">
-      <div class="latest-tag" data-i18n="latest_tag">Yeni Yazı</div>
-      <div>
-        <div class="latest-title" id="latest-post-title">Kapalı Dini Yapıların Psikososyal Mekanizması</div>
-        <div style="font-size:13px; color:var(--muted);" id="latest-post-date">05 Nisan 2026</div>
-      </div>
-      <div class="latest-link" id="latest-btn-text">Yazıyı Oku →</div>
-    </a>
-  </div>
-
-  <section id="hakkimda" class="section">
-    <div class="container">
-      <h2 class="section-title" data-i18n="nav_about">Hakkımda</h2>
-      <div class="card about-content">
-        <div id="about-text-container"></div>
-      </div>
-    </div>
-  </section>
 
   <section id="kitaplar" class="section">
     <div class="container">
@@ -755,41 +393,14 @@
         <article class="item-card">
           <img src="travmakodu.jpeg" alt="The Trauma Code">
           <h3>The Trauma Code</h3>
-          <p data-i18n="book_1_desc">Travma katmanları, zihinsel işlemleme ve içsel dönüşüm üzerine kurulu çalışma.</p>
+          <p>Travma katmanları, zihinsel işlemleme ve içsel dönüşüm üzerine kurulu çalışma.</p>
           <a class="btn" target="_blank" href="https://amzn.asia/d/69u7qBn">Amazon</a>
-          <div class="flag-list"><span class="fi fi-gb"></span></div>
         </article>
-
         <article class="item-card">
           <img src="inancin_anatomisi.png" alt="Anatomy of Belief">
-          <h3 data-i18n="book_new_title">İnancın Anatomisi</h3>
-          <p data-i18n="book_2_desc">İnanç sistemleri, anlam üretimi ve bilinç üzerine düşünsel çalışma.</p>
+          <h3>İnancın Anatomisi</h3>
+          <p>İnanç sistemleri, anlam üretimi ve bilinç üzerine düşünsel çalışma.</p>
           <a class="btn" target="_blank" href="https://amzn.asia/d/2PzdlQH">Amazon</a>
-          <div class="flag-list"><span class="fi fi-tr"></span><span class="fi fi-gb"></span><span class="fi fi-de"></span><span class="fi fi-fr"></span><span class="fi fi-jp"></span><span class="fi fi-es"></span></div>
-        </article>
-
-        <article class="item-card">
-          <img src="zehir-degil-ciglik.png" alt="Zehir Değil Çığlık">
-          <h3>Zehir Değil Çığlık</h3>
-          <p data-i18n="book_3_desc">Travma, ifade ve içsel kırılma üzerine odaklanan çalışma.</p>
-          <a class="btn" target="_blank" href="https://www.amazon.com/gp/product/B0FK6KLYJ6">Amazon</a>
-          <div class="flag-list"><span class="fi fi-tr"></span><span class="fi fi-gb"></span><span class="fi fi-de"></span><span class="fi fi-es"></span><span class="fi fi-sa"></span><span class="fi fi-it"></span><span class="fi fi-fr"></span><span class="fi fi-ru"></span><span class="fi fi-jp"></span></div>
-        </article>
-
-        <article class="item-card">
-          <img src="kalbin-butcesi.jpg" alt="Kalbin Bütçesi">
-          <h3>Kalbin Bütçesi</h3>
-          <p data-i18n="book_4_desc">Duygusal yapı, ilişki dinamikleri ve içsel denge üzerine çalışma.</p>
-          <a class="btn" target="_blank" href="https://www.amazon.com/gp/product/B0FKTCQSBS">Amazon</a>
-          <div class="flag-list"><span class="fi fi-tr"></span><span class="fi fi-gb"></span><span class="fi fi-de"></span><span class="fi fi-es"></span><span class="fi fi-sa"></span><span class="fi fi-it"></span><span class="fi fi-fr"></span><span class="fi fi-ru"></span><span class="fi fi-jp"></span></div>
-        </article>
-
-        <article class="item-card">
-          <img src="askin-haritasi.jpeg" alt="Aşkın Haritası">
-          <h3>Aşkın Haritası</h3>
-          <p data-i18n="book_5_desc">Yakınlık, duygu ve insan ilişkileri üzerine kavramsal çalışma.</p>
-          <a class="btn" target="_blank" href="https://www.amazon.com/gp/product/B0FMYXK27M">Amazon</a>
-          <div class="flag-list"><span class="fi fi-tr"></span><span class="fi fi-gb"></span><span class="fi fi-de"></span><span class="fi fi-fr"></span><span class="fi fi-jp"></span><span class="fi fi-es"></span></div>
         </article>
       </div>
     </div>
@@ -797,86 +408,76 @@
 
   <section id="projeler" class="section">
     <div class="container">
-      <h2 class="section-title" data-i18n="nav_projects">Projeler & Araştırmalar</h2>
+      <h2 class="section-title" data-i18n="nav_projects">Projeler & Zenodo</h2>
       <div class="grid">
         <article class="item-card">
-          <img src="imtp.jpeg" alt="IMTP">
-          <span class="project-tag" data-i18n="project_tag_1">Trauma Protocol</span>
           <h3>IMTP — Imagery–Memory Transformation Protocol</h3>
-          <p data-i18n="p1_d">Travmanın yanlış tehlike algısı üzerinden yeniden işlendiği, hafıza ve duygu entegrasyonuna dayalı dönüşüm protokolü.</p>
-        </article>
-
-        <article class="item-card">
-          <img src="dim-imec.jpeg" alt="DIM-IMEC">
-          <span class="project-tag" data-i18n="project_tag_2">Consciousness Model</span>
-          <h3>DIM–IMEC Project</h3>
-          <p data-i18n="p2_d">Bilinç, etik ve karar mekanizmaları arasındaki ilişkiyi açıklayan çok katmanlı teorik model.</p>
-        </article>
-
-        <article class="item-card">
-          <img src="melike.jpeg?v=2" alt="Perception and Human Decisions">
-          <span class="project-tag" data-i18n="project_tag_3">Research Line</span>
-          <h3 data-i18n="project_3_title">Perception, Belief & Human Decisions</h3>
-          <p data-i18n="project_3_desc">Algı, inanç, duygu ve karar zincirinin insan davranışı üzerindeki etkisini inceleyen araştırma hattı.</p>
+          <p>Travmanın hafıza ve duygu entegrasyonuna dayalı dönüşüm protokolü.</p>
+          <a href="#" class="btn alt"><i class="fas fa-scroll"></i> Zenodo Repository</a>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Video Galeri Bölümü -->
+  <!-- YouTube Videoları -->
   <section id="videolar" class="section">
     <div class="container">
-      <h2 class="section-title" data-i18n="nav_videos">Videolar</h2>
+      <h2 class="section-title" data-i18n="nav_videos">YouTube Videoları</h2>
       <div class="video-grid">
-        <div class="video-card">
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/Obj8MtM5GCg" allowfullscreen></iframe>
-          </div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/Obj8MtM5GCg" allowfullscreen></iframe></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/Ydq7-bXZ8fY" allowfullscreen></iframe></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ehJ-XKSyKHI" allowfullscreen></iframe></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/rHzZzXvlSTw" allowfullscreen></iframe></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/bnn_AA3TQ-4" allowfullscreen></iframe></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TikTok Psikolojik Harp Bölümü (GELİŞTİRİLMİŞ) -->
+  <section id="tiktok-harp" class="section" style="background: rgba(255,255,255,0.02);">
+    <div class="container">
+      <h2 class="section-title" data-i18n="nav_tiktok">Psikolojik Harp (TikTok)</h2>
+      <div class="tiktok-grid">
+        
+        <div class="tiktok-card">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@melikebalkinkarakaya/video/7606680668826766599" data-video-id="7606680668826766599">
+            <section><a href="https://www.tiktok.com/@melikebalkinkarakaya/video/7606680668826766599">Video yükleniyor...</a></section>
+          </blockquote>
         </div>
-        <div class="video-card">
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/Ydq7-bXZ8fY" allowfullscreen></iframe>
-          </div>
+
+        <div class="tiktok-card">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@melikebalkinkarakaya/video/7608672195702787335" data-video-id="7608672195702787335">
+            <section><a href="https://www.tiktok.com/@melikebalkinkarakaya/video/7608672195702787335">Video yükleniyor...</a></section>
+          </blockquote>
         </div>
-        <div class="video-card">
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/ehJ-XKSyKHI" allowfullscreen></iframe>
-          </div>
+
+        <div class="tiktok-card">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@melikebalkinkarakaya/video/7615708570608274696" data-video-id="7615708570608274696">
+            <section><a href="https://www.tiktok.com/@melikebalkinkarakaya/video/7615708570608274696">Video yükleniyor...</a></section>
+          </blockquote>
         </div>
-        <div class="video-card">
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/rHzZzXvlSTw" allowfullscreen></iframe>
-          </div>
+
+        <div class="tiktok-card">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@melikebalkinkarakaya/video/7622235589647043858" data-video-id="7622235589647043858">
+            <section><a href="https://www.tiktok.com/@melikebalkinkarakaya/video/7622235589647043858">Video yükleniyor...</a></section>
+          </blockquote>
         </div>
+
+      </div>
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="https://www.tiktok.com/@melikebalkinkarakaya" target="_blank" class="btn alt">Tüm TikTok Videolarını Gör <i class="fab fa-tiktok"></i></a>
       </div>
     </div>
   </section>
 
   <section id="iletisim" class="section">
     <div class="container">
-      <h2 class="section-title" data-i18n="nav_contact">İletişim & Randevu</h2>
+      <h2 class="section-title" data-i18n="nav_contact">İletişim</h2>
       <div class="card">
-        <div class="whatsapp-box">
-          <p id="ws-notice-text" class="ws-notice"></p>
-          <div class="consent-area">
-            <label class="consent-wrapper">
-              <input type="checkbox" id="main-ws-consent">
-              <span id="consent-label" style="font-size: 14px; font-weight: 500;"></span>
-            </label>
-          </div>
-          <a href="https://wa.me/905325698152" target="_blank" class="ws-btn disabled" id="main-ws-btn">
-            <i class="fab fa-whatsapp"></i> <span id="ws-btn-label"></span>
-          </a>
-          <span id="ws-warning-text" class="ws-warning"></span>
-          <p style="margin-top:20px; font-size:13px; color:var(--muted);" id="collab-link-container"></p>
-        </div>
-
-        <div class="social-grid" style="margin-top: 32px;">
+        <div class="social-grid">
           <a href="mailto:research@melikebalkinkarakaya.org" class="social-link"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://www.tiktok.com/@melikebalkinkarakaya" target="_blank" class="social-link"><i class="fab fa-tiktok"></i> TikTok</a>
           <a href="https://www.instagram.com/melikebalkinkarakaya/" target="_blank" class="social-link"><i class="fab fa-instagram"></i> Instagram</a>
-          <a href="https://www.youtube.com/@melikebalkinkarakaya" target="_blank" class="social-link"><i class="fab fa-youtube"></i> YouTube</a>
-          <a href="https://x.com/MelikeBalkin" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i> Twitter</a>
-          <a href="https://www.linkedin.com/in/melike-balkin-karakaya-101740263/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
         </div>
       </div>
     </div>
@@ -886,187 +487,39 @@
     <p>© 2026 Melike Balkın Karakaya</p>
   </footer>
 
+  <!-- TIKTOK SCRİPTİ (MUTLAKA OLMALI) -->
+  <script async src="https://www.tiktok.com/embed.js"></script>
+
   <script>
     const tr = {
       site_title: "Melike Balkın Karakaya",
-      brand_subtitle: "Psychology • Consciousness • Transformation",
-      nav_blog: "Blog",
       nav_books: "Kitaplar",
       nav_projects: "Projeler",
       nav_videos: "Videolar",
-      nav_about: "Hakkımda",
-      nav_contact: "İletişim",
-
-      hero_badge: "Araştırma • Yayınlar • Projeler",
-      hero_title: "Melike Balkın Karakaya",
-      hero_lead: "Klinik psikoloji, bilinç ve inanç sistemleri üzerine çalışan bir araştırmacı. Travma, algı ve insan davranışı üzerine kuramsal ve uygulamalı çalışmalar.",
-      hero_btn_1: "Projeler",
-      hero_btn_2: "Yazılar",
-
-      hero_stat_1_title: "Odak Alanı",
-      hero_stat_1_text: "Travma, algı, bilinç, inanç sistemleri ve insan davranışı.",
-      hero_stat_2_title: "Üretim",
-      hero_stat_2_text: "Kitaplar, araştırma projeleri, analiz yazıları ve teorik modeller.",
-      hero_stat_3_title: "Yaklaşım",
-      hero_stat_3_text: "Psikoloji, felsefe ve bilinç çalışmalarını bir araya getiren çok disiplinli yapı.",
-
-      hero_side_badge: "Akademik Profil",
-      hero_side_label: "Araştırmacı & Yazar",
-      hero_side_name: "Melike Balkın Karakaya",
-      hero_side_text: "Klinik psikoloji, bilinç çalışmaları ve din felsefesi ekseninde çalışan araştırmacı ve yazar.",
-
-      tag_1: "Clinical Psychology",
-      tag_2: "Consciousness Studies",
-      tag_3: "Philosophy of Religion",
-      tag_4: "Trauma Transformation",
-
-      latest_tag: "Yeni Yazı",
-      latest_title: "Kapalı Dini Yapıların Psikososyal Mekanizması",
-      latest_date: "05 Nisan 2026",
-      latest_btn: "Yazıyı Oku →",
-
-      book_new_title: "İnancın Anatomisi",
-      book_1_desc: "Travma katmanları, zihinsel işlemleme ve içsel dönüşüm üzerine kurulu çalışma.",
-      book_2_desc: "İnanç sistemleri, anlam üretimi ve bilinç üzerine düşünsel çalışma.",
-      book_3_desc: "Travma, ifade ve içsel kırılma üzerine odaklanan çalışma.",
-      book_4_desc: "Duygusal yapı, ilişki dinamikleri ve içsel denge üzerine çalışma.",
-      book_5_desc: "Yakınlık, duygu ve insan ilişkileri üzerine kavramsal çalışma.",
-
-      project_tag_1: "Travma Protokolü",
-      project_tag_2: "Bilinç Modeli",
-      project_tag_3: "Araştırma Hattı",
-      p1_d: "Travmanın yanlış tehlike algısı üzerinden yeniden işlendiği, hafıza ve duygu entegrasyonuna dayalı dönüşüm protokolü.",
-      p2_d: "Bilinç, etik ve karar mekanizmaları arasındaki ilişkiyi açıklayan çok katmanlı teorik model.",
-      project_3_title: "Algı, İnanç & İnsan Kararları",
-      project_3_desc: "Algı, inanç, duygu ve karar zincirinin insan davranışı üzerindeki etkisini inceleyen araştırma hattı.",
-
-      ws_notice: "Randevu ve bilgi için WhatsApp üzerinden asistanıma ulaşabilirsiniz.",
-      ws_consent: "Okudum, onaylıyorum. WhatsApp'a yönlendirilmeyi kabul ediyorum.",
-      ws_btn: "WhatsApp ile İletişime Geç",
-      ws_warning: "Lütfen önce onay kutusunu işaretleyin.",
-      collab_text: "Akademik iş birlikleri için: research@melikebalkinkarakaya.org",
-
-      about_html: `
-        <p>Melike Balkın Karakaya; klinik psikoloji, bilinç çalışmaları ve din felsefesi alanlarında çalışan bir araştırmacı ve yazardır.</p>
-        <p>Çalışmaları travma, algı, inanç sistemleri ve insan davranışı üzerine yoğunlaşır. Geliştirdiği modeller ve yazıları, bireysel deneyim ile düşünsel yapılar arasındaki ilişkiyi anlamayı amaçlar.</p>
-        <p>Bu site; kitaplarını, projelerini ve akademik üretim alanlarını bir araya getiren bir çalışma alanıdır.</p>
-      `
+      nav_tiktok: "Psikolojik Harp",
+      nav_contact: "İletişim"
     };
-
     const en = {
       site_title: "Melike Balkın Karakaya",
-      brand_subtitle: "Psychology • Consciousness • Transformation",
-      nav_blog: "Blog",
       nav_books: "Books",
       nav_projects: "Projects",
       nav_videos: "Videos",
-      nav_about: "About",
-      nav_contact: "Contact",
-
-      hero_badge: "Research • Publications • Projects",
-      hero_title: "Melike Balkın Karakaya",
-      hero_lead: "Researcher working on clinical psychology, consciousness, and belief systems. Focused on trauma, perception, and human behavior.",
-      hero_btn_1: "Projects",
-      hero_btn_2: "Writings",
-
-      hero_stat_1_title: "Focus",
-      hero_stat_1_text: "Trauma, perception, consciousness, belief systems, and human behavior.",
-      hero_stat_2_title: "Production",
-      hero_stat_2_text: "Books, research projects, analytical writings, and theoretical models.",
-      hero_stat_3_title: "Approach",
-      hero_stat_3_text: "A multidisciplinary structure combining psychology, philosophy, and consciousness studies.",
-
-      hero_side_badge: "Academic Profile",
-      hero_side_label: "Researcher & Author",
-      hero_side_name: "Melike Balkın Karakaya",
-      hero_side_text: "Researcher and author working across clinical psychology, consciousness studies, and philosophy of religion.",
-
-      tag_1: "Clinical Psychology",
-      tag_2: "Consciousness Studies",
-      tag_3: "Philosophy of Religion",
-      tag_4: "Trauma Transformation",
-
-      latest_tag: "Latest Post",
-      latest_title: "Psychosocial Mechanisms of Closed Religious Structures",
-      latest_date: "April 05, 2026",
-      latest_btn: "Read More →",
-
-      book_new_title: "The Anatomy of Belief",
-      book_1_desc: "A study on trauma layers, mental processing, and inner transformation.",
-      book_2_desc: "A conceptual work on belief systems, meaning-making, and consciousness.",
-      book_3_desc: "A work focused on trauma, expression, and inner rupture.",
-      book_4_desc: "A study on emotional structure, relationship dynamics, and inner balance.",
-      book_5_desc: "A conceptual work on intimacy, emotion, and human relationships.",
-
-      project_tag_1: "Trauma Protocol",
-      project_tag_2: "Consciousness Model",
-      project_tag_3: "Research Line",
-      p1_d: "A transformation protocol based on updating false threat perception and integrating memory and emotion.",
-      p2_d: "A multi-layered theoretical model explaining the relationship between consciousness, ethics, and decision-making.",
-      project_3_title: "Perception, Belief & Human Decisions",
-      project_3_desc: "A research line examining the effect of perception, belief, emotion, and decision chains on human behavior.",
-
-      ws_notice: "You can reach my assistant via WhatsApp for appointments and information.",
-      ws_consent: "I have read and agree to be redirected to WhatsApp.",
-      ws_btn: "Contact via WhatsApp",
-      ws_warning: "Please check the consent box first.",
-      collab_text: "For academic collaborations: research@melikebalkinkarakaya.org",
-
-      about_html: `
-        <p>Melike Balkın Karakaya is a researcher and author working in clinical psychology, consciousness studies, and philosophy of religion.</p>
-        <p>Her work focuses on trauma, perception, belief systems, and human behavior. Her models and writings aim to understand the relationship between individual experience and cognitive structures.</p>
-        <p>This website brings together her books, projects, and academic work.</p>
-      `
+      nav_tiktok: "Psychological Warfare",
+      nav_contact: "Contact"
     };
 
     function updateLang(lang) {
       const data = lang === 'tr' ? tr : en;
-
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (data[key] !== undefined) el.textContent = data[key];
+        if (data[key]) el.textContent = data[key];
       });
-
-      document.getElementById('latest-post-title').textContent = data.latest_title;
-      document.getElementById('latest-post-date').textContent = data.latest_date;
-      document.getElementById('latest-btn-text').textContent = data.latest_btn;
-      document.getElementById('about-text-container').innerHTML = data.about_html;
-      document.getElementById('ws-notice-text').textContent = data.ws_notice;
-      document.getElementById('consent-label').textContent = data.ws_consent;
-      document.getElementById('ws-btn-label').textContent = data.ws_btn;
-      document.getElementById('ws-warning-text').textContent = "";
-      document.getElementById('collab-link-container').textContent = data.collab_text;
-
-      const blogPage = lang === 'tr' ? "blog.html" : "blog-en.html";
-      document.getElementById('nav-blog-link').href = blogPage;
-      document.getElementById('hero-blog-btn').href = blogPage;
-      document.getElementById('latest-post-link').href = blogPage + "?post=kapalıyapı";
-
       document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-      document.documentElement.lang = lang;
-      document.documentElement.setAttribute('data-lang', lang);
     }
 
     document.getElementById('btn-tr').onclick = () => updateLang('tr');
     document.getElementById('btn-en').onclick = () => updateLang('en');
-
-    const consent = document.getElementById('main-ws-consent');
-    const wsBtn = document.getElementById('main-ws-btn');
-    const wsWarn = document.getElementById('ws-warning-text');
-
-    consent.onchange = () => {
-      wsBtn.classList.toggle('disabled', !consent.checked);
-      if (consent.checked) wsWarn.textContent = "";
-    };
-
-    wsBtn.onclick = (e) => {
-      if (!consent.checked) {
-        e.preventDefault();
-        wsWarn.textContent = document.documentElement.lang === 'tr' ? tr.ws_warning : en.ws_warning;
-      }
-    };
-
     updateLang('tr');
   </script>
 </body>
