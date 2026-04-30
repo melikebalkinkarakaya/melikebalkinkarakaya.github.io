@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
   <style>
     :root{
-      --bg:#0d1117; --bg-2:#111822; --card:#161b22; --text:#e6edf3; --muted:#9aa4af; 
+      --bg:#0d1117; --card:#161b22; --text:#e6edf3; --muted:#9aa4af; 
       --brand:#58a6ff; --border:#30363d; --whatsapp:#25D366; --danger:#f85149; --shadow:0 18px 40px rgba(0,0,0,.28);
     }
     *{box-sizing:border-box}
@@ -25,7 +25,7 @@
     .menu{display:flex;gap:12px;flex-wrap:wrap}
     .menu a{ padding:8px 12px; border-radius:10px; color:#c9d1d9; font-size:14px; transition:.2s; }
     .menu a:hover{background:#21262d;color:#fff}
-    .lang-btn{ background:#21262d; border:1px solid var(--border); border-radius:12px; padding:6px 10px; cursor:pointer; font-size:18px; opacity:0.6; transition:0.3s; }
+    .lang-btn{ background:#21262d; border:1px solid var(--border); border-radius:12px; padding:6px 10px; cursor:pointer; font-size:18px; opacity:0.5; }
     .lang-btn.active{ opacity:1; border-color:var(--brand); background:rgba(88,166,255,0.1); }
 
     .hero{ padding:88px 0 56px; background: radial-gradient(900px 500px at 85% -10%, rgba(88,166,255,.18), transparent), var(--bg); border-bottom:1px solid rgba(255,255,255,.04); }
@@ -34,7 +34,7 @@
 
     .section{padding:60px 0}
     .section-title{ font-size:28px; border-left:4px solid var(--brand); padding-left:12px; margin-bottom:30px; }
-    .grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; }
+    .grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px; }
     .item-card{ background:var(--card); border:1px solid var(--border); border-radius:16px; padding:20px; transition:.22s; display:flex; flex-direction:column; height:100%; }
     .item-card:hover{ border-color:var(--brand); transform:translateY(-4px); }
     .item-card img{ width:100%; border-radius:12px; margin-bottom:15px; aspect-ratio:3/4; object-fit:cover; }
@@ -46,15 +46,15 @@
     .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background:#000; }
     .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
     
-    .tiktok-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+    .tiktok-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
     .tiktok-card { background: #000; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; min-height: 550px; }
 
     .doi-badge { font-size: 10px; font-family: monospace; color: var(--brand); background: rgba(88,166,255,0.1); padding: 4px; border-radius: 4px; margin-bottom: 10px; display:inline-block; }
-    .whatsapp-box{ text-align:center; background:rgba(37, 211, 102, 0.05); border:1px solid rgba(37, 211, 102, 0.2); border-radius:16px; padding:24px; }
+    .whatsapp-box{ text-align:center; background:rgba(37, 211, 102, 0.05); border:1px solid rgba(37, 211, 102, 0.2); border-radius:16px; padding:32px; }
     .consent-wrapper{ display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:20px; cursor:pointer; font-size:14px; }
     .ws-btn.disabled{ opacity:0.3; pointer-events:none; }
 
-    @media (max-width: 768px){ .hero-grid{ grid-template-columns:1fr; text-align:center; } .nav-row{ flex-direction:column; gap:10px; } }
+    @media (max-width: 768px){ .hero-grid, .nav-row{ flex-direction:column; text-align:center; gap:20px; } }
   </style>
 </head>
 <body>
@@ -104,18 +104,18 @@
     </div>
   </section>
 
-  <!-- Akademik Yayınlar -->
+  <!-- Akademik Yayınlar (Gerçek DOI Başlıkları) -->
   <section id="akademik" class="section">
     <div class="container">
       <h2 class="section-title" data-i18n="nav_projects">Akademik Yayınlar (Zenodo)</h2>
       <div class="grid">
-        <article class="item-card"><span class="doi-badge">10.5281/zenodo.16915210</span><h3 data-i18n="zen_1">IMTP Framework v1</h3><a href="https://doi.org/10.5281/zenodo.16915210" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo'da Gör</a></article>
-        <article class="item-card"><span class="doi-badge">10.5281/zenodo.16915202</span><h3 data-i18n="zen_2">IMTP Framework v2</h3><a href="https://doi.org/10.5281/zenodo.16915202" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo'da Gör</a></article>
-        <article class="item-card"><span class="doi-badge">10.5281/zenodo.17137459</span><h3 data-i18n="zen_3">Iradi Motor Reaction Protocol</h3><a href="https://doi.org/10.5281/zenodo.17137459" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo'da Gör</a></article>
-        <article class="item-card"><span class="doi-badge">10.5281/zenodo.18098057</span><h3 data-i18n="zen_4">D-IM-EC Consciousness Model</h3><a href="https://doi.org/10.5281/zenodo.18098057" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo'da Gör</a></article>
-        <article class="item-card"><span class="doi-badge">10.5281/zenodo.18231579</span><h3 data-i18n="zen_5">Trauma and Perception Studies</h3><a href="https://doi.org/10.5281/zenodo.18231579" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo'da Gör</a></article>
-        <article class="item-card"><span class="doi-badge">10.5281/zenodo.18911611</span><h3 data-i18n="zen_6">Belief Systems Dataset</h3><a href="https://doi.org/10.5281/zenodo.18911611" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo'da Gör</a></article>
-        <article class="item-card"><span class="doi-badge">10.5281/zenodo.19697589</span><h3 data-i18n="zen_7">Clinical Human Decision Analysis</h3><a href="https://doi.org/10.5281/zenodo.19697589" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo'da Gör</a></article>
+        <article class="item-card"><span class="doi-badge">10.5281/zenodo.19697589</span><h3 data-i18n="zen_1969">TÜRKİYE'DE ÇOCUK KORUMA MEKANİZMALARININ YAPISAL ANALİZİ</h3><a href="https://doi.org/10.5281/zenodo.19697589" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo</a></article>
+        <article class="item-card"><span class="doi-badge">10.5281/zenodo.18911611</span><h3 data-i18n="zen_1891">Orta Doğu Stratejik Satranç Masası — Türkiye Analist Perspektifi</h3><a href="https://doi.org/10.5281/zenodo.18911611" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo</a></article>
+        <article class="item-card"><span class="doi-badge">10.5281/zenodo.18231579</span><h3 data-i18n="zen_1823">Canlı Olmadan Bilinç: Yapay Zekâ, İnsan ve Korku Üzerine Felsefi Denemeler</h3><a href="https://doi.org/10.5281/zenodo.18231579" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo</a></article>
+        <article class="item-card"><span class="doi-badge">10.5281/zenodo.18098057</span><h3 data-i18n="zen_1809">Sessiz Yönlendirme: Bilinç, Algı ve Psikolojik Harp Mekanizmaları</h3><a href="https://doi.org/10.5281/zenodo.18098057" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo</a></article>
+        <article class="item-card"><span class="doi-badge">10.5281/zenodo.17137459</span><h3 data-i18n="zen_1713">Integrated Memory Transformation Protocol (IMTP): 13-Day Interim Report</h3><a href="https://doi.org/10.5281/zenodo.17137459" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo</a></article>
+        <article class="item-card"><span class="doi-badge">10.5281/zenodo.16915202</span><h3 data-i18n="zen_1691">Yakın-Yanlış Silme Protokolü: Çok Katmanlı Hafıza Nötralizasyon Yöntemi</h3><a href="https://doi.org/10.5281/zenodo.16915202" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo</a></article>
+        <article class="item-card"><span class="doi-badge">10.5281/zenodo.16915210</span><h3 data-i18n="zen_16915">Çalışma Belgesi – Ek Materyaller: YYSP+HME Pilot Uygulaması</h3><a href="https://doi.org/10.5281/zenodo.16915210" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo</a></article>
       </div>
     </div>
   </section>
@@ -144,17 +144,17 @@
   <!-- İletişim -->
   <section id="iletisim" class="section">
     <div class="container">
-      <h2 class="section-title" data-i18n="nav_contact">İletişim & Randevu</h2>
+      <h2 class="section-title" data-i18n="nav_contact">Akademik İletişim & İş Birliği</h2>
       <div class="whatsapp-box">
-        <p style="margin-bottom:16px; color:var(--muted);" data-i18n="ws_notice">Randevu ve bilgi için WhatsApp üzerinden asistanıma ulaşabilirsiniz.</p>
+        <p style="margin-bottom:24px; color:var(--muted); font-size:16px;" data-i18n="ws_notice">Akademik projeler ve iş birliği süreçleri için doğrudan iletişime geçebilirsiniz.</p>
         <label class="consent-wrapper">
           <input type="checkbox" id="main-ws-consent">
-          <span data-i18n="ws_consent">Okudum, onaylıyorum. WhatsApp'a yönlendirilmeyi kabul ediyorum.</span>
+          <span data-i18n="ws_consent">Rıza Metni: Proje iş birliği için WhatsApp üzerinden iletişime geçmeyi kabul ediyorum.</span>
         </label>
         <a href="https://wa.me/905325698152" target="_blank" class="ws-btn disabled" id="main-ws-btn">
-          <i class="fab fa-whatsapp"></i> <span data-i18n="ws_btn">WhatsApp ile İletişime Geç</span>
+          <i class="fab fa-whatsapp"></i> <span data-i18n="ws_btn">Proje İş Birliği İçin Yazın</span>
         </a>
-        <div id="ws-warning-text" style="color:var(--danger); font-size:12px; margin-top:10px;"></div>
+        <div id="ws-warning-text" style="color:var(--danger); font-size:12px; margin-top:12px;"></div>
       </div>
     </div>
   </section>
@@ -168,22 +168,34 @@
       nav_blog: "Blog", nav_books: "Kitaplar", nav_projects: "Akademik", nav_videos: "Videolar", nav_tiktok: "Psikolojik Harp", nav_contact: "İletişim",
       hero_title: "Melike Balkın Karakaya", hero_lead: "Klinik psikoloji, bilinç çalışmaları ve din felsefesi üzerine çalışan araştırmacı ve yazar.",
       hero_btn_1: "Akademik Yayınlar", hero_btn_2: "Yazılar",
-      zen_1: "IMTP Protokol Çerçevesi (v1)", zen_2: "IMTP Protokol Çerçevesi (v2)", zen_3: "İradi Motor Tepki Protokolü", zen_4: "D-IM-EC Bilinç Modeli", zen_5: "Travma ve Algı Çalışmaları", zen_6: "İnanç Sistemleri Veri Seti", zen_7: "Klinik Karar Analizleri",
+      zen_1969: "TÜRKİYE'DE ÇOCUK KORUMA MEKANİZMALARININ YAPISAL ANALİZİ", 
+      zen_1891: "Orta Doğu Stratejik Satranç Masası — Türkiye Analist Perspektifi", 
+      zen_1823: "Canlı Olmadan Bilinç: Yapay Zekâ, İnsan ve Korku Üzerine Felsefi Denemeler", 
+      zen_1809: "Sessiz Yönlendirme: Bilinç, Algı ve Psikolojik Harp Mekanizmaları", 
+      zen_1713: "Integrated Memory Transformation Protocol (IMTP): 13-Day Interim Report", 
+      zen_1691: "Yakın-Yanlış Silme Protokolü: Çok Katmanlı Hafıza Nötralizasyon Yöntemi", 
+      zen_16915: "Çalışma Belgesi – Ek Materyaller: YYSP+HME Pilot Uygulaması",
       zen_btn: "Zenodo'da Gör",
-      ws_notice: "Randevu ve bilgi için WhatsApp üzerinden asistanıma ulaşabilirsiniz.",
-      ws_consent: "Okudum, onaylıyorum. WhatsApp'a yönlendirilmeyi kabul ediyorum.",
-      ws_btn: "WhatsApp ile İletişime Geç", ws_warning: "Lütfen önce onay kutusunu işaretleyin."
+      ws_notice: "Akademik projeler ve iş birliği süreçleri için doğrudan iletişime geçebilirsiniz.",
+      ws_consent: "Rıza Metni: Proje iş birliği için WhatsApp üzerinden iletişime geçmeyi kabul ediyorum.",
+      ws_btn: "Proje İş Birliği İçin Yazın", ws_warning: "Lütfen önce rıza kutusunu işaretleyin."
     };
     const en = {
       site_title: "Melike Balkın Karakaya",
       nav_blog: "Blog", nav_books: "Books", nav_projects: "Academic", nav_videos: "Videos", nav_tiktok: "Psychological Warfare", nav_contact: "Contact",
       hero_title: "Melike Balkın Karakaya", hero_lead: "Researcher and author working across clinical psychology, consciousness, and philosophy.",
       hero_btn_1: "Academic Publications", hero_btn_2: "Writings",
-      zen_1: "IMTP Framework (v1)", zen_2: "IMTP Framework (v2)", zen_3: "Iradi Motor Reaction Protocol", zen_4: "D-IM-EC Consciousness Model", zen_5: "Trauma and Perception Studies", zen_6: "Belief Systems Dataset", zen_7: "Clinical Human Decision Analysis",
+      zen_1969: "STRUCTURAL ANALYSIS OF CHILD PROTECTION MECHANISMS IN TÜRKİYE", 
+      zen_1891: "Middle East Strategic Chessboard — Turkey Analyst Perspective", 
+      zen_1823: "Consciousness Without Life: Philosophical Essays on AI, Humanity, and Fear", 
+      zen_1809: "Silent Steering: Consciousness, Perception, and Psychological Warfare Mechanisms", 
+      zen_1713: "Integrated Memory Transformation Protocol (IMTP): 13-Day Interim Report", 
+      zen_1691: "Near-False Deletion Protocol: Multi-Layer Memory Neutralization Method", 
+      zen_16915: "Working Paper – Supplementary Materials: YYSP+HME Pilot Implementation",
       zen_btn: "View on Zenodo",
-      ws_notice: "For appointments and info, please reach out to my assistant via WhatsApp.",
-      ws_consent: "I have read and agree to be redirected to WhatsApp.",
-      ws_btn: "Contact via WhatsApp", ws_warning: "Please check the consent box first."
+      ws_notice: "You can get in touch directly for academic projects and collaborations.",
+      ws_consent: "Consent: I agree to contact via WhatsApp for project collaboration.",
+      ws_btn: "Contact for Collaboration", ws_warning: "Please check the consent box first."
     };
 
     function updateLang(lang) {
