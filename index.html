@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="color-scheme" content="dark">
   <title data-i18n="site_title">Melike Balkın Karakaya</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
@@ -18,6 +17,7 @@
     a{color:var(--brand);text-decoration:none}
     .container{max-width:1140px;margin:auto;padding:0 20px}
     
+    /* Nav */
     .nav{ position:sticky; top:0; z-index:50; backdrop-filter:blur(10px); background:rgba(13,17,23,.9); border-bottom:1px solid var(--border); }
     .nav-row{ display:flex; align-items:center; justify-content:space-between; min-height:68px; }
     .brand{ display:flex; align-items:center; gap:12px; font-weight:700; color:#fff; }
@@ -28,10 +28,18 @@
     .lang-btn{ background:#21262d; border:1px solid var(--border); border-radius:12px; padding:6px 10px; cursor:pointer; font-size:18px; opacity:0.5; }
     .lang-btn.active{ opacity:1; border-color:var(--brand); background:rgba(88,166,255,0.1); }
 
+    /* Hero */
     .hero{ padding:88px 0 56px; background: radial-gradient(900px 500px at 85% -10%, rgba(88,166,255,.18), transparent), var(--bg); border-bottom:1px solid rgba(255,255,255,.04); }
     .hero-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center; }
     .hero-image img { width: 100%; max-width: 320px; border-radius: 24px; border: 2px solid var(--brand); box-shadow: var(--shadow); }
 
+    /* Latest Post Card */
+    .latest-post-section{ margin-top:-24px; position:relative; z-index:10; }
+    .latest-post-card{ background:linear-gradient(180deg,#1a2028,#161c24); border:1px solid var(--brand); border-radius:18px; padding:20px; display:flex; align-items:center; gap:20px; text-decoration:none; box-shadow:var(--shadow); transition: 0.3s; }
+    .latest-post-card:hover { transform: translateY(-3px); border-color: #fff; }
+    .latest-tag{ background:var(--brand); color:#0d1117; padding:4px 10px; border-radius:8px; font-size:12px; font-weight:800; text-transform:uppercase; }
+
+    /* Sections */
     .section{padding:60px 0}
     .section-title{ font-size:28px; border-left:4px solid var(--brand); padding-left:12px; margin-bottom:30px; }
     .grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px; }
@@ -42,6 +50,7 @@
     .btn{ background:var(--brand); color:#0d1117; padding:12px 18px; border-radius:12px; font-weight:700; display:inline-flex; align-items:center; justify-content:center; gap:8px; border:none; cursor:pointer; }
     .btn.alt{ background:#21262d; color:#e6edf3; border:1px solid var(--border); font-size: 13px; }
 
+    /* Videos */
     .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
     .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background:#000; }
     .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
@@ -49,12 +58,13 @@
     .tiktok-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
     .tiktok-card { background: #000; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; min-height: 550px; }
 
+    /* DOI & Contact */
     .doi-badge { font-size: 10px; font-family: monospace; color: var(--brand); background: rgba(88,166,255,0.1); padding: 4px; border-radius: 4px; margin-bottom: 10px; display:inline-block; }
     .whatsapp-box{ text-align:center; background:rgba(37, 211, 102, 0.05); border:1px solid rgba(37, 211, 102, 0.2); border-radius:16px; padding:32px; }
     .consent-wrapper{ display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:20px; cursor:pointer; font-size:14px; }
     .ws-btn.disabled{ opacity:0.3; pointer-events:none; }
 
-    @media (max-width: 768px){ .hero-grid, .nav-row{ flex-direction:column; text-align:center; gap:20px; } }
+    @media (max-width: 768px){ .hero-grid, .nav-row, .latest-post-card{ flex-direction:column; text-align:center; gap:20px; } }
   </style>
 </head>
 <body>
@@ -90,6 +100,18 @@
     </div>
   </header>
 
+  <!-- Son Yazı Kartı -->
+  <div class="container latest-post-section">
+    <a href="blog.html?post=kapalıyapı" class="latest-post-card">
+      <div class="latest-tag" data-i18n="latest_tag">Yeni Yazı</div>
+      <div>
+        <div style="font-weight:700; color:#fff;" data-i18n="latest_title">Kapalı Dini Yapıların Psikososyal Mekanizması</div>
+        <div style="font-size:13px; color:var(--muted);">30 Nisan 2026</div>
+      </div>
+      <div style="margin-left:auto; color:var(--brand); font-weight:700;" data-i18n="latest_read">Oku →</div>
+    </a>
+  </div>
+
   <!-- Kitaplar -->
   <section id="kitaplar" class="section">
     <div class="container">
@@ -104,18 +126,18 @@
     </div>
   </section>
 
-  <!-- Akademik Yayınlar (Gerçek DOI Başlıkları) -->
+  <!-- Akademik Yayınlar -->
   <section id="akademik" class="section">
     <div class="container">
       <h2 class="section-title" data-i18n="nav_projects">Akademik Yayınlar (Zenodo)</h2>
       <div class="grid">
-        <article class="item-card"><span class="doi-badge">10.5281/zenodo.19697589</span><h3 data-i18n="zen_1969">TÜRKİYE'DE ÇOCUK KORUMA MEKANİZMALARININ YAPISAL ANALİZİ</h3><a href="https://doi.org/10.5281/zenodo.19697589" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo</a></article>
-        <article class="item-card"><span class="doi-badge">10.5281/zenodo.18911611</span><h3 data-i18n="zen_1891">Orta Doğu Stratejik Satranç Masası — Türkiye Analist Perspektifi</h3><a href="https://doi.org/10.5281/zenodo.18911611" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo</a></article>
-        <article class="item-card"><span class="doi-badge">10.5281/zenodo.18231579</span><h3 data-i18n="zen_1823">Canlı Olmadan Bilinç: Yapay Zekâ, İnsan ve Korku Üzerine Felsefi Denemeler</h3><a href="https://doi.org/10.5281/zenodo.18231579" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo</a></article>
-        <article class="item-card"><span class="doi-badge">10.5281/zenodo.18098057</span><h3 data-i18n="zen_1809">Sessiz Yönlendirme: Bilinç, Algı ve Psikolojik Harp Mekanizmaları</h3><a href="https://doi.org/10.5281/zenodo.18098057" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo</a></article>
-        <article class="item-card"><span class="doi-badge">10.5281/zenodo.17137459</span><h3 data-i18n="zen_1713">Integrated Memory Transformation Protocol (IMTP): 13-Day Interim Report</h3><a href="https://doi.org/10.5281/zenodo.17137459" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo</a></article>
-        <article class="item-card"><span class="doi-badge">10.5281/zenodo.16915202</span><h3 data-i18n="zen_1691">Yakın-Yanlış Silme Protokolü: Çok Katmanlı Hafıza Nötralizasyon Yöntemi</h3><a href="https://doi.org/10.5281/zenodo.16915202" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo</a></article>
-        <article class="item-card"><span class="doi-badge">10.5281/zenodo.16915210</span><h3 data-i18n="zen_16915">Çalışma Belgesi – Ek Materyaller: YYSP+HME Pilot Uygulaması</h3><a href="https://doi.org/10.5281/zenodo.16915210" target="_blank" class="btn alt" data-i18n="zen_btn">Zenodo</a></article>
+        <article class="item-card"><span class="doi-badge">10.5281/zenodo.19697589</span><h3 data-i18n="zen_1969">TÜRKİYE'DE ÇOCUK KORUMA MEKANİZMALARININ YAPISAL ANALİZİ</h3><a href="https://doi.org/10.5281/zenodo.19697589" target="_blank" class="btn alt">Zenodo</a></article>
+        <article class="item-card"><span class="doi-badge">10.5281/zenodo.18911611</span><h3 data-i18n="zen_1891">Orta Doğu Stratejik Satranç Masası — Türkiye Analist Perspektifi</h3><a href="https://doi.org/10.5281/zenodo.18911611" target="_blank" class="btn alt">Zenodo</a></article>
+        <article class="item-card"><span class="doi-badge">10.5281/zenodo.18231579</span><h3 data-i18n="zen_1823">Canlı Olmadan Bilinç: Yapay Zekâ, İnsan ve Korku Üzerine Felsefi Denemeler</h3><a href="https://doi.org/10.5281/zenodo.18231579" target="_blank" class="btn alt">Zenodo</a></article>
+        <article class="item-card"><span class="doi-badge">10.5281/zenodo.18098057</span><h3 data-i18n="zen_1809">Sessiz Yönlendirme: Bilinç, Algı ve Psikolojik Harp Mekanizmaları</h3><a href="https://doi.org/10.5281/zenodo.18098057" target="_blank" class="btn alt">Zenodo</a></article>
+        <article class="item-card"><span class="doi-badge">10.5281/zenodo.17137459</span><h3 data-i18n="zen_1713">Integrated Memory Transformation Protocol (IMTP): 13-Day Interim Report</h3><a href="https://doi.org/10.5281/zenodo.17137459" target="_blank" class="btn alt">Zenodo</a></article>
+        <article class="item-card"><span class="doi-badge">10.5281/zenodo.16915202</span><h3 data-i18n="zen_1691">Yakın-Yanlış Silme Protokolü: Çok Katmanlı Hafıza Nötralizasyon Yöntemi</h3><a href="https://doi.org/10.5281/zenodo.16915202" target="_blank" class="btn alt">Zenodo</a></article>
+        <article class="item-card"><span class="doi-badge">10.5281/zenodo.16915210</span><h3 data-i18n="zen_16915">Çalışma Belgesi – Ek Materyaller: YYSP+HME Pilot Uygulaması</h3><a href="https://doi.org/10.5281/zenodo.16915210" target="_blank" class="btn alt">Zenodo</a></article>
       </div>
     </div>
   </section>
@@ -123,7 +145,7 @@
   <!-- Videolar -->
   <section id="videolar" class="section">
     <div class="container">
-      <h2 class="section-title" data-i18n="nav_videos">Videolar</h2>
+      <h2 class="section-title" data-i18n="nav_videos">YouTube Videoları</h2>
       <div class="video-grid">
         <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/Obj8MtM5GCg"></iframe></div>
         <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/Ydq7-bXZ8fY"></iframe></div>
@@ -168,6 +190,7 @@
       nav_blog: "Blog", nav_books: "Kitaplar", nav_projects: "Akademik", nav_videos: "Videolar", nav_tiktok: "Psikolojik Harp", nav_contact: "İletişim",
       hero_title: "Melike Balkın Karakaya", hero_lead: "Klinik psikoloji, bilinç çalışmaları ve din felsefesi üzerine çalışan araştırmacı ve yazar.",
       hero_btn_1: "Akademik Yayınlar", hero_btn_2: "Yazılar",
+      latest_tag: "Yeni Yazı", latest_title: "Kapalı Dini Yapıların Psikososyal Mekanizması", latest_read: "Oku →",
       zen_1969: "TÜRKİYE'DE ÇOCUK KORUMA MEKANİZMALARININ YAPISAL ANALİZİ", 
       zen_1891: "Orta Doğu Stratejik Satranç Masası — Türkiye Analist Perspektifi", 
       zen_1823: "Canlı Olmadan Bilinç: Yapay Zekâ, İnsan ve Korku Üzerine Felsefi Denemeler", 
@@ -175,7 +198,6 @@
       zen_1713: "Integrated Memory Transformation Protocol (IMTP): 13-Day Interim Report", 
       zen_1691: "Yakın-Yanlış Silme Protokolü: Çok Katmanlı Hafıza Nötralizasyon Yöntemi", 
       zen_16915: "Çalışma Belgesi – Ek Materyaller: YYSP+HME Pilot Uygulaması",
-      zen_btn: "Zenodo'da Gör",
       ws_notice: "Akademik projeler ve iş birliği süreçleri için doğrudan iletişime geçebilirsiniz.",
       ws_consent: "Rıza Metni: Proje iş birliği için WhatsApp üzerinden iletişime geçmeyi kabul ediyorum.",
       ws_btn: "Proje İş Birliği İçin Yazın", ws_warning: "Lütfen önce rıza kutusunu işaretleyin."
@@ -185,6 +207,7 @@
       nav_blog: "Blog", nav_books: "Books", nav_projects: "Academic", nav_videos: "Videos", nav_tiktok: "Psychological Warfare", nav_contact: "Contact",
       hero_title: "Melike Balkın Karakaya", hero_lead: "Researcher and author working across clinical psychology, consciousness, and philosophy.",
       hero_btn_1: "Academic Publications", hero_btn_2: "Writings",
+      latest_tag: "Latest Post", latest_title: "Psychosocial Mechanism of Closed Religious Structures", latest_read: "Read →",
       zen_1969: "STRUCTURAL ANALYSIS OF CHILD PROTECTION MECHANISMS IN TÜRKİYE", 
       zen_1891: "Middle East Strategic Chessboard — Turkey Analyst Perspective", 
       zen_1823: "Consciousness Without Life: Philosophical Essays on AI, Humanity, and Fear", 
@@ -192,7 +215,6 @@
       zen_1713: "Integrated Memory Transformation Protocol (IMTP): 13-Day Interim Report", 
       zen_1691: "Near-False Deletion Protocol: Multi-Layer Memory Neutralization Method", 
       zen_16915: "Working Paper – Supplementary Materials: YYSP+HME Pilot Implementation",
-      zen_btn: "View on Zenodo",
       ws_notice: "You can get in touch directly for academic projects and collaborations.",
       ws_consent: "Consent: I agree to contact via WhatsApp for project collaboration.",
       ws_btn: "Contact for Collaboration", ws_warning: "Please check the consent box first."
