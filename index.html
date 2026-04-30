@@ -424,6 +424,33 @@
       background:#0f141b;
     }
 
+    /* Video Galeri Stilleri */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 24px;
+    }
+    .video-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     .item-card h3{
       margin:0 0 10px;
       font-size:20px;
@@ -573,6 +600,7 @@
     @media (max-width: 980px){
       .hero-grid{grid-template-columns:1fr}
       .hero-note{grid-template-columns:1fr}
+      .video-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width:768px){
@@ -634,6 +662,7 @@
         <a href="blog.html" id="nav-blog-link">Blog</a>
         <a href="#kitaplar" data-i18n="nav_books">Kitaplar</a>
         <a href="#projeler" data-i18n="nav_projects">Projeler</a>
+        <a href="#videolar" data-i18n="nav_videos">Videolar</a>
         <a href="#hakkimda" data-i18n="nav_about">Hakkımda</a>
         <a href="#iletisim" id="nav-contact-link" data-i18n="nav_contact">İletişim</a>
       </div>
@@ -794,6 +823,35 @@
     </div>
   </section>
 
+  <!-- Video Galeri Bölümü -->
+  <section id="videolar" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="nav_videos">Videolar</h2>
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/Obj8MtM5GCg" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/Ydq7-bXZ8fY" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/ehJ-XKSyKHI" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/rHzZzXvlSTw" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="iletisim" class="section">
     <div class="container">
       <h2 class="section-title" data-i18n="nav_contact">İletişim & Randevu</h2>
@@ -835,6 +893,7 @@
       nav_blog: "Blog",
       nav_books: "Kitaplar",
       nav_projects: "Projeler",
+      nav_videos: "Videolar",
       nav_about: "Hakkımda",
       nav_contact: "İletişim",
 
@@ -900,6 +959,7 @@
       nav_blog: "Blog",
       nav_books: "Books",
       nav_projects: "Projects",
+      nav_videos: "Videos",
       nav_about: "About",
       nav_contact: "Contact",
 
