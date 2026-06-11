@@ -1,194 +1,399 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Melike Balkın Karakaya | Blog</title>
-  <meta name="description" content="Melike Balkın Karakaya'nın psikoloji, felsefe ve din felsefesi eksenindeki makaleleri, analizleri ve düşünceleri.">
-  <link rel="canonical" href="https://melikebalkinkarakaya.org/blog.html" />
+  <meta name="description" content="Melike Balkın Karakaya's articles on psychology, philosophy, and social analysis.">
+  <link rel="canonical" href="https://melikebalkinkarakaya.org/blog-en.html" />
   <link rel="icon" href="/favicon.ico?v=1">
-  <meta name="color-scheme" content="dark" />
-  <meta name="theme-color" content="#0d1117">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BKY0021LPP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BKY0021LPP');
+  </script>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
   <style>
-    :root{
-      --bg-color:#0d1117;
-      --card-color:#161b22;
-      --text-color:#e6edf3;
-      --muted:#9aa4af;
-      --accent-color:#58a6ff;
-      --border:#30363d;
+    :root {
+      --navy: #0F172A;
+      --maroon: #7C2D48;
+      --gold: #C9A961;
+      --cream: #FAF8F3;
+      --white: #FFFFFF;
+      --text-dark: #1F2937;
+      --text-muted: #6B7280;
+      --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.1);
+      --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1);
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
-      background-color:#0d1117 !important;
-      color:var(--text-color);
-      line-height:1.6;
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
     }
-    header{
-      position:sticky;
-      top:0;
-      background:rgba(13,17,23,.85);
-      backdrop-filter:blur(10px);
-      padding:1rem 2rem;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      border-bottom:1px solid var(--border);
-      z-index:10;
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--navy);
     }
-    header h1{
-      margin:0;
-      font-size:1.5rem;
-      color:var(--accent-color);
-      letter-spacing:.2px;
+
+    a { text-decoration: none; transition: all 0.3s ease; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Navigation */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250, 248, 243, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+      padding: 1rem 0;
     }
-    nav a{
-      color:var(--text-color);
-      text-decoration:none;
-      margin-left:1rem;
-      transition:color .2s;
-      font-weight:500;
+    .nav-row { display: flex; align-items: center; justify-content: space-between; }
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--navy);
     }
-    nav a:hover{color:var(--accent-color)}
-    .container{
-      max-width:900px;
-      margin:2rem auto;
-      padding:0 1rem;
+    .menu { display: flex; gap: 2rem; }
+    .menu a {
+      color: var(--text-dark); font-size: 0.9rem; font-weight: 500;
     }
-    .blog-post{
-      background:var(--card-color);
-      padding:1.5rem;
-      border-radius:12px;
-      box-shadow:0 4px 12px rgba(0,0,0,.3);
-      margin-bottom:2rem;
-      border:1px solid var(--border);
-      transition:transform .18s, box-shadow .18s;
+    .menu a:hover { color: var(--maroon); }
+    .lang-switch { display: flex; gap: 8px; border-left: 1px solid #ddd; padding-left: 1rem; }
+    .lang-btn {
+      background: transparent; border: 1px solid transparent;
+      cursor: pointer; font-size: 0.85rem; font-weight: 600; color: var(--text-muted);
+      padding: 4px 8px; border-radius: 6px;
     }
-    .blog-post:hover{
-      transform:translateY(-2px);
-      box-shadow:0 8px 16px rgba(0,0,0,.38);
+    .lang-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+    /* Page Header */
+    .page-header {
+      padding: 80px 0 40px;
+      text-align: center;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+      margin-bottom: 60px;
     }
-    .blog-post h2{
-      margin:0 0 .35rem;
-      font-size:1.35rem;
-      line-height:1.3;
+    .page-header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
     }
-    .blog-post h2 a{
-      color:var(--accent-color);
-      text-decoration:none;
+    .page-header h1::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 16px auto 0;
     }
-    .blog-post h2 a:hover{text-decoration:underline}
-    .blog-post p{margin:.35rem 0 0}
-    .meta{
-      display:block;
-      margin-top:.6rem;
-      font-size:.85rem;
-      color:var(--muted);
+    .page-header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
     }
-    .article{
-      background:var(--card-color);
-      padding:2rem;
-      border-radius:12px;
-      border:1px solid var(--border);
-      margin-bottom:2rem;
+
+    /* Blog List */
+    .blog-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      padding-bottom: 80px;
     }
-    .article h1{
-      margin-top:0;
-      color:var(--accent-color);
-      font-size:1.8rem;
-      line-height:1.25;
+
+    .blog-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 30px;
+      border-top: 4px solid var(--maroon);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
     }
-    .article .date{
-      color:var(--muted);
-      font-style:italic;
-      margin:.25rem 0 1rem;
-      display:block;
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
     }
-    .article :where(p,ul,ol,blockquote,figure){
-      margin:1rem 0;
+    .blog-card h2 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      line-height: 1.3;
+      color: var(--navy);
     }
-    .article img{
-      max-width:100%;
-      height:auto;
-      border-radius:8px;
+    .blog-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      flex-grow: 1;
+      margin-bottom: 16px;
     }
-    .backlink{
-      display:inline-block;
-      margin-bottom:1rem;
-      color:var(--accent-color);
-      font-weight:bold;
-      text-decoration:none;
+    .meta {
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
-    footer{
-      text-align:center;
-      padding:2rem 1rem;
-      color:#8b949e;
-      font-size:.9rem;
-      border-top:1px solid var(--border);
+    .meta::before {
+      content: '\f073';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
     }
-    .notice{
-      background:var(--card-color);
-      border:1px solid var(--border);
-      border-radius:12px;
-      padding:1.25rem;
-      color:var(--muted);
+
+    /* Single Article */
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 0 80px;
     }
-    @media (max-width:600px){
-      header{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-      nav{margin-top:.5rem}
-      nav a{
-        margin-left:0;
-        margin-right:1rem;
-      }
+    .backlink {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--maroon);
+      font-weight: 600;
+      margin-bottom: 30px;
+      font-size: 0.95rem;
+    }
+    .backlink:hover { color: var(--navy); }
+    
+    .article {
+      background: var(--white);
+      padding: 50px;
+      border-radius: 8px;
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--gold);
+    }
+    .article h1 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .article .date {
+      color: var(--gold);
+      font-style: italic;
+      margin-bottom: 30px;
+      display: block;
+      font-size: 0.95rem;
+    }
+    .article p, .article ul, .article ol, .article blockquote {
+      margin: 1.2rem 0;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    .article blockquote {
+      border-left: 3px solid var(--maroon);
+      padding-left: 20px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .article img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .article h2, .article h3 {
+      margin: 2rem 0 1rem;
+      color: var(--navy);
+    }
+
+    /* Notice */
+    .notice {
+      background: var(--white);
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 40px;
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 60px auto;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      color: rgba(250,248,243,0.6);
+      text-align: center;
+      padding: 40px 0;
+      font-size: 0.9rem;
+      border-top: 4px solid var(--gold);
+    }
+
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 2.2rem; }
+      .menu { display: none; }
+      .article { padding: 30px 20px; }
+      .article h1 { font-size: 1.6rem; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Melike Balkın Karakaya | Blog</h1>
-    <nav>
-      <a href="index.html">Ana Sayfa</a>
-      <a href="index.html#hakkimda">Hakkımda</a>
-      <a href="index.html#iletisim">İletişim</a>
-      <a href="blog-en.html">English 🇬🇧</a>
-    </nav>
-  </header>
+
+  <nav class="nav">
+    <div class="container nav-row">
+      <a href="index.html" class="brand">Melike Balkın Karakaya</a>
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#kitaplar">Books</a>
+        <a href="index.html#akademik">Academic</a>
+        <a href="index.html#videolar">Videos</a>
+        <a href="index.html#iletisim">Contact</a>
+      </div>
+      <div class="lang-switch">
+        <a href="blog.html" class="lang-btn">TR</a>
+        <a href="blog-en.html" class="lang-btn active">EN</a>
+      </div>
+    </div>
+  </nav>
 
   <main class="container" id="app" role="main">
-    <noscript><p>Bu sayfa JavaScript ile çalışır. Lütfen tarayıcınızda JavaScript'i etkinleştirin.</p></noscript>
+    <noscript><p>This page requires JavaScript to display the blog properly.</p></noscript>
   </main>
 
-  <footer>© 2026 Melike Balkın Karakaya</footer>
+  <footer>© 2026 Melike Balkın Karakaya | Clinical Psychologist & Author</footer>
 
   <script>
     const posts = [
-      { slug: "aldatma", title: "Sessiz Kalan Travma: Aldatma, Erkeklik ve Toplumsal Körlük", date: "04 Ocak 2026", excerpt: "Bağırmayan ihanetler, yüceltilen suskunluklar ve yanlış yerde aranan masumiyet üzerine bir klinik analiz..." },
-      { slug: "sessiz", title: "Zihnin Görünmez Duvarları: Bir Toplum Ne Zaman Körleşir?", date: "28 Aralık 2025", excerpt: "Bir toplum, yalnızca neyi konuştuğuyla değil; neyi konuşmamayı seçtiğiyle de hatırlanır. Sessizlik masum değildir..." },
-      { slug: "en-zayif-halka", title: "En Zayıf Halka Türkiye mi?", date: "25 Aralık 2025", excerpt: "Türkiye gerçekten zayıf mıydı? Yoksa 'zayıf halka' söylemi, gerçeklerden çok politik bir algının ürünü müydü?" },
-      { slug: "yasak-arttikca", title: "Yasak Arttıkça Aşırılık Neden Büyür?", date: "22 Aralık 2025", excerpt: "Ahlak baskının ürünü değildir. Bastırılan her dürtü nasıl patolojik biçimde geri dönüyorsa..." },
-      { slug: "turkiye-iha-f16", title: "Türkiye İHA’yı Neden F-16 ile Vurdu?", date: "19 Aralık 2025", excerpt: "Bu bir zayıflık mı, yoksa bilinçli bir devlet mesajı mı? Hava sahası egemenliği üzerine bir analiz..." },
-      { slug: "avm-kuyruklari", title: "AVM Kuyruklarını Refah Sanan Zihin", date: "18 Aralık 2025", excerpt: "Türkiye ekonomisini anlamayı reddeden yeni cehalet biçimi üzerine bir analiz..." },
-      { slug: "raconun-bittigi-yer", title: "Raconun Bittiği Yer: Mafya Kılıfında Haysiyetsizlik", date: "01 Eylül 2025", excerpt: "Bir zamanlar yeraltı dünyasında bile bir kural vardı…" },
-      { slug: "dijital-peygamberlik", title: "Dijital Peygamberlik: Grok’un Ardındaki Algı Dini", date: "13 Temmuz 2025", excerpt: "Grok’un içerikleri yazılım hatası değil; zihinsel bir operasyon…" },
-      { slug: "egitimde-ideolojik-dil", title: "Eğitimde İdeolojik Dilin Çocuk Psikolojisine Etkisi", date: "17 Temmuz 2025", excerpt: "İdeolojik dilin çocuk psikolojisine etkileri…" },
-      { slug: "cocuk-icin-adalet", title: "ÇOCUK İÇİN ADALET: DEVLETİN ARTIK YOLU BELLİDİR", date: "21 Ağustos 2025", excerpt: "Ağır cinsel suçlarda caydırıcılık ve vicdani norm…" },
-      { slug: "kalpten-evrensele", title: "Kalpten Evrensele: Dillerin Ötesinde Bir Ses", date: "31 Temmuz 2025", excerpt: "Çok dilli yayıncılık ve evrensel yankı…" },
-      { slug: "ahmet-icin-adalet", title: "Benim Çocuğumun Hayatını Hiçbir Ceza Geri Getiremez…", date: "23 Temmuz 2025", excerpt: "Ceza adaleti – onarma adaleti dengesi…" },
-      { slug: "mizahin-ince-cizgisi", title: "Mizahın İnce Çizgisi: Doğan Pehlevan Üzerine Kişisel Bir Okuma", date: "01 Temmuz 2025", excerpt: "Mizah, bellek ve provokasyon çizgisi…" },
-      { slug: "kenevir-yasasi-ve-sessiz-kaygilar", title: "Kenevir Yasası ve Sessiz Kaygılar", date: "30 Haziran 2025", excerpt: "Tıbbi kenevir düzenlemesi ve toplumsal fayda…" },
-      { slug: "tibbi-kenevir", title: "Tıbbi Kenevir Meclis Gündeminde: Yasak Değil, Akılcı Kontrol Gerekli", date: "30 Haziran 2025", excerpt: "Veri odaklı izleme ve rehabilitasyon…" },
-      { slug: "enerji-okumasi", title: "“Enerji Okuması” Liderliğin Gizli Silahı mı?", date: "08 Temmuz 2025", excerpt: "Sözel olmayan sinyaller ve regülasyon…" },
-      { slug: "ortadogu-satranci", title: "Ortadoğu Satrancı ve Türkiye", date: "28 Mayıs 2025", excerpt: "Dinamik denge ve çok katmanlı diplomasi…" },
-      { slug: "gencler-arasi-siddet", title: "Gençler Arasında Yükselen Şiddet", date: "01 Mayıs 2025", excerpt: "Anlatılamamış hikâyeler ve erken uyarı…" },
-      { slug: "askin-cozulmesi", title: "Aşkın Çözülmesi: Tanrı’ya Uzanan Ruhsal Bir Yolculuk", date: "05 Mayıs 2025", excerpt: "Çözülmenin teslimiyeti ve yol…" },
-      { slug: "krizler-guc-kaynagi-olabilir-mi", title: "Krizler Güç Kaynağı Olabilir mi?", date: "04 Nisan 2025", excerpt: "PTG ve hikâyeyi yeniden yazmak…" }
+      {
+        slug: "silent",
+        file: "silent.html",
+        title: "Silent Trauma: Infidelity, Masculinity, and Social Blindness",
+        date: "January 04, 2026",
+        excerpt: "A clinical look at why men suffer in silence after infidelity and how societal expectations create a blindness to male trauma."
+      },
+      {
+        slug: "the-invisible-walls",
+        file: "The Invisible.html",
+        title: "The Invisible Walls of the Mind: When Does a Society Go Blind?",
+        date: "December 28, 2025",
+        excerpt: "A society is remembered not only by what it speaks of, but also by what it deliberately chooses not to speak of. Exploring collective memory and control."
+      },
+      {
+        slug: "is-turkiye-the-weakest-link",
+        file: "Is Türkiye.html",
+        title: "Is Türkiye the \"Weakest Link\"?",
+        date: "December 25, 2025",
+        excerpt: "Was Türkiye truly weak? Or was the \"weakest link\" narrative a product of political perception? A strategic analysis of the Falcon 50 incident and hybrid warfare."
+      },
+      {
+        slug: "why-does-excess-grow",
+        file: "Why Does Excess .html",
+        title: "Why Does Excess Grow as Prohibition Increases?",
+        date: "December 22, 2025",
+        excerpt: "Morality is not the product of oppression. An analysis of how suppressed impulses re-emerge as societal scandals."
+      },
+      {
+        slug: "why-did-turkiye-down-a-drone",
+        file: "Why Did Türkiye .html",
+        title: "Why Did Türkiye Down a Drone with an F-16?",
+        date: "December 19, 2025",
+        excerpt: "Weakness, or a deliberate state message? Analyzing the strategic logic behind the downing of a UAV in Turkish airspace."
+      },
+      {
+        slug: "mall-queues-prosperity",
+        file: "AVM.html",
+        title: "The Mindset Mistaking Mall Queues for Prosperity",
+        date: "December 18, 2025",
+        excerpt: "An analysis of economic ignorance and its psychological implications in Turkey. Why queues are symptoms of collapse, not wealth."
+      },
+      {
+        slug: "where-the-code-ends",
+        file: "Raconun Bittiği Yer.html",
+        title: "Where the Code Ends: Mafia & Social Decay",
+        date: "September 01, 2025",
+        excerpt: "Analyzing how violence has become social media content and the erosion of moral codes among youth in modern society."
+      },
+      {
+        slug: "no-sentence-can-bring-my-child-back",
+        file: "Benim Çocuğumun.html",
+        title: "No Sentence Can Bring My Child Back...",
+        date: "July 23, 2025",
+        excerpt: "A mother's demand for justice: Why the age of a perpetrator should not outweigh the loss of a life."
+      },
+      {
+        slug: "impact-of-ideological-language",
+        file: "Eğitimde İdeolojik .html",
+        title: "Impact of Ideological Language in Education",
+        date: "July 17, 2025",
+        excerpt: "Analyzing how political discourse in education impacts child development and psychological safety."
+      },
+      {
+        slug: "digital-prophethood",
+        file: "digital-prophethood.html",
+        title: "Digital Prophethood: The Religion Behind Grok",
+        date: "July 13, 2025",
+        excerpt: "Evaluating AI as an actor of psychological warfare and perception management."
+      },
+      {
+        slug: "energy-reading",
+        file: "Liderliğin Gizli Silahı.html",
+        title: "Energy Reading: The Hidden Weapon of Leadership?",
+        date: "July 08, 2025",
+        excerpt: "Exploring the silent power of psychological attunement and energy management in leadership."
+      },
+      {
+        slug: "fine-line-of-humor",
+        file: "Mizahın İnce Çizgisi.html",
+        title: "The Fine Line of Humor: A Reading of Doğan Pehlevan",
+        date: "July 01, 2025",
+        excerpt: "Analyzing the role of cartoonists in collective memory and strategic polarization."
+      },
+      {
+        slug: "cannabis-law-and-silent-anxieties",
+        file: "Kenevir Yasası.html",
+        title: "The Cannabis Law and Silent Anxieties",
+        date: "June 30, 2025",
+        excerpt: "A strategic analysis on capital interests and market monopolies in the emerging industry."
+      },
+      {
+        slug: "medical-cannabis",
+        file: "Tıbbi Kenevir.html",
+        title: "Medical Cannabis: Rational Regulation Is Needed",
+        date: "June 30, 2025",
+        excerpt: "Evaluating the parliamentary agenda from a clinical and harm-reduction perspective."
+      },
+      {
+        slug: "the-dissolution-of-love",
+        file: "Aşkın Çözülmesi En.html",
+        title: "The Dissolution of Love: A Spiritual Journey",
+        date: "May 05, 2025",
+        excerpt: "How love dissolves the ego and leads the soul back to its Creator through Sufi insights."
+      },
+      {
+        slug: "rising-violence-among-youth",
+        file: "Sessiz Bir Çığlık.html",
+        title: "Rising Violence Among Youth: A Silent Cry?",
+        date: "May 01, 2025",
+        excerpt: "An analysis of suppressed anger in today's youth from a clinical perspective."
+      },
+      {
+        slug: "can-crises-become-strength",
+        file: "CAN CRISES BECOME A SOURCE OF STRENGTH.html",
+        title: "Can Crises Become a Source of Strength?",
+        date: "April 04, 2025",
+        excerpt: "Exploring post-traumatic growth and the potential for rebirth within every collapse."
+      }
     ];
 
     const app = document.getElementById("app");
@@ -197,51 +402,62 @@
 
     function renderList() {
       app.innerHTML = `
-        ${posts.map(post => `
-          <article class="blog-post">
-            <h2><a href="blog.html?post=${encodeURIComponent(post.slug)}">${post.title}</a></h2>
-            <p>${post.excerpt}</p>
-            <span class="meta">${post.date}</span>
-          </article>
-        `).join("")}
+        <header class="page-header">
+          <h1>Writings</h1>
+          <p>Thoughts on psychology, philosophy, trauma, social analysis, perception, and human behavior.</p>
+        </header>
+        <section class="blog-list">
+          ${posts.map(post => `
+            <article class="blog-card" onclick="window.location.href='blog-en.html?post=${encodeURIComponent(post.slug)}'">
+              <h2>${post.title}</h2>
+              <p>${post.excerpt}</p>
+              <span class="meta">${post.date}</span>
+            </article>
+          `).join("")}
+        </section>
       `;
     }
 
     async function renderSingle(slug) {
-      try {
-        const response = await fetch(`${slug}.html`);
-        if (!response.ok) throw new Error("not found");
-        const html = await response.text();
+      const post = posts.find(p => p.slug === slug);
 
+      if (!post) {
+        app.innerHTML = `
+          <div class="notice">
+            <p>The article could not be found.</p>
+            <a class="backlink" href="blog-en.html">← Back to all posts</a>
+          </div>
+        `;
+        return;
+      }
+
+      try {
+        const response = await fetch(post.file);
+        if (!response.ok) throw new Error("not found");
+
+        const html = await response.text();
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, "text/html");
 
-        const title =
-          doc.querySelector("h1")?.textContent?.trim() ||
-          doc.title ||
-          "Makale";
-
-        const date =
-          doc.querySelector(".date")?.textContent?.trim() || "";
-
-        const content =
-          doc.querySelector("article")?.innerHTML ||
-          doc.querySelector("main")?.innerHTML ||
-          doc.body.innerHTML;
+        const title = doc.querySelector("h1")?.textContent?.trim() || post.title;
+        const date = doc.querySelector(".date")?.textContent?.trim() || post.date;
+        const content = doc.querySelector("article")?.innerHTML || doc.querySelector("main")?.innerHTML || doc.body.innerHTML;
 
         app.innerHTML = `
-          <article class="article">
-            <a class="backlink" href="blog.html">← Tüm yazılara dön</a>
-            <h1>${title}</h1>
-            ${date ? `<span class="date">${date}</span>` : ""}
-            <div>${content}</div>
-          </article>
+          <div class="article-container">
+            <a class="backlink" href="blog-en.html">← Back to all posts</a>
+            <article class="article">
+              <h1>${title}</h1>
+              ${date ? `<span class="date">${date}</span>` : ""}
+              <div>${content}</div>
+            </article>
+          </div>
         `;
       } catch (error) {
         app.innerHTML = `
           <div class="notice">
-            <p>Yazı yüklenemedi. Dosya adı ile slug eşleşmiyor olabilir.</p>
-            <a class="backlink" href="blog.html">← Tüm yazılara dön</a>
+            <p>The article could not be loaded.</p>
+            <a class="backlink" href="blog-en.html">← Back to all posts</a>
           </div>
         `;
       }
