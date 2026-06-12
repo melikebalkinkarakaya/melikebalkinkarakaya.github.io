@@ -13,95 +13,357 @@
   
   <style>
     :root {
-      --navy: #0F172A; --maroon: #7C2D48; --gold: #C9A961;
-      --cream: #FAF8F3; --text-dark: #1F2937; --text-muted: #6B7280; --white: #FFFFFF;
+      --navy: #0F172A;
+      --navy-light: #1E293B;
+      --maroon: #7C2D48;
+      --maroon-light: #9B3D5E;
+      --gold: #C9A961;
+      --gold-light: #D4B573;
+      --cream: #FAF8F3;
+      --cream-dark: #F0EBE0;
+      --text-dark: #1F2937;
+      --text-muted: #6B7280;
+      --white: #FFFFFF;
+      
       --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.1);
       --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1);
+      --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.15);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', system-ui, sans-serif; background-color: var(--cream); color: var(--text-dark); line-height: 1.6; }
-    h1, h2, h3, .serif { font-family: 'Playfair Display', serif; color: var(--navy); }
+    
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .serif {
+      font-family: 'Playfair Display', serif;
+      color: var(--navy);
+    }
+
     a { text-decoration: none; transition: all 0.3s ease; }
+    ul { list-style: none; }
+
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* Nav */
-    .nav { position: sticky; top: 0; z-index: 100; background: rgba(250, 248, 243, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(15, 23, 42, 0.1); padding: 1rem 0; }
+    /* --- NAVIGATION --- */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250, 248, 243, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--maroon);
+      padding: 1rem 0;
+    }
     .nav-row { display: flex; align-items: center; justify-content: space-between; }
-    .brand { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--navy); }
+    
+    .brand { 
+      font-family: 'Playfair Display', serif; 
+      font-size: 1.25rem; font-weight: 700; 
+      color: var(--navy); letter-spacing: -0.5px;
+    }
+    
     .menu { display: flex; gap: 2rem; }
-    .menu a { color: var(--text-dark); font-size: 0.9rem; font-weight: 500; }
-    .menu a:hover { color: var(--maroon); }
-    .lang-switch { display: flex; gap: 8px; border-left: 1px solid #ddd; padding-left: 1rem; }
-    .lang-btn { background: transparent; border: 1px solid transparent; cursor: pointer; font-size: 0.85rem; font-weight: 600; color: var(--text-muted); padding: 4px 8px; border-radius: 6px; }
-    .lang-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .menu a { 
+      color: var(--text-dark); font-size: 0.9rem; font-weight: 500; 
+      position: relative;
+    }
+    .menu a:hover { 
+      color: var(--maroon);
+      text-shadow: 0 0 8px rgba(124, 45, 72, 0.3);
+    }
+    .menu a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+      background: var(--maroon); transition: width 0.3s;
+    }
+    .menu a:hover::after { width: 100%; }
 
-    /* Hero */
-    .hero { background: var(--navy); color: var(--cream); padding: 80px 0; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 60%; height: 100%; background-image: radial-gradient(circle at 2px 2px, rgba(201,169,97,0.15) 1px, transparent 0); background-size: 40px 40px; mask-image: linear-gradient(to left, black, transparent); -webkit-mask-image: linear-gradient(to left, black, transparent); pointer-events: none; }
-    .hero-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; position: relative; z-index: 2; }
-    .hero-img-wrapper img { width: 100%; max-width: 400px; border-radius: 4px; border: 1px solid var(--gold); box-shadow: 0 20px 40px rgba(0,0,0,0.4); filter: grayscale(20%) contrast(110%); }
-    .hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; color: var(--cream); }
-    .hero-subtitle { font-size: 1.1rem; color: var(--gold); font-weight: 500; margin-bottom: 1.5rem; letter-spacing: 0.5px; text-transform: uppercase; }
-    .hero-desc { font-size: 1rem; color: rgba(250,248,243,0.8); margin-bottom: 2rem; max-width: 500px; line-height: 1.8; }
-    .btn-hero { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy); padding: 14px 28px; border-radius: 4px; font-weight: 600; }
-    .btn-hero:hover { background: #d4b573; transform: translateY(-2px); }
+    .lang-switch { display: flex; gap: 8px; border-left: 2px solid var(--maroon); padding-left: 1rem; }
+    .lang-btn {
+      background: transparent; border: 1px solid transparent;
+      cursor: pointer; font-size: 0.85rem; font-weight: 600; color: var(--text-muted);
+      padding: 4px 8px; border-radius: 6px;
+    }
+    .lang-btn.active { 
+      background: var(--navy); color: var(--white); border-color: var(--navy); 
+    }
+    .lang-btn:hover { border-color: var(--maroon); }
 
-    /* Feature Cards */
-    .features-section { margin-top: -60px; position: relative; z-index: 10; padding-bottom: 60px; }
-    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .feature-card { background: var(--white); padding: 40px 30px; border-top: 4px solid var(--maroon); box-shadow: var(--shadow-md); text-align: center; transition: transform 0.3s; border-radius: 0 0 8px 8px; }
-    .feature-card:hover { transform: translateY(-5px); }
-    .feature-icon { font-size: 2rem; color: var(--navy); margin-bottom: 1.5rem; width: 60px; height: 60px; line-height: 60px; border: 1px solid #eee; border-radius: 50%; margin: 0 auto 1.5rem; }
-    .feature-card h3 { font-size: 1.25rem; margin-bottom: 1rem; }
-    .feature-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; min-height: 45px;}
-    .card-link { color: var(--maroon); font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 6px; }
+    /* --- HERO SECTION (Split Screen with Gradient) --- */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--maroon) 100%);
+      color: var(--cream);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Nöral Ağ Deseni */
+    .hero::before {
+      content: ''; position: absolute; top: 0; right: 0; width: 60%; height: 100%;
+      background-image: radial-gradient(circle at 2px 2px, rgba(201,169,97,0.2) 1px, transparent 0);
+      background-size: 40px 40px;
+      mask-image: linear-gradient(to left, black, transparent);
+      -webkit-mask-image: linear-gradient(to left, black, transparent);
+      pointer-events: none;
+    }
+    /* Altın Çizgi */
+    .hero::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 4px;
+      background: var(--gold);
+    }
+
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center;
+      position: relative; z-index: 2;
+    }
+
+    .hero-img-wrapper {
+      position: relative;
+    }
+    .hero-img-wrapper img {
+      width: 100%; max-width: 400px;
+      border-radius: 4px;
+      border: 3px solid var(--gold);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      filter: grayscale(20%) contrast(110%);
+    }
+    /* Çift Çerçeve Efekti */
+    .hero-img-wrapper::before {
+      content: ''; position: absolute; top: -8px; left: -8px; right: 8px; bottom: 8px;
+      border: 2px solid var(--maroon); z-index: -1; border-radius: 4px;
+    }
+    .hero-img-wrapper::after {
+      content: ''; position: absolute; top: 15px; left: 15px; right: -15px; bottom: -15px;
+      border: 1px solid rgba(201,169,97,0.4); z-index: -2; border-radius: 4px;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; color: var(--cream);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .hero-subtitle {
+      font-size: 1.1rem; color: var(--gold); font-weight: 500; margin-bottom: 1.5rem;
+      letter-spacing: 0.5px; text-transform: uppercase;
+    }
+    .hero-desc {
+      font-size: 1rem; color: rgba(250,248,243,0.9); margin-bottom: 2rem; max-width: 500px;
+      line-height: 1.8;
+    }
+    .hero-tags {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 2rem;
+    }
+    .tag {
+      font-size: 0.75rem; padding: 4px 12px; border: 1px solid var(--gold);
+      border-radius: 20px; color: var(--gold); background: rgba(201,169,97,0.1);
+    }
+
+    .btn-hero {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--navy);
+      padding: 14px 28px; border-radius: 4px; font-weight: 600;
+      font-family: 'Inter', sans-serif; letter-spacing: 0.5px;
+      border: 2px solid var(--gold);
+    }
+    .btn-hero:hover { 
+      background: transparent; color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(201,169,97,0.3);
+    }
+
+    /* --- FEATURE CARDS (3 Kart Yapısı - Zengin Detay) --- */
+    .features-section {
+      margin-top: -60px; position: relative; z-index: 10; padding-bottom: 60px;
+    }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .feature-card {
+      background: var(--white);
+      padding: 40px 30px;
+      border-top: 6px solid var(--maroon);
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      transition: all 0.4s ease;
+      border-radius: 0 0 8px 8px;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--maroon) 100%);
+      opacity: 0; transition: opacity 0.4s;
+      z-index: 0;
+    }
+    .feature-card:hover::before { opacity: 1; }
+    .feature-card:hover { 
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    .feature-card > * { position: relative; z-index: 1; }
+    .feature-card:hover h3,
+    .feature-card:hover p { color: var(--cream); }
+    .feature-card:hover .feature-icon { 
+      background: var(--gold); color: var(--navy); border-color: var(--gold);
+    }
+    .feature-card:hover .card-link { color: var(--gold); }
+    
+    .feature-icon {
+      font-size: 2rem; color: var(--navy); margin-bottom: 1.5rem;
+      width: 70px; height: 70px; line-height: 70px;
+      border: 2px solid var(--maroon); border-radius: 50%; margin: 0 auto 1.5rem;
+      background: var(--cream);
+      transition: all 0.4s;
+    }
+    .feature-card h3 { 
+      font-size: 1.3rem; margin-bottom: 1rem; 
+      color: var(--navy); transition: color 0.4s;
+    }
+    .feature-card p { 
+      font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; min-height: 45px;
+      transition: color 0.4s;
+    }
+    
+    .card-link {
+      color: var(--maroon); font-weight: 600; font-size: 0.9rem;
+      display: inline-flex; align-items: center; gap: 6px;
+      transition: all 0.3s;
+    }
     .card-link:hover { gap: 10px; }
 
-    /* Sections */
+    /* --- SECTIONS GENERAL --- */
     .section { padding: 80px 0; }
     .section-header { text-align: center; margin-bottom: 50px; }
-    .section-title { font-size: 2.2rem; margin-bottom: 1rem; position: relative; display: inline-block; }
-    .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--gold); margin: 12px auto 0; }
-    
-    /* Books */
-    .books-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+    .section-title { 
+      font-size: 2.2rem; margin-bottom: 1rem; position: relative; display: inline-block;
+      color: var(--navy);
+    }
+    .section-title::after {
+      content: ''; display: block; width: 80px; height: 4px; 
+      background: var(--maroon); margin: 12px auto 0;
+    }
+    .section-subtitle { color: var(--text-muted); font-size: 1rem; }
+
+    /* --- BOOKS (Clean Grid) --- */
+    .books-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;
+    }
     .book-item { text-align: center; }
-    .book-cover { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 4px; box-shadow: var(--shadow-sm); margin-bottom: 15px; transition: transform 0.3s; background: #eee; }
-    .book-item:hover .book-cover { transform: scale(1.03); box-shadow: var(--shadow-md); }
-    .book-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; font-family: 'Playfair Display', serif;}
-    .btn-amazon { font-size: 0.8rem; padding: 6px 16px; border: 1px solid var(--navy); color: var(--navy); border-radius: 20px; display: inline-block; }
-    .btn-amazon:hover { background: var(--navy); color: var(--white); }
+    .book-cover {
+      width: 100%; aspect-ratio: 2/3; object-fit: cover;
+      border-radius: 4px; box-shadow: var(--shadow-sm);
+      margin-bottom: 15px; transition: all 0.3s;
+      background: #eee;
+      border: 2px solid transparent;
+    }
+    .book-item:hover .book-cover { 
+      transform: scale(1.03); 
+      box-shadow: var(--shadow-md);
+      border-color: var(--maroon);
+    }
+    .book-title { 
+      font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; 
+      font-family: 'Playfair Display', serif; color: var(--navy);
+    }
+    .btn-amazon {
+      font-size: 0.8rem; padding: 6px 16px; border: 2px solid var(--navy);
+      color: var(--navy); border-radius: 20px; display: inline-block;
+      font-weight: 600;
+    }
+    .btn-amazon:hover { 
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy);
+    }
 
-    /* Academic Lists */
+    /* --- ACADEMIC (List Style - Zengin Detay) --- */
     .academic-group { margin-bottom: 60px; }
-    .group-title { font-size: 1.5rem; color: var(--maroon); margin-bottom: 20px; border-left: 4px solid var(--gold); padding-left: 15px; }
+    .group-title { 
+      font-size: 1.5rem; color: var(--maroon); margin-bottom: 20px; 
+      border-left: 6px solid var(--navy); padding-left: 15px;
+      font-family: 'Playfair Display', serif;
+    }
     .academic-list { display: flex; flex-direction: column; gap: 20px; }
-    .paper-item { background: var(--white); padding: 24px; border-radius: 8px; border-left: 4px solid var(--gold); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 10px; }
-    .doi-badge { font-family: monospace; font-size: 0.75rem; color: var(--maroon); background: rgba(124, 45, 72, 0.08); padding: 4px 8px; border-radius: 4px; align-self: flex-start; }
-    .paper-title { font-size: 1.1rem; font-weight: 600; color: var(--navy); line-height: 1.4; }
-    .btn-zenodo { align-self: flex-start; font-size: 0.85rem; color: var(--text-muted); border-bottom: 1px dotted var(--text-muted); padding-bottom: 2px; }
-    .btn-zenodo:hover { color: var(--maroon); border-color: var(--maroon); }
+    .paper-item {
+      background: var(--white); padding: 24px; border-radius: 8px;
+      border-left: 6px solid var(--maroon); box-shadow: var(--shadow-sm);
+      display: flex; flex-direction: column; gap: 10px;
+      transition: all 0.3s;
+    }
+    .paper-item:hover {
+      box-shadow: var(--shadow-md);
+      border-left-color: var(--navy);
+    }
+    .doi-badge {
+      font-family: monospace; font-size: 0.75rem; color: var(--cream);
+      background: var(--navy); padding: 4px 8px; border-radius: 4px;
+      align-self: flex-start; font-weight: 600;
+    }
+    .paper-title { 
+      font-size: 1.1rem; font-weight: 600; color: var(--navy); line-height: 1.4; 
+    }
+    .btn-zenodo {
+      align-self: flex-start; font-size: 0.85rem; color: var(--maroon);
+      border-bottom: 2px dotted var(--maroon); padding-bottom: 2px;
+      font-weight: 600;
+    }
+    .btn-zenodo:hover { 
+      color: var(--navy); border-color: var(--navy);
+    }
 
-    /* Videos */
+    /* --- VIDEOS --- */
     .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-    .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 8px; overflow: hidden; background: #000; box-shadow: var(--shadow-sm); }
+    .video-wrapper { 
+      position: relative; padding-bottom: 56.25%; height: 0; 
+      border-radius: 8px; overflow: hidden; background: #000; box-shadow: var(--shadow-sm);
+      border: 3px solid var(--navy);
+    }
+    .video-wrapper:hover {
+      border-color: var(--maroon);
+      box-shadow: var(--shadow-md);
+    }
     .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
     .tiktok-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 40px; }
-    .tiktok-card { background: #000; border-radius: 12px; overflow: hidden; min-height: 550px; }
+    .tiktok-card { background: #000; border-radius: 12px; overflow: hidden; min-height: 550px; border: 3px solid var(--navy); }
+    .tiktok-card:hover { border-color: var(--maroon); }
 
-    /* Contact */
-    .contact-box { background: var(--white); border: 1px solid #eee; border-radius: 12px; padding: 40px; text-align: center; max-width: 700px; margin: 0 auto; box-shadow: var(--shadow-sm); }
-    .consent-wrapper { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 20px 0; font-size: 0.9rem; color: var(--text-muted); cursor: pointer; }
-    .ws-btn { background: #25D366; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; opacity: 0.5; pointer-events: none; transition: 0.3s; }
+    /* --- CONTACT --- */
+    .contact-box {
+      background: var(--white); border: 2px solid var(--maroon); border-radius: 12px;
+      padding: 40px; text-align: center; max-width: 700px; margin: 0 auto;
+      box-shadow: var(--shadow-md);
+    }
+    .consent-wrapper {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      margin: 20px 0; font-size: 0.9rem; color: var(--text-muted); cursor: pointer;
+    }
+    .ws-btn {
+      background: #25D366; color: white; padding: 12px 24px; border-radius: 8px;
+      font-weight: 600; display: inline-flex; align-items: center; gap: 8px;
+      opacity: 0.5; pointer-events: none; transition: 0.3s;
+      border: 2px solid #25D366;
+    }
     .ws-btn.active { opacity: 1; pointer-events: auto; }
-    .ws-btn:hover { background: #20bd5a; }
+    .ws-btn:hover { 
+      background: #20bd5a; border-color: #20bd5a;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
 
-    footer { background: var(--navy); color: rgba(250,248,243,0.6); text-align: center; padding: 40px 0; font-size: 0.9rem; border-top: 4px solid var(--gold); }
+    /* --- FOOTER --- */
+    footer {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--maroon) 100%);
+      color: rgba(250,248,243,0.8);
+      text-align: center; padding: 40px 0; font-size: 0.9rem;
+      border-top: 4px solid var(--gold);
+    }
 
+    /* --- RESPONSIVE --- */
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
       .hero-img-wrapper { margin: 0 auto; }
+      .hero-img-wrapper::before,
+      .hero-img-wrapper::after { display: none; }
       .features-grid { grid-template-columns: 1fr; }
       .menu { display: none; }
       .hero-text h1 { font-size: 2.5rem; }
@@ -110,6 +372,7 @@
 </head>
 <body>
 
+  <!-- NAVIGATION -->
   <nav class="nav">
     <div class="container nav-row">
       <a href="#" class="brand">Melike Balkın Karakaya</a>
@@ -129,6 +392,7 @@
     </div>
   </nav>
 
+  <!-- HERO SECTION -->
   <header id="hero" class="hero">
     <div class="container hero-grid">
       <div class="hero-img-wrapper">
@@ -141,11 +405,18 @@
           Bağımsız Araştırmacı | Din Felsefesi | Siyasal Psikoloji | Bilinç Çalışmaları<br>
           IMTP ve DIM–IMEC Çerçevelerinin Geliştiricisi
         </p>
+        <div class="hero-tags">
+          <span class="tag">Travma</span>
+          <span class="tag">Bellek</span>
+          <span class="tag">Felsefe</span>
+          <span class="tag">Bilinç</span>
+        </div>
         <a href="#imtp" class="btn-hero" data-i18n="hero_btn">Çalışmalarımı İnceleyin</a>
       </div>
     </div>
   </header>
 
+  <!-- 3 FEATURE CARDS -->
   <section class="features-section">
     <div class="container features-grid">
       <div class="feature-card" id="imtp">
@@ -176,6 +447,7 @@
     <div class="container">
       <div class="section-header">
         <h2 class="section-title" data-i18n="nav_books">Kitaplarım</h2>
+        <p class="section-subtitle" data-i18n="books_sub">Travma, inanç ve insan psikolojisi üzerine derinlemesine incelemeler</p>
       </div>
       <div class="books-grid">
         <article class="book-item">
@@ -285,7 +557,7 @@
         <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/bnn_AA3TQ-4" title="YouTube video player"></iframe></div>
       </div>
       
-      <h3 style="text-align:center; margin-top:60px; margin-bottom:30px; font-family:'Playfair Display';" data-i18n="nav_tiktok">Psikolojik Harp Serisi (TikTok)</h3>
+      <h3 style="text-align:center; margin-top:60px; margin-bottom:30px; font-family:'Playfair Display'; color: var(--navy);" data-i18n="nav_tiktok">Psikolojik Harp Serisi (TikTok)</h3>
       <div class="tiktok-grid">
          <div class="tiktok-card"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@melikebalkinkarakaya/video/7606680668826766599" data-video-id="7606680668826766599"><section></section></blockquote></div>
          <div class="tiktok-card"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@melikebalkinkarakaya/video/7608672195702787335" data-video-id="7608672195702787335"><section></section></blockquote></div>
@@ -335,6 +607,7 @@
       card_dimimec_title: "DIM-IMEC Çerçevesi", card_dimimec_desc: "Bilinç, algı ve hafıza üzerine felsefi-teorik model; din felsefesi ve siyasal psikoloji kesişimi.",
       card_books_pubs_title: "Kitaplar & Medya", card_books_pubs_desc: "Yayınlanmış eserler, blog yazıları ve video içerikler.",
       card_read_more: "İncele →",
+      books_sub: "Travma, inanç ve insan psikolojisi üzerine derinlemesine incelemeler",
       group_imtp: "IMTP Araştırmaları", group_dimimec: "DIM-IMEC & Diğer Çalışmalar",
       zen_1992: "IMTP Pilot Vaka Serisi (N=7): Kaygı Regülasyonu, Bedensel Rahatlama ve Toparlanma Esnekliği Üzerine Ön Bütünleşik Gözlemsel Bulgular",
       zen_1969: "TÜRKİYE'DE ÇOCUK KORUMA MEKANİZMALARININ YAPISAL ANALİZİ", 
@@ -359,6 +632,7 @@
       card_dimimec_title: "DIM-IMEC Framework", card_dimimec_desc: "Philosophical-theoretical model on consciousness, perception, and memory; intersection of philosophy of religion and political psychology.",
       card_books_pubs_title: "Books & Media", card_books_pubs_desc: "Published works, blog posts, and video content.",
       card_read_more: "Explore →",
+      books_sub: "In-depth examinations on trauma, faith, and human psychology",
       group_imtp: "IMTP Research", group_dimimec: "DIM-IMEC & Other Studies",
       zen_1992: "IMTP Pilot Case Series (N=7): Preliminary Integrated Observational Findings on Anxiety Regulation, Somatic Relief, and Recovery Flexibility",
       zen_1969: "STRUCTURAL ANALYSIS OF CHILD PROTECTION MECHANISMS IN TÜRKİYE", 
