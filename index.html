@@ -92,7 +92,7 @@
     }
     .lang-btn:hover { border-color: var(--maroon); }
 
-    /* --- HERO SECTION (Split Screen with Gradient) --- */
+    /* --- HERO SECTION --- */
     .hero {
       background: linear-gradient(135deg, var(--navy) 0%, var(--maroon) 100%);
       color: var(--cream);
@@ -100,7 +100,6 @@
       position: relative;
       overflow: hidden;
     }
-    /* Nöral Ağ Deseni */
     .hero::before {
       content: ''; position: absolute; top: 0; right: 0; width: 60%; height: 100%;
       background-image: radial-gradient(circle at 2px 2px, rgba(201,169,97,0.2) 1px, transparent 0);
@@ -109,7 +108,6 @@
       -webkit-mask-image: linear-gradient(to left, black, transparent);
       pointer-events: none;
     }
-    /* Altın Çizgi */
     .hero::after {
       content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 4px;
       background: var(--gold);
@@ -120,9 +118,7 @@
       position: relative; z-index: 2;
     }
 
-    .hero-img-wrapper {
-      position: relative;
-    }
+    .hero-img-wrapper { position: relative; }
     .hero-img-wrapper img {
       width: 100%; max-width: 400px;
       border-radius: 4px;
@@ -130,7 +126,6 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.5);
       filter: grayscale(20%) contrast(110%);
     }
-    /* Çift Çerçeve Efekti */
     .hero-img-wrapper::before {
       content: ''; position: absolute; top: -8px; left: -8px; right: 8px; bottom: 8px;
       border: 2px solid var(--maroon); z-index: -1; border-radius: 4px;
@@ -152,9 +147,7 @@
       font-size: 1rem; color: rgba(250,248,243,0.9); margin-bottom: 2rem; max-width: 500px;
       line-height: 1.8;
     }
-    .hero-tags {
-      display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 2rem;
-    }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 2rem; }
     .tag {
       font-size: 0.75rem; padding: 4px 12px; border: 1px solid var(--gold);
       border-radius: 20px; color: var(--gold); background: rgba(201,169,97,0.1);
@@ -173,16 +166,16 @@
       box-shadow: 0 8px 20px rgba(201,169,97,0.3);
     }
 
-    /* --- FEATURE CARDS (3 Kart Yapısı - Zengin Detay) --- */
+    /* --- 4 FEATURE CARDS --- */
     .features-section {
       margin-top: -60px; position: relative; z-index: 10; padding-bottom: 60px;
     }
     .features-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
     }
     .feature-card {
       background: var(--white);
-      padding: 40px 30px;
+      padding: 35px 25px;
       border-top: 6px solid var(--maroon);
       box-shadow: var(--shadow-md);
       text-align: center;
@@ -211,23 +204,23 @@
     .feature-card:hover .card-link { color: var(--gold); }
     
     .feature-icon {
-      font-size: 2rem; color: var(--navy); margin-bottom: 1.5rem;
-      width: 70px; height: 70px; line-height: 70px;
+      font-size: 1.8rem; color: var(--navy); margin-bottom: 1.5rem;
+      width: 65px; height: 65px; line-height: 65px;
       border: 2px solid var(--maroon); border-radius: 50%; margin: 0 auto 1.5rem;
       background: var(--cream);
       transition: all 0.4s;
     }
     .feature-card h3 { 
-      font-size: 1.3rem; margin-bottom: 1rem; 
+      font-size: 1.15rem; margin-bottom: 1rem; 
       color: var(--navy); transition: color 0.4s;
     }
     .feature-card p { 
-      font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; min-height: 45px;
+      font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; min-height: 60px;
       transition: color 0.4s;
     }
     
     .card-link {
-      color: var(--maroon); font-weight: 600; font-size: 0.9rem;
+      color: var(--maroon); font-weight: 600; font-size: 0.85rem;
       display: inline-flex; align-items: center; gap: 6px;
       transition: all 0.3s;
     }
@@ -246,7 +239,7 @@
     }
     .section-subtitle { color: var(--text-muted); font-size: 1rem; }
 
-    /* --- BOOKS (Clean Grid) --- */
+    /* --- BOOKS --- */
     .books-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;
     }
@@ -277,7 +270,7 @@
       border-color: var(--navy);
     }
 
-    /* --- ACADEMIC (List Style - Zengin Detay) --- */
+    /* --- ACADEMIC --- */
     .academic-group { margin-bottom: 60px; }
     .group-title { 
       font-size: 1.5rem; color: var(--maroon); margin-bottom: 20px; 
@@ -301,7 +294,10 @@
       align-self: flex-start; font-weight: 600;
     }
     .paper-title { 
-      font-size: 1.1rem; font-weight: 600; color: var(--navy); line-height: 1.4; 
+      font-size: 1.05rem; font-weight: 600; color: var(--navy); line-height: 1.4; 
+    }
+    .paper-title-en {
+      font-size: 0.9rem; font-style: italic; color: var(--text-muted); margin-top: 4px;
     }
     .btn-zenodo {
       align-self: flex-start; font-size: 0.85rem; color: var(--maroon);
@@ -359,12 +355,15 @@
     }
 
     /* --- RESPONSIVE --- */
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .features-grid { grid-template-columns: 1fr; }
       .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
       .hero-img-wrapper { margin: 0 auto; }
       .hero-img-wrapper::before,
       .hero-img-wrapper::after { display: none; }
-      .features-grid { grid-template-columns: 1fr; }
       .menu { display: none; }
       .hero-text h1 { font-size: 2.5rem; }
     }
@@ -380,6 +379,7 @@
         <a href="#hero" data-i18n="nav_home">Ana Sayfa</a>
         <a href="#imtp" data-i18n="nav_imtp">IMTP</a>
         <a href="#dimimec" data-i18n="nav_dimimec">DIM-IMEC</a>
+        <a href="#psikoharp" data-i18n="nav_psikoharp">Psikolojik Harp</a>
         <a href="#kitaplar" data-i18n="nav_books">Kitaplar</a>
         <a href="#videolar" data-i18n="nav_videos">Videolar</a>
         <a href="blog.html" data-i18n="nav_blog">Blog</a>
@@ -403,22 +403,24 @@
         <div class="hero-subtitle" data-i18n="hero_subtitle">Uzman Klinik Psikolog & Yazar</div>
         <p class="hero-desc" data-i18n="hero_desc">
           Bağımsız Araştırmacı | Din Felsefesi | Siyasal Psikoloji | Bilinç Çalışmaları<br>
-          IMTP ve DIM–IMEC Çerçevelerinin Geliştiricisi
+          IMTP, DIM–IMEC ve ÖBPH/SIPWM Çerçevelerinin Geliştiricisi
         </p>
         <div class="hero-tags">
           <span class="tag">Travma</span>
           <span class="tag">Bellek</span>
           <span class="tag">Felsefe</span>
           <span class="tag">Bilinç</span>
+          <span class="tag">Psikolojik Harp</span>
         </div>
         <a href="#imtp" class="btn-hero" data-i18n="hero_btn">Çalışmalarımı İnceleyin</a>
       </div>
     </div>
   </header>
 
-  <!-- 3 FEATURE CARDS -->
+  <!-- 4 FEATURE CARDS -->
   <section class="features-section">
     <div class="container features-grid">
+      <!-- Card 1: IMTP -->
       <div class="feature-card" id="imtp">
         <div class="feature-icon"><i class="fa-solid fa-brain"></i></div>
         <h3 data-i18n="card_imtp_title">IMTP Protokolü</h3>
@@ -426,13 +428,23 @@
         <a href="#akademik-imtp" class="card-link" data-i18n="card_read_more">Araştırmaları Gör →</a>
       </div>
       
+      <!-- Card 2: DIM-IMEC -->
       <div class="feature-card" id="dimimec">
         <div class="feature-icon"><i class="fa-solid fa-scroll"></i></div>
-        <h3 data-i18n="card_dimimec_title">DIM-IMEC Çerçevesi</h3>
-        <p data-i18n="card_dimimec_desc">Bilinç, algı ve hafıza üzerine felsefi-teorik model; din felsefesi ve siyasal psikoloji kesişimi.</p>
-        <a href="#akademik-dimimec" class="card-link" data-i18n="card_read_more">Teorik Model →</a>
+        <h3 data-i18n="card_dimimec_title">DIM-IMEC Paradigması</h3>
+        <p data-i18n="card_dimimec_desc">Sistemik entropi, bütünlük çöküşü ve çarpıtılmış gerçekliğin maliyeti üzerine teorik çerçeve.</p>
+        <a href="#akademik-dimimec" class="card-link" data-i18n="card_read_more">Paradigmayı İncele →</a>
       </div>
 
+      <!-- Card 3: Psikolojik Harp -->
+      <div class="feature-card" id="psikoharp">
+        <div class="feature-icon"><i class="fa-solid fa-chess"></i></div>
+        <h3 data-i18n="card_psikoharp_title">Psikolojik Harp & Algı</h3>
+        <p data-i18n="card_psikoharp_desc">Ölçek-Bağımsız Psikolojik Harp Modeli (ÖBPH/SIPWM) ve algı yönetimi çalışmaları.</p>
+        <a href="#akademik-psikoharp" class="card-link" data-i18n="card_read_more">Modeli Keşfet →</a>
+      </div>
+
+      <!-- Card 4: Kitaplar & Medya -->
       <div class="feature-card">
         <div class="feature-icon"><i class="fa-solid fa-book-open"></i></div>
         <h3 data-i18n="card_books_pubs_title">Kitaplar & Medya</h3>
@@ -514,10 +526,28 @@
         </div>
       </div>
 
-      <!-- DIM-IMEC & OTHER GROUP -->
+      <!-- DIM-IMEC GROUP -->
       <div class="academic-group" id="akademik-dimimec">
-        <h3 class="group-title" data-i18n="group_dimimec">DIM-IMEC & Diğer Çalışmalar</h3>
+        <h3 class="group-title" data-i18n="group_dimimec">DIM-IMEC Paradigması</h3>
         <div class="academic-list">
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.20356605</span>
+            <div class="paper-title" data-i18n="zen_20356">Uygulamalı DIM–IMEC Vaka Analizi: Türkiye (2015–2024)</div>
+            <div class="paper-title-en" data-i18n="zen_20356_en">Applied DIM–IMEC Case Analysis: Turkey (2015–2024) — Version v1</div>
+            <a href="https://doi.org/10.5281/zenodo.20356605" target="_blank" class="btn-zenodo">Zenodo'ya Git →</a>
+          </article>
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.20340438</span>
+            <div class="paper-title" data-i18n="zen_20340">DIM–IMEC Paradigması: Sistemik Entropi, Bütünlük Çöküşü ve Çarpıtılmış Gerçekliğin Maliyeti (Genişletilmiş 2.0 Baskı)</div>
+            <div class="paper-title-en" data-i18n="zen_20340_en">The DIM–IMEC Paradigm: Systemic Entropy, Integrity Collapse, and the Cost of Distorted Reality — Version 2.0</div>
+            <a href="https://doi.org/10.5281/zenodo.20340438" target="_blank" class="btn-zenodo">Zenodo'ya Git →</a>
+          </article>
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.20310804</span>
+            <div class="paper-title" data-i18n="zen_20310">DIM–IMEC Paradigması: Sistemik Entropi, Bütünlük Çöküşü ve Çarpıtılmış Gerçekliğin Maliyeti</div>
+            <div class="paper-title-en" data-i18n="zen_20310_en">The DIM–IMEC Paradigm: Systemic Entropy, Integrity Collapse, and the Cost of Distorted Reality</div>
+            <a href="https://doi.org/10.5281/zenodo.20310804" target="_blank" class="btn-zenodo">Zenodo'ya Git →</a>
+          </article>
           <article class="paper-item">
             <span class="doi-badge">DOI: 10.5281/zenodo.19697589</span>
             <div class="paper-title" data-i18n="zen_1969">TÜRKİYE'DE ÇOCUK KORUMA MEKANİZMALARININ YAPISAL ANALİZİ</div>
@@ -532,6 +562,25 @@
             <span class="doi-badge">DOI: 10.5281/zenodo.18231579</span>
             <div class="paper-title" data-i18n="zen_1823">Canlı Olmadan Bilinç: Yapay Zekâ, İnsan ve Korku Üzerine Felsefi Denemeler</div>
             <a href="https://doi.org/10.5281/zenodo.18231579" target="_blank" class="btn-zenodo">Zenodo'ya Git →</a>
+          </article>
+        </div>
+      </div>
+
+      <!-- PSİKOLOJİK HARP GROUP -->
+      <div class="academic-group" id="akademik-psikoharp">
+        <h3 class="group-title" data-i18n="group_psikoharp">Psikolojik Harp & Algı Çalışmaları</h3>
+        <div class="academic-list">
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.20645409</span>
+            <div class="paper-title" data-i18n="zen_20645">Ölçek-Bağımsız Psikolojik Harp Modeli'nin Derinleştirilmesi: Kavram Haritasından Ölçütsel İşleyişe Uzanan İkinci Aşama Bir Analitik Çerçeve</div>
+            <div class="paper-title-en" data-i18n="zen_20645_en">Deepening the Scale-Independent Psychological Warfare Model (SIPWM): A Second-Stage Analytical Framework from Conceptual Mapping to Criterial Operation — Version v1</div>
+            <a href="https://doi.org/10.5281/zenodo.20645409" target="_blank" class="btn-zenodo">Zenodo'ya Git →</a>
+          </article>
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.20645301</span>
+            <div class="paper-title" data-i18n="zen_20645301">Ölçek-Bağımsız Psikolojik Harp Modeli (ÖBPH): Psikolojik Harbi Yapısal Ölçütlerle Tanımlamaya Yönelik Kavramsal Bir Çerçeve</div>
+            <div class="paper-title-en" data-i18n="zen_20645301_en">The Scale-Independent Psychological Warfare Model (SIPWM): A Conceptual Framework for Defining Psychological Warfare Through Structural Criteria — Version v2</div>
+            <a href="https://doi.org/10.5281/zenodo.20645301" target="_blank" class="btn-zenodo">Zenodo'ya Git →</a>
           </article>
           <article class="paper-item">
             <span class="doi-badge">DOI: 10.5281/zenodo.18098057</span>
@@ -599,16 +648,17 @@
   <script>
     const tr = {
       site_title: "Melike Balkın Karakaya",
-      nav_home: "Ana Sayfa", nav_imtp: "IMTP", nav_dimimec: "DIM-IMEC", nav_books: "Kitaplar", nav_videos: "Videolar", nav_blog: "Blog", nav_contact: "İletişim", nav_tiktok: "Psikolojik Harp Serisi",
+      nav_home: "Ana Sayfa", nav_imtp: "IMTP", nav_dimimec: "DIM-IMEC", nav_psikoharp: "Psikolojik Harp", nav_books: "Kitaplar", nav_videos: "Videolar", nav_blog: "Blog", nav_contact: "İletişim", nav_tiktok: "Psikolojik Harp Serisi (TikTok)", nav_academic: "Akademik Yayınlar",
       hero_subtitle: "Uzman Klinik Psikolog & Yazar",
-      hero_desc: "Bağımsız Araştırmacı | Din Felsefesi | Siyasal Psikoloji | Bilinç Çalışmaları<br>IMTP ve DIM–IMEC Çerçevelerinin Geliştiricisi",
+      hero_desc: "Bağımsız Araştırmacı | Din Felsefesi | Siyasal Psikoloji | Bilinç Çalışmaları<br>IMTP, DIM–IMEC ve ÖBPH/SIPWM Çerçevelerinin Geliştiricisi",
       hero_btn: "Çalışmalarımı İnceleyin",
       card_imtp_title: "IMTP Protokolü", card_imtp_desc: "Travmatik anıların nörolojik düzeyde dönüşümü için geliştirilmiş entegre bellek protokolü.",
-      card_dimimec_title: "DIM-IMEC Çerçevesi", card_dimimec_desc: "Bilinç, algı ve hafıza üzerine felsefi-teorik model; din felsefesi ve siyasal psikoloji kesişimi.",
+      card_dimimec_title: "DIM-IMEC Paradigması", card_dimimec_desc: "Sistemik entropi, bütünlük çöküşü ve çarpıtılmış gerçekliğin maliyeti üzerine teorik çerçeve.",
+      card_psikoharp_title: "Psikolojik Harp & Algı", card_psikoharp_desc: "Ölçek-Bağımsız Psikolojik Harp Modeli (ÖBPH/SIPWM) ve algı yönetimi çalışmaları.",
       card_books_pubs_title: "Kitaplar & Medya", card_books_pubs_desc: "Yayınlanmış eserler, blog yazıları ve video içerikler.",
       card_read_more: "İncele →",
       books_sub: "Travma, inanç ve insan psikolojisi üzerine derinlemesine incelemeler",
-      group_imtp: "IMTP Araştırmaları", group_dimimec: "DIM-IMEC & Diğer Çalışmalar",
+      group_imtp: "IMTP Araştırmaları", group_dimimec: "DIM-IMEC Paradigması", group_psikoharp: "Psikolojik Harp & Algı Çalışmaları",
       zen_1992: "IMTP Pilot Vaka Serisi (N=7): Kaygı Regülasyonu, Bedensel Rahatlama ve Toparlanma Esnekliği Üzerine Ön Bütünleşik Gözlemsel Bulgular",
       zen_1969: "TÜRKİYE'DE ÇOCUK KORUMA MEKANİZMALARININ YAPISAL ANALİZİ", 
       zen_1891: "Orta Doğu Stratejik Satranç Masası — Türkiye Analist Perspektifi", 
@@ -617,6 +667,16 @@
       zen_1713: "Integrated Memory Transformation Protocol (IMTP): 13-Day Interim Report", 
       zen_1691: "Yakın-Yanlış Silme Protokolü: Çok Katmanlı Hafıza Nötralizasyon Yöntemi", 
       zen_16915: "Çalışma Belgesi – Ek Materyaller: YYSP+HME Pilot Uygulaması",
+      zen_20310: "DIM–IMEC Paradigması: Sistemik Entropi, Bütünlük Çöküşü ve Çarpıtılmış Gerçekliğin Maliyeti",
+      zen_20310_en: "The DIM–IMEC Paradigm: Systemic Entropy, Integrity Collapse, and the Cost of Distorted Reality",
+      zen_20340: "DIM–IMEC Paradigması: Sistemik Entropi, Bütünlük Çöküşü ve Çarpıtılmış Gerçekliğin Maliyeti (Genişletilmiş 2.0 Baskı)",
+      zen_20340_en: "The DIM–IMEC Paradigm: Systemic Entropy, Integrity Collapse, and the Cost of Distorted Reality — Version 2.0",
+      zen_20356: "Uygulamalı DIM–IMEC Vaka Analizi: Türkiye (2015–2024)",
+      zen_20356_en: "Applied DIM–IMEC Case Analysis: Turkey (2015–2024) — Version v1",
+      zen_20645301: "Ölçek-Bağımsız Psikolojik Harp Modeli (ÖBPH): Psikolojik Harbi Yapısal Ölçütlerle Tanımlamaya Yönelik Kavramsal Bir Çerçeve",
+      zen_20645301_en: "The Scale-Independent Psychological Warfare Model (SIPWM): A Conceptual Framework for Defining Psychological Warfare Through Structural Criteria — Version v2",
+      zen_20645: "Ölçek-Bağımsız Psikolojik Harp Modeli'nin Derinleştirilmesi: Kavram Haritasından Ölçütsel İşleyişe Uzanan İkinci Aşama Bir Analitik Çerçeve",
+      zen_20645_en: "Deepening the Scale-Independent Psychological Warfare Model (SIPWM): A Second-Stage Analytical Framework from Conceptual Mapping to Criterial Operation — Version v1",
       ws_notice: "Akademik projeler, danışmanlık ve iş birliği süreçleri için doğrudan iletişime geçebilirsiniz.",
       ws_consent: "Rıza Metni: Proje iş birliği için WhatsApp üzerinden iletişime geçmeyi kabul ediyorum.",
       ws_btn: "Proje İş Birliği İçin Yazın", ws_warning: "Lütfen önce rıza kutusunu işaretleyin."
@@ -624,16 +684,17 @@
 
     const en = {
       site_title: "Melike Balkın Karakaya",
-      nav_home: "Home", nav_imtp: "IMTP", nav_dimimec: "DIM-IMEC", nav_books: "Books", nav_videos: "Videos", nav_blog: "Blog", nav_contact: "Contact", nav_tiktok: "Psychological Warfare Series",
+      nav_home: "Home", nav_imtp: "IMTP", nav_dimimec: "DIM-IMEC", nav_psikoharp: "PsyOps", nav_books: "Books", nav_videos: "Videos", nav_blog: "Blog", nav_contact: "Contact", nav_tiktok: "Psychological Warfare Series (TikTok)", nav_academic: "Academic Publications",
       hero_subtitle: "Clinical Psychologist & Author",
-      hero_desc: "Independent Researcher | Philosophy of Religion | Political Psychology | Consciousness Studies<br>Developer of IMTP and DIM–IMEC Frameworks",
+      hero_desc: "Independent Researcher | Philosophy of Religion | Political Psychology | Consciousness Studies<br>Developer of IMTP, DIM–IMEC and SIPWM Frameworks",
       hero_btn: "Explore My Work",
       card_imtp_title: "IMTP Protocol", card_imtp_desc: "Neurological transformation of traumatic memories via Integrated Memory Transformation Protocol.",
-      card_dimimec_title: "DIM-IMEC Framework", card_dimimec_desc: "Philosophical-theoretical model on consciousness, perception, and memory; intersection of philosophy of religion and political psychology.",
+      card_dimimec_title: "DIM-IMEC Paradigm", card_dimimec_desc: "Theoretical framework on systemic entropy, integrity collapse, and the cost of distorted reality.",
+      card_psikoharp_title: "PsyOps & Perception", card_psikoharp_desc: "Scale-Independent Psychological Warfare Model (SIPWM) and perception management studies.",
       card_books_pubs_title: "Books & Media", card_books_pubs_desc: "Published works, blog posts, and video content.",
       card_read_more: "Explore →",
       books_sub: "In-depth examinations on trauma, faith, and human psychology",
-      group_imtp: "IMTP Research", group_dimimec: "DIM-IMEC & Other Studies",
+      group_imtp: "IMTP Research", group_dimimec: "DIM-IMEC Paradigm", group_psikoharp: "Psychological Warfare & Perception Studies",
       zen_1992: "IMTP Pilot Case Series (N=7): Preliminary Integrated Observational Findings on Anxiety Regulation, Somatic Relief, and Recovery Flexibility",
       zen_1969: "STRUCTURAL ANALYSIS OF CHILD PROTECTION MECHANISMS IN TÜRKİYE", 
       zen_1891: "Middle East Strategic Chessboard — Turkey Analyst Perspective", 
@@ -642,6 +703,16 @@
       zen_1713: "Integrated Memory Transformation Protocol (IMTP): 13-Day Interim Report", 
       zen_1691: "Near-False Deletion Protocol: Multi-Layer Memory Neutralization Method", 
       zen_16915: "Working Paper – Supplementary Materials: YYSP+HME Pilot Implementation",
+      zen_20310: "The DIM–IMEC Paradigm: Systemic Entropy, Integrity Collapse, and the Cost of Distorted Reality",
+      zen_20310_en: "The DIM–IMEC Paradigm: Systemic Entropy, Integrity Collapse, and the Cost of Distorted Reality",
+      zen_20340: "The DIM–IMEC Paradigm: Systemic Entropy, Integrity Collapse, and the Cost of Distorted Reality (Expanded 2.0 Edition)",
+      zen_20340_en: "The DIM–IMEC Paradigm: Systemic Entropy, Integrity Collapse, and the Cost of Distorted Reality — Version 2.0",
+      zen_20356: "Applied DIM–IMEC Case Analysis: Turkey (2015–2024)",
+      zen_20356_en: "Applied DIM–IMEC Case Analysis: Turkey (2015–2024) — Version v1",
+      zen_20645301: "The Scale-Independent Psychological Warfare Model (SIPWM): A Conceptual Framework for Defining Psychological Warfare Through Structural Criteria",
+      zen_20645301_en: "The Scale-Independent Psychological Warfare Model (SIPWM): A Conceptual Framework for Defining Psychological Warfare Through Structural Criteria — Version v2",
+      zen_20645: "Deepening the Scale-Independent Psychological Warfare Model (SIPWM): A Second-Stage Analytical Framework from Conceptual Mapping to Criterial Operation",
+      zen_20645_en: "Deepening the Scale-Independent Psychological Warfare Model (SIPWM): A Second-Stage Analytical Framework from Conceptual Mapping to Criterial Operation — Version v1",
       ws_notice: "You can contact directly for academic projects, consulting, and collaborations.",
       ws_consent: "Consent: I agree to contact via WhatsApp for project collaboration.",
       ws_btn: "Contact for Collaboration", ws_warning: "Please check the consent box first."
