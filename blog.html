@@ -25,6 +25,7 @@
       --text-muted: #6B7280;
       --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.1);
       --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1);
+      --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.15);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -51,7 +52,7 @@
       position: sticky; top: 0; z-index: 100;
       background: rgba(250, 248, 243, 0.95);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+      border-bottom: 2px solid var(--maroon);
       padding: 1rem 0;
     }
     .nav-row { display: flex; align-items: center; justify-content: space-between; }
@@ -63,15 +64,26 @@
     .menu { display: flex; gap: 2rem; }
     .menu a {
       color: var(--text-dark); font-size: 0.9rem; font-weight: 500;
+      position: relative;
     }
-    .menu a:hover { color: var(--maroon); }
-    .lang-switch { display: flex; gap: 8px; border-left: 1px solid #ddd; padding-left: 1rem; }
+    .menu a:hover { 
+      color: var(--maroon);
+      text-shadow: 0 0 8px rgba(124, 45, 72, 0.3);
+    }
+    .menu a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+      background: var(--maroon); transition: width 0.3s;
+    }
+    .menu a:hover::after { width: 100%; }
+    
+    .lang-switch { display: flex; gap: 8px; border-left: 2px solid var(--maroon); padding-left: 1rem; }
     .lang-btn {
       background: transparent; border: 1px solid transparent;
       cursor: pointer; font-size: 0.85rem; font-weight: 600; color: var(--text-muted);
       padding: 4px 8px; border-radius: 6px;
     }
     .lang-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .lang-btn:hover { border-color: var(--maroon); }
 
     /* Page Header */
     .page-header {
@@ -89,9 +101,9 @@
     .page-header h1::after {
       content: '';
       display: block;
-      width: 60px;
-      height: 3px;
-      background: var(--gold);
+      width: 80px;
+      height: 4px;
+      background: var(--maroon);
       margin: 16px auto 0;
     }
     .page-header p {
@@ -113,16 +125,19 @@
       background: var(--white);
       border-radius: 8px;
       padding: 30px;
-      border-top: 4px solid var(--maroon);
+      border-top: 6px solid var(--maroon);
       box-shadow: var(--shadow-sm);
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: all 0.4s ease;
       display: flex;
       flex-direction: column;
       cursor: pointer;
+      position: relative;
+      overflow: hidden;
     }
     .blog-card:hover {
       transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-lg);
+      border-top-color: var(--navy);
     }
     .blog-card h2 {
       font-size: 1.4rem;
@@ -140,10 +155,12 @@
     .meta {
       font-size: 0.85rem;
       color: var(--gold);
-      font-weight: 500;
+      font-weight: 600;
       display: flex;
       align-items: center;
       gap: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
     .meta::before {
       content: '\f073';
@@ -173,7 +190,7 @@
       padding: 50px;
       border-radius: 8px;
       box-shadow: var(--shadow-sm);
-      border-left: 4px solid var(--gold);
+      border-left: 6px solid var(--maroon);
     }
     .article h1 {
       font-size: 2.2rem;
@@ -186,6 +203,7 @@
       margin-bottom: 30px;
       display: block;
       font-size: 0.95rem;
+      font-weight: 500;
     }
     .article p, .article ul, .article ol, .article blockquote {
       margin: 1.2rem 0;
@@ -193,16 +211,21 @@
       line-height: 1.8;
     }
     .article blockquote {
-      border-left: 3px solid var(--maroon);
+      border-left: 4px solid var(--navy);
       padding-left: 20px;
       color: var(--text-muted);
       font-style: italic;
+      background: var(--cream);
+      padding: 15px 20px;
+      border-radius: 0 8px 8px 0;
     }
     .article img {
       max-width: 100%;
       height: auto;
       border-radius: 8px;
       margin: 20px 0;
+      border: 2px solid var(--cream);
+      box-shadow: var(--shadow-sm);
     }
     .article h2, .article h3 {
       margin: 2rem 0 1rem;
@@ -212,19 +235,20 @@
     /* Notice */
     .notice {
       background: var(--white);
-      border: 1px solid #eee;
+      border: 2px solid var(--maroon);
       border-radius: 8px;
       padding: 40px;
       text-align: center;
       color: var(--text-muted);
       max-width: 600px;
       margin: 60px auto;
+      box-shadow: var(--shadow-sm);
     }
 
     /* Footer */
     footer {
-      background: var(--navy);
-      color: rgba(250,248,243,0.6);
+      background: linear-gradient(135deg, var(--navy) 0%, var(--maroon) 100%);
+      color: rgba(250,248,243,0.8);
       text-align: center;
       padding: 40px 0;
       font-size: 0.9rem;
@@ -266,6 +290,7 @@
 
   <script>
     const posts = [
+      { slug: "kapalıyapı", title: "Kapalı Dini Yapıların Psikososyal Mekanizması", date: "30 Nisan 2026", excerpt: "Kapalı dini yapılar, bireylerin kimlik inşası ve aidiyet ihtiyaçlarını kullanarak kendilerini sürdürebilen psikososyal sistemlerdir. Bu yazıda, bu yapıların iç dinamikleri incelenmektedir..." },
       { slug: "aldatma", title: "Sessiz Kalan Travma: Aldatma, Erkeklik ve Toplumsal Körlük", date: "04 Ocak 2026", excerpt: "Bağırmayan ihanetler, yüceltilen suskunluklar ve yanlış yerde aranan masumiyet üzerine bir klinik analiz..." },
       { slug: "sessiz", title: "Zihnin Görünmez Duvarları: Bir Toplum Ne Zaman Körleşir?", date: "28 Aralık 2025", excerpt: "Bir toplum, yalnızca neyi konuştuğuyla değil; neyi konuşmamayı seçtiğiyle de hatırlanır. Sessizlik masum değildir..." },
       { slug: "en-zayif-halka", title: "En Zayıf Halka Türkiye mi?", date: "25 Aralık 2025", excerpt: "Türkiye gerçekten zayıf mıydı? Yoksa 'zayıf halka' söylemi, gerçeklerden çok politik bir algının ürünü müydü?" },
@@ -281,7 +306,7 @@
       { slug: "mizahin-ince-cizgisi", title: "Mizahın İnce Çizgisi: Doğan Pehlevan Üzerine Kişisel Bir Okuma", date: "01 Temmuz 2025", excerpt: "Mizah, bellek ve provokasyon çizgisi…" },
       { slug: "kenevir-yasasi-ve-sessiz-kaygilar", title: "Kenevir Yasası ve Sessiz Kaygılar", date: "30 Haziran 2025", excerpt: "Tıbbi kenevir düzenlemesi ve toplumsal fayda…" },
       { slug: "tibbi-kenevir", title: "Tıbbi Kenevir Meclis Gündeminde: Yasak Değil, Akılcı Kontrol Gerekli", date: "30 Haziran 2025", excerpt: "Veri odaklı izleme ve rehabilitasyon…" },
-      { slug: "enerji-okumasi", title: "\"Enerji Okuması\" Liderliğin Gizli Silahı mı?", date: "08 Temmuz 2025", excerpt: "Sözel olmayan sinyaller ve regülasyon…" },
+      { slug: "enerji-okumasi", title: '"Enerji Okuması" Liderliğin Gizli Silahı mı?', date: "08 Temmuz 2025", excerpt: "Sözel olmayan sinyaller ve regülasyon…" },
       { slug: "ortadogu-satranci", title: "Ortadoğu Satrancı ve Türkiye", date: "28 Mayıs 2025", excerpt: "Dinamik denge ve çok katmanlı diplomasi…" },
       { slug: "gencler-arasi-siddet", title: "Gençler Arasında Yükselen Şiddet", date: "01 Mayıs 2025", excerpt: "Anlatılamamış hikâyeler ve erken uyarı…" },
       { slug: "askin-cozulmesi", title: "Aşkın Çözülmesi: Tanrı'ya Uzanan Ruhsal Bir Yolculuk", date: "05 Mayıs 2025", excerpt: "Çözülmenin teslimiyeti ve yol…" },
