@@ -11,7 +11,7 @@
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=400;600;700&family=Inter:wght=300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
   <style>
@@ -290,7 +290,6 @@
 
   <script>
     const posts = [
-      { slug: "tokyaz-ovezova-davasi-analiz-raporu", title: "Ayşe Tokyaz ve Ejegül Ovezova Davaları: Hukuki, Psikososyal ve Stratejik Analiz Raporu", date: "16 Temmuz 2026", excerpt: "Hukuki normlar, toplumsal algı dinamikleri ve adalet mekanizmalarının psikososyal etkileri üzerine çok boyutlu bir vaka incelemesi..." },
       { slug: "kapalıyapı", title: "Kapalı Dini Yapıların Psikososyal Mekanizması", date: "30 Nisan 2026", excerpt: "Kapalı dini yapılar, bireylerin kimlik inşası ve aidiyet ihtiyaçlarını kullanarak kendilerini sürdürebilen psikososyal sistemlerdir. Bu yazıda, bu yapıların iç dinamikleri incelenmektedir..." },
       { slug: "aldatma", title: "Sessiz Kalan Travma: Aldatma, Erkeklik ve Toplumsal Körlük", date: "04 Ocak 2026", excerpt: "Bağırmayan ihanetler, yüceltilen suskunluklar ve yanlış yerde aranan masumiyet üzerine bir klinik analiz..." },
       { slug: "sessiz", title: "Zihnin Görünmez Duvarları: Bir Toplum Ne Zaman Körleşir?", date: "28 Aralık 2025", excerpt: "Bir toplum, yalnızca neyi konuştuğuyla değil; neyi konuşmamayı seçtiğiyle de hatırlanır. Sessizlik masum değildir..." },
@@ -315,21 +314,31 @@
     ];
 
     const app = document.getElementById("app");
+    
+    // Hem blog.html?post=slug hem de blog?post=slug durumunu sorunsuz desteklemesi için düzeltildi
     const params = new URLSearchParams(window.location.search);
     const activeSlug = params.get("post");
 
+    // Yönlendirme butonları için dinamik dosya adı tespiti yapar
+    function getCurrentPageName() {
+      const path = window.location.pathname;
+      const page = path.substring(path.lastIndexOf('/') + 1);
+      return page.includes('blog') ? page.split('?')[0] : 'blog.html';
+    }
+
     function renderList() {
+      const currentPage = getCurrentPageName();
       app.innerHTML = `
         <header class="page-header">
           <h1>Yazılar</h1>
           <p>Psikoloji, felsefe, travma, toplumsal analiz ve insan davranışı üzerine düşünceler.</p>
         </header>
         <section class="blog-list">
-          \${posts.map(post => `
-            <article class="blog-card" onclick="window.location.href='blog.html?post=\${encodeURIComponent(post.slug)}'">
-              <h2>\${post.title}</h2>
-              <p>\${post.excerpt}</p>
-              <span class="meta">\${post.date}</span>
+          ${posts.map(post => `
+            <article class="blog-card" onclick="window.location.href='${currentPage}?post=${encodeURIComponent(post.slug)}'">
+              <h2>${post.title}</h2>
+              <p>${post.excerpt}</p>
+              <span class="meta">${post.date}</span>
             </article>
           `).join("")}
         </section>
@@ -337,8 +346,9 @@
     }
 
     async function renderSingle(slug) {
+      const currentPage = getCurrentPageName();
       try {
-        const response = await fetch(`\${slug}.html`);
+        const response = await fetch(`${slug}.html`);
         if (!response.ok) throw new Error("not found");
         const html = await response.text();
 
@@ -351,19 +361,19 @@
 
         app.innerHTML = `
           <div class="article-container">
-            <a class="backlink" href="blog.html">← Tüm yazılara dön</a>
+            <a class="backlink" href="${currentPage}">← Tüm yazılara dön</a>
             <article class="article">
-              <h1>\${title}</h1>
-              \${date ? `<span class="date">\${date}</span>` : ""}
-              <div>\${content}</div>
+              <h1>${title}</h1>
+              ${date ? `<span class="date">${date}</span>` : ""}
+              <div>${content}</div>
             </article>
           </div>
         `;
       } catch (error) {
         app.innerHTML = `
           <div class="notice">
-            <p>Yazı yüklenemedi. Dosya adı ile slug eşleşmiyor olabilir.</p>
-            <a class="backlink" href="blog.html">← Tüm yazılara dön</a>
+            <p>Yazı yüklenemedi. Sunucunuzda "${slug}.html" adında bir dosya bulunduğundan emin olun.</p>
+            <a class="backlink" href="${currentPage}">← Tüm yazılara dön</a>
           </div>
         `;
       }
