@@ -290,6 +290,7 @@
 
   <script>
     const posts = [
+      { slug: "tokyaz-ovezova-davasi-analiz-raporu", title: "Ben Mahkeme Değilim; Ama Susmak da Tarafsızlık Değildir", date: "16 Temmuz 2026", excerpt: "Ayşe Tokyaz ve Ejegül Ovezova davaları üzerinden, adalet mekanizmalarını, toplumsal sessizliği ve sosyo-hukuki vicdanı ele alan derinlemesine bir analiz..." },
       { slug: "kapalıyapı", title: "Kapalı Dini Yapıların Psikososyal Mekanizması", date: "30 Nisan 2026", excerpt: "Kapalı dini yapılar, bireylerin kimlik inşası ve aidiyet ihtiyaçlarını kullanarak kendilerini sürdürebilen psikososyal sistemlerdir. Bu yazıda, bu yapıların iç dinamikleri incelenmektedir..." },
       { slug: "aldatma", title: "Sessiz Kalan Travma: Aldatma, Erkeklik ve Toplumsal Körlük", date: "04 Ocak 2026", excerpt: "Bağırmayan ihanetler, yüceltilen suskunluklar ve yanlış yerde aranan masumiyet üzerine bir klinik analiz..." },
       { slug: "sessiz", title: "Zihnin Görünmez Duvarları: Bir Toplum Ne Zaman Körleşir?", date: "28 Aralık 2025", excerpt: "Bir toplum, yalnızca neyi konuştuğuyla değil; neyi konuşmamayı seçtiğiyle de hatırlanır. Sessizlik masum değildir..." },
@@ -299,7 +300,7 @@
       { slug: "avm-kuyruklari", title: "AVM Kuyruklarını Refah Sanan Zihin", date: "18 Aralık 2025", excerpt: "Türkiye ekonomisini anlamayı reddeden yeni cehalet biçimi üzerine bir analiz..." },
       { slug: "raconun-bittigi-yer", title: "Raconun Bittiği Yer: Mafya Kılıfında Haysiyetsizlik", date: "01 Eylül 2025", excerpt: "Bir zamanlar yeraltı dünyasında bile bir kural vardı…" },
       { slug: "dijital-peygamberlik", title: "Dijital Peygamberlik: Grok'un Ardındaki Algı Dini", date: "13 Temmuz 2025", excerpt: "Grok'un içerikleri yazılım hatası değil; zihinsel bir operasyon…" },
-      { slug: "egitimde-ideolojik-dil", title: "Eğitimde İdeolojik Dilin Çocuk Psikolojisine Etkisi", date: "17 Temmuz 2025", excerpt: "İdeolojik dilin çocuk psikolojisine etkileri…" },
+      { slug: "egitimde-ideolojik-dil", title: "Eğitimde İdeolojik Dilin Çocuk Psikolojisine Etkisi", date: "17 Temmuz 2025", excerpt: "İdeolojik dilin child psikolojisine etkileri…" },
       { slug: "cocuk-icin-adalet", title: "ÇOCUK İÇİN ADALET: DEVLETİN ARTIK YOLU BELLİDİR", date: "21 Ağustos 2025", excerpt: "Ağır cinsel suçlarda caydırıcılık ve vicdani norm…" },
       { slug: "kalpten-evrensele", title: "Kalpten Evrensele: Dillerin Ötesinde Bir Ses", date: "31 Temmuz 2025", excerpt: "Çok dilli yayıncılık ve evrensel yankı…" },
       { slug: "ahmet-icin-adalet", title: "Benim Çocuğumun Hayatını Hiçbir Ceza Geri Getiremez…", date: "23 Temmuz 2025", excerpt: "Ceza adaleti – onarma adaleti dengesi…" },
@@ -324,20 +325,20 @@
           <p>Psikoloji, felsefe, travma, toplumsal analiz ve insan davranışı üzerine düşünceler.</p>
         </header>
         <section class="blog-list">
-          ${posts.map(post => `
-            <article class="blog-card" onclick="window.location.href='blog.html?post=${encodeURIComponent(post.slug)}'">
-              <h2>${post.title}</h2>
-              <p>${post.excerpt}</p>
-              <span class="meta">${post.date}</span>
+          \${posts.map(post => `
+            <article class="blog-card" onclick="window.location.href='blog.html?post=\${encodeURIComponent(post.slug)}'">
+              <h2>\${post.title}</h2>
+              <p>\${post.excerpt}</p>
+              <span class="meta">\${post.date}</span>
             </article>
-          `).join("")}
+          \`).join("")}
         </section>
       `;
     }
 
     async function renderSingle(slug) {
       try {
-        const response = await fetch(`${slug}.html`);
+        const response = await fetch(`\${slug}.html`);
         if (!response.ok) throw new Error("not found");
         const html = await response.text();
 
@@ -352,9 +353,9 @@
           <div class="article-container">
             <a class="backlink" href="blog.html">← Tüm yazılara dön</a>
             <article class="article">
-              <h1>${title}</h1>
-              ${date ? `<span class="date">${date}</span>` : ""}
-              <div>${content}</div>
+              <h1>\${title}</h1>
+              \${date ? `<span class="date">\${date}</span>` : ""}
+              <div>\${content}</div>
             </article>
           </div>
         `;
