@@ -290,6 +290,12 @@
 
   <script>
     const posts = [
+      { 
+        slug: "tokyaz-ovezova-davasi-analiz-raporu", 
+        title: "Ayşe Tokyaz ve Ejegül Ovezova Davası Analiz Raporu", 
+        date: "16 Temmuz 2026", 
+        excerpt: "Yargılama süreçleri, hukuki boşluklar ve toplumsal yansımalar üzerinden Ayşe Tokyaz ve Ejegül Ovezova dosyalarının derinlemesine analizi..." 
+      },
       { slug: "kapalıyapı", title: "Kapalı Dini Yapıların Psikososyal Mekanizması", date: "30 Nisan 2026", excerpt: "Kapalı dini yapılar, bireylerin kimlik inşası ve aidiyet ihtiyaçlarını kullanarak kendilerini sürdürebilen psikososyal sistemlerdir. Bu yazıda, bu yapıların iç dinamikleri incelenmektedir..." },
       { slug: "aldatma", title: "Sessiz Kalan Travma: Aldatma, Erkeklik ve Toplumsal Körlük", date: "04 Ocak 2026", excerpt: "Bağırmayan ihanetler, yüceltilen suskunluklar ve yanlış yerde aranan masumiyet üzerine bir klinik analiz..." },
       { slug: "sessiz", title: "Zihnin Görünmez Duvarları: Bir Toplum Ne Zaman Körleşir?", date: "28 Aralık 2025", excerpt: "Bir toplum, yalnızca neyi konuştuğuyla değil; neyi konuşmamayı seçtiğiyle de hatırlanır. Sessizlik masum değildir..." },
@@ -309,17 +315,14 @@
       { slug: "enerji-okumasi", title: '"Enerji Okuması" Liderliğin Gizli Silahı mı?', date: "08 Temmuz 2025", excerpt: "Sözel olmayan sinyaller ve regülasyon…" },
       { slug: "ortadogu-satranci", title: "Ortadoğu Satrancı ve Türkiye", date: "28 Mayıs 2025", excerpt: "Dinamik denge ve çok katmanlı diplomasi…" },
       { slug: "gencler-arasi-siddet", title: "Gençler Arasında Yükselen Şiddet", date: "01 Mayıs 2025", excerpt: "Anlatılamamış hikâyeler ve erken uyarı…" },
-      { slug: "askin-cozulmesi", title: "Aşkın Çözülmesi: Tanrı'ya Uzanan Ruhsal Bir Yolculuk", date: "05 Mayıs 2025", excerpt: "Çözülmenin teslimiyeti ve yol…" },
+      { slug: "askin-cozulmesi", title: "Aşkın Çözülmesi: Tanrı'ya Uzanan Ruhsal Bir Yolculuk", date: "05 Mayıs 2025", excerpt: "Çok çözülmenin teslimiyeti ve yol…" },
       { slug: "krizler-guc-kaynagi-olabilir-mi", title: "Krizler Güç Kaynağı Olabilir mi?", date: "04 Nisan 2025", excerpt: "PTG ve hikâyeyi yeniden yazmak…" }
     ];
 
     const app = document.getElementById("app");
-    
-    // Hem blog.html?post=slug hem de blog?post=slug durumunu sorunsuz desteklemesi için düzeltildi
     const params = new URLSearchParams(window.location.search);
     const activeSlug = params.get("post");
 
-    // Yönlendirme butonları için dinamik dosya adı tespiti yapar
     function getCurrentPageName() {
       const path = window.location.pathname;
       const page = path.substring(path.lastIndexOf('/') + 1);
