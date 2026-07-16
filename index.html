@@ -1,52 +1,56 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!doctype html>
+<html lang="tr" data-lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Melike Balkın Karakaya | Resmi Web Sitesi</title>
-  <meta name="description" content="Uzman Klinik Psikolog, Siyaset Bilimi Doktora Adayı ve Araştırmacı Melike Balkın Karakaya'nın resmi web sitesi.">
-  <link rel="canonical" href="https://melikebalkinkarakaya.org/" />
-  <link rel="icon" href="/favicon.ico?v=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title data-i18n="site_title">Melike Balkın Karakaya</title>
   
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
+  
   <style>
     :root {
       --navy: #0F172A;
+      --navy-light: #1E293B;
       --maroon: #7C2D48;
+      --maroon-light: #9B3D5E;
       --gold: #C9A961;
+      --gold-light: #D4B573;
       --cream: #FAF8F3;
-      --white: #FFFFFF;
+      --cream-dark: #F0EBE0;
       --text-dark: #1F2937;
       --text-muted: #6B7280;
-      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+      --white: #FFFFFF;
+      
+      --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.1);
+      --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1);
+      --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.15);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
     
     body {
       font-family: 'Inter', system-ui, sans-serif;
       background-color: var(--cream);
       color: var(--text-dark);
-      line-height: 1.7;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    h1, h2, h3 {
+    h1, h2, h3, .serif {
       font-family: 'Playfair Display', serif;
       color: var(--navy);
     }
 
     a { text-decoration: none; transition: all 0.3s ease; }
+    ul { list-style: none; }
+
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* Navigation */
+    /* --- NAVIGATION --- */
     .nav {
       position: sticky; top: 0; z-index: 100;
       background: rgba(250, 248, 243, 0.95);
@@ -55,14 +59,16 @@
       padding: 1rem 0;
     }
     .nav-row { display: flex; align-items: center; justify-content: space-between; }
-    .brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem; font-weight: 700;
-      color: var(--navy);
+    
+    .brand { 
+      font-family: 'Playfair Display', serif; 
+      font-size: 1.25rem; font-weight: 700; 
+      color: var(--navy); letter-spacing: -0.5px;
     }
+    
     .menu { display: flex; gap: 2rem; }
-    .menu a {
-      color: var(--text-dark); font-size: 0.9rem; font-weight: 500;
+    .menu a { 
+      color: var(--text-dark); font-size: 0.9rem; font-weight: 500; 
       position: relative;
     }
     .menu a:hover { 
@@ -74,362 +80,791 @@
       background: var(--maroon); transition: width 0.3s;
     }
     .menu a:hover::after { width: 100%; }
-    
+
     .lang-switch { display: flex; gap: 8px; border-left: 2px solid var(--maroon); padding-left: 1rem; }
     .lang-btn {
       background: transparent; border: 1px solid transparent;
       cursor: pointer; font-size: 0.85rem; font-weight: 600; color: var(--text-muted);
       padding: 4px 8px; border-radius: 6px;
     }
-    .lang-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .lang-btn.active { 
+      background: var(--navy); color: var(--white); border-color: var(--navy); 
+    }
     .lang-btn:hover { border-color: var(--maroon); }
 
-    /* Hero Section */
+    /* --- HERO SECTION --- */
     .hero {
-      padding: 100px 0 80px;
-      text-align: center;
-      background: radial-gradient(circle at top, rgba(124, 45, 72, 0.05) 0%, transparent 70%);
+      background: linear-gradient(135deg, var(--navy) 0%, var(--maroon) 100%);
+      color: var(--cream);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
     }
-    .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; letter-spacing: -0.5px; }
-    .hero p {
-      font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem;
-      font-weight: 300;
+    .hero::before {
+      content: ''; position: absolute; top: 0; right: 0; width: 60%; height: 100%;
+      background-image: radial-gradient(circle at 2px 2px, rgba(201,169,97,0.2) 1px, transparent 0);
+      background-size: 40px 40px;
+      mask-image: linear-gradient(to left, black, transparent);
+      -webkit-mask-image: linear-gradient(to left, black, transparent);
+      pointer-events: none;
     }
-    .cta-btn {
-      display: inline-block; background: var(--maroon); color: var(--white);
-      padding: 12px 32px; border-radius: 30px; font-weight: 600;
-      box-shadow: var(--shadow-sm); transition: all 0.3s ease;
-    }
-    .cta-btn:hover {
-      background: var(--navy); transform: translateY(-2px); box-shadow: var(--shadow-md);
+    .hero::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 4px;
+      background: var(--gold);
     }
 
-    /* Section Global Style */
-    section { padding: 80px 0; border-top: 1px solid rgba(15, 23, 42, 0.08); }
-    .section-title {
-      font-size: 2.25rem; margin-bottom: 3rem; text-align: center;
-      position: relative; padding-bottom: 1rem;
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center;
+      position: relative; z-index: 2;
+    }
+
+    .hero-img-wrapper { position: relative; }
+    .hero-img-wrapper img {
+      width: 100%; max-width: 400px;
+      border-radius: 4px;
+      border: 3px solid var(--gold);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      filter: grayscale(20%) contrast(110%);
+    }
+    .hero-img-wrapper::before {
+      content: ''; position: absolute; top: -8px; left: -8px; right: 8px; bottom: 8px;
+      border: 2px solid var(--maroon); z-index: -1; border-radius: 4px;
+    }
+    .hero-img-wrapper::after {
+      content: ''; position: absolute; top: 15px; left: 15px; right: -15px; bottom: -15px;
+      border: 1px solid rgba(201,169,97,0.4); z-index: -2; border-radius: 4px;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; color: var(--cream);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .hero-subtitle {
+      font-size: 1.1rem; color: var(--gold); font-weight: 500; margin-bottom: 1.5rem;
+      letter-spacing: 0.5px; text-transform: uppercase;
+    }
+    .hero-desc {
+      font-size: 1rem; color: rgba(250,248,243,0.9); margin-bottom: 2rem; max-width: 500px;
+      line-height: 1.8;
+    }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 2rem; }
+    .tag {
+      font-size: 0.75rem; padding: 4px 12px; border: 1px solid var(--gold);
+      border-radius: 20px; color: var(--gold); background: rgba(201,169,97,0.1);
+    }
+
+    .btn-hero {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--navy);
+      padding: 14px 28px; border-radius: 4px; font-weight: 600;
+      font-family: 'Inter', sans-serif; letter-spacing: 0.5px;
+      border: 2px solid var(--gold);
+    }
+    .btn-hero:hover { 
+      background: transparent; color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(201,169,97,0.3);
+    }
+
+    /* --- 4 FEATURE CARDS --- */
+    .features-section {
+      margin-top: -60px; position: relative; z-index: 10; padding-bottom: 60px;
+    }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    }
+    .feature-card {
+      background: var(--white);
+      padding: 35px 25px;
+      border-top: 6px solid var(--maroon);
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      transition: all 0.4s ease;
+      border-radius: 0 0 8px 8px;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--maroon) 100%);
+      opacity: 0; transition: opacity 0.4s;
+      z-index: 0;
+    }
+    .feature-card:hover::before { opacity: 1; }
+    .feature-card:hover { 
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    .feature-card > * { position: relative; z-index: 1; }
+    .feature-card:hover h3,
+    .feature-card:hover p { color: var(--cream); }
+    .feature-card:hover .feature-icon { 
+      background: var(--gold); color: var(--navy); border-color: var(--gold);
+    }
+    .feature-card:hover .card-link { color: var(--gold); }
+    
+    .feature-icon {
+      font-size: 1.8rem; color: var(--navy); margin-bottom: 1.5rem;
+      width: 65px; height: 65px; line-height: 65px;
+      border: 2px solid var(--maroon); border-radius: 50%; margin: 0 auto 1.5rem;
+      background: var(--cream);
+      transition: all 0.4s;
+    }
+    .feature-card h3 { 
+      font-size: 1.15rem; margin-bottom: 1rem; 
+      color: var(--navy); transition: color 0.4s;
+    }
+    .feature-card p { 
+      font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; min-height: 60px;
+      transition: color 0.4s;
+    }
+    
+    .card-link {
+      color: var(--maroon); font-weight: 600; font-size: 0.85rem;
+      display: inline-flex; align-items: center; gap: 6px;
+      transition: all 0.3s;
+    }
+    .card-link:hover { gap: 10px; }
+
+    /* --- SECTIONS GENERAL --- */
+    .section { padding: 80px 0; }
+    .section-header { text-align: center; margin-bottom: 50px; }
+    .section-title { 
+      font-size: 2.2rem; margin-bottom: 1rem; position: relative; display: inline-block;
+      color: var(--navy);
     }
     .section-title::after {
-      content: ''; display: block; width: 50px; height: 3px; background: var(--maroon);
-      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      content: ''; display: block; width: 80px; height: 4px; 
+      background: var(--maroon); margin: 12px auto 0;
+    }
+    .section-subtitle { color: var(--text-muted); font-size: 1rem; }
+
+    /* --- BOOKS --- */
+    .books-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;
+    }
+    .book-item { text-align: center; }
+    .book-cover {
+      width: 100%; aspect-ratio: 2/3; object-fit: cover;
+      border-radius: 4px; box-shadow: var(--shadow-sm);
+      margin-bottom: 15px; transition: all 0.3s;
+      background: #eee;
+      border: 2px solid transparent;
+    }
+    .book-item:hover .book-cover { 
+      transform: scale(1.03); 
+      box-shadow: var(--shadow-md);
+      border-color: var(--maroon);
+    }
+    .book-title { 
+      font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; 
+      font-family: 'Playfair Display', serif; color: var(--navy);
+    }
+    .btn-amazon {
+      font-size: 0.8rem; padding: 6px 16px; border: 2px solid var(--navy);
+      color: var(--navy); border-radius: 20px; display: inline-block;
+      font-weight: 600;
+    }
+    .btn-amazon:hover { 
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy);
     }
 
-    /* About Section */
-    .about-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
-    @media (min-width: 768px) {
-      .about-grid { grid-template-columns: 1.20fr 0.80fr; }
+    /* --- ACADEMIC --- */
+    .academic-group { margin-bottom: 60px; }
+    .group-title { 
+      font-size: 1.5rem; color: var(--maroon); margin-bottom: 20px; 
+      border-left: 6px solid var(--navy); padding-left: 15px;
+      font-family: 'Playfair Display', serif;
     }
-    .about-text h3 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--maroon); }
-    .about-text p { margin-bottom: 1.2rem; font-size: 1.05rem; text-align: justify; }
-
-    /* Highlights / Latest Posts */
-    .latest-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+    .academic-list { display: flex; flex-direction: column; gap: 20px; }
+    .paper-item {
+      background: var(--white); padding: 24px; border-radius: 8px;
+      border-left: 6px solid var(--maroon); box-shadow: var(--shadow-sm);
+      display: flex; flex-direction: column; gap: 10px;
+      transition: all 0.3s;
     }
-    .post-card {
-      background: var(--white); padding: 30px; border-radius: 8px;
-      border-top: 5px solid var(--maroon); box-shadow: var(--shadow-sm);
-      transition: all 0.3s ease;
+    .paper-item:hover {
+      box-shadow: var(--shadow-md);
+      border-left-color: var(--navy);
     }
-    .post-card:hover {
-      transform: translateY(-5px); box-shadow: var(--shadow-md);
-      border-top-color: var(--navy);
+    .doi-badge {
+      font-family: monospace; font-size: 0.75rem; color: var(--cream);
+      background: var(--navy); padding: 4px 8px; border-radius: 4px;
+      align-self: flex-start; font-weight: 600;
     }
-    .post-card .date { font-size: 0.85rem; color: var(--gold); font-weight: 600; margin-bottom: 10px; display: block; }
-    .post-card h3 { font-size: 1.3rem; margin-bottom: 12px; line-height: 1.4; }
-    .post-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
-    .read-more { color: var(--maroon); font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
-    .read-more:hover { color: var(--navy); }
-
-    /* Books & Academic */
-    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 45px; }
-    .book-card, .academic-card {
-      background: var(--white); padding: 40px; border-radius: 8px;
-      box-shadow: var(--shadow-sm); border-left: 5px solid var(--maroon);
+    .paper-title { 
+      font-size: 1.05rem; font-weight: 600; color: var(--navy); line-height: 1.4; 
     }
-    .book-card h3, .academic-card h3 { font-size: 1.4rem; margin-bottom: 15px; }
-    .book-card p, .academic-card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 20px; }
-    .badge {
-      display: inline-block; background: rgba(124, 45, 72, 0.1); color: var(--maroon);
-      padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;
-      text-transform: uppercase; margin-bottom: 15px;
+    .paper-title-en {
+      font-size: 0.9rem; font-style: italic; color: var(--text-muted); margin-top: 4px;
+    }
+    .btn-zenodo {
+      align-self: flex-start; font-size: 0.85rem; color: var(--maroon);
+      border-bottom: 2px dotted var(--maroon); padding-bottom: 2px;
+      font-weight: 600;
+    }
+    .btn-zenodo:hover { 
+      color: var(--navy); border-color: var(--navy);
     }
 
-    /* Video Section */
-    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-    .video-wrapper {
-      position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-      border-radius: 8px; box-shadow: var(--shadow-md);
+    /* --- VIDEOS --- */
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .video-wrapper { 
+      position: relative; padding-bottom: 56.25%; height: 0; 
+      border-radius: 8px; overflow: hidden; background: #000; box-shadow: var(--shadow-sm);
+      border: 3px solid var(--navy);
     }
-    .video-wrapper iframe {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
+    .video-wrapper:hover {
+      border-color: var(--maroon);
+      box-shadow: var(--shadow-md);
+    }
+    .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .tiktok-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 40px; }
+    .tiktok-card { background: #000; border-radius: 12px; overflow: hidden; min-height: 550px; border: 3px solid var(--navy); }
+    .tiktok-card:hover { border-color: var(--maroon); }
+
+    /* --- CONTACT --- */
+    .contact-box {
+      background: var(--white); border: 2px solid var(--maroon); border-radius: 12px;
+      padding: 40px; text-align: center; max-width: 700px; margin: 0 auto;
+      box-shadow: var(--shadow-md);
+    }
+    .consent-wrapper {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      margin: 20px 0; font-size: 0.9rem; color: var(--text-muted); cursor: pointer;
+    }
+    .ws-btn {
+      background: #25D366; color: white; padding: 12px 24px; border-radius: 8px;
+      font-weight: 600; display: inline-flex; align-items: center; gap: 8px;
+      opacity: 0.5; pointer-events: none; transition: 0.3s;
+      border: 2px solid #25D366;
+    }
+    .ws-btn.active { opacity: 1; pointer-events: auto; }
+    .ws-btn:hover { 
+      background: #20bd5a; border-color: #20bd5a;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
     }
 
-    /* Contact Section */
-    .contact-content { text-align: center; max-width: 600px; margin: 0 auto; }
-    .contact-links { display: flex; justify-content: center; gap: 20px; margin-top: 30px; }
-    .contact-icon {
-      width: 50px; height: 50px; border-radius: 50%; background: var(--white);
-      display: flex; align-items: center; justify-content: center; color: var(--maroon);
-      font-size: 1.3rem; box-shadow: var(--shadow-sm); transition: all 0.3s;
-    }
-    .contact-icon:hover { background: var(--maroon); color: var(--white); transform: scale(1.1); }
-
-    /* Footer */
+    /* --- FOOTER --- */
     footer {
       background: linear-gradient(135deg, var(--navy) 0%, var(--maroon) 100%);
-      color: rgba(250, 248, 243, 0.8); text-align: center; padding: 40px 0;
-      font-size: 0.9rem; border-top: 4px solid var(--gold);
+      color: rgba(250,248,243,0.8);
+      text-align: center; padding: 40px 0; font-size: 0.9rem;
+      border-top: 4px solid var(--gold);
     }
 
+    /* --- RESPONSIVE --- */
+    @media (max-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
+      .features-grid { grid-template-columns: 1fr; }
+      .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+      .hero-img-wrapper { margin: 0 auto; }
+      .hero-img-wrapper::before,
+      .hero-img-wrapper::after { display: none; }
       .menu { display: none; }
+      .hero-text h1 { font-size: 2.5rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- NAVIGATION -->
   <nav class="nav">
     <div class="container nav-row">
-      <a href="index.html" class="brand" id="brand-text">Melike Balkın Karakaya</a>
-      <div class="menu" id="nav-menu">
-        <a href="#hakkimda">Hakkımda</a>
-        <a href="blog.html">Blog</a>
-        <a href="#kitaplar">Kitaplar</a>
-        <a href="#akademik">Akademik</a>
-        <a href="#videolar">Videolar</a>
-        <a href="#iletisim">İletişim</a>
+      <a href="#" class="brand">Melike Balkın Karakaya</a>
+      <div class="menu">
+        <a href="#hero" data-i18n="nav_home">Ana Sayfa</a>
+        <a href="#imtp" data-i18n="nav_imtp">IMTP</a>
+        <a href="#dimimec" data-i18n="nav_dimimec">DIM-IMEC</a>
+        <a href="#psikoharp" data-i18n="nav_psikoharp">Psikolojik Harp</a>
+        <a href="#kitaplar" data-i18n="nav_books">Kitaplar</a>
+        <a href="#videolar" data-i18n="nav_videos">Videolar</a>
+        <a href="blog.html" data-i18n="nav_blog">Blog</a>
+        <a href="#iletisim" data-i18n="nav_contact">İletişim</a>
       </div>
       <div class="lang-switch">
-        <button class="lang-btn active" onclick="switchLanguage('tr')">TR</button>
-        <button class="lang-btn" onclick="switchLanguage('en')">EN</button>
+        <button id="btn-tr" class="lang-btn active">TR</button>
+        <button id="btn-en" class="lang-btn">EN</button>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <header class="hero">
-    <div class="container">
-      <h1 id="hero-title">Düşünce, Analiz ve Sosyal Algı</h1>
-      <p id="hero-subtitle">Uzman Klinik Psikolog & Siyaset Bilimi Doktora Adayı. Toplumsal psikoloji, felsefe ve kriminoloji ekseninde disiplinlerarası okumalar.</p>
-      <a href="blog.html" class="cta-btn" id="hero-cta">Yazıları Oku</a>
+  <!-- HERO SECTION -->
+  <header id="hero" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-img-wrapper">
+        <img src="melike.jpeg?v=3" alt="Melike Balkın Karakaya">
+      </div>
+      <div class="hero-text">
+        <h1>Melike Balkın Karakaya</h1>
+        <div class="hero-subtitle" data-i18n="hero_subtitle">Uzman Klinik Psikolog & Yazar</div>
+        <p class="hero-desc" data-i18n="hero_desc">
+          Bağımsız Araştırmacı | Din Felsefesi | Siyasal Psikoloji | Bilinç Çalışmaları<br>
+          IMTP, DIM–IMEC ve ÖBPH/SIPWM Çerçevelerinin Geliştiricisi
+        </p>
+        <div class="hero-tags">
+          <span class="tag" data-i18n="tag_trauma">Travma</span>
+          <span class="tag" data-i18n="tag_memory">Bellek</span>
+          <span class="tag" data-i18n="tag_philosophy">Felsefe</span>
+          <span class="tag" data-i18n="tag_consciousness">Bilinç</span>
+          <span class="tag" data-i18n="tag_psywar">Psikolojik Harp</span>
+        </div>
+        <a href="#imtp" class="btn-hero" data-i18n="hero_btn">Çalışmalarımı İnceleyin</a>
+      </div>
     </div>
   </header>
 
-  <!-- About Section -->
-  <section id="hakkimda">
-    <div class="container">
-      <h2 class="section-title" id="about-title">Hakkımda</h2>
-      <div class="about-grid">
-        <div class="about-text" id="about-content">
-          <h3>Uzman Klinik Psikolog | Felsefeci & Tasavvuf Ehli | Toplumsal Psikoloji & Stratejik Algı Yorumcusu</h3>
-          <p>Diyarbakır merkezli bağımsız bir araştırmacı, uzman klinik psikolog ve siyaset bilimi doktora adayıyım. Akademik ve klinik çalışmalarımı felsefe, tasavvuf, toplumsal psikoloji ve kriminoloji disiplinlerinin kesişim noktasında şekillendiriyorum.</p>
-          <p>Çalışmalarımda bireysel ruh sağlığının ötesine geçerek; toplumsal travmaları, inanç mekanizmalarının psikososyal yapısını, kapalı dini yapıların otorite ve aidiyet ilişkilerini ve stratejik algı yönetim süreçlerini inceliyorum. Adalet, insan onuru ve toplumsal vicdan temalarını sosyo-hukuki perspektiflerle analiz ediyorum.</p>
-        </div>
-        <div style="text-align: center;">
-          <!-- Profil Görseli Alanı veya Dekoratif İkon -->
-          <i class="fa-solid fa-feather-pointed" style="font-size: 8rem; color: var(--maroon); opacity: 0.85;"></i>
-        </div>
+  <!-- 4 FEATURE CARDS -->
+  <section class="features-section">
+    <div class="container features-grid">
+      <!-- Card 1: IMTP -->
+      <div class="feature-card" id="imtp">
+        <div class="feature-icon"><i class="fa-solid fa-brain"></i></div>
+        <h3 data-i18n="card_imtp_title">IMTP Protokolü</h3>
+        <p data-i18n="card_imtp_desc">Travmatik anıların nörolojik düzeyde dönüşümü için geliştirilmiş entegre bellek protokolü.</p>
+        <a href="#akademik-imtp" class="card-link" data-i18n="card_read_more">Araştırmaları Gör →</a>
+      </div>
+      
+      <!-- Card 2: DIM-IMEC -->
+      <div class="feature-card" id="dimimec">
+        <div class="feature-icon"><i class="fa-solid fa-scroll"></i></div>
+        <h3 data-i18n="card_dimimec_title">DIM-IMEC Paradigması</h3>
+        <p data-i18n="card_dimimec_desc">Sistemik entropi, bütünlük çöküşü ve çarpıtılmış gerçekliğin maliyeti üzerine teorik çerçeve.</p>
+        <a href="#akademik-dimimec" class="card-link" data-i18n="card_read_more">Paradigmayı İncele →</a>
+      </div>
+
+      <!-- Card 3: Psychological Warfare -->
+      <div class="feature-card" id="psikoharp">
+        <div class="feature-icon"><i class="fa-solid fa-chess"></i></div>
+        <h3 data-i18n="card_psikoharp_title">Psikolojik Harp & Algı</h3>
+        <p data-i18n="card_psikoharp_desc">Ölçek-Bağımsız Psikolojik Harp Modeli (ÖBPH/SIPWM) ve algı yönetimi çalışmaları.</p>
+        <a href="#akademik-psikoharp" class="card-link" data-i18n="card_read_more">Modeli Keşfet →</a>
+      </div>
+
+      <!-- Card 4: Books & Media -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-book-open"></i></div>
+        <h3 data-i18n="card_books_pubs_title">Kitaplar & Medya</h3>
+        <p data-i18n="card_books_pubs_desc">Yayınlanmış eserler, blog yazıları ve video içerikler.</p>
+        <a href="#kitaplar" class="card-link" data-i18n="card_read_more">Keşfet →</a>
       </div>
     </div>
   </section>
 
-  <!-- Latest Posts -->
-  <section id="son-yazilar">
+  <!-- BOOKS SECTION -->
+  <section id="kitaplar" class="section">
     <div class="container">
-      <h2 class="section-title" id="latest-title">Öne Çıkan Yazılar</h2>
-      <div class="latest-grid" id="latest-posts-grid">
-        <!-- Rapor Yazısı -->
-        <article class="post-card">
-          <span class="date">16 Temmuz 2026</span>
-          <h3>Ben Mahkeme Değilim; Ama Susmak da Tarafsızlık Değildir</h3>
-          <p>Ayşe Tokyaz ve Ejegül Ovezova dosyaları üzerinden, adalet mekanizmalarını, toplumsal sessizliği ve sosyo-hukuki vicdanı ele alan derinlemesine bir analiz.</p>
-          <a href="blog.html?post=tokyaz-ovezova-davasi-analiz-raporu" class="read-more">Okumaya Devam Et →</a>
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="nav_books">Kitaplarım</h2>
+        <p class="section-subtitle" data-i18n="books_sub">Travma, inanç ve insan psikolojisi üzerine derinlemesine incelemeler</p>
+      </div>
+      <div class="books-grid">
+        <article class="book-item">
+          <img src="travmakodu.jpeg" class="book-cover" alt="The Trauma Code">
+          <div class="book-title">The Trauma Code</div>
+          <a class="btn-amazon" target="_blank" href="https://amzn.asia/d/69u7qBn">Amazon</a>
         </article>
-
-        <!-- Kapalı Dini Yapılar Yazısı -->
-        <article class="post-card">
-          <span class="date">05 Nisan 2026</span>
-          <h3>Kapalı Dini Yapıların Psikososyal Mekanizması</h3>
-          <p>Otorite, aidiyet ve güç dinamikleri çerçevesinde, kapalı inanç topluluklarının birey ve toplum üzerindeki psikolojik sınırlarını çözümlüyoruz.</p>
-          <a href="blog.html?post=kapali-dini-yapilarin-psikososyal-mekanizmasi" class="read-more">Okumaya Devam Et →</a>
+        <article class="book-item">
+          <img src="inancin_anatomisi.png" class="book-cover" alt="İnancın Anatomisi">
+          <div class="book-title">İnancın Anatomisi</div>
+          <a class="btn-amazon" target="_blank" href="https://amzn.asia/d/2PzdlQH">Amazon</a>
         </article>
-
-        <!-- Aldatma Yazısı -->
-        <article class="post-card">
-          <span class="date">04 Ocak 2026</span>
-          <h3>Sessiz Kalan Travma: Aldatma ve Toplumsal Körlük</h3>
-          <p>Bağırmayan ihanetler, yüceltilen suskunluklar ve yanlış yerde aranan masumiyet üzerine klinik ve toplumsal bir okuma.</p>
-          <a href="blog.html?post=aldatma" class="read-more">Okumaya Devam Et →</a>
+        <article class="book-item">
+          <img src="zehir-degil-ciglik.png" class="book-cover" alt="Zehir Değil Çığlık">
+          <div class="book-title">Zehir Değil Çığlık</div>
+          <a class="btn-amazon" target="_blank" href="https://amzn.asia/d/7gWvC7V">Amazon</a>
+        </article>
+        <article class="book-item">
+          <img src="kalbin-butcesi.jpg" class="book-cover" alt="Kalbin Bütçesi">
+          <div class="book-title">Kalbin Bütçesi</div>
+          <a class="btn-amazon" target="_blank" href="https://amzn.asia/d/9xYmK7P">Amazon</a>
+        </article>
+        <article class="book-item">
+          <img src="askin-haritasi.jpeg" class="book-cover" alt="Aşkın Haritası">
+          <div class="book-title">Aşkın Haritası</div>
+          <a class="btn-amazon" target="_blank" href="https://amzn.asia/d/3kLpQ2F">Amazon</a>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Books Section -->
-  <section id="kitaplar">
+  <!-- ACADEMIC SECTION -->
+  <section id="akademik" class="section" style="background: var(--white);">
     <div class="container">
-      <h2 class="section-title" id="books-title">Kitaplar ve Çalışmalar</h2>
-      <div class="grid-2" id="books-grid">
-        <div class="book-card">
-          <span class="badge">Yayın Hazırlığı</span>
-          <h3>The Anatomy of Belief</h3>
-          <p>İnanç sistemlerinin nöro-psikolojik kökenlerini, felsefi ve tasavvufi derinliğini ve bireysel algı süreçlerini ele alan geniş kapsamlı bir başvuru çalışması.</p>
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="nav_academic">Akademik Yayınlar</h2>
+        <p class="section-subtitle">Zenodo Open Access Archive</p>
+      </div>
+
+      <!-- IMTP GROUP -->
+      <div class="academic-group" id="akademik-imtp">
+        <h3 class="group-title" data-i18n="group_imtp">IMTP Araştırmaları</h3>
+        <div class="academic-list">
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.19924440</span>
+            <div class="paper-title" data-i18n="zen_1992">IMTP Pilot Vaka Serisi (N=7): Kaygı Regülasyonu, Bedensel Rahatlama ve Toparlanma Esnekliği Üzerine Ön Bütünleşik Gözlemsel Bulgular</div>
+            <a href="https://zenodo.org/records/19924440" target="_blank" class="btn-zenodo" data-i18n="btn_go_zenodo">Zenodo'ya Git →</a>
+          </article>
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.17137459</span>
+            <div class="paper-title" data-i18n="zen_1713">Integrated Memory Transformation Protocol (IMTP): 13-Day Interim Report</div>
+            <a href="https://doi.org/10.5281/zenodo.17137459" target="_blank" class="btn-zenodo" data-i18n="btn_go_zenodo">Zenodo'ya Git →</a>
+          </article>
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.16915202</span>
+            <div class="paper-title" data-i18n="zen_1691">Yakın-Yanlış Silme Protokolü: Çok Katmanlı Hafıza Nötralizasyon Yöntemi</div>
+            <a href="https://doi.org/10.5281/zenodo.16915202" target="_blank" class="btn-zenodo" data-i18n="btn_go_zenodo">Zenodo'ya Git →</a>
+          </article>
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.16915210</span>
+            <div class="paper-title" data-i18n="zen_16915">Çalışma Belgesi – Ek Materyaller: YYSP+HME Pilot Uygulaması</div>
+            <a href="https://doi.org/10.5281/zenodo.16915210" target="_blank" class="btn-zenodo" data-i18n="btn_go_zenodo">Zenodo'ya Git →</a>
+          </article>
         </div>
-        <div class="book-card">
-          <span class="badge">Analitik İnceleme</span>
-          <h3>Sosyo-Hukuki Dosya Analizleri</h3>
-          <p>Toplumsal cinsiyet odaklı şiddet vakaları, kriminoloji çalışmaları ve ceza-onarım adaleti dengesi üzerine hazırlanmış güncel raporlar.</p>
+      </div>
+
+      <!-- DIM-IMEC GROUP -->
+      <div class="academic-group" id="akademik-dimimec">
+        <h3 class="group-title" data-i18n="group_dimimec">DIM-IMEC Paradigması</h3>
+        <div class="academic-list">
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.20356605</span>
+            <div class="paper-title" data-i18n="zen_20356">Uygulamalı DIM–IMEC Vaka Analizi: Türkiye (2015–2024)</div>
+            <div class="paper-title-en" data-i18n="zen_20356_en">Applied DIM–IMEC Case Analysis: Turkey (2015–2024) — Version v1</div>
+            <a href="https://doi.org/10.5281/zenodo.20356605" target="_blank" class="btn-zenodo" data-i18n="btn_go_zenodo">Zenodo'ya Git →</a>
+          </article>
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.20340438</span>
+            <div class="paper-title" data-i18n="zen_20340">DIM–IMEC Paradigması: Sistemik Entropi, Bütünlük Çöküşü ve Çarpıtılmış Gerçekliğin Maliyeti (Genişletilmiş 2.0 Baskı)</div>
+            <div class="paper-title-en" data-i18n="zen_20340_en">The DIM–IMEC Paradigm: Systemic Entropy, Integrity Collapse, and the Cost of Distorted Reality — Version 2.0</div>
+            <a href="https://doi.org/10.5281/zenodo.20340438" target="_blank" class="btn-zenodo" data-i18n="btn_go_zenodo">Zenodo'ya Git →</a>
+          </article>
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.20310804</span>
+            <div class="paper-title" data-i18n="zen_20310">DIM–IMEC Paradigması: Sistemik Entropi, Bütünlük Çöküşü ve Çarpıtılmış Gerçekliğin Maliyeti</div>
+            <div class="paper-title-en" data-i18n="zen_20310_en">The DIM–IMEC Paradigm: Systemic Entropy, Integrity Collapse, and the Cost of Distorted Reality</div>
+            <a href="https://doi.org/10.5281/zenodo.20310804" target="_blank" class="btn-zenodo" data-i18n="btn_go_zenodo">Zenodo'ya Git →</a>
+          </article>
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.19697589</span>
+            <div class="paper-title" data-i18n="zen_1969">TÜRKİYE'DE ÇOCUK KORUMA MEKANİZMALARININ YAPISAL ANALİZİ</div>
+            <a href="https://doi.org/10.5281/zenodo.19697589" target="_blank" class="btn-zenodo" data-i18n="btn_go_zenodo">Zenodo'ya Git →</a>
+          </article>
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.18911611</span>
+            <div class="paper-title" data-i18n="zen_1891">Orta Doğu Stratejik Satranç Masası — Türkiye Analist Perspektifi</div>
+            <a href="https://doi.org/10.5281/zenodo.18911611" target="_blank" class="btn-zenodo" data-i18n="btn_go_zenodo">Zenodo'ya Git →</a>
+          </article>
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.18231579</span>
+            <div class="paper-title" data-i18n="zen_1823">Canlı Olmadan Bilinç: Yapay Zekâ, İnsan ve Korku Üzerine Felsefi Denemeler</div>
+            <a href="https://doi.org/10.5281/zenodo.18231579" target="_blank" class="btn-zenodo" data-i18n="btn_go_zenodo">Zenodo'ya Git →</a>
+          </article>
+        </div>
+      </div>
+
+      <!-- PSİKOLOJİK HARP GROUP -->
+      <div class="academic-group" id="akademik-psikoharp">
+        <h3 class="group-title" data-i18n="group_psikoharp">Psikolojik Harp & Algı Çalışmaları</h3>
+        <div class="academic-list">
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.20680492</span>
+            <div class="paper-title" data-i18n="zen_20680">Ölçek-Bağımsız Psikolojik Harbin Tarihsel Seyri: Antik Dünyadan Dijital Kırılmaya</div>
+            <div class="paper-title-en" data-i18n="zen_20680_en">The Historical Trajectory of Scale-Independent Psychological Warfare: From the Ancient World to the Digital Break</div>
+            <a href="https://doi.org/10.5281/zenodo.20680492" target="_blank" class="btn-zenodo" data-i18n="btn_go_zenodo">Zenodo'ya Git →</a>
+          </article>
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.20679934</span>
+            <div class="paper-title" data-i18n="zen_20679">Bilişsel Egemenliğin Kuşatılması: Deterministik Çatışma Modellerine Karşı Yönetilen Kriz Paradigması</div>
+            <div class="paper-title-en" data-i18n="zen_20679_en">The Siege of Cognitive Sovereignty: Managed Crisis Paradigm Against Deterministic Conflict Models</div>
+            <a href="https://doi.org/10.5281/zenodo.20679934" target="_blank" class="btn-zenodo" data-i18n="btn_go_zenodo">Zenodo'ya Git →</a>
+          </article>
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.20679026</span>
+            <div class="paper-title" data-i18n="zen_20679026">Ölçek-Bağımsız Psikolojik Harp Modeli: Antik Dünyadan Dijital Çağa Tarihsel Bir Stres Testi</div>
+            <div class="paper-title-en" data-i18n="zen_20679026_en">The Scale-Independent Psychological Warfare Model: A Historical Stress Test from the Ancient World to the Digital Age — Version v1</div>
+            <a href="https://doi.org/10.5281/zenodo.20679026" target="_blank" class="btn-zenodo" data-i18n="btn_go_zenodo">Zenodo'ya Git →</a>
+          </article>
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.20645409</span>
+            <div class="paper-title" data-i18n="zen_20645">Ölçek-Bağımsız Psikolojik Harp Modeli'nin Derinleştirilmesi: Kavram Haritasından Ölçütsel İşleyişe Uzanan İkinci Aşama Bir Analitik Çerçeve</div>
+            <div class="paper-title-en" data-i18n="zen_20645_en">Deepening the Scale-Independent Psychological Warfare Model (SIPWM): A Second-Stage Analytical Framework from Conceptual Mapping to Criterial Operation — Version v1</div>
+            <a href="https://doi.org/10.5281/zenodo.20645409" target="_blank" class="btn-zenodo" data-i18n="btn_go_zenodo">Zenodo'ya Git →</a>
+          </article>
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.20645301</span>
+            <div class="paper-title" data-i18n="zen_20645301">Ölçek-Bağımsız Psikolojik Harp Modeli (ÖBPH): Psikolojik Harbi Yapısal Ölçütlerle Tanımlamaya Yönelik Kavramsal Bir Çerçeve</div>
+            <div class="paper-title-en" data-i18n="zen_20645301_en">The Scale-Independent Psychological Warfare Model (SIPWM): A Conceptual Framework for Defining Psychological Warfare Through Structural Criteria — Version v2</div>
+            <a href="https://doi.org/10.5281/zenodo.20645301" target="_blank" class="btn-zenodo" data-i18n="btn_go_zenodo">Zenodo'ya Git →</a>
+          </article>
+          <article class="paper-item">
+            <span class="doi-badge">DOI: 10.5281/zenodo.18098057</span>
+            <div class="paper-title" data-i18n="zen_1809">Sessiz Yönlendirme: Bilinç, Algı ve Psikolojik Harp Mekanizmaları</div>
+            <a href="https://doi.org/10.5281/zenodo.18098057" target="_blank" class="btn-zenodo" data-i18n="btn_go_zenodo">Zenodo'ya Git →</a>
+          </article>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Academic & Reports -->
-  <section id="akademik">
+  <!-- VIDEOS SECTION -->
+  <section id="videolar" class="section">
     <div class="container">
-      <h2 class="section-title" id="academic-title">Akademik & Stratejik Analizler</h2>
-      <div class="grid-2" id="academic-grid">
-        <div class="academic-card">
-          <span class="badge">Siyaset Bilimi</span>
-          <h3>Stratejik Ticaret Kontrolleri</h3>
-          <p>Türkiye’nin stratejik ticaret kontrolleri ve bölgesel rolünü; yasal mevzuatlar, sınır yönetimi ve uluslararası güvenlik dengeleri üzerinden yorumlayan analitik inceleme.</p>
-        </div>
-        <div class="academic-card">
-          <span class="badge">ORCID: 0009-0009-8616-3129</span>
-          <h3>Akademik Yayınlar & Araştırmalar</h3>
-          <p>Sosyal psikoloji, kolektif hafıza teorileri, inanç dinamikleri ve siyaset bilimi ekseninde hakemli dergilerde yayınlanmak üzere hazırlanan makaleler.</p>
-        </div>
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="nav_videos">Videolar & Medya</h2>
       </div>
-    </div>
-  </section>
-
-  <!-- Videos Section -->
-  <section id="videolar">
-    <div class="container">
-      <h2 class="section-title" id="videos-title">Video ve Yayınlar</h2>
       <div class="video-grid">
-        <div class="video-wrapper">
-          <!-- İlerleyen süreçte ekleyeceğiniz YouTube veya video linkleri için hazır alan -->
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Yayın Kayıtları" allowfullscreen></iframe>
-        </div>
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/Obj8MtM5GCg" title="YouTube video player"></iframe></div>
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/Ydq7-bXZ8fY" title="YouTube video player"></iframe></div>
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ehJ-XKSyKHI" title="YouTube video player"></iframe></div>
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/rHzZzXvlSTw" title="YouTube video player"></iframe></div>
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/bnn_AA3TQ-4" title="YouTube video player"></iframe></div>
+      </div>
+      
+      <h3 style="text-align:center; margin-top:60px; margin-bottom:30px; font-family:'Playfair Display'; color: var(--navy);" data-i18n="nav_tiktok">Psikolojik Harp Serisi (TikTok)</h3>
+      <div class="tiktok-grid">
+         <div class="tiktok-card"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@melikebalkinkarakaya/video/7606680668826766599" data-video-id="7606680668826766599"><section></section></blockquote></div>
+         <div class="tiktok-card"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@melikebalkinkarakaya/video/7608672195702787335" data-video-id="7608672195702787335"><section></section></blockquote></div>
+         <div class="tiktok-card"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@melikebalkinkarakaya/video/7615708570608274696" data-video-id="7615708570608274696"><section></section></blockquote></div>
+         <div class="tiktok-card"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@melikebalkinkarakaya/video/7622235589647043858" data-video-id="7622235589647043858"><section></section></blockquote></div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="iletisim">
+  <!-- CONTACT SECTION -->
+  <section id="iletisim" class="section" style="background: var(--white);">
     <div class="container">
-      <div class="contact-content">
-        <h2 class="section-title" id="contact-title">İletişim</h2>
-        <p id="contact-subtitle">Akademik işbirlikleri, görüşleriniz veya analiz talepleriniz için aşağıdaki kanallardan ulaşabilirsiniz.</p>
-        <div class="contact-links">
-          <a href="mailto:info@melikebalkinkarakaya.org" class="contact-icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
-          <a href="https://wa.me/905300000000" class="contact-icon" title="WhatsApp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="https://twitter.com" class="contact-icon" title="X (Twitter)" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-        </div>
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="nav_contact">İletişim & İş Birliği</h2>
+      </div>
+      <div class="contact-box">
+        <p style="color:var(--text-muted); margin-bottom:20px;" data-i18n="ws_notice">
+          Akademik projeler, danışmanlık ve iş birliği süreçleri için doğrudan iletişime geçebilirsiniz.
+        </p>
+        <label class="consent-wrapper">
+          <input type="checkbox" id="main-ws-consent">
+          <span data-i18n="ws_consent">Rıza Metni: Proje iş birliği için WhatsApp üzerinden iletişime geçmeyi kabul ediyorum.</span>
+        </label>
+        <a href="https://wa.me/905325698152" target="_blank" class="ws-btn" id="main-ws-btn">
+          <i class="fab fa-whatsapp"></i> <span data-i18n="ws_btn">Proje İş Birliği İçin Yazın</span>
+        </a>
+        <div id="ws-warning-text" style="color:var(--maroon); font-size:0.85rem; margin-top:12px; min-height:20px;"></div>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 Melike Balkın Karakaya | Uzman Klinik Psikolog & Siyaset Bilimi Doktora Adayı</p>
+    <div class="container" id="footer-text">
+      © 2026 Melike Balkın Karakaya | Uzman Klinik Psikolog & Yazar
+    </div>
   </footer>
 
-  <!-- Multilingual Translation Script -->
+  <script async src="https://www.tiktok.com/embed.js"></script>
   <script>
-    const translations = {
-      tr: {
-        brand: "Melike Balkın Karakaya",
-        menuHome: "Ana Sayfa",
-        menuAbout: "Hakkımda",
-        menuBlog: "Blog",
-        menuBooks: "Kitaplar",
-        menuAcademic: "Akademik",
-        menuVideos: "Videolar",
-        menuContact: "İletişim",
-        heroTitle: "Düşünce, Analiz ve Sosyal Algı",
-        heroSubtitle: "Uzman Klinik Psikolog & Siyaset Bilimi Doktora Adayı. Toplumsal psikoloji, felsefe ve kriminoloji ekseninde disiplinlerarası okumalar.",
-        heroCta: "Yazıları Oku",
-        aboutTitle: "Hakkımda",
-        aboutText: `<h3>Uzman Klinik Psikolog | Felsefeci & Tasavvuf Ehli | Toplumsal Psikoloji & Stratejik Algı Yorumcusu</h3>
-                    <p>Diyarbakır merkezli bağımsız bir araştırmacı, uzman klinik psikolog ve siyaset bilimi doktora adayıyım. Akademik ve klinik çalışmalarımı felsefe, tasavvuf, toplumsal psikoloji ve kriminoloji disiplinlerinin kesişim noktasında şekillendiriyorum.</p>
-                    <p>Çalışmalarımda bireysel ruh sağlığının ötesine geçerek; toplumsal travmaları, inanç mekanizmalarının psikososyal yapısını, kapalı dini yapıların otorite ve aidiyet ilişkilerini ve stratejik algı yönetim süreçlerini inceliyorum. Adalet, insan onuru ve toplumsal vicdan temalarını sosyo-hukuki perspektiflerle analiz ediyorum.</p>`,
-        latestTitle: "Öne Çıkan Yazılar",
-        booksTitle: "Kitaplar ve Çalışmalar",
-        academicTitle: "Akademik & Stratejik Analizler",
-        videosTitle: "Video ve Yayınlar",
-        contactTitle: "İletişim",
-        contactSubtitle: "Akademik işbirlikleri, görüşleriniz veya analiz talepleriniz için aşağıdaki kanallardan ulaşabilirsiniz."
-      },
-      en: {
-        brand: "Melike Balkin Karakaya",
-        menuHome: "Home",
-        menuAbout: "About Me",
-        menuBlog: "Blog",
-        menuBooks: "Books",
-        menuAcademic: "Academic",
-        menuVideos: "Videos",
-        menuContact: "Contact",
-        heroTitle: "Thought, Analysis & Social Perception",
-        heroSubtitle: "Expert Clinical Psychologist & PhD Candidate in Political Science. Interdisciplinary readings in social psychology, philosophy, and criminology.",
-        heroCta: "Read Articles",
-        aboutTitle: "About Me",
-        aboutText: `<h3>Expert Clinical Psychologist | Philosopher & Sufi Scholar | Social Psychology & Strategic Analyst</h3>
-                    <p>I am an independent researcher, clinical psychologist, and PhD candidate in political science based in Diyarbakir. I construct my academic and clinical work at the intersection of philosophy, Sufism, social psychology, and criminology.</p>
-                    <p>Moving beyond individual mental health, my research examines collective traumas, the psychosocial structure of belief systems, the power dynamics and authority in closed religious structures, and strategic perception management. I analyze themes of justice, human dignity, and social conscience through socio-legal frameworks.</p>`,
-        latestTitle: "Featured Articles",
-        booksTitle: "Books & Works",
-        academicTitle: "Academic & Strategic Analysis",
-        videosTitle: "Videos & Broadcasts",
-        contactTitle: "Contact",
-        contactSubtitle: "For academic collaborations, feedback, or analysis requests, you can reach out via the channels below."
-      }
+    // DİL ÇEVİRİ KAYNAKLARI
+    const tr = {
+      site_title: "Melike Balkın Karakaya",
+      nav_home: "Ana Sayfa", 
+      nav_imtp: "IMTP", 
+      nav_dimimec: "DIM-IMEC", 
+      nav_psikoharp: "Psikolojik Harp", 
+      nav_books: "Kitaplar", 
+      nav_videos: "Videolar", 
+      nav_blog: "Blog", 
+      nav_contact: "İletişim", 
+      nav_tiktok: "Psikolojik Harp Serisi (TikTok)", 
+      nav_academic: "Akademik Yayınlar",
+      hero_subtitle: "Uzman Klinik Psikolog & Yazar",
+      hero_desc: "Bağımsız Araştırmacı | Din Felsefesi | Siyasal Psikoloji | Bilinç Çalışmaları<br>IMTP, DIM–IMEC ve ÖBPH/SIPWM Çerçevelerinin Geliştiricisi",
+      hero_btn: "Çalışmalarımı İnceleyin",
+      tag_trauma: "Travma",
+      tag_memory: "Bellek",
+      tag_philosophy: "Felsefe",
+      tag_consciousness: "Bilinç",
+      tag_psywar: "Psikolojik Harp",
+      card_imtp_title: "IMTP Protokolü",
+      card_imtp_desc: "Travmatik anıların nörolojik düzeyde dönüşümü için geliştirilmiş entegre bellek protokolü.",
+      card_read_more: "Araştırmaları Gör →",
+      card_dimimec_title: "DIM-IMEC Paradigması",
+      card_dimimec_desc: "Sistemik entropi, bütünlük çöküşü ve çarpıtılmış gerçekliğin maliyeti üzerine teorik çerçeve.",
+      card_psikoharp_title: "Psikolojik Harp & Algı",
+      card_psikoharp_desc: "Ölçek-Bağımsız Psikolojik Harp Modeli (ÖBPH/SIPWM) ve algı yönetimi çalışmaları.",
+      card_books_pubs_title: "Kitaplar & Medya",
+      card_books_pubs_desc: "Yayınlanmış eserler, blog yazıları ve video içerikler.",
+      books_sub: "Travma, inanç ve insan psikolojisi üzerine derinlemesine incelemeler",
+      group_imtp: "IMTP Araştırmaları",
+      group_dimimec: "DIM-IMEC Paradigması",
+      group_psikoharp: "Psikolojik Harp & Algı Çalışmaları",
+      btn_go_zenodo: "Zenodo'ya Git →",
+      ws_notice: "Akademik projeler, danışmanlık ve iş birliği süreçleri için doğrudan iletişime geçebilirsiniz.",
+      ws_consent: "Rıza Metni: Proje iş birliği için WhatsApp üzerinden iletişime geçmeyi kabul ediyorum.",
+      ws_btn: "Proje İş Birliği İçin Yazın",
+      ws_warning: "Lütfen iletişime geçmeden önce rıza kutucuğunu işaretleyin.",
+      footer_text: "© 2026 Melike Balkın Karakaya | Uzman Klinik Psikolog & Yazar",
+      
+      // Dinamik Akademik Başlıklar (TR)
+      zen_1992: "IMTP Pilot Vaka Serisi (N=7): Kaygı Regülasyonu, Bedensel Rahatlama ve Toparlanma Esnekliği Üzerine Ön Bütünleşik Gözlemsel Bulgular",
+      zen_1713: "Entegre Bellek Dönüşüm Protokolü (IMTP): 13 Günlük Ara Rapor",
+      zen_1691: "Yakın-Yanlış Silme Protokolü: Çok Katmanlı Hafıza Nötralizasyon Yöntemi",
+      zen_16915: "Çalışma Belgesi – Ek Materyaller: YYSP+HME Pilot Uygulaması",
+      zen_20356: "Uygulamalı DIM–IMEC Vaka Analizi: Türkiye (2015–2024)",
+      zen_20356_en: "Applied DIM–IMEC Case Analysis: Turkey (2015–2024) — Sürüm v1",
+      zen_20340: "DIM–IMEC Paradigması: Sistemik Entropi, Bütünlük Çöküşü ve Çarpıtılmış Gerçekliğin Maliyeti (Genişletilmiş 2.0 Baskı)",
+      zen_20340_en: "The DIM–IMEC Paradigm: Systemic Entropy, Integrity Collapse, and the Cost of Distorted Reality — Sürüm 2.0",
+      zen_20310: "DIM–IMEC Paradigması: Sistemik Entropi, Bütünlük Çöküşü ve Çarpıtılmış Gerçekliğin Maliyeti",
+      zen_20310_en: "The DIM–IMEC Paradigm: Systemic Entropy, Integrity Collapse, and the Cost of Distorted Reality",
+      zen_1969: "TÜRKİYE'DE ÇOCUK KORUMA MEKANİZMALARININ YAPISAL ANALİZİ",
+      zen_1891: "Orta Doğu Stratejik Satranç Masası — Türkiye Analist Perspektifi",
+      zen_1823: "Canlı Olmadan Bilinç: Yapay Zekâ, İnsan ve Korku Üzerine Felsefi Denemeler",
+      zen_20680: "Ölçek-Bağımsız Psikolojik Harbin Tarihsel Seyri: Antik Dünyadan Dijital Kırılmaya",
+      zen_20680_en: "The Historical Trajectory of Scale-Independent Psychological Warfare: From the Ancient World to the Digital Break",
+      zen_20679: "Bilişsel Egemenliğin Kuşatılması: Deterministik Çatışma Modellerine Karşı Yönetilen Kriz Paradigması",
+      zen_20679_en: "The Siege of Cognitive Sovereignty: Managed Crisis Paradigm Against Deterministic Conflict Models",
+      zen_20679026: "Ölçek-Bağımsız Psikolojik Harp Modeli: Antik Dünyadan Dijital Çağa Tarihsel Bir Stres Testi",
+      zen_20679026_en: "The Scale-Independent Psychological Warfare Model: A Historical Stress Test from the Ancient World to the Digital Age — Sürüm v1",
+      zen_20645: "Ölçek-Bağımsız Psikolojik Harp Modeli'nin Derinleştirilmesi: Kavram Haritasından Ölçütsel İşleyişe Uzanan İkinci Aşama Bir Analitik Çerçeve",
+      zen_20645_en: "Deepening the Scale-Independent Psychological Warfare Model (SIPWM): A Second-Stage Analytical Framework from Conceptual Mapping to Criterial Operation — Sürüm v1",
+      zen_20645301: "Ölçek-Bağımsız Psikolojik Harp Modeli (ÖBPH): Psikolojik Harbi Yapısal Ölçütlerle Tanımlamaya Yönelik Kavramsal Bir Çerçeve",
+      zen_20645301_en: "The Scale-Independent Psychological Warfare Model (SIPWM): A Conceptual Framework for Defining Psychological Warfare Through Structural Criteria — Sürüm v2",
+      zen_1809: "Sessiz Yönlendirme: Bilinç, Algı ve Psikolojik Harp Mekanizmaları"
     };
 
-    function switchLanguage(lang) {
-      document.documentElement.lang = lang;
+    const en = {
+      site_title: "Melike Balkin Karakaya",
+      nav_home: "Home", 
+      nav_imtp: "IMTP", 
+      nav_dimimec: "DIM-IMEC", 
+      nav_psikoharp: "Psychological Warfare", 
+      nav_books: "Books", 
+      nav_videos: "Videos", 
+      nav_blog: "Blog", 
+      nav_contact: "Contact", 
+      nav_tiktok: "Psychological Warfare Series (TikTok)", 
+      nav_academic: "Academic Publications",
+      hero_subtitle: "Clinical Psychologist & Author",
+      hero_desc: "Independent Researcher | Philosophy of Religion | Political Psychology | Consciousness Studies<br>Developer of IMTP, DIM–IMEC, and SIPWM Frameworks",
+      hero_btn: "Explore My Work",
+      tag_trauma: "Trauma",
+      tag_memory: "Memory",
+      tag_philosophy: "Philosophy",
+      tag_consciousness: "Consciousness",
+      tag_psywar: "Psych Warfare",
+      card_imtp_title: "IMTP Protocol",
+      card_imtp_desc: "An integrated memory protocol developed for the neurological transformation of traumatic memories.",
+      card_read_more: "See Research →",
+      card_dimimec_title: "DIM-IMEC Paradigm",
+      card_dimimec_desc: "Theoretical framework exploring systemic entropy, collapse of integrity, and the cost of distorted reality.",
+      card_psikoharp_title: "Psychological Warfare",
+      card_psikoharp_desc: "Scale-Independent Psychological Warfare Model (SIPWM) and cognitive perception management.",
+      card_books_pubs_title: "Books & Media",
+      card_books_pubs_desc: "Published books, essays, and digital video content.",
+      books_sub: "Deep inquiries into trauma, belief systems, and human cognitive dynamics",
+      group_imtp: "IMTP Studies",
+      group_dimimec: "DIM-IMEC Paradigm",
+      group_psikoharp: "Psychological Warfare & Cognition Studies",
+      btn_go_zenodo: "Go to Zenodo →",
+      ws_notice: "You can reach out directly for academic projects, professional counseling, and strategic collaborations.",
+      ws_consent: "Consent: I consent to contacting via WhatsApp for project collaboration and academic inquiries.",
+      ws_btn: "Write for Project Collaboration",
+      ws_warning: "Please accept the consent checkbox before initiating contact.",
+      footer_text: "© 2026 Melike Balkın Karakaya | Clinical Psychologist & Author",
       
-      // Update Active Button State
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if(btn.textContent.toLowerCase() === lang) btn.classList.add('active');
+      // Dynamic Academic Titles (EN)
+      zen_1992: "IMTP Pilot Case Series (N=7): Preliminary Integrated Observational Findings on Anxiety Regulation, Somatic Relief, and Resilience",
+      zen_1713: "Integrated Memory Transformation Protocol (IMTP): 13-Day Interim Report",
+      zen_1691: "Near-False Deletion Protocol: A Multi-Layered Memory Neutralization Method",
+      zen_16915: "Working Paper – Supplementary Materials: NFDP+MRE Pilot Implementation",
+      zen_20356: "Applied DIM–IMEC Case Analysis: Turkey (2015–2024)",
+      zen_20356_en: "Applied DIM–IMEC Case Analysis: Turkey (2015–2024) — Version v1",
+      zen_20340: "The DIM–IMEC Paradigm: Systemic Entropy, Integrity Collapse, and the Cost of Distorted Reality (Expanded 2.0 Edition)",
+      zen_20340_en: "The DIM–IMEC Paradigm: Systemic Entropy, Integrity Collapse, and the Cost of Distorted Reality — Version 2.0",
+      zen_20310: "The DIM–IMEC Paradigm: Systemic Entropy, Integrity Collapse, and the Cost of Distorted Reality",
+      zen_20310_en: "The DIM–IMEC Paradigm: Systemic Entropy, Integrity Collapse, and the Cost of Distorted Reality",
+      zen_1969: "STRUCTURAL ANALYSIS OF CHILD PROTECTION MECHANISMS IN TURKEY",
+      zen_1891: "Middle East Strategic Chessboard — Turkish Analyst Perspective",
+      zen_1823: "Consciousness Without Being Alive: Philosophical Essays on AI, Humans, and Fear",
+      zen_20680: "The Historical Trajectory of Scale-Independent Psychological Warfare: From the Ancient World to the Digital Break",
+      zen_20680_en: "The Historical Trajectory of Scale-Independent Psychological Warfare: From the Ancient World to the Digital Break",
+      zen_20679: "The Siege of Cognitive Sovereignty: Managed Crisis Paradigm Against Deterministic Conflict Models",
+      zen_20679_en: "The Siege of Cognitive Sovereignty: Managed Crisis Paradigm Against Deterministic Conflict Models",
+      zen_20679026: "The Scale-Independent Psychological Warfare Model: A Historical Stress Test from the Ancient World to the Digital Age",
+      zen_20679026_en: "The Scale-Independent Psychological Warfare Model: A Historical Stress Test from the Ancient World to the Digital Age — Version v1",
+      zen_20645: "Deepening the Scale-Independent Psychological Warfare Model (SIPWM): A Second-Stage Analytical Framework",
+      zen_20645_en: "Deepening the Scale-Independent Psychological Warfare Model (SIPWM): A Second-Stage Analytical Framework from Conceptual Mapping to Criterial Operation — Version v1",
+      zen_20645301: "The Scale-Independent Psychological Warfare Model (SIPWM): A Conceptual Framework",
+      zen_20645301_en: "The Scale-Independent Psychological Warfare Model (SIPWM): A Conceptual Framework for Defining Psychological Warfare Through Structural Criteria — Version v2",
+      zen_1809: "Silent Steering: Consciousness, Perception, and Psychological Warfare Mechanisms"
+    };
+
+    // DİL DEĞİŞTİRME MEKANİZMASI
+    const btnTr = document.getElementById('btn-tr');
+    const btnEn = document.getElementById('btn-en');
+    const htmlTag = document.documentElement;
+
+    function setLanguage(lang) {
+      const dictionary = lang === 'en' ? en : tr;
+      htmlTag.setAttribute('lang', lang);
+      htmlTag.setAttribute('data-lang', lang);
+
+      // DOM üzerindeki data-i18n etiketli her alanı güncelle
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dictionary[key]) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.placeholder = dictionary[key];
+          } else {
+            el.innerHTML = dictionary[key];
+          }
+        }
       });
 
-      const t = translations[lang];
+      // Sayfa başlığını (Title) güncelle
+      document.title = dictionary['site_title'] || "Melike Balkın Karakaya";
 
-      // Update Header & Brand
-      document.getElementById('brand-text').textContent = t.brand;
-
-      // Update Navigation
-      const navLinks = document.getElementById('nav-menu').querySelectorAll('a');
-      navLinks[0].textContent = t.menuAbout;
-      navLinks[1].textContent = t.menuBlog;
-      navLinks[2].textContent = t.menuBooks;
-      navLinks[3].textContent = t.menuAcademic;
-      navLinks[4].textContent = t.menuVideos;
-      navLinks[5].textContent = t.menuContact;
-
-      // Update Hero
-      document.getElementById('hero-title').textContent = t.heroTitle;
-      document.getElementById('hero-subtitle').textContent = t.heroSubtitle;
-      document.getElementById('hero-cta').textContent = t.heroCta;
-
-      // Update Sections Text
-      document.getElementById('about-title').textContent = t.aboutTitle;
-      document.getElementById('about-content').innerHTML = t.aboutText;
-      document.getElementById('latest-title').textContent = t.latestTitle;
-      document.getElementById('books-title').textContent = t.booksTitle;
-      document.getElementById('academic-title').textContent = t.academicTitle;
-      document.getElementById('videos-title').textContent = t.videosTitle;
-      document.getElementById('contact-title').textContent = t.contactTitle;
-      document.getElementById('contact-subtitle').textContent = t.contactSubtitle;
+      // Buton aktiflik sınıflarını ayarla
+      if (lang === 'en') {
+        btnEn.classList.add('active');
+        btnTr.classList.remove('active');
+      } else {
+        btnTr.classList.add('active');
+        btnEn.classList.remove('active');
+      }
     }
+
+    btnTr.addEventListener('click', () => setLanguage('tr'));
+    btnEn.addEventListener('click', () => setLanguage('en'));
+
+
+    // WHATSAPP RIZA METNİ VE BUTON KONTROLÜ
+    const wsConsent = document.getElementById('main-ws-consent');
+    const wsBtn = document.getElementById('main-ws-btn');
+    const wsWarning = document.getElementById('ws-warning-text');
+
+    wsConsent.addEventListener('change', function() {
+      if (this.checked) {
+        wsBtn.classList.add('active');
+        wsWarning.textContent = "";
+      } else {
+        wsBtn.classList.remove('active');
+      }
+    });
+
+    // Rıza kutusu seçilmeden butona tıklanmaya çalışılması durumu için koruma
+    wsBtn.addEventListener('click', function(e) {
+      if (!wsConsent.checked) {
+        e.preventDefault();
+        const currentLang = htmlTag.getAttribute('data-lang') || 'tr';
+        wsWarning.textContent = currentLang === 'en' ? en.ws_warning : tr.ws_warning;
+      }
+    });
+
+    // Sayfa ilk yüklendiğinde varsayılan dili (TR) uygula
+    document.addEventListener('DOMContentLoaded', () => {
+      setLanguage('tr');
+    });
   </script>
 </body>
 </html>
